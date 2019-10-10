@@ -3,7 +3,7 @@
       "packages": [
         {
           "name": "Version 1.0",
-          "description": "Dating App Version 1.0",
+          "description": "MyApp Version 1.0",
           "files": ["MyApp.API/bin/Debug/netcoreapp2.1/publish/**"]
         }
       ],
@@ -12,7 +12,7 @@
           "type": "sftp",
           "name": "Linux",
           "description": "Remote Linux Server",
-          "dir": "/var/datingapp",
+          "dir": "/var/myapp",
           "mappings": [
               {
                   "source": "/MyApp.API/bin/Debug/netcoreapp2.1/publish",
