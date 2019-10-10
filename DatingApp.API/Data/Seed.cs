@@ -1,10 +1,10 @@
 using System.Collections.Generic;
 using System.Linq;
-using DatingApp.API.Models;
+using MyApp.API.Models;
 using Microsoft.AspNetCore.Identity;
 using Newtonsoft.Json;
 
-namespace DatingApp.API.Data
+namespace MyApp.API.Data
 {
     public class Seed
     {

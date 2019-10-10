@@ -1,6 +1,6 @@
 using System;
 
-namespace DatingApp.API.Dtos
+namespace MyApp.API.Dtos
 {
     public class MessageForCreationDto
     {

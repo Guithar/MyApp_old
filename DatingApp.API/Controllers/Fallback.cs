@@ -1,7 +1,7 @@
 using System.IO;
 using Microsoft.AspNetCore.Mvc;
 
-namespace DatingApp.API.Controllers
+namespace MyApp.API.Controllers
 {
     public class Fallback : Controller
     {

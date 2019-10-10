@@ -1,9 +1,9 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using DatingApp.API.Helpers;
-using DatingApp.API.Models;
+using MyApp.API.Helpers;
+using MyApp.API.Models;
 
-namespace DatingApp.API.Data
+namespace MyApp.API.Data
 {
     public interface IDatingRepository
     {

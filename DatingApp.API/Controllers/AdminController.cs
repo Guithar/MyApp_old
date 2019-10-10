@@ -1,18 +1,18 @@
 using System.Threading.Tasks;
-using DatingApp.API.Data;
+using MyApp.API.Data;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
-using DatingApp.API.Dtos;
+using MyApp.API.Dtos;
 using Microsoft.AspNetCore.Identity;
-using DatingApp.API.Models;
+using MyApp.API.Models;
 using Microsoft.Extensions.Options;
-using DatingApp.API.Helpers;
+using MyApp.API.Helpers;
 using CloudinaryDotNet;
 using CloudinaryDotNet.Actions;
 
-namespace DatingApp.API.Controllers
+namespace MyApp.API.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]

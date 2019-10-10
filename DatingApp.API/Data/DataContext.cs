@@ -1,9 +1,9 @@
-using DatingApp.API.Models;
+using MyApp.API.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace DatingApp.API.Data
+namespace MyApp.API.Data
 {
     public class DataContext : IdentityDbContext<User, Role, int, 
         IdentityUserClaim<int>, UserRole, IdentityUserLogin<int>, 

@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace DatingApp.API.Migrations
+namespace MyApp.API.Migrations
 {
     public partial class Initial : Migration
     {

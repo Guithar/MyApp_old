@@ -1,9 +1,9 @@
 ﻿using System.Net;
 using System.Text;
 using AutoMapper;
-using DatingApp.API.Data;
-using DatingApp.API.Helpers;
-using DatingApp.API.Models;
+using MyApp.API.Data;
+using MyApp.API.Helpers;
+using MyApp.API.Models;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
@@ -18,7 +18,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 
-namespace DatingApp.API
+namespace MyApp.API
 {
     public class Startup
     {

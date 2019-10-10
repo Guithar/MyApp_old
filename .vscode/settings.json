@@ -4,7 +4,7 @@
         {
           "name": "Version 1.0",
           "description": "Dating App Version 1.0",
-          "files": ["DatingApp.API/bin/Debug/netcoreapp2.1/publish/**"]
+          "files": ["MyApp.API/bin/Debug/netcoreapp2.1/publish/**"]
         }
       ],
       "targets": [
@@ -15,7 +15,7 @@
           "dir": "/var/datingapp",
           "mappings": [
               {
-                  "source": "/DatingApp.API/bin/Debug/netcoreapp2.1/publish",
+                  "source": "/MyApp.API/bin/Debug/netcoreapp2.1/publish",
                   "target": "/"
               }
           ],

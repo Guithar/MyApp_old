@@ -2,11 +2,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using DatingApp.API.Helpers;
-using DatingApp.API.Models;
+using MyApp.API.Helpers;
+using MyApp.API.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace DatingApp.API.Data
+namespace MyApp.API.Data
 {
     public class DatingRepository : IDatingRepository
     {

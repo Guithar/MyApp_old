@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Identity;
 
-namespace DatingApp.API.Models
+namespace MyApp.API.Models
 {
     public class User : IdentityUser<int>
     {

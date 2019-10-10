@@ -9,9 +9,9 @@
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            "program": "${workspaceFolder}/DatingApp.API/bin/Debug/netcoreapp2.1/DatingApp.API.dll",
+            "program": "${workspaceFolder}/MyApp.API/bin/Debug/netcoreapp2.1/MyApp.API.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/DatingApp.API",
+            "cwd": "${workspaceFolder}/MyApp.API",
             "stopAtEntry": false,
             "internalConsoleOptions": "openOnSessionStart",
             "launchBrowser": {

@@ -1,6 +1,6 @@
 ﻿using System;
-using DatingApp.API.Data;
-using DatingApp.API.Models;
+using MyApp.API.Data;
+using MyApp.API.Models;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
-namespace DatingApp.API
+namespace MyApp.API
 {
     public class Program
     {

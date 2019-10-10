@@ -1,4 +1,4 @@
-namespace DatingApp.API.Helpers
+namespace MyApp.API.Helpers
 {
     public class MessageParams
     {
