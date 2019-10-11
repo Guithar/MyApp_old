@@ -1,0 +1,37 @@
+//To generate json file at https://www.json-generator.com
+
+[
+  '{{repeat(1, 20)}}',
+  {
+    FirstName: '{{firstName()}}',
+    LastName: ' {{surname()}}',
+    company: '{{company().toUpperCase()}}',
+    NIF: 'B{{floating(45000, 99999999, 0, "00000000")}}',
+    JobTitle: function (tags) {
+      var fruits = ['Administrativo', 'Gerente', 'Director Técnico', 'Responsable de mantenimiento,Director de RRHH,Ingeniero Jefe,Jefe Dpto. Técnico'];
+      return fruits[tags.integer(0, fruits.length - 1)];  },
+    Adress: '{{integer(100, 999)}} {{street()}},}',
+    
+    City: ' {{city()}},',
+    
+    State: '{{state()}}',
+    
+    ZIP_PostalCode: '{{integer(100, 10000)}}',
+    
+    Country: '{{Country()}}',
+    
+    email: '{{email()}}',
+    
+    phone: '+1 {{phone()}}',
+    
+    Observations: '{{lorem(1, "paragraphs")}}',
+    
+    UserId:'{{ integer(1, 10,"0") }}',
+    
+    isDeleted: 'false',
+    
+    isActive: '{{bool()}}',
+    
+    registered: '{{date(new Date(2014, 0, 1), new Date(), "YYYY-MM-ddThh:mm:ss Z")}}'
+  }
+]

@@ -15,6 +15,7 @@ namespace MyApp.API.Data
         public DbSet<Photo> Photos { get; set; }
         public DbSet<Like> Likes { get; set; }
         public DbSet<Message> Messages { get; set; }
+        public DbSet<Client> Clients { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -61,6 +62,17 @@ namespace MyApp.API.Data
                 .OnDelete(DeleteBehavior.Restrict);
 
             builder.Entity<Photo>().HasQueryFilter(p => p.IsApproved);
+
+
+            builder.Entity<Client>()
+            .Property(c => c.CreatedDate)
+            .HasDefaultValueSql("getdate()");
+             builder.Entity<Client>()
+            .Property(c => c.LastModifiedDate)
+            .HasDefaultValueSql("getdate()");
+            builder.Entity<Client>()
+            .Property(c => c.FullName)
+            .HasComputedColumnSql("[LastName] + ', ' + [FirstName]");
         }
     }
 }

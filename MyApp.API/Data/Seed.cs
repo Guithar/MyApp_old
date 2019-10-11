@@ -12,7 +12,7 @@ namespace MyApp.API.Data
         {
             if (!userManager.Users.Any())
             {
-                var userData = System.IO.File.ReadAllText("Data/UserSeedData.json");
+                var userData = System.IO.File.ReadAllText("Data/SeedDataUser.json");
                 var users = JsonConvert.DeserializeObject<List<User>>(userData);
 
                 var roles = new List<Role>
@@ -49,5 +49,18 @@ namespace MyApp.API.Data
                 }
             }
         }
+         public static void SeedClients(DataContext context)
+         {
+            if(!context.Clients.Any())
+            {
+                var clientData = System.IO.File.ReadAllText("Data/SeedDataClient.json");
+                var clients = JsonConvert.DeserializeObject<List<Client>>(clientData);
+                foreach (var client in clients)
+                {
+                    context.Clients.Add(client);
+                };
+                context.SaveChanges();
+            }
+         }
     }
 }
