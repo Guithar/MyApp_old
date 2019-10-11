@@ -5,7 +5,7 @@ using MyApp.API.Models;
 
 namespace MyApp.API.Data
 {
-    public interface IDatingRepository
+    public interface IMyAppRepository
     {
          void Add<T>(T entity) where T: class;
          void Delete<T>(T entity) where T: class;

@@ -99,10 +99,10 @@ namespace MyApp.API
                 });
             services.AddCors();
             services.Configure<CloudinarySettings>(Configuration.GetSection("CloudinarySettings"));
-            services.AddAutoMapper(typeof(DatingRepository).Assembly);
+            services.AddAutoMapper(typeof(MyAppRepository).Assembly);
             services.AddTransient<Seed>();
             services.AddScoped<IAuthRepository, AuthRepository>();
-            services.AddScoped<IDatingRepository, DatingRepository>();
+            services.AddScoped<IMyAppRepository, MyAppRepository>();
             services.AddScoped<LogUserActivity>();
         }
 

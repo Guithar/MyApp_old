@@ -18,12 +18,12 @@ namespace MyApp.API.Controllers
     [ApiController]
     public class PhotosController : ControllerBase
     {
-        private readonly IDatingRepository _repo;
+        private readonly IMyAppRepository _repo;
         private readonly IMapper _mapper;
         private readonly IOptions<CloudinarySettings> _cloudinaryConfig;
         private Cloudinary _cloudinary;
 
-        public PhotosController(IDatingRepository repo, IMapper mapper,
+        public PhotosController(IMyAppRepository repo, IMapper mapper,
             IOptions<CloudinarySettings> cloudinaryConfig)
         {
             _cloudinaryConfig = cloudinaryConfig;
