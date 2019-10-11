@@ -1,5 +1,6 @@
 //To generate json file at https://www.json-generator.com
 
+
 [
   '{{repeat(1, 20)}}',
   {
@@ -10,15 +11,15 @@
     JobTitle: function (tags) {
       var fruits = ['Administrativo', 'Gerente', 'Director Técnico', 'Responsable de mantenimiento,Director de RRHH,Ingeniero Jefe,Jefe Dpto. Técnico'];
       return fruits[tags.integer(0, fruits.length - 1)];  },
-    Adress: '{{integer(100, 999)}} {{street()}},}',
+    Adress: '{{integer(100, 999)}} {{street()}},',
     
-    City: ' {{city()}},',
+    City: ' {{city()}}',
     
-    State: '{{state()}}',
+    State_Province: '{{state()}}',
     
     ZIP_PostalCode: '{{integer(100, 10000)}}',
     
-    Country: '{{Country()}}',
+    Country: '{{country()}}',
     
     email: '{{email()}}',
     
