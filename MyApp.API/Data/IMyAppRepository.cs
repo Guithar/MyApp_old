@@ -18,5 +18,7 @@ namespace MyApp.API.Data
          Task<Message> GetMessage(int id);
          Task<PagedList<Message>> GetMessagesForUser(MessageParams messageParams);
          Task<IEnumerable<Message>> GetMessageThread(int userId, int recipientId);
+         Task<IEnumerable<Client>> GetClients(int UserId);
+         Task<Client> GetClient(int id,int userId);
     }
 }

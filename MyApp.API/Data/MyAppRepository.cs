@@ -162,5 +162,19 @@ namespace MyApp.API.Data
 
             return messages;
         }
+
+        public async Task<IEnumerable<Client>> GetClients(int UserId)
+        {
+             var clients= await _context.Clients.Where(c => c.UserId==UserId).ToListAsync();
+            
+            return clients;
+        }
+
+        public async Task<Client> GetClient(int id,int userId)
+        {
+             var client=await _context.Clients.FirstOrDefaultAsync(c => c.Id==id && c.UserId==userId);
+            return client;   
+        }
+
     }
 }
