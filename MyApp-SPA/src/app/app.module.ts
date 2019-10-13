@@ -39,6 +39,8 @@ import { UserManagementComponent } from './admin/user-management/user-management
 import { PhotoManagementComponent } from './admin/photo-management/photo-management.component';
 import { AdminService } from './_services/admin.service';
 import { RolesModalComponent } from './admin/roles-modal/roles-modal.component';
+import { ClientListComponent } from './clients/client-list/client-list.component';
+import { ClientListResolver } from './_resolvers/client-list.resolver';
 
 export function tokenGetter() {
   return localStorage.getItem('token');
@@ -70,7 +72,8 @@ export class CustomHammerConfig extends HammerGestureConfig  {
     HasRoleDirective,
     UserManagementComponent,
     PhotoManagementComponent,
-    RolesModalComponent
+    RolesModalComponent,
+    ClientListComponent
   ],
   imports: [
     BrowserModule,
@@ -107,6 +110,7 @@ export class CustomHammerConfig extends HammerGestureConfig  {
       ListsResolver,
       MessagesResolver,
       AdminService,
+      ClientListResolver,
       { provide: HAMMER_GESTURE_CONFIG, useClass: CustomHammerConfig }
     ],
   entryComponents: [

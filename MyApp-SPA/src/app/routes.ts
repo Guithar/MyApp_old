@@ -13,6 +13,8 @@ import { PreventUnsavedChanges } from './_guards/prevent-unsaved-changes.guard';
 import { ListsResolver } from './_resolvers/lists.resolver';
 import { MessagesResolver } from './_resolvers/messages.resolver';
 import { AdminPanelComponent } from './admin/admin-panel/admin-panel.component';
+import { ClientListComponent } from './clients/client-list/client-list.component';
+import { ClientListResolver } from './_resolvers/client-list.resolver';
 
 export const appRoutes: Routes = [
     {path: '', component: HomeComponent},
@@ -21,6 +23,8 @@ export const appRoutes: Routes = [
         runGuardsAndResolvers: 'always',
         canActivate: [AuthGuard],
         children: [
+            {path: 'clients', component: ClientListComponent,
+                resolve: {clients: ClientListResolver}},
             {path: 'members', component: MemberListComponent,
                 resolve: {users: MemberListResolver}},
             {path: 'members/:id', component: MemberDetailComponent,

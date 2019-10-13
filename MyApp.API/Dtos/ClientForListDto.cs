@@ -20,6 +20,7 @@ namespace MyApp.API.Dtos
         public string Email { get; set; }
         public string Phone { get; set; }
         public string Observations { get; set; }
+        public int UserId { get; set; }
 
         //control of register
         public bool  IsDeleted { get; set; }
