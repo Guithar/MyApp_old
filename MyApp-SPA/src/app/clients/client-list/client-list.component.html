@@ -1,17 +1,17 @@
-<div class="container" > 
-
-        <mat-toolbar  class="navbar">
-            
+<div class="card">
+        <div class="card-header">
             <div>
-                <h2> CLIENT LIST </h2>    
+                <strong> CLIENT </strong> <small>List</small> 
             </div>
+        
             <span>
                 <mat-form-field>
-                        <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+                    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
                 </mat-form-field>
             </span>
-        </mat-toolbar>
-        <div class="mat-elevation-z8">
+        </div>
+        <div class="card-body">
+        
             <table mat-table [dataSource]="dataSource" matSort>
             
                 <!-- id Column -->
@@ -116,6 +116,6 @@
                 <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
                 <tr mat-row (click)="logData(row)" *matRowDef="let row; columns: displayedColumns;"></tr>
             </table>
+            
         <mat-paginator [pageSizeOptions]="[20, 30, 40, 50]" showFirstLastButtons></mat-paginator>
-    </div>
 </div>

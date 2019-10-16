@@ -6,6 +6,7 @@ using MyApp.API.Data;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using MyApp.API.Dtos;
+using System;
 
 namespace MyApp.API.Controllers
 {
@@ -35,6 +36,26 @@ namespace MyApp.API.Controllers
             var client = await _repo.GetClient(id, int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value));
             var clientToReturn= _mapper.Map<ClientForDetailedDto>(client);
             return Ok(clientToReturn);
+        }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdateClient(int id,ClientForUpdateDto clientForUpdateDto)
+        {       // ID DEL USUARIO ACTUAL= int.Parse(Client.FindFirst(ClaimTypes.NameIdentifier).Value)
+            var currentUserId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value);
+
+            if (clientForUpdateDto.UserId != currentUserId)
+                return Unauthorized();
+
+            var clientFromRepo = await _repo.GetClient(id,currentUserId);
+            if(clientFromRepo==null)
+             return Unauthorized();
+
+            _mapper.Map(clientForUpdateDto, clientFromRepo);
+
+            if (await _repo.SaveAll())
+                return NoContent();
+
+            throw new Exception($"Updating client {id} failed on save");
         }
     }
 }

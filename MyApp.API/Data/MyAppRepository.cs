@@ -175,6 +175,7 @@ namespace MyApp.API.Data
              var client=await _context.Clients.FirstOrDefaultAsync(c => c.Id==id && c.UserId==userId);
             return client;   
         }
+        
 
     }
 }

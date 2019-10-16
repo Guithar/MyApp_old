@@ -36,6 +36,7 @@ namespace MyApp.API.Helpers
                     .MapFrom(u => u.Recipient.Photos.FirstOrDefault(p => p.IsMain).Url));
             CreateMap<Client,ClientForListDto>();
             CreateMap<Client,ClientForDetailedDto>();
+            CreateMap<ClientForUpdateDto,Client>();
         }
     }
 }

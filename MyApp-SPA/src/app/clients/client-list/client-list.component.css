@@ -1,17 +1,10 @@
 
-.container{
-  margin-top: 5px;
-}
 table {
     width: 100%;
     cursor: pointer;
   }
   
-  .navbar {
+  .card-header {
     justify-content: space-between
   }
 
-  .span{
-    padding-right: 1rem;
-    
-  }
