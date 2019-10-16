@@ -1,5 +1,121 @@
-<div class="container">
-    <h1> Clients list</h1>
-    <p *ngFor="let client of clients">name: {{client.firstName}}</p>
-    
+<div class="container" > 
+
+        <mat-toolbar  class="navbar">
+            
+            <div>
+                <h2> CLIENT LIST </h2>    
+            </div>
+            <span>
+                <mat-form-field>
+                        <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+                </mat-form-field>
+            </span>
+        </mat-toolbar>
+        <div class="mat-elevation-z8">
+            <table mat-table [dataSource]="dataSource" matSort>
+            
+                <!-- id Column -->
+                <ng-container matColumnDef="id">
+                    <th mat-header-cell mat-sort-header *matHeaderCellDef> id </th>
+                    <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+                </ng-container>
+
+                <!-- firstName Column -->
+                <ng-container matColumnDef="firstName">
+                    <th mat-header-cell mat-sort-header *matHeaderCellDef> firstName</th>
+                    <td mat-cell *matCellDef="let element"> {{element.firstName}} </td>
+                </ng-container>
+
+                <!-- lastName Column -->
+                <ng-container matColumnDef="lastName">
+                <th mat-header-cell mat-sort-header *matHeaderCellDef> lastName</th>
+                <td mat-cell *matCellDef="let element"> {{element.lastName}} </td>
+                </ng-container>
+
+                <!-- company Column -->
+                <ng-container matColumnDef="company">
+                    <th mat-header-cell mat-sort-header *matHeaderCellDef> company </th>
+                    <td mat-cell *matCellDef="let element"> {{element.company}} </td>
+                </ng-container>
+
+                <!-- nif Column -->
+                <ng-container matColumnDef="nif">
+                    <th mat-header-cell mat-sort-header *matHeaderCellDef> nif </th>
+                    <td mat-cell *matCellDef="let element"> {{element.nif}} </td>
+                </ng-container>
+
+                <!-- jobTitle Column -->
+                <ng-container matColumnDef="jobTitle">
+                    <th mat-header-cell *matHeaderCellDef> jobTitle </th>
+                    <td mat-cell *matCellDef="let element"> {{element.jobTitle}} </td>
+                </ng-container>
+
+                <!-- adress Column -->
+                <ng-container matColumnDef="adress">
+                    <th mat-header-cell mat-sort-header *matHeaderCellDef> adress </th>
+                    <td mat-cell *matCellDef="let element"> {{element.adress}} </td>
+                </ng-container>
+
+                <!-- city Column -->
+                <ng-container matColumnDef="city">
+                    <th mat-header-cell mat-sort-header *matHeaderCellDef> city </th>
+                    <td mat-cell *matCellDef="let element"> {{element.city}} </td>
+                </ng-container>
+
+                <!-- state_Province Column -->
+                <ng-container matColumnDef="state_Province">
+                    <th mat-header-cell mat-sort-header *matHeaderCellDef> state_Province </th>
+                    <td mat-cell *matCellDef="let element"> {{element.state_Province}} </td>
+                </ng-container>
+
+                <!-- ziP_PostalCode Column -->
+                <ng-container matColumnDef="ziP_PostalCode">
+                    <th mat-header-cell *matHeaderCellDef> ziP_PostalCode </th>
+                    <td mat-cell *matCellDef="let element"> {{element.ziP_PostalCode}} </td>
+                </ng-container>    
+
+                <!-- country Column -->
+                <ng-container matColumnDef="country">
+                    <th mat-header-cell mat-sort-header *matHeaderCellDef> country </th>
+                    <td mat-cell *matCellDef="let element"> {{element.country}} </td>
+                </ng-container>   
+                
+                <!-- email Column -->
+                <ng-container matColumnDef="email">
+                    <th mat-header-cell *matHeaderCellDef> email </th>
+                    <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+                </ng-container>  
+
+                <!-- phone Column -->
+                <ng-container matColumnDef="phone">
+                    <th mat-header-cell *matHeaderCellDef> phone </th>
+                    <td mat-cell *matCellDef="let element"> {{element.phone}} </td>
+                </ng-container>
+
+                <!-- observations Column -->
+                <ng-container matColumnDef="observations">
+                    <th mat-header-cell *matHeaderCellDef> observations </th>
+                    <td mat-cell *matCellDef="let element"> {{element.observations}} </td>
+                </ng-container>
+                <!-- userId Column -->
+                <ng-container matColumnDef="userId">
+                    <th mat-header-cell *matHeaderCellDef> userId </th>
+                    <td mat-cell *matCellDef="let element"> {{element.userId}} </td>
+                </ng-container>
+                <!-- createdDate Column -->
+                <ng-container matColumnDef="created">
+                    <th mat-header-cell *matHeaderCellDef> created </th>
+                    <td mat-cell *matCellDef="let element"> {{element.createdDate}} </td>
+                </ng-container>    
+                <!-- lastModifiedDate Column -->
+                <ng-container matColumnDef="last Modified">
+                    <th mat-header-cell *matHeaderCellDef> last Modified </th>
+                    <td mat-cell *matCellDef="let element"> {{element.lastModifiedDate}} </td>
+                </ng-container>     
+                    
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row (click)="logData(row)" *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+        <mat-paginator [pageSizeOptions]="[20, 30, 40, 50]" showFirstLastButtons></mat-paginator>
+    </div>
 </div>

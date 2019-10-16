@@ -15,6 +15,8 @@ import { MessagesResolver } from './_resolvers/messages.resolver';
 import { AdminPanelComponent } from './admin/admin-panel/admin-panel.component';
 import { ClientListComponent } from './clients/client-list/client-list.component';
 import { ClientListResolver } from './_resolvers/client-list.resolver';
+import { ClientDetailComponent } from './clients/client-detail/client-detail.component';
+import { ClientDetailResolver } from './_resolvers/client-detail.resolver';
 
 export const appRoutes: Routes = [
     {path: '', component: HomeComponent},
@@ -25,6 +27,8 @@ export const appRoutes: Routes = [
         children: [
             {path: 'clients', component: ClientListComponent,
                 resolve: {clients: ClientListResolver}},
+            {path: 'clients/:id', component: ClientDetailComponent,
+                resolve: {client: ClientDetailResolver}},
             {path: 'members', component: MemberListComponent,
                 resolve: {users: MemberListResolver}},
             {path: 'members/:id', component: MemberDetailComponent,

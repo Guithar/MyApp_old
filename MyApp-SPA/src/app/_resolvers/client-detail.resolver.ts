@@ -8,12 +8,12 @@ import { catchError } from 'rxjs/operators';
 import { Client } from '../_models/client';
 
 @Injectable()
-export class ClientListResolver implements Resolve<Client[]> {
+export class ClientDetailResolver implements Resolve<Client> {
     constructor(private clientService: ClientService, private router: Router,
         private alertify: AlertifyService) {}
 
-    resolve(route: ActivatedRouteSnapshot): Observable<Client[]> {
-        return this.clientService.getClients().pipe(
+    resolve(route: ActivatedRouteSnapshot): Observable<Client> {
+        return this.clientService.getClient(route.params['id']).pipe(
             catchError(error => {
                 this.alertify.error('Problem retrieving data');
                 this.router.navigate(['/home']);

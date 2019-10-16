@@ -41,6 +41,10 @@ import { AdminService } from './_services/admin.service';
 import { RolesModalComponent } from './admin/roles-modal/roles-modal.component';
 import { ClientListComponent } from './clients/client-list/client-list.component';
 import { ClientListResolver } from './_resolvers/client-list.resolver';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './material/material.module';
+import { ClientDetailComponent } from './clients/client-detail/client-detail.component';
+import { ClientDetailResolver } from './_resolvers/client-detail.resolver';
 
 export function tokenGetter() {
   return localStorage.getItem('token');
@@ -73,7 +77,8 @@ export class CustomHammerConfig extends HammerGestureConfig  {
     UserManagementComponent,
     PhotoManagementComponent,
     RolesModalComponent,
-    ClientListComponent
+    ClientListComponent,
+    ClientDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -95,7 +100,9 @@ export class CustomHammerConfig extends HammerGestureConfig  {
         whitelistedDomains: ['localhost:5000'],
         blacklistedRoutes: ['localhost:5000/api/auth']
       }
-    })
+    }),
+    BrowserAnimationsModule,
+    MaterialModule
   ],
   providers: [
       AuthService,
@@ -111,6 +118,7 @@ export class CustomHammerConfig extends HammerGestureConfig  {
       MessagesResolver,
       AdminService,
       ClientListResolver,
+      ClientDetailResolver,
       { provide: HAMMER_GESTURE_CONFIG, useClass: CustomHammerConfig }
     ],
   entryComponents: [
