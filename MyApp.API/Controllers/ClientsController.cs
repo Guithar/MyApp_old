@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using MyApp.API.Dtos;
 using System;
+using MyApp.API.Models;
 
 namespace MyApp.API.Controllers
 {
@@ -30,7 +31,7 @@ namespace MyApp.API.Controllers
             var clientsToReturn= _mapper.Map<IEnumerable<ClientForListDto>>(clients);
             return Ok(clientsToReturn);
         }
-        [HttpGet("{id}")]
+        [HttpGet("{id}", Name="GetClient")]
         public async Task<IActionResult> GetClient(int id)
         {
             var client = await _repo.GetClient(id, int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value));
@@ -57,5 +58,23 @@ namespace MyApp.API.Controllers
 
             throw new Exception($"Updating client {id} failed on save");
         }
+
+    [HttpPost]     // TODO createClient 
+        public async Task<IActionResult> CreateClient(ClientForCreationDto clientForCreationDto)
+        {
+            clientForCreationDto.UserId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value);
+            var client = _mapper.Map<Client>(clientForCreationDto);
+
+            _repo.Add(client);
+
+            if (await _repo.SaveAll())
+            {
+                var clientToReturn= _mapper.Map<ClientForDetailedDto>(client);
+                return CreatedAtRoute("GetClient", new {id = client.Id}, clientToReturn);
+            }
+
+            throw new Exception("Creating the client failed on save");
+        }
+
     }
 }

@@ -1,11 +1,10 @@
 using System;
-using MyApp.API.Models;
 
 namespace MyApp.API.Dtos
 {
-    public class ClientForUpdateDto
-    {   //information of the client
-        
+    public class ClientToReturnDto
+    {
+        //information of the client
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string FullName { get; set; }
@@ -24,12 +23,8 @@ namespace MyApp.API.Dtos
 
         //control of register
         public bool  IsDeleted { get; set; }
-        public bool  IsActive { get; set; }      
+        public bool  IsActive { get; set; }
+        public DateTime CreatedDate { get; set; }
         public DateTime LastModifiedDate { get; set; }
-
-        public ClientForUpdateDto()
-        {
-            LastModifiedDate=DateTime.Now;
-        }
     }
 }
