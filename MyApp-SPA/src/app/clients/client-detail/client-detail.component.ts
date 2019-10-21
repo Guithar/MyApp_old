@@ -5,6 +5,7 @@ import { ClientService } from 'src/app/_services/client.service';
 import { AlertifyService } from 'src/app/_services/alertify.service';
 import { FormBuilder, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/_services/auth.service';
+import { UserService } from 'src/app/_services/user.service';
 
 @Component({
   selector: 'app-client-detail',
@@ -14,7 +15,8 @@ import { AuthService } from 'src/app/_services/auth.service';
 export class ClientDetailComponent implements OnInit {
 
   constructor(private alertify: AlertifyService, private clientService: ClientService,
-    private route: ActivatedRoute, private router: Router, private formBuilder: FormBuilder) { }
+    private route: ActivatedRoute, private router: Router, private formBuilder: FormBuilder,
+    private userService: UserService) { }
 
   client: Client;
   newClientFlag: boolean;
@@ -74,14 +76,20 @@ export class ClientDetailComponent implements OnInit {
     .subscribe((client: Client) => {
       this.client = client;
       this.router.navigate(['clients/', client.id]);
-  }, error => {
-    this.alertify.error(error);
-  });
+    }, error => {
+      this.alertify.error(error);
+    });
 
-
-
-
-
+  }
+  deleteClient() {
+    this.alertify.confirm('Delete client', 'Are you sure you want to delete this client?', () => {
+      this.clientService.deleteClient(this.client.id).subscribe(() => {
+        this.alertify.success('Client has been deleted');
+        this.router.navigate(['clients']);
+      }, error => {
+        this.alertify.error('Failed to delete client');
+      });
+    });
   }
   resetForm() {
     this.clientForm.reset();

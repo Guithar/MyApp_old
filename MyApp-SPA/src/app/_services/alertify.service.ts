@@ -7,14 +7,18 @@ declare let alertify: any;
 export class AlertifyService {
   constructor() {}
 
-  confirm(message: string, okCallback: () => any) {
-    alertify.confirm(message, function(e) {
-      if (e) {
-        okCallback();
-      } else {}
-    });
-  }
+  // confirm(message: string, okCallback: () => any) {
+  //   alertify.confirm('MENSAJE A', 'MENSAJE B', function(e) {
+  //     if (e) {
+  //       okCallback();
+  //     } else {}
+  //   });
+  // }
 
+  confirm(tittle: string, message: string, okCallback: () => any) {
+    alertify.confirm(tittle, message, function() { okCallback(); }
+    , function() { alertify.error('Cancel'); });
+  }
   success(message: string) {
     alertify.success(message);
   }

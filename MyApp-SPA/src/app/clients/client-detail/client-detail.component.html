@@ -4,7 +4,10 @@
           <strong *ngIf="!client"> New Client</strong>
           <strong *ngIf="client"> {{client.company}}</strong>
           <small> Form</small>
+          <button (click)="deleteClient()" mat-stroked-button color="primary"><i class="material-icons">
+            delete</i> Delete</button>
         </div>
+        
         <div *ngIf="clientForm.dirty" class="alert alert-info">
             <strong>Information:</strong> You have made changes.  Any unsaved changes will be lost!
         </div>

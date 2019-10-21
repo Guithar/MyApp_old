@@ -24,4 +24,9 @@ export class ClientService {
   createClient(client: Client) {
     return this.http.post(this.baseUrl + 'clients/', client);
   }
+  deleteClient(id: number) {
+    return this.http.post(this.baseUrl + 'clients/' + id, {});
+  }
+
+
 }
