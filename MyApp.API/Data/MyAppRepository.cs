@@ -172,7 +172,9 @@ namespace MyApp.API.Data
 
         public async Task<Client> GetClient(int id,int userId)
         {
-             var client=await _context.Clients.FirstOrDefaultAsync(c => c.Id==id && c.UserId==userId);
+            var query = _context.Clients.AsQueryable();
+            //query = query.IgnoreQueryFilters();
+            var client = await query.FirstOrDefaultAsync(c => c.Id==id && c.UserId==userId);
             return client;   
         }
         

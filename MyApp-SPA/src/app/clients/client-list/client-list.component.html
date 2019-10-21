@@ -1,13 +1,16 @@
 <div class="card">
         <div class="card-header">
-            <div>
-                <strong> CLIENT </strong> <small>List</small> 
-            </div>
-        
             <span>
-                <mat-form-field>
-                    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
-                </mat-form-field>
+                <strong> CLIENT </strong> <small>List</small> 
+                <button [routerLink]="['/clients/new']" mat-stroked-button color="primary"><i class="material-icons">
+                    add
+                    </i> New</button>
+                <button  mat-stroked-button color="primary">Options <i class="material-icons">
+                    keyboard_arrow_down
+                    </i> </button>
+                    <mat-form-field>
+                        <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+                    </mat-form-field>
             </span>
         </div>
         <div class="card-body">
@@ -114,7 +117,7 @@
                 </ng-container>     
                     
                 <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-                <tr mat-row (click)="logData(row)" *matRowDef="let row; columns: displayedColumns;"></tr>
+                <tr mat-row (click)="editClient(row)" *matRowDef="let row; columns: displayedColumns;"></tr>
             </table>
             
         <mat-paginator [pageSizeOptions]="[20, 30, 40, 50]" showFirstLastButtons></mat-paginator>

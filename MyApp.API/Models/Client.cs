@@ -19,6 +19,7 @@ namespace MyApp.API.Models
         public string Email { get; set; }
         public string Phone { get; set; }
         public string Observations { get; set; }
+    
         public virtual User User { get; set; }
         public int UserId { get; set; }
 

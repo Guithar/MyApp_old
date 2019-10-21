@@ -20,7 +20,8 @@ export class ClientListComponent implements OnInit {
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
 
   constructor(private clientService: ClientService, private alertify: AlertifyService,
-  private route: ActivatedRoute, private router: Router) { }
+  private route: ActivatedRoute, private router: Router) {
+  }
 
     ngOnInit() {
       this.route.data.subscribe(data => {
@@ -28,6 +29,7 @@ export class ClientListComponent implements OnInit {
         this.loadClients();
       });
   }
+
   loadClients() {
     this.clientService.getClients()
       .subscribe((clients: Client[]) => {
@@ -43,9 +45,11 @@ export class ClientListComponent implements OnInit {
     console.log(filterValue.trim().toLowerCase());
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
-  logData(row: Client) {
-    console.log(row);
-    this.router.navigate(['clients/' + row.id]);
+  editClient(row: Client) {
+      this.router.navigate(['clients/' + row.id]);
+  }
+  newClient() {
+    this.router.navigate(['clients/new']);
   }
 }
 

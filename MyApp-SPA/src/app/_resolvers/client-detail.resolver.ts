@@ -13,12 +13,15 @@ export class ClientDetailResolver implements Resolve<Client> {
         private alertify: AlertifyService) {}
 
     resolve(route: ActivatedRouteSnapshot): Observable<Client> {
-        return this.clientService.getClient(route.params['id']).pipe(
+
+        if (route.params['id'] !== 'new') {
+           return this.clientService.getClient(route.params['id']).pipe(
             catchError(error => {
                 this.alertify.error('Problem retrieving data');
                 this.router.navigate(['/home']);
                 return of(null);
             })
         );
+        }
     }
 }

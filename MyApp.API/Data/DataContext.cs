@@ -73,6 +73,7 @@ namespace MyApp.API.Data
             builder.Entity<Client>()
             .Property(c => c.FullName)
             .HasComputedColumnSql("[LastName] + ', ' + [FirstName]");
+            builder.Entity<Client>().HasQueryFilter(c => !c.IsDeleted);
         }
     }
 }

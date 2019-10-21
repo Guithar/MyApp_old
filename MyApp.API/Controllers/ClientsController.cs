@@ -41,16 +41,14 @@ namespace MyApp.API.Controllers
 
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateClient(int id,ClientForUpdateDto clientForUpdateDto)
-        {       // ID DEL USUARIO ACTUAL= int.Parse(Client.FindFirst(ClaimTypes.NameIdentifier).Value)
+        {      
             var currentUserId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value);
-
-            if (clientForUpdateDto.UserId != currentUserId)
-                return Unauthorized();
 
             var clientFromRepo = await _repo.GetClient(id,currentUserId);
             if(clientFromRepo==null)
              return Unauthorized();
 
+            clientForUpdateDto.UserId = currentUserId;
             _mapper.Map(clientForUpdateDto, clientFromRepo);
 
             if (await _repo.SaveAll())
@@ -59,7 +57,7 @@ namespace MyApp.API.Controllers
             throw new Exception($"Updating client {id} failed on save");
         }
 
-    [HttpPost]     // TODO createClient 
+    [HttpPost]     
         public async Task<IActionResult> CreateClient(ClientForCreationDto clientForCreationDto)
         {
             clientForCreationDto.UserId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value);
@@ -74,6 +72,26 @@ namespace MyApp.API.Controllers
             }
 
             throw new Exception("Creating the client failed on save");
+        }
+
+        [HttpPost("{id}")]
+        public async Task<IActionResult> DeleteClient(int id)
+        {
+            var currentUserId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value);
+
+            var clientFromRepo = await _repo.GetClient(id,currentUserId);
+            if(clientFromRepo==null)
+             return Unauthorized();
+
+             if (clientFromRepo.IsDeleted == true)
+                 _repo.Delete(clientFromRepo);
+            if (clientFromRepo.IsDeleted == false)
+                clientFromRepo.IsDeleted = true;
+                
+            if (await _repo.SaveAll())
+                return NoContent();
+
+            throw new Exception("Error deleting the message");
         }
 
     }

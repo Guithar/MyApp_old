@@ -1,48 +1,65 @@
 
 <div class="card">
         <div class="card-header">
-          <strong>{{client.company}}</strong>
+          <strong *ngIf="!client"> New Client</strong>
+          <strong *ngIf="client"> {{client.company}}</strong>
           <small> Form</small>
         </div>
-        <div *ngIf="editForm.dirty" class="alert alert-info">
+        <div *ngIf="clientForm.dirty" class="alert alert-info">
             <strong>Information:</strong> You have made changes.  Any unsaved changes will be lost!
-          </div>
-        <form #editForm="ngForm" id="editForm" (ngSubmit)="updateClient()">
+        </div>
+        <form [formGroup]="clientForm" (submit)="onSubmit()" id="clientForm">
             <div class="card-body">
               <div class="form-group">
                 <label for="company">Company</label>
-                <input name="company" type="text" class="form-control" id="company" placeholder="Enter your company name" 
-                [(ngModel)]="client.company">
+                <input formControlName="company" type="text" class="form-control" 
+                  id="company" placeholder="Enter your company name" 
+                >
               </div>
               <div class="form-group">
                 <label for="nif">VAT</label>
-                <input name="nif"type="text" class="form-control" id="vat" placeholder="PL1234567890" [(ngModel)]="client.nif">
+                <input formControlName="nif"type="text" class="form-control" 
+                  id="vat" placeholder="PL1234567890" >
               </div>
               <div class="form-group">
                 <label for="adress">Street</label>
-                <input name="adress" type="text" class="form-control" id="adress" placeholder="Enter street name" [(ngModel)]="client.adress">
+                <input formControlName="adress" type="text" class="form-control" 
+                  id="adress" placeholder="Enter street name">
               </div>
               <div class="row">
                 <div class="form-group col-sm-8">
                   <label for="city">City</label>
-                  <input name="city"  type="text" class="form-control" id="city" placeholder="Enter your city" [(ngModel)]="client.city">
+                  <input formControlName="city"  type="text" class="form-control" 
+                    id="city" placeholder="Enter your city">
                 </div>
                 <div class="form-group col-sm-4">
                   <label for="phone">Phone</label>
-                  <input name="phone" type="text" class="form-control" id="phone" placeholder="Postal Code" [(ngModel)]="client.phone">
+                  <input formControlName="phone" type="text" class="form-control" 
+                    id="phone" placeholder="Postal Code">
                 </div>
               </div><!--/.row-->
               <div class="form-group">
                 <label for="country">Country</label>
-                <input name="country" type="text" class="form-control" id="country" placeholder="Country name" [(ngModel)]="client.country">
+                <input formControlName="country" type="text" class="form-control" 
+                  id="country" placeholder="Country name">
               </div>
             
             </div>
+           
+            
          </form>
         <div class="card-footer">
-                <div class="form-actions">
-                        <button type="submit" class="btn btn-primary" [disabled]="!editForm.dirty" form="editForm">Save changes</button>
-                        <button class="btn btn-secondary" type="button">Cancel</button>
+            <!-- <div class="form-group">
+                <button type="submit" class="btn btn-primary"  form="clientForm" >GO</button>
+              </div> -->
+                <div *ngIf="!client" class="form-actions">
+                        <button type="submit" class="btn btn-primary"  form="clientForm" >Create</button>
+                        <button (click)="onSubmit()" class="btn btn-secondary" type="button">Reset</button>
                  </div>
+                 <!-- [disabled]="!clientForm.dirty" -->
+                 <div *ngIf="client" class="form-actions">
+                  <button type="submit" class="btn btn-primary"  form="clientForm" >Update</button>
+                  <button class="btn btn-secondary" type="button">Cancel</button>
+                </div>
             </div>
       </div>

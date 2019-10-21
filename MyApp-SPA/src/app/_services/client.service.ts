@@ -9,16 +9,19 @@ import { Client } from '../_models/client';
   providedIn: 'root'
 })
 export class ClientService {
-  baseUrl = environment.apiUrl;
-constructor(private http: HttpClient) { }
-getClients(): Observable<Client[]> {
-  return this.http.get<Client[]>(this.baseUrl + 'clients');
-}
+    baseUrl = environment.apiUrl;
+  constructor(private http: HttpClient) { }
+  getClients(): Observable<Client[]> {
+    return this.http.get<Client[]>(this.baseUrl + 'clients');
+  }
 
-getClient( id: number): Observable<Client> {
-  return this.http.get<Client>(this.baseUrl + 'clients/' + id);
-}
-updateClient(id: number, client: Client) {
-  return this.http.put(this.baseUrl + 'clients/' + id, client);
-}
+  getClient( id: number): Observable<Client> {
+    return this.http.get<Client>(this.baseUrl + 'clients/' + id);
+  }
+  updateClient(id: number, client: Client) {
+    return this.http.put(this.baseUrl + 'clients/' + id, client);
+  }
+  createClient(client: Client) {
+    return this.http.post(this.baseUrl + 'clients/', client);
+  }
 }
