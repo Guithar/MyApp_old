@@ -16,6 +16,10 @@ namespace MyApp.API.Data
         public DbSet<Like> Likes { get; set; }
         public DbSet<Message> Messages { get; set; }
         public DbSet<Client> Clients { get; set; }
+        public DbSet<ProductCategory> ProductCategories {get;set;}
+        public DbSet<Product> Products { get; set; }
+        public DbSet<Asset> Assets { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -74,6 +78,19 @@ namespace MyApp.API.Data
             .Property(c => c.FullName)
             .HasComputedColumnSql("[LastName] + ', ' + [FirstName]");
             builder.Entity<Client>().HasQueryFilter(c => !c.IsDeleted);
+
+             builder.Entity<Asset>()
+            .Property(a => a.CreatedDate)
+            .HasDefaultValueSql("getdate()");
+            builder.Entity<Asset>()
+            .Property(a => a.ManufacturedDate)
+            .HasDefaultValueSql("getdate()");
+            builder.Entity<Asset>()
+            .Property(a => a.Quantity)
+            .HasDefaultValue(3);
+            builder.Entity<Asset>()
+            .Property(a => a.IsActive)
+            .HasDefaultValue(true);
         }
     }
 }
