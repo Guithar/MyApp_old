@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace MyApp.API.Models
 {
@@ -22,6 +23,11 @@ namespace MyApp.API.Models
     
         public virtual User User { get; set; }
         public int UserId { get; set; }
+
+        public int AssetID { get; set; }
+        public virtual ICollection<Asset> Assets { get; set; }
+
+
 
         //control of register
         public bool  IsDeleted { get; set; }

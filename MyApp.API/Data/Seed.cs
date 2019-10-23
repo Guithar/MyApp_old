@@ -62,5 +62,20 @@ namespace MyApp.API.Data
                 context.SaveChanges();
             }
          }
+
+        public static void SeedProducts(DataContext context)
+         {
+            if(!context.ProductCategories.Any())
+            {
+                var productsData = System.IO.File.ReadAllText("Data/SeedDataProduct.json");
+                var products = JsonConvert.DeserializeObject<List<ProductCategory>>(productsData);
+                foreach (var product in products)
+                {
+                    
+                    context.ProductCategories.Add(product);
+                };
+                context.SaveChanges();
+            }
+         }
     }
 }

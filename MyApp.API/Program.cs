@@ -26,6 +26,7 @@ namespace MyApp.API
                     context.Database.Migrate();
                     Seed.SeedUsers(userManager, roleManager);
                     Seed.SeedClients(context);
+                    Seed.SeedProducts(context);
                 } 
                 catch (Exception ex)
                 {

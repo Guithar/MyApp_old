@@ -103,7 +103,7 @@ namespace MyApp.API.Migrations
 
                     b.Property<DateTime?>("InstalledDate");
 
-                    b.Property<bool>("IsActive")
+                    b.Property<bool?>("IsActive")
                         .ValueGeneratedOnAdd()
                         .HasDefaultValue(true);
 
@@ -119,7 +119,7 @@ namespace MyApp.API.Migrations
 
                     b.Property<int>("Quantity")
                         .ValueGeneratedOnAdd()
-                        .HasDefaultValue(3);
+                        .HasDefaultValue(1);
 
                     b.Property<int>("clientId");
 
@@ -139,6 +139,8 @@ namespace MyApp.API.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Adress");
+
+                    b.Property<int>("AssetID");
 
                     b.Property<string>("City");
 
@@ -452,12 +454,12 @@ namespace MyApp.API.Migrations
             modelBuilder.Entity("MyApp.API.Models.Asset", b =>
                 {
                     b.HasOne("MyApp.API.Models.Product", "Product")
-                        .WithMany()
+                        .WithMany("Assets")
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("MyApp.API.Models.Client", "Client")
-                        .WithMany()
+                        .WithMany("Assets")
                         .HasForeignKey("clientId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });

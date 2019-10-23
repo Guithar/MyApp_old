@@ -31,21 +31,28 @@ namespace MyApp.API
 
         public void ConfigureDevelopmentServices(IServiceCollection services)
         {
+              
             services.AddDbContext<DataContext>(x => {
                 x.UseLazyLoadingProxies();
+                x.EnableSensitiveDataLogging();
                 x.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
             });
+
+          
 
             ConfigureServices(services);
         }
 
         public void ConfigureProductionServices(IServiceCollection services)
         {
+            
+
             services.AddDbContext<DataContext>(x => {
                 x.UseLazyLoadingProxies();
                 x.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
             });
-
+           
+            
             ConfigureServices(services);
         }
         public void ConfigureServices(IServiceCollection services)

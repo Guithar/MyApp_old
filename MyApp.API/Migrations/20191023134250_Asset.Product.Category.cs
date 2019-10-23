@@ -9,6 +9,44 @@ namespace MyApp.API.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
+                name: "Clients",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    FirstName = table.Column<string>(nullable: true),
+                    LastName = table.Column<string>(nullable: true),
+                    FullName = table.Column<string>(nullable: true, computedColumnSql: "[LastName] + ', ' + [FirstName]"),
+                    Company = table.Column<string>(nullable: true),
+                    NIF = table.Column<string>(nullable: true),
+                    JobTitle = table.Column<string>(nullable: true),
+                    Adress = table.Column<string>(nullable: true),
+                    City = table.Column<string>(nullable: true),
+                    State_Province = table.Column<string>(nullable: true),
+                    ZIP_PostalCode = table.Column<string>(nullable: true),
+                    Country = table.Column<string>(nullable: true),
+                    Email = table.Column<string>(nullable: true),
+                    Phone = table.Column<string>(nullable: true),
+                    Observations = table.Column<string>(nullable: true),
+                    UserId = table.Column<int>(nullable: false),
+                    AssetID = table.Column<int>(nullable: false),
+                    IsDeleted = table.Column<bool>(nullable: false),
+                    IsActive = table.Column<bool>(nullable: false),
+                    CreatedDate = table.Column<DateTime>(nullable: false, defaultValueSql: "getdate()"),
+                    LastModifiedDate = table.Column<DateTime>(nullable: false, defaultValueSql: "getdate()")
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Clients", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Clients_AspNetUsers_UserId",
+                        column: x => x.UserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "ProductCategories",
                 columns: table => new
                 {
@@ -53,8 +91,8 @@ namespace MyApp.API.Migrations
                     Name = table.Column<string>(nullable: true),
                     Description = table.Column<string>(nullable: true),
                     Location = table.Column<string>(nullable: true),
-                    Quantity = table.Column<int>(nullable: false, defaultValue: 3),
-                    IsActive = table.Column<bool>(nullable: false, defaultValue: true),
+                    Quantity = table.Column<int>(nullable: false, defaultValue: 1),
+                    IsActive = table.Column<bool>(nullable: true, defaultValue: true),
                     ManufacturedDate = table.Column<DateTime>(nullable: false, defaultValueSql: "getdate()"),
                     InstalledDate = table.Column<DateTime>(nullable: true),
                     CreatedDate = table.Column<DateTime>(nullable: false, defaultValueSql: "getdate()"),
@@ -88,6 +126,11 @@ namespace MyApp.API.Migrations
                 column: "clientId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Clients_UserId",
+                table: "Clients",
+                column: "UserId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Products_ProductCategoryId",
                 table: "Products",
                 column: "ProductCategoryId");
@@ -100,6 +143,9 @@ namespace MyApp.API.Migrations
 
             migrationBuilder.DropTable(
                 name: "Products");
+
+            migrationBuilder.DropTable(
+                name: "Clients");
 
             migrationBuilder.DropTable(
                 name: "ProductCategories");

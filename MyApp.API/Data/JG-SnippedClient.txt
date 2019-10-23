@@ -1,4 +1,4 @@
-//To generate json file at https://www.json-generator.com
+//To generate json file at https://next.json-generator.com/
 [
   '{{repeat(1, 20)}}',
   {

@@ -87,10 +87,11 @@ namespace MyApp.API.Data
             .HasDefaultValueSql("getdate()");
             builder.Entity<Asset>()
             .Property(a => a.Quantity)
-            .HasDefaultValue(3);
+            .HasDefaultValue(1);
             builder.Entity<Asset>()
             .Property(a => a.IsActive)
             .HasDefaultValue(true);
+
         }
     }
 }
