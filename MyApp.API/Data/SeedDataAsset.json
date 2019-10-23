@@ -1,0 +1,837 @@
+[
+    {
+      "Ide": 1,
+      "Name": "Bocas de Incendio",
+      "Description": "eiusmod fugiat deserunt esse duis eiusmod exercitation proident",
+      "Products": [
+        {
+          "Ide": 1,
+          "Name": "Bocas de Incendio tipo {{lorem(1, \"words\")}}",
+          "Description": "sunt elit et cillum Lorem ut magna quis",
+          "CategoryId": "1",
+          "Assets": [
+            {
+              "Name": "Bocas de Incendio tipo {{lorem(1, \"words\")}}",
+              "Description": "adipisicing tempor ad deserunt voluptate proident nulla magna",
+              "ClientId": 2,
+              "Location": "Lodoga",
+              "Quantity": 1,
+              "IsActive": true,
+              "ManufacturedDate": "2010-02-01 12:00:00",
+              "InstalledDate": "2010-02-01 12:00:00",
+              "CreatedDate": "2019-10-23 09:11:59",
+              "productId": "1"
+            },
+            {
+              "Name": "Bocas de Incendio tipo {{lorem(1, \"words\")}}",
+              "Description": "nostrud qui culpa officia quis consequat magna irure",
+              "ClientId": 8,
+              "Location": "Tetherow",
+              "Quantity": 1,
+              "IsActive": true,
+              "ManufacturedDate": "2010-02-01 12:00:00",
+              "InstalledDate": "2010-02-01 12:00:00",
+              "CreatedDate": "2019-10-23 09:11:59",
+              "productId": "1"
+            }
+          ]
+        },
+        {
+          "Ide": 2,
+          "Name": "Bocas de Incendio tipo {{lorem(1, \"words\")}}",
+          "Description": "ex excepteur enim est adipisicing sit nostrud exercitation",
+          "CategoryId": "1",
+          "Assets": [
+            {
+              "Name": "Bocas de Incendio tipo {{lorem(1, \"words\")}}",
+              "Description": "do irure Lorem ad amet Lorem et veniam",
+              "ClientId": 11,
+              "Location": "Coaldale",
+              "Quantity": 1,
+              "IsActive": true,
+              "ManufacturedDate": "2010-02-01 12:00:00",
+              "InstalledDate": "2010-02-01 12:00:00",
+              "CreatedDate": "2019-10-23 09:11:59",
+              "productId": "2"
+            },
+            {
+              "Name": "Bocas de Incendio tipo {{lorem(1, \"words\")}}",
+              "Description": "proident cupidatat minim incididunt nulla labore ullamco et",
+              "ClientId": 7,
+              "Location": "Roland",
+              "Quantity": 1,
+              "IsActive": true,
+              "ManufacturedDate": "2010-02-01 12:00:00",
+              "InstalledDate": "2010-02-01 12:00:00",
+              "CreatedDate": "2019-10-23 09:11:59",
+              "productId": "2"
+            }
+          ]
+        },
+        {
+          "Ide": 3,
+          "Name": "Bocas de Incendio tipo id",
+          "Description": "ad dolore mollit ipsum ipsum sit eiusmod magna",
+          "CategoryId": 1,
+          "Assets": [
+            {
+              "Name": "Bocas de Incendio tipo veniam",
+              "Description": "culpa exercitation incididunt est minim eiusmod ex qui",
+              "ClientId": 6,
+              "Location": "Gibsonia",
+              "Quantity": 1,
+              "IsActive": true,
+              "ManufacturedDate": "2010-02-01 12:00:00",
+              "InstalledDate": "2010-02-01 12:00:00",
+              "CreatedDate": "2019-10-23 09:11:59",
+              "productId": 3
+            },
+            {
+              "Name": "Bocas de Incendio tipo ut",
+              "Description": "nisi veniam exercitation reprehenderit do tempor magna consequat",
+              "ClientId": 6,
+              "Location": "Deercroft",
+              "Quantity": 1,
+              "IsActive": true,
+              "ManufacturedDate": "2010-02-01 12:00:00",
+              "InstalledDate": "2010-02-01 12:00:00",
+              "CreatedDate": "2019-10-23 09:11:59",
+              "productId": 3
+            }
+          ]
+        },
+        {
+          "Ide": 4,
+          "Name": "Bocas de Incendio tipo adipisicing",
+          "Description": "est officia non anim cupidatat exercitation elit do",
+          "CategoryId": 1,
+          "Assets": [
+            {
+              "Name": "Bocas de Incendio tipo id",
+              "Description": "exercitation excepteur Lorem pariatur enim eiusmod nulla do",
+              "ClientId": 2,
+              "Location": "Caspar",
+              "Quantity": 1,
+              "IsActive": true,
+              "ManufacturedDate": "2010-02-01 12:00:00",
+              "InstalledDate": "2010-02-01 12:00:00",
+              "CreatedDate": "2019-10-23 09:11:59",
+              "productId": 4
+            },
+            {
+              "Name": "Bocas de Incendio tipo enim",
+              "Description": "labore occaecat incididunt labore quis duis cupidatat irure",
+              "ClientId": 8,
+              "Location": "Manchester",
+              "Quantity": 1,
+              "IsActive": true,
+              "ManufacturedDate": "2010-02-01 12:00:00",
+              "InstalledDate": "2010-02-01 12:00:00",
+              "CreatedDate": "2019-10-23 09:11:59",
+              "productId": 4
+            }
+          ]
+        },
+        {
+          "Ide": 5,
+          "Name": "Bocas de Incendio tipo tempor",
+          "Description": "ad pariatur aliquip sit non sit deserunt deserunt",
+          "CategoryId": 1,
+          "Assets": [
+            {
+              "Name": "Bocas de Incendio tipo consequat",
+              "Description": "irure esse laborum amet consectetur duis nulla deserunt",
+              "ClientId": 6,
+              "Location": "Camino",
+              "Quantity": 1,
+              "IsActive": true,
+              "ManufacturedDate": "2010-02-01 12:00:00",
+              "InstalledDate": "2010-02-01 12:00:00",
+              "CreatedDate": "2019-10-23 09:11:59",
+              "productId": 5
+            },
+            {
+              "Name": "Bocas de Incendio tipo minim",
+              "Description": "exercitation esse culpa quis exercitation adipisicing eu dolore",
+              "ClientId": 11,
+              "Location": "Kansas",
+              "Quantity": 1,
+              "IsActive": true,
+              "ManufacturedDate": "2010-02-01 12:00:00",
+              "InstalledDate": "2010-02-01 12:00:00",
+              "CreatedDate": "2019-10-23 09:11:59",
+              "productId": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Ide": 2,
+      "Name": "Detectores de incendios",
+      "Description": "quis nostrud ullamco esse non enim deserunt irure",
+      "Products": [
+        {
+          "Ide": 1,
+          "Name": "Detectores de incendios tipo {{lorem(1, \"words\")}}",
+          "Description": "aute ex excepteur laboris et quis aliquip magna",
+          "CategoryId": "2",
+          "Assets": [
+            {
+              "Name": "Detectores de incendios tipo {{lorem(1, \"words\")}}",
+              "Description": "ipsum sunt in officia culpa sint pariatur et",
+              "ClientId": 6,
+              "Location": "Richmond",
+              "Quantity": 1,
+              "IsActive": true,
+              "ManufacturedDate": "2010-02-01 12:00:00",
+              "InstalledDate": "2010-02-01 12:00:00",
+              "CreatedDate": "2019-10-23 09:11:59",
+              "productId": "1"
+            },
+            {
+              "Name": "Detectores de incendios tipo {{lorem(1, \"words\")}}",
+              "Description": "cupidatat et magna dolore esse aute exercitation aliquip",
+              "ClientId": 6,
+              "Location": "Kersey",
+              "Quantity": 1,
+              "IsActive": true,
+              "ManufacturedDate": "2010-02-01 12:00:00",
+              "InstalledDate": "2010-02-01 12:00:00",
+              "CreatedDate": "2019-10-23 09:11:59",
+              "productId": "1"
+            }
+          ]
+        },
+        {
+          "Ide": 2,
+          "Name": "Detectores de incendios tipo {{lorem(1, \"words\")}}",
+          "Description": "aliqua ea veniam in reprehenderit laboris sint deserunt",
+          "CategoryId": "2",
+          "Assets": [
+            {
+              "Name": "Detectores de incendios tipo {{lorem(1, \"words\")}}",
+              "Description": "eiusmod deserunt velit ea cillum laborum duis veniam",
+              "ClientId": 9,
+              "Location": "Dennard",
+              "Quantity": 1,
+              "IsActive": true,
+              "ManufacturedDate": "2010-02-01 12:00:00",
+              "InstalledDate": "2010-02-01 12:00:00",
+              "CreatedDate": "2019-10-23 09:11:59",
+              "productId": "2"
+            },
+            {
+              "Name": "Detectores de incendios tipo {{lorem(1, \"words\")}}",
+              "Description": "id veniam cillum voluptate sit duis non non",
+              "ClientId": 5,
+              "Location": "Enetai",
+              "Quantity": 1,
+              "IsActive": true,
+              "ManufacturedDate": "2010-02-01 12:00:00",
+              "InstalledDate": "2010-02-01 12:00:00",
+              "CreatedDate": "2019-10-23 09:11:59",
+              "productId": "2"
+            }
+          ]
+        },
+        {
+          "Ide": 3,
+          "Name": "Detectores de incendios tipo veniam",
+          "Description": "duis do minim veniam ullamco aliqua Lorem commodo",
+          "CategoryId": 2,
+          "Assets": [
+            {
+              "Name": "Detectores de incendios tipo qui",
+              "Description": "qui culpa voluptate officia commodo magna consectetur ut",
+              "ClientId": 6,
+              "Location": "Edgar",
+              "Quantity": 1,
+              "IsActive": true,
+              "ManufacturedDate": "2010-02-01 12:00:00",
+              "InstalledDate": "2010-02-01 12:00:00",
+              "CreatedDate": "2019-10-23 09:11:59",
+              "productId": 3
+            },
+            {
+              "Name": "Detectores de incendios tipo officia",
+              "Description": "commodo elit ea est pariatur culpa dolore ad",
+              "ClientId": 5,
+              "Location": "Hayden",
+              "Quantity": 1,
+              "IsActive": true,
+              "ManufacturedDate": "2010-02-01 12:00:00",
+              "InstalledDate": "2010-02-01 12:00:00",
+              "CreatedDate": "2019-10-23 09:11:59",
+              "productId": 3
+            }
+          ]
+        },
+        {
+          "Ide": 4,
+          "Name": "Detectores de incendios tipo eu",
+          "Description": "amet mollit laborum mollit pariatur anim officia ea",
+          "CategoryId": 2,
+          "Assets": [
+            {
+              "Name": "Detectores de incendios tipo tempor",
+              "Description": "dolore duis laboris sunt laborum exercitation id nostrud",
+              "ClientId": 7,
+              "Location": "Brazos",
+              "Quantity": 1,
+              "IsActive": true,
+              "ManufacturedDate": "2010-02-01 12:00:00",
+              "InstalledDate": "2010-02-01 12:00:00",
+              "CreatedDate": "2019-10-23 09:11:59",
+              "productId": 4
+            },
+            {
+              "Name": "Detectores de incendios tipo aute",
+              "Description": "elit cupidatat cupidatat veniam sunt laboris voluptate sunt",
+              "ClientId": 2,
+              "Location": "Wilsonia",
+              "Quantity": 1,
+              "IsActive": true,
+              "ManufacturedDate": "2010-02-01 12:00:00",
+              "InstalledDate": "2010-02-01 12:00:00",
+              "CreatedDate": "2019-10-23 09:11:59",
+              "productId": 4
+            }
+          ]
+        },
+        {
+          "Ide": 5,
+          "Name": "Detectores de incendios tipo commodo",
+          "Description": "consectetur anim quis ea labore pariatur velit tempor",
+          "CategoryId": 2,
+          "Assets": [
+            {
+              "Name": "Detectores de incendios tipo incididunt",
+              "Description": "consectetur minim amet excepteur sit eiusmod laboris esse",
+              "ClientId": 8,
+              "Location": "Smock",
+              "Quantity": 1,
+              "IsActive": true,
+              "ManufacturedDate": "2010-02-01 12:00:00",
+              "InstalledDate": "2010-02-01 12:00:00",
+              "CreatedDate": "2019-10-23 09:11:59",
+              "productId": 5
+            },
+            {
+              "Name": "Detectores de incendios tipo tempor",
+              "Description": "dolor velit in mollit esse id laborum et",
+              "ClientId": 6,
+              "Location": "Hampstead",
+              "Quantity": 1,
+              "IsActive": true,
+              "ManufacturedDate": "2010-02-01 12:00:00",
+              "InstalledDate": "2010-02-01 12:00:00",
+              "CreatedDate": "2019-10-23 09:11:59",
+              "productId": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Ide": 3,
+      "Name": "Aerosoles",
+      "Description": "enim ad aliqua consequat veniam eiusmod ullamco consectetur",
+      "Products": [
+        {
+          "Ide": 1,
+          "Name": "Aerosoles tipo nisi",
+          "Description": "exercitation Lorem nulla esse nisi eu reprehenderit velit",
+          "CategoryId": 3,
+          "Assets": [
+            {
+              "Name": "Aerosoles tipo consectetur",
+              "Description": "laboris esse officia id magna esse tempor ut",
+              "ClientId": 9,
+              "Location": "Mahtowa",
+              "Quantity": 1,
+              "IsActive": true,
+              "ManufacturedDate": "2010-02-01 12:00:00",
+              "InstalledDate": "2010-02-01 12:00:00",
+              "CreatedDate": "2019-10-23 09:11:59",
+              "productId": 1
+            },
+            {
+              "Name": "Aerosoles tipo do",
+              "Description": "aliqua nisi aliqua voluptate nostrud voluptate elit ullamco",
+              "ClientId": 3,
+              "Location": "Wilmington",
+              "Quantity": 1,
+              "IsActive": true,
+              "ManufacturedDate": "2010-02-01 12:00:00",
+              "InstalledDate": "2010-02-01 12:00:00",
+              "CreatedDate": "2019-10-23 09:11:59",
+              "productId": 1
+            }
+          ]
+        },
+        {
+          "Ide": 2,
+          "Name": "Aerosoles tipo velit",
+          "Description": "enim cupidatat voluptate et nulla proident duis minim",
+          "CategoryId": 3,
+          "Assets": [
+            {
+              "Name": "Aerosoles tipo aliqua",
+              "Description": "nulla consequat dolor deserunt ipsum pariatur id voluptate",
+              "ClientId": 9,
+              "Location": "Allamuchy",
+              "Quantity": 1,
+              "IsActive": true,
+              "ManufacturedDate": "2010-02-01 12:00:00",
+              "InstalledDate": "2010-02-01 12:00:00",
+              "CreatedDate": "2019-10-23 09:11:59",
+              "productId": 2
+            },
+            {
+              "Name": "Aerosoles tipo pariatur",
+              "Description": "nostrud incididunt laborum ex dolore voluptate ex cupidatat",
+              "ClientId": 2,
+              "Location": "Kilbourne",
+              "Quantity": 1,
+              "IsActive": true,
+              "ManufacturedDate": "2010-02-01 12:00:00",
+              "InstalledDate": "2010-02-01 12:00:00",
+              "CreatedDate": "2019-10-23 09:11:59",
+              "productId": 2
+            }
+          ]
+        },
+        {
+          "Ide": 3,
+          "Name": "Aerosoles tipo in",
+          "Description": "nulla ullamco consectetur cillum id consectetur irure consectetur",
+          "CategoryId": 3,
+          "Assets": [
+            {
+              "Name": "Aerosoles tipo cupidatat",
+              "Description": "qui nulla cupidatat et anim consectetur ipsum officia",
+              "ClientId": 3,
+              "Location": "Oasis",
+              "Quantity": 1,
+              "IsActive": true,
+              "ManufacturedDate": "2010-02-01 12:00:00",
+              "InstalledDate": "2010-02-01 12:00:00",
+              "CreatedDate": "2019-10-23 09:11:59",
+              "productId": 3
+            },
+            {
+              "Name": "Aerosoles tipo veniam",
+              "Description": "laboris commodo exercitation consequat non eiusmod dolore sunt",
+              "ClientId": 4,
+              "Location": "Tooleville",
+              "Quantity": 1,
+              "IsActive": true,
+              "ManufacturedDate": "2010-02-01 12:00:00",
+              "InstalledDate": "2010-02-01 12:00:00",
+              "CreatedDate": "2019-10-23 09:11:59",
+              "productId": 3
+            }
+          ]
+        },
+        {
+          "Ide": 4,
+          "Name": "Aerosoles tipo occaecat",
+          "Description": "do aute ad ullamco Lorem sunt reprehenderit culpa",
+          "CategoryId": 3,
+          "Assets": [
+            {
+              "Name": "Aerosoles tipo adipisicing",
+              "Description": "est ad labore duis enim officia magna esse",
+              "ClientId": 5,
+              "Location": "Muse",
+              "Quantity": 1,
+              "IsActive": true,
+              "ManufacturedDate": "2010-02-01 12:00:00",
+              "InstalledDate": "2010-02-01 12:00:00",
+              "CreatedDate": "2019-10-23 09:11:59",
+              "productId": 4
+            },
+            {
+              "Name": "Aerosoles tipo Lorem",
+              "Description": "nostrud consequat eu duis do id proident consequat",
+              "ClientId": 8,
+              "Location": "Fivepointville",
+              "Quantity": 1,
+              "IsActive": true,
+              "ManufacturedDate": "2010-02-01 12:00:00",
+              "InstalledDate": "2010-02-01 12:00:00",
+              "CreatedDate": "2019-10-23 09:11:59",
+              "productId": 4
+            }
+          ]
+        },
+        {
+          "Ide": 5,
+          "Name": "Aerosoles tipo commodo",
+          "Description": "sint cupidatat cupidatat quis consequat deserunt exercitation non",
+          "CategoryId": 3,
+          "Assets": [
+            {
+              "Name": "Aerosoles tipo ex",
+              "Description": "aliqua ipsum in est nulla laboris cupidatat nisi",
+              "ClientId": 7,
+              "Location": "Hamilton",
+              "Quantity": 1,
+              "IsActive": true,
+              "ManufacturedDate": "2010-02-01 12:00:00",
+              "InstalledDate": "2010-02-01 12:00:00",
+              "CreatedDate": "2019-10-23 09:11:59",
+              "productId": 5
+            },
+            {
+              "Name": "Aerosoles tipo laborum",
+              "Description": "aliqua veniam ea dolor est ex occaecat et",
+              "ClientId": 5,
+              "Location": "Sussex",
+              "Quantity": 1,
+              "IsActive": true,
+              "ManufacturedDate": "2010-02-01 12:00:00",
+              "InstalledDate": "2010-02-01 12:00:00",
+              "CreatedDate": "2019-10-23 09:11:59",
+              "productId": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Ide": 4,
+      "Name": "Extinción por Rociadores",
+      "Description": "cupidatat nostrud enim cillum do excepteur Lorem velit",
+      "Products": [
+        {
+          "Ide": 1,
+          "Name": "Extinción por Rociadores tipo exercitation",
+          "Description": "eu in adipisicing id esse fugiat adipisicing dolore",
+          "CategoryId": 4,
+          "Assets": [
+            {
+              "Name": "Extinción por Rociadores tipo laborum",
+              "Description": "anim Lorem veniam dolor qui ea exercitation ullamco",
+              "ClientId": 1,
+              "Location": "Deseret",
+              "Quantity": 1,
+              "IsActive": true,
+              "ManufacturedDate": "2010-02-01 12:00:00",
+              "InstalledDate": "2010-02-01 12:00:00",
+              "CreatedDate": "2019-10-23 09:11:59",
+              "productId": 1
+            },
+            {
+              "Name": "Extinción por Rociadores tipo consequat",
+              "Description": "amet nisi consequat enim aliqua mollit incididunt labore",
+              "ClientId": 4,
+              "Location": "Toftrees",
+              "Quantity": 1,
+              "IsActive": true,
+              "ManufacturedDate": "2010-02-01 12:00:00",
+              "InstalledDate": "2010-02-01 12:00:00",
+              "CreatedDate": "2019-10-23 09:11:59",
+              "productId": 1
+            }
+          ]
+        },
+        {
+          "Ide": 2,
+          "Name": "Extinción por Rociadores tipo esse",
+          "Description": "irure aute Lorem consectetur reprehenderit commodo voluptate enim",
+          "CategoryId": 4,
+          "Assets": [
+            {
+              "Name": "Extinción por Rociadores tipo eiusmod",
+              "Description": "incididunt sit deserunt quis et deserunt eiusmod duis",
+              "ClientId": 6,
+              "Location": "Idamay",
+              "Quantity": 1,
+              "IsActive": true,
+              "ManufacturedDate": "2010-02-01 12:00:00",
+              "InstalledDate": "2010-02-01 12:00:00",
+              "CreatedDate": "2019-10-23 09:11:59",
+              "productId": 2
+            },
+            {
+              "Name": "Extinción por Rociadores tipo commodo",
+              "Description": "ut pariatur commodo incididunt excepteur aliquip ex in",
+              "ClientId": 5,
+              "Location": "Caron",
+              "Quantity": 1,
+              "IsActive": true,
+              "ManufacturedDate": "2010-02-01 12:00:00",
+              "InstalledDate": "2010-02-01 12:00:00",
+              "CreatedDate": "2019-10-23 09:11:59",
+              "productId": 2
+            }
+          ]
+        },
+        {
+          "Ide": 3,
+          "Name": "Extinción por Rociadores tipo ad",
+          "Description": "deserunt pariatur magna do anim ad non est",
+          "CategoryId": 4,
+          "Assets": [
+            {
+              "Name": "Extinción por Rociadores tipo sunt",
+              "Description": "nulla ea ipsum sint minim eu elit dolor",
+              "ClientId": 1,
+              "Location": "Bennett",
+              "Quantity": 1,
+              "IsActive": true,
+              "ManufacturedDate": "2010-02-01 12:00:00",
+              "InstalledDate": "2010-02-01 12:00:00",
+              "CreatedDate": "2019-10-23 09:11:59",
+              "productId": 3
+            },
+            {
+              "Name": "Extinción por Rociadores tipo qui",
+              "Description": "cupidatat minim aliqua in proident veniam et quis",
+              "ClientId": 7,
+              "Location": "Strykersville",
+              "Quantity": 1,
+              "IsActive": true,
+              "ManufacturedDate": "2010-02-01 12:00:00",
+              "InstalledDate": "2010-02-01 12:00:00",
+              "CreatedDate": "2019-10-23 09:11:59",
+              "productId": 3
+            }
+          ]
+        },
+        {
+          "Ide": 4,
+          "Name": "Extinción por Rociadores tipo tempor",
+          "Description": "aliquip cillum aliqua fugiat do incididunt ipsum irure",
+          "CategoryId": 4,
+          "Assets": [
+            {
+              "Name": "Extinción por Rociadores tipo minim",
+              "Description": "qui labore commodo dolore fugiat sint sit magna",
+              "ClientId": 9,
+              "Location": "Dunlo",
+              "Quantity": 1,
+              "IsActive": true,
+              "ManufacturedDate": "2010-02-01 12:00:00",
+              "InstalledDate": "2010-02-01 12:00:00",
+              "CreatedDate": "2019-10-23 09:11:59",
+              "productId": 4
+            },
+            {
+              "Name": "Extinción por Rociadores tipo nisi",
+              "Description": "cupidatat dolor irure sunt amet incididunt do labore",
+              "ClientId": 11,
+              "Location": "Knowlton",
+              "Quantity": 1,
+              "IsActive": true,
+              "ManufacturedDate": "2010-02-01 12:00:00",
+              "InstalledDate": "2010-02-01 12:00:00",
+              "CreatedDate": "2019-10-23 09:11:59",
+              "productId": 4
+            }
+          ]
+        },
+        {
+          "Ide": 5,
+          "Name": "Extinción por Rociadores tipo pariatur",
+          "Description": "Lorem duis non eiusmod enim aliquip ad aute",
+          "CategoryId": 4,
+          "Assets": [
+            {
+              "Name": "Extinción por Rociadores tipo adipisicing",
+              "Description": "amet non ullamco dolor sit elit et reprehenderit",
+              "ClientId": 3,
+              "Location": "Maxville",
+              "Quantity": 1,
+              "IsActive": true,
+              "ManufacturedDate": "2010-02-01 12:00:00",
+              "InstalledDate": "2010-02-01 12:00:00",
+              "CreatedDate": "2019-10-23 09:11:59",
+              "productId": 5
+            },
+            {
+              "Name": "Extinción por Rociadores tipo sunt",
+              "Description": "enim exercitation mollit laboris magna minim tempor eu",
+              "ClientId": 4,
+              "Location": "Riceville",
+              "Quantity": 1,
+              "IsActive": true,
+              "ManufacturedDate": "2010-02-01 12:00:00",
+              "InstalledDate": "2010-02-01 12:00:00",
+              "CreatedDate": "2019-10-23 09:11:59",
+              "productId": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Ide": 5,
+      "Name": "Extinción por gas",
+      "Description": "nostrud aliquip eiusmod anim nulla excepteur irure amet",
+      "Products": [
+        {
+          "Ide": 1,
+          "Name": "Extinción por gas tipo est",
+          "Description": "quis duis exercitation minim tempor ad nostrud ullamco",
+          "CategoryId": 5,
+          "Assets": [
+            {
+              "Name": "Extinción por gas tipo ullamco",
+              "Description": "qui ipsum laboris id adipisicing dolore nulla nostrud",
+              "ClientId": 7,
+              "Location": "Buxton",
+              "Quantity": 1,
+              "IsActive": true,
+              "ManufacturedDate": "2010-02-01 12:00:00",
+              "InstalledDate": "2010-02-01 12:00:00",
+              "CreatedDate": "2019-10-23 09:11:59",
+              "productId": 1
+            },
+            {
+              "Name": "Extinción por gas tipo voluptate",
+              "Description": "do quis esse veniam veniam duis veniam anim",
+              "ClientId": 10,
+              "Location": "Fillmore",
+              "Quantity": 1,
+              "IsActive": true,
+              "ManufacturedDate": "2010-02-01 12:00:00",
+              "InstalledDate": "2010-02-01 12:00:00",
+              "CreatedDate": "2019-10-23 09:11:59",
+              "productId": 1
+            }
+          ]
+        },
+        {
+          "Ide": 2,
+          "Name": "Extinción por gas tipo eu",
+          "Description": "proident irure ad sit eiusmod in exercitation cupidatat",
+          "CategoryId": 5,
+          "Assets": [
+            {
+              "Name": "Extinción por gas tipo culpa",
+              "Description": "exercitation commodo reprehenderit occaecat enim amet cupidatat amet",
+              "ClientId": 6,
+              "Location": "Troy",
+              "Quantity": 1,
+              "IsActive": true,
+              "ManufacturedDate": "2010-02-01 12:00:00",
+              "InstalledDate": "2010-02-01 12:00:00",
+              "CreatedDate": "2019-10-23 09:11:59",
+              "productId": 2
+            },
+            {
+              "Name": "Extinción por gas tipo esse",
+              "Description": "et velit et ad nostrud in anim amet",
+              "ClientId": 5,
+              "Location": "Summerset",
+              "Quantity": 1,
+              "IsActive": true,
+              "ManufacturedDate": "2010-02-01 12:00:00",
+              "InstalledDate": "2010-02-01 12:00:00",
+              "CreatedDate": "2019-10-23 09:11:59",
+              "productId": 2
+            }
+          ]
+        },
+        {
+          "Ide": 3,
+          "Name": "Extinción por gas tipo proident",
+          "Description": "qui eu tempor incididunt ut pariatur non mollit",
+          "CategoryId": 5,
+          "Assets": [
+            {
+              "Name": "Extinción por gas tipo ad",
+              "Description": "occaecat culpa enim velit minim incididunt ipsum consectetur",
+              "ClientId": 6,
+              "Location": "Falmouth",
+              "Quantity": 1,
+              "IsActive": true,
+              "ManufacturedDate": "2010-02-01 12:00:00",
+              "InstalledDate": "2010-02-01 12:00:00",
+              "CreatedDate": "2019-10-23 09:11:59",
+              "productId": 3
+            },
+            {
+              "Name": "Extinción por gas tipo enim",
+              "Description": "incididunt labore ad in nulla nostrud duis laborum",
+              "ClientId": 8,
+              "Location": "Wikieup",
+              "Quantity": 1,
+              "IsActive": true,
+              "ManufacturedDate": "2010-02-01 12:00:00",
+              "InstalledDate": "2010-02-01 12:00:00",
+              "CreatedDate": "2019-10-23 09:11:59",
+              "productId": 3
+            }
+          ]
+        },
+        {
+          "Ide": 4,
+          "Name": "Extinción por gas tipo ad",
+          "Description": "in ad pariatur dolor labore tempor deserunt nostrud",
+          "CategoryId": 5,
+          "Assets": [
+            {
+              "Name": "Extinción por gas tipo mollit",
+              "Description": "eu ullamco eiusmod occaecat et elit deserunt fugiat",
+              "ClientId": 1,
+              "Location": "Celeryville",
+              "Quantity": 1,
+              "IsActive": true,
+              "ManufacturedDate": "2010-02-01 12:00:00",
+              "InstalledDate": "2010-02-01 12:00:00",
+              "CreatedDate": "2019-10-23 09:11:59",
+              "productId": 4
+            },
+            {
+              "Name": "Extinción por gas tipo et",
+              "Description": "pariatur amet aliqua veniam mollit non ullamco cillum",
+              "ClientId": 3,
+              "Location": "Delwood",
+              "Quantity": 1,
+              "IsActive": true,
+              "ManufacturedDate": "2010-02-01 12:00:00",
+              "InstalledDate": "2010-02-01 12:00:00",
+              "CreatedDate": "2019-10-23 09:11:59",
+              "productId": 4
+            }
+          ]
+        },
+        {
+          "Ide": 5,
+          "Name": "Extinción por gas tipo amet",
+          "Description": "quis Lorem occaecat culpa ad velit nostrud ex",
+          "CategoryId": 5,
+          "Assets": [
+            {
+              "Name": "Extinción por gas tipo labore",
+              "Description": "laborum deserunt culpa eiusmod est quis adipisicing cupidatat",
+              "ClientId": 8,
+              "Location": "Canterwood",
+              "Quantity": 1,
+              "IsActive": true,
+              "ManufacturedDate": "2010-02-01 12:00:00",
+              "InstalledDate": "2010-02-01 12:00:00",
+              "CreatedDate": "2019-10-23 09:11:59",
+              "productId": 5
+            },
+            {
+              "Name": "Extinción por gas tipo sunt",
+              "Description": "anim elit minim magna laboris aute et occaecat",
+              "ClientId": 10,
+              "Location": "Kidder",
+              "Quantity": 1,
+              "IsActive": true,
+              "ManufacturedDate": "2010-02-01 12:00:00",
+              "InstalledDate": "2010-02-01 12:00:00",
+              "CreatedDate": "2019-10-23 09:11:59",
+              "productId": 5
+            }
+          ]
+        }
+      ]
+    }
+  ]

@@ -10,7 +10,7 @@ using MyApp.API.Data;
 namespace MyApp.API.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20191023134250_Asset.Product.Category")]
+    [Migration("20191023211608_Asset.Product.Category")]
     partial class AssetProductCategory
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

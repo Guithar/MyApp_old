@@ -63,11 +63,11 @@ namespace MyApp.API.Data
             }
          }
 
-        public static void SeedProducts(DataContext context)
+        public static void SeedAssets(DataContext context)
          {
             if(!context.ProductCategories.Any())
             {
-                var productsData = System.IO.File.ReadAllText("Data/SeedDataProduct.json");
+                var productsData = System.IO.File.ReadAllText("Data/SeedDataAsset.json");
                 var products = JsonConvert.DeserializeObject<List<ProductCategory>>(productsData);
                 foreach (var product in products)
                 {
