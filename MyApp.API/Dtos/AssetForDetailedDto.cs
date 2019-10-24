@@ -1,12 +1,13 @@
 using System;
 
-namespace MyApp.API.Models
+namespace MyApp.API.Dtos
 {
-    public class Asset
+    public class AssetForDetailedDto
     {
         public int Id { get; set; }
         public int ClientId { get; set; }
-        public virtual Client Client { get; set; }
+        public int ClientUserId { get; set; }
+        public string ClientCompany { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
         public string Location { get; set; }
@@ -16,7 +17,6 @@ namespace MyApp.API.Models
         public DateTime? InstalledDate { get; set; }
         public DateTime CreatedDate { get; set; }
         public int ProductId { get; set; }
-        public virtual Product Product { get; set; }
-
+        public string ProductName { get; set; } 
     }
 }

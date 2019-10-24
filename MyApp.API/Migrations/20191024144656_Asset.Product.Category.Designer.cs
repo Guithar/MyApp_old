@@ -10,7 +10,7 @@ using MyApp.API.Data;
 namespace MyApp.API.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20191023211608_Asset.Product.Category")]
+    [Migration("20191024144656_Asset.Product.Category")]
     partial class AssetProductCategory
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -97,6 +97,8 @@ namespace MyApp.API.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int>("ClientId");
+
                     b.Property<DateTime>("CreatedDate")
                         .ValueGeneratedOnAdd()
                         .HasDefaultValueSql("getdate()");
@@ -123,13 +125,11 @@ namespace MyApp.API.Migrations
                         .ValueGeneratedOnAdd()
                         .HasDefaultValue(1);
 
-                    b.Property<int>("clientId");
-
                     b.HasKey("Id");
 
-                    b.HasIndex("ProductId");
+                    b.HasIndex("ClientId");
 
-                    b.HasIndex("clientId");
+                    b.HasIndex("ProductId");
 
                     b.ToTable("Assets");
                 });
@@ -455,14 +455,14 @@ namespace MyApp.API.Migrations
 
             modelBuilder.Entity("MyApp.API.Models.Asset", b =>
                 {
+                    b.HasOne("MyApp.API.Models.Client", "Client")
+                        .WithMany("Assets")
+                        .HasForeignKey("ClientId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
                     b.HasOne("MyApp.API.Models.Product", "Product")
                         .WithMany("Assets")
                         .HasForeignKey("ProductId")
-                        .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("MyApp.API.Models.Client", "Client")
-                        .WithMany("Assets")
-                        .HasForeignKey("clientId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 

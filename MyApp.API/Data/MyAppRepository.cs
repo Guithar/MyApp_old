@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using MyApp.API.Helpers;
 using MyApp.API.Models;
 using Microsoft.EntityFrameworkCore;
+using System.Security.Claims;
 
 namespace MyApp.API.Data
 {
@@ -163,9 +164,9 @@ namespace MyApp.API.Data
             return messages;
         }
 
-        public async Task<IEnumerable<Client>> GetClients(int UserId)
+        public async Task<IEnumerable<Client>> GetClients(int userId)
         {
-             var clients= await _context.Clients.Where(c => c.UserId==UserId).ToListAsync();
+             var clients= await _context.Clients.Where(c => c.UserId==userId).ToListAsync();
             
             return clients;
         }
@@ -173,11 +174,28 @@ namespace MyApp.API.Data
         public async Task<Client> GetClient(int id,int userId)
         {
             var query = _context.Clients.AsQueryable();
-            //query = query.IgnoreQueryFilters();
             var client = await query.FirstOrDefaultAsync(c => c.Id==id && c.UserId==userId);
             return client;   
         }
-        
 
+            //      Quantity=a.Quantity,
+        public async Task<IEnumerable<Asset>> GetAssets(int clientId, int userId)
+        {
+             var assets= await _context.Assets
+             .Where(c=> c.ClientId==clientId && c.Client.UserId==userId)
+             .ToListAsync(); 
+            return assets;
+        }
+
+        public async Task<Asset> GetAsset(int id, int userId)
+        {
+            // var query = _context.Assets.AsQueryable();
+            // var asset = await query.FirstOrDefaultAsync(a => a.Id==id && a.ClientId==clientId);
+            // return asset;   
+            var asset= await _context.Assets
+             .Where(c=> c.Id==id && c.Client.UserId==userId)
+             .FirstOrDefaultAsync(); 
+            return asset;
+        }
     }
 }

@@ -39,6 +39,11 @@ namespace MyApp.API.Helpers
             CreateMap<ClientForUpdateDto,Client>();
             CreateMap<ClientForCreationDto,Client>();
             CreateMap<Client,ClientToReturnDto>();
+
+            CreateMap<Asset,AssetForListDto>();
+            CreateMap<Asset,AssetForDetailedDto>();
+
+
         }
     }
 }

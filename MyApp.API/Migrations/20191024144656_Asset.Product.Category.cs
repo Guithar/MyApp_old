@@ -87,7 +87,7 @@ namespace MyApp.API.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    clientId = table.Column<int>(nullable: false),
+                    ClientId = table.Column<int>(nullable: false),
                     Name = table.Column<string>(nullable: true),
                     Description = table.Column<string>(nullable: true),
                     Location = table.Column<string>(nullable: true),
@@ -102,28 +102,28 @@ namespace MyApp.API.Migrations
                 {
                     table.PrimaryKey("PK_Assets", x => x.Id);
                     table.ForeignKey(
+                        name: "FK_Assets_Clients_ClientId",
+                        column: x => x.ClientId,
+                        principalTable: "Clients",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
                         name: "FK_Assets_Products_ProductId",
                         column: x => x.ProductId,
                         principalTable: "Products",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Assets_Clients_clientId",
-                        column: x => x.clientId,
-                        principalTable: "Clients",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
                 });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Assets_ClientId",
+                table: "Assets",
+                column: "ClientId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Assets_ProductId",
                 table: "Assets",
                 column: "ProductId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Assets_clientId",
-                table: "Assets",
-                column: "clientId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Clients_UserId",
@@ -142,10 +142,10 @@ namespace MyApp.API.Migrations
                 name: "Assets");
 
             migrationBuilder.DropTable(
-                name: "Products");
+                name: "Clients");
 
             migrationBuilder.DropTable(
-                name: "Clients");
+                name: "Products");
 
             migrationBuilder.DropTable(
                 name: "ProductCategories");
