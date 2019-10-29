@@ -2,6 +2,9 @@ using MyApp.API.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using System.Linq;
+using System.Threading.Tasks;
+using System.Threading;
 
 namespace MyApp.API.Data
 {
@@ -20,7 +23,34 @@ namespace MyApp.API.Data
         public DbSet<Product> Products { get; set; }
         public DbSet<Asset> Assets { get; set; }
 
+        public override int SaveChanges()
+        {
+            UpdateSoftDeleteStatuses();
+            return base.SaveChanges();
+        }
 
+        public override  Task<int>  SaveChangesAsync(bool acceptAllChangesOnSuccess, CancellationToken cancellationToken = default(CancellationToken))
+        {
+                UpdateSoftDeleteStatuses();
+                return base.SaveChangesAsync(acceptAllChangesOnSuccess, cancellationToken);
+        }
+
+        private void UpdateSoftDeleteStatuses()
+        {
+            foreach (var entry in ChangeTracker.Entries())
+            {
+                switch (entry.State)
+                {
+                    case EntityState.Added:
+                        entry.CurrentValues["IsDeleted"] = false;
+                        break;
+                    case EntityState.Deleted:
+                        entry.State = EntityState.Modified;
+                        entry.CurrentValues["IsDeleted"] = true;
+                        break;
+                }
+            }
+        }
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
@@ -77,7 +107,8 @@ namespace MyApp.API.Data
             builder.Entity<Client>()
             .Property(c => c.FullName)
             .HasComputedColumnSql("[LastName] + ', ' + [FirstName]");
-            builder.Entity<Client>().HasQueryFilter(c => !c.IsDeleted);
+            builder.Entity<Client>().HasQueryFilter(
+                c => EF.Property<bool>(c, "IsDeleted") == false);
 
              builder.Entity<Asset>()
             .Property(a => a.CreatedDate)

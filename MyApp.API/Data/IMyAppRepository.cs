@@ -9,6 +9,7 @@ namespace MyApp.API.Data
     {
         void Add<T>(T entity) where T: class;
         void Delete<T>(T entity) where T: class;
+        void Update<T>(T entity) where T: class;
         Task<bool> SaveAll();
         Task<PagedList<User>> GetUsers(UserParams userParams);
         Task<User> GetUser(int id, bool isCurrentUser);
@@ -18,10 +19,10 @@ namespace MyApp.API.Data
         Task<Message> GetMessage(int id);
         Task<PagedList<Message>> GetMessagesForUser(MessageParams messageParams);
         Task<IEnumerable<Message>> GetMessageThread(int userId, int recipientId);
-        Task<IEnumerable<Client>> GetClients(int userId);
-        Task<Client> GetClient(int id,int userId);
-        Task<IEnumerable<Asset>> GetAssets(int clientId, int userId);
-        Task<Asset> GetAsset(int id,int userId);
+        Task<IEnumerable<Client>> GetClients(int currentUserId);
+        Task<Client> GetClient(int id, int currentUserId);
+        Task<IEnumerable<Asset>> GetAssets(int clientId, int currentUserId);
+        Task<Asset> GetAsset(int id, int clientId, int currentUserId);
          
 
          

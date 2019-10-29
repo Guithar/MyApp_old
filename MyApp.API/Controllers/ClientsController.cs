@@ -25,30 +25,36 @@ namespace MyApp.API.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetClients()
-        {
-            var clients = await _repo.GetClients(int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value));
+        public async Task<ActionResult<IEnumerable<ClientForListDto>>> GetClients()
+        {   
+            var currentUserId= int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value); 
+            var clients = await _repo.GetClients(currentUserId);
             var clientsToReturn= _mapper.Map<IEnumerable<ClientForListDto>>(clients);
-            return Ok(clientsToReturn);
+            return new List<ClientForListDto>(clientsToReturn);
         }
         [HttpGet("{id}", Name="GetClient")]
-        public async Task<IActionResult> GetClient(int id)
+        public async Task<ActionResult<ClientForDetailedDto>> GetClient(int id)
         {
-            var client = await _repo.GetClient(id, int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value));
+            var currentUserId= int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value); 
+            var client = await _repo.GetClient(id, currentUserId);
+            if (client == null)
+                return NotFound();
+                
             var clientToReturn= _mapper.Map<ClientForDetailedDto>(client);
-            return Ok(clientToReturn);
+            return clientToReturn;
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateClient(int id,ClientForUpdateDto clientForUpdateDto)
-        {      
-            var currentUserId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value);
-
-            var clientFromRepo = await _repo.GetClient(id,currentUserId);
+        public async Task<ActionResult> UpdateClient(int id,ClientForUpdateDto clientForUpdateDto)
+        {   
+            if(id != clientForUpdateDto.Id)
+                return Unauthorized();
+            
+            var currentUserId= int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value);   
+            var clientFromRepo = await _repo.GetClient(id, currentUserId);
             if(clientFromRepo==null)
-             return Unauthorized();
+             return NotFound();
 
-            clientForUpdateDto.UserId = currentUserId;
             _mapper.Map(clientForUpdateDto, clientFromRepo);
 
             if (await _repo.SaveAll())
@@ -58,7 +64,7 @@ namespace MyApp.API.Controllers
         }
 
     [HttpPost]     
-        public async Task<IActionResult> CreateClient(ClientForCreationDto clientForCreationDto)
+        public async Task<ActionResult<ClientForDetailedDto>> CreateClient(ClientForCreationDto clientForCreationDto)
         {
             clientForCreationDto.UserId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value);
             var client = _mapper.Map<Client>(clientForCreationDto);
@@ -74,24 +80,20 @@ namespace MyApp.API.Controllers
             throw new Exception("Creating the client failed on save");
         }
 
-        [HttpPost("{id}")]
-        public async Task<IActionResult> DeleteClient(int id)
+        [HttpDelete("{id}")]
+        public async Task<ActionResult> DeleteClient(int id)
         {
             var currentUserId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value);
 
-            var clientFromRepo = await _repo.GetClient(id,currentUserId);
+            var clientFromRepo = await _repo.GetClient(id, currentUserId);
             if(clientFromRepo==null)
              return Unauthorized();
-
-             if (clientFromRepo.IsDeleted == true)
                  _repo.Delete(clientFromRepo);
-            if (clientFromRepo.IsDeleted == false)
-                clientFromRepo.IsDeleted = true;
                 
             if (await _repo.SaveAll())
                 return NoContent();
 
-            throw new Exception("Error deleting the message");
+            throw new Exception("Error deleting the client");
         }
 
     }

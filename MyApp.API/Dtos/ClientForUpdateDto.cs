@@ -5,10 +5,10 @@ namespace MyApp.API.Dtos
 {
     public class ClientForUpdateDto
     {   //information of the client
-        
+        public int Id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public string FullName { get; set; }
+    
         public string Company { get; set; }
         public string NIF { get; set; }
         public string JobTitle { get; set; }
@@ -20,8 +20,7 @@ namespace MyApp.API.Dtos
         public string Email { get; set; }
         public string Phone { get; set; }
         public string Observations { get; set; }
-        public int UserId { get; set; }
-
+        public bool  IsActive { get; set; }
 
         public DateTime LastModifiedDate { get; set; }
 

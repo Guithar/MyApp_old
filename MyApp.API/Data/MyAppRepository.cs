@@ -25,7 +25,12 @@ namespace MyApp.API.Data
         {
             _context.Remove(entity);
         }
-
+        
+        public void Update<T>(T entity) where T : class
+        {
+            _context.Entry(entity).State=EntityState.Modified;
+        }
+    
         public async Task<Like> GetLike(int userId, int recipientId)
         {
             return await _context.Likes.FirstOrDefaultAsync(u =>
@@ -164,36 +169,31 @@ namespace MyApp.API.Data
             return messages;
         }
 
-        public async Task<IEnumerable<Client>> GetClients(int userId)
+        public async Task<IEnumerable<Client>> GetClients(int currentUserId)
         {
-             var clients= await _context.Clients.Where(c => c.UserId==userId).ToListAsync();
-            
+           var clients= await _context.Clients
+           .Where(c => c.UserId==currentUserId)
+           .ToListAsync();
             return clients;
         }
-
-        public async Task<Client> GetClient(int id,int userId)
-        {
+ 
+        public async Task<Client> GetClient(int id, int currentUserId)
+        {    
             var query = _context.Clients.AsQueryable();
-            var client = await query.FirstOrDefaultAsync(c => c.Id==id && c.UserId==userId);
+            var client = await query.FirstOrDefaultAsync(c => c.Id==id && c.UserId==currentUserId);
             return client;   
         }
-
-            //      Quantity=a.Quantity,
-        public async Task<IEnumerable<Asset>> GetAssets(int clientId, int userId)
-        {
+        public async Task<IEnumerable<Asset>> GetAssets(int clientId, int currentUserId)
+        {     
              var assets= await _context.Assets
-             .Where(c=> c.ClientId==clientId && c.Client.UserId==userId)
+             .Where(c=> c.ClientId==clientId && c.Client.UserId==currentUserId)
              .ToListAsync(); 
             return assets;
         }
-
-        public async Task<Asset> GetAsset(int id, int userId)
-        {
-            // var query = _context.Assets.AsQueryable();
-            // var asset = await query.FirstOrDefaultAsync(a => a.Id==id && a.ClientId==clientId);
-            // return asset;   
+        public async Task<Asset> GetAsset(int id, int clientId, int currentUserId)
+        {           
             var asset= await _context.Assets
-             .Where(c=> c.Id==id && c.Client.UserId==userId)
+             .Where(c=> c.Id==id && c.Client.Id==clientId && c.Client.UserId==currentUserId)
              .FirstOrDefaultAsync(); 
             return asset;
         }
