@@ -10,8 +10,8 @@ using MyApp.API.Data;
 namespace MyApp.API.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20191024144656_Asset.Product.Category")]
-    partial class AssetProductCategory
+    [Migration("20191031162952_AssetsCategoriesProducts")]
+    partial class AssetsCategoriesProducts
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -306,6 +306,8 @@ namespace MyApp.API.Migrations
 
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken();
+
+                    b.Property<bool>("IsDeleted");
 
                     b.Property<string>("Name")
                         .HasMaxLength(256);

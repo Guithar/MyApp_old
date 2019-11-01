@@ -123,7 +123,7 @@ namespace MyApp.API.Data
 
         public async Task<bool> SaveAll()
         {
-            return await _context.SaveChangesAsync() > 0;
+            return await _context.SaveChangesAsync()>0 ;
         }
 
         public async Task<Message> GetMessage(int id)

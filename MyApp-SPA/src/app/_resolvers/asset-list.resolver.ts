@@ -1,19 +1,19 @@
 import {Injectable} from '@angular/core';
 import {Resolve, Router, ActivatedRouteSnapshot} from '@angular/router';
-import { ClientService } from '../_services/client.service';
+import { AssetService } from '../_services/asset.service';
 import { AlertifyService } from '../_services/alertify.service';
 import { Observable, of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { Client } from '../_models/client';
+import { Asset } from '../_models/asset';
 
 @Injectable()
-export class ClientListResolver implements Resolve<Client[]> {
-    constructor(private clientService: ClientService, private router: Router,
+export class AssetListResolver implements Resolve<Asset[]> {
+    constructor(private assetService: AssetService, private router: Router,
         private alertify: AlertifyService) {}
 
-    resolve(route: ActivatedRouteSnapshot): Observable<Client[]> {
-        return this.clientService.getClients().pipe(
-            catchError(error => {
+    resolve(route: ActivatedRouteSnapshot): Observable<Asset[]> {
+        return this.assetService.getAssets(route.params['id']).pipe(
+            catchError(() => {
                 this.alertify.error('Problem retrieving data');
                 this.router.navigate(['/home']);
                 return of(null);

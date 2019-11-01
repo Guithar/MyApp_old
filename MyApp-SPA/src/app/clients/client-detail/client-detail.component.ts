@@ -1,11 +1,9 @@
-import { Component, OnInit, ViewChild, HostListener } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Client } from 'src/app/_models/client';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { ClientService } from 'src/app/_services/client.service';
 import { AlertifyService } from 'src/app/_services/alertify.service';
 import { FormBuilder, Validators } from '@angular/forms';
-import { AuthService } from 'src/app/_services/auth.service';
-import { UserService } from 'src/app/_services/user.service';
 
 @Component({
   selector: 'app-client-detail',
@@ -13,14 +11,13 @@ import { UserService } from 'src/app/_services/user.service';
   styleUrls: ['./client-detail.component.css']
 })
 export class ClientDetailComponent implements OnInit {
+  @Input() client: Client;
 
   constructor(private alertify: AlertifyService, private clientService: ClientService,
-    private route: ActivatedRoute, private router: Router, private formBuilder: FormBuilder,
-    private userService: UserService) { }
+    private router: Router, private formBuilder: FormBuilder) { }
 
-  client: Client;
-  newClientFlag: boolean;
   clientForm =  this.formBuilder.group({
+    id: ['', Validators.required],
     company: ['', Validators.required],
     nif: ['', Validators.required],
     adress: ['', Validators.required],
@@ -29,44 +26,24 @@ export class ClientDetailComponent implements OnInit {
     country: ['', Validators.required]
   });
 
-  @HostListener('window:beforeunload', ['$event'])
-
-  unloadNotification($event: any) {
-    if (this.clientForm.dirty) {
-      $event.returnValue = true;
-    }
-  }
-
   ngOnInit() {
-      this.route.data.subscribe(data => {
-      this.client = data['client'];
-        if (this.client) {
-          console.log(this.client);
-          this.loadFormData();
-        }
-    });
-  }
-  loadFormData() {
+    if (this.client) {
     this.clientForm.patchValue(this.client);
+    }
+
   }
   onSubmit() {
-    console.log('onSubmit()');
     if (this.client) {
-      console.log('updateClient()');
-      console.log(this.clientForm.value);
       this.updateClient();
     } else {
-      console.log('createClient()');
-      console.log(this.clientForm.value);
        this.createClient();
     }
   }
-
   updateClient() {
-    console.log(this.clientForm.value);
-    this.clientService.updateClient(this.client.id, this.clientForm.value).subscribe(next => {
+    this.clientService.updateClient(this.client.id, this.clientForm.value).subscribe(() => {
       this.alertify.success('Client updated successfully');
-       this.clientForm.reset(this.clientForm.value);
+      this.client = this.clientForm.value;
+      this.resetForm();
     }, error => {
       this.alertify.error(error);
     });
@@ -75,6 +52,7 @@ export class ClientDetailComponent implements OnInit {
       this.clientService.createClient(this.clientForm.value)
     .subscribe((client: Client) => {
       this.client = client;
+      this.alertify.success('Client created successfully');
       this.router.navigate(['clients/', client.id]);
     }, error => {
       this.alertify.error(error);
@@ -86,13 +64,18 @@ export class ClientDetailComponent implements OnInit {
       this.clientService.deleteClient(this.client.id).subscribe(() => {
         this.alertify.success('Client has been deleted');
         this.router.navigate(['clients']);
-      }, error => {
+      }, () => {
         this.alertify.error('Failed to delete client');
       });
     });
   }
   resetForm() {
-    this.clientForm.reset();
+    if (this.client) {
+      this.clientForm.reset(this.client);
+    } else {
+      this.alertify.confirm('Reset form', 'Are you sure you want to reset this form?', () => {
+        this.clientForm.reset();
+      });
+    }
   }
-
 }

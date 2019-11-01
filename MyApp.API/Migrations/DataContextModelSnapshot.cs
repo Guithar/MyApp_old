@@ -305,6 +305,8 @@ namespace MyApp.API.Migrations
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken();
 
+                    b.Property<bool>("IsDeleted");
+
                     b.Property<string>("Name")
                         .HasMaxLength(256);
 

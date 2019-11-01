@@ -1,0 +1,35 @@
+<div class="card-header">
+    <strong *ngIf="!client"> New Client</strong>
+    <strong *ngIf="client"> {{client.company}}</strong>
+    <small> Form</small>
+</div>
+<mat-tab-group>
+    <mat-tab>
+        <ng-template mat-tab-label>
+            Detail
+        </ng-template>
+        <app-client-detail #clientDetailComponent [client]="client"></app-client-detail>
+    </mat-tab>
+
+    <mat-tab>
+        <ng-template mat-tab-label>
+            Assets
+        </ng-template>
+        <app-client-assets-list [clientId]="client.id" ></app-client-assets-list>
+    </mat-tab>
+
+    <mat-tab>
+        <ng-template mat-tab-label>
+            Revisions
+        </ng-template>
+
+        Content 3
+    </mat-tab>
+    <mat-tab>
+        <ng-template mat-tab-label>
+            Revisions
+        </ng-template>
+
+        Content 3
+    </mat-tab>
+</mat-tab-group>

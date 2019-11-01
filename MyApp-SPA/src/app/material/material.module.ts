@@ -7,7 +7,12 @@ import {MatButtonModule,
         MatPaginatorModule,
         MatSortModule,
         MatIconModule,
-        MatToolbarModule} from '@angular/material';
+        MatToolbarModule,
+        MatTabsModule,
+        MatDialogModule,
+        MatSlideToggleModule,
+        MatDatepickerModule,
+        MatNativeDateModule} from '@angular/material';
 
 const MaterialComponents = [
   MatButtonModule,
@@ -18,7 +23,12 @@ const MaterialComponents = [
   MatPaginatorModule,
   MatSortModule,
   MatIconModule,
-  MatToolbarModule
+  MatToolbarModule,
+  MatTabsModule,
+  MatDialogModule,
+  MatSlideToggleModule,
+  MatDatepickerModule,
+  MatNativeDateModule
 ];
 
 @NgModule({

@@ -4,10 +4,16 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace MyApp.API.Migrations
 {
-    public partial class AssetProductCategory : Migration
+    public partial class AssetsCategoriesProducts : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.AddColumn<bool>(
+                name: "IsDeleted",
+                table: "AspNetRoles",
+                nullable: false,
+                defaultValue: false);
+
             migrationBuilder.CreateTable(
                 name: "Clients",
                 columns: table => new
@@ -149,6 +155,10 @@ namespace MyApp.API.Migrations
 
             migrationBuilder.DropTable(
                 name: "ProductCategories");
+
+            migrationBuilder.DropColumn(
+                name: "IsDeleted",
+                table: "AspNetRoles");
         }
     }
 }

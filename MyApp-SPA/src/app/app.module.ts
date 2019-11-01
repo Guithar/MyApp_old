@@ -45,6 +45,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
 import { ClientDetailComponent } from './clients/client-detail/client-detail.component';
 import { ClientDetailResolver } from './_resolvers/client-detail.resolver';
+import { ClientSkeletonComponent } from './clients/client-skeleton/client-skeleton.component';
+import { ClientAssetsListComponent } from './clients/client-assets-list/client-assets-list.component';
+import { AssetListResolver } from './_resolvers/asset-list.resolver';
+import { AssetService } from './_services/asset.service';
+import { ClientAssetDetailComponent } from './clients/client-asset-detail/client-asset-detail.component';
 
 export function tokenGetter() {
   return localStorage.getItem('token');
@@ -78,7 +83,10 @@ export class CustomHammerConfig extends HammerGestureConfig  {
     PhotoManagementComponent,
     RolesModalComponent,
     ClientListComponent,
-    ClientDetailComponent
+    ClientDetailComponent,
+    ClientSkeletonComponent,
+    ClientAssetsListComponent,
+    ClientAssetDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -119,10 +127,13 @@ export class CustomHammerConfig extends HammerGestureConfig  {
       AdminService,
       ClientListResolver,
       ClientDetailResolver,
+      AssetListResolver,
+      AssetService,
       { provide: HAMMER_GESTURE_CONFIG, useClass: CustomHammerConfig }
     ],
   entryComponents: [
-    RolesModalComponent
+    RolesModalComponent,
+    ClientAssetDetailComponent
   ],
   bootstrap: [AppComponent]
 })

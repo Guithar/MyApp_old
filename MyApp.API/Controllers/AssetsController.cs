@@ -53,8 +53,8 @@ namespace MyApp.API.Controllers
              [HttpPut("{id}")]
         public async Task<ActionResult> UpdateAsset(int id,int clientId,AssetForUpdateDto assetForUpdateDto)
         {      
-            if(id != assetForUpdateDto.Id)
-                return Unauthorized();
+            // if(id != assetForUpdateDto.Id)
+            //     return Unauthorized();
             
             var currentUserId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value);
 
@@ -66,8 +66,8 @@ namespace MyApp.API.Controllers
 
             if (await _repo.SaveAll())
                 return NoContent();
-
-            throw new Exception($"Updating Asset {id} failed on save");
+            return BadRequest("No changes were applied");
+            //throw new Exception($"Updating Asset {id} failed on save");   
         }
          [HttpDelete("{id}")]
         public async Task<ActionResult<Asset>> DeleteAsset(int id, int clientId)
