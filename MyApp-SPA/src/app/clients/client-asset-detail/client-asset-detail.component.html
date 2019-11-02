@@ -1,7 +1,7 @@
 <div class="container">
-        <h3 mat-dialog-title>Asset id: {{data.id}}</h3>
+        <h3 mat-dialog-title>{{action}} Asset id: {{data.id}}</h3>
       
-        <form [formGroup]="assetForm"  (submit)="submit()" id="assetForm" >
+        <form [formGroup]="assetForm"   id="assetForm" >
       
           <div class="form">
             <mat-form-field >
@@ -11,7 +11,7 @@
 
             <mat-form-field color="accent">
               <input matInput #input  placeholder="name"
-                formControlName="name" name="name"   required >
+                formControlName="name" name="name" >
             </mat-form-field>
           </div>
 
@@ -32,24 +32,20 @@
           </div>
           
           <div class="form">
-              <mat-slide-toggle
-              class="example-margin"
-              color="primary"
-              checked="{{data.isActive}}"
-              disabled="false">
+              <mat-slide-toggle #input 
+              formControlName="isActive" id="isActive">
               Is Active
             </mat-slide-toggle>
           </div>
 
           <div class="form">
             
-            <mat-form-field >
+            <!-- <mat-form-field >
               <input matInput #input  placeholder="manufacturedDate" 
                 formControlName="manufacturedDate" id="manufacturedDate"
                 [value]="assetForm.get('manufacturedDate').value | date:'MMM, y'">
             </mat-form-field>
-         
-            
+          -->
         
             <mat-form-field>
               <input matInput #input [matDatepicker]="picker2" placeholder="Manufactured date"
@@ -86,9 +82,10 @@
             </mat-form-field>
           </div>
 
-          <div mat-dialog-actions>
-            <button mat-button type="submit" >Save</button>
+          <div  mat-dialog-actions>
+            <button mat-button (click)="submit()" >{{action}}</button>
             <button mat-button (click)="closeDialog()" tabindex="-1">Cancel</button>
           </div>
+          
         </form>
       </div>

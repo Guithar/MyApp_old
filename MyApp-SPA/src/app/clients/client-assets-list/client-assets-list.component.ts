@@ -77,15 +77,29 @@ export class ClientAssetsListComponent implements OnInit {
     this.assetService.updateAsset(asset.clientId,
       asset.id, asset).subscribe(() => {
           this.alertify.success('Asset updated successfully');
-          // Update the table
+          this.loadAssets();
         }, error => {
           this.alertify.error(error);
         });
   }
   addData(asset: Asset) {
     console.log('addData');
+    this.assetService.createAsset(asset.clientId,
+      asset).subscribe(() => {
+          this.alertify.success('Asset created successfully');
+          this.loadAssets();
+        }, error => {
+          this.alertify.error(error);
+        });
   }
   deleteData(asset: Asset) {
     console.log('deleteData');
+    this.assetService.deleteAsset(asset.clientId,
+      asset.id).subscribe(() => {
+          this.alertify.success('Asset deleted successfully');
+          this.loadAssets();
+        }, error => {
+          this.alertify.error(error);
+        });
   }
 }

@@ -13,17 +13,18 @@ import { AlertifyService } from 'src/app/_services/alertify.service';
 })
 export class ClientAssetDetailComponent implements OnInit  {
     action: string;
+    formDisabled: boolean;
     constructor(public dialogRef: MatDialogRef<ClientAssetDetailComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any , private formBuilder: FormBuilder,
     private assetService: AssetService, private alertify: AlertifyService) { }
 
 
     assetForm =  this.formBuilder.group({
-      id: ['', Validators.required],
+      id: [{value: '' } , Validators.required],
       clientId: ['', Validators.required],
       clientUserId: ['', Validators.required],
       clientCompany: ['', Validators.required],
-      name: ['', Validators.required],
+      name: [{value: '', disabled: false}, Validators.required],
       description: ['', Validators.required],
       location: ['', Validators.required],
       quantity: ['', Validators.required],
@@ -36,21 +37,26 @@ export class ClientAssetDetailComponent implements OnInit  {
 
     ngOnInit() {
       if (this.data) {
-        // console.log('data previous delete the propertie action : ' , this.data);
-        // console.log('data previous delete the propertie action : ' , this.data.action);
         this.action = this.data.action;
-        // delete this.data.action; // delete this propertie
+        if (this.action === 'Delete'){
+          this.assetForm.disable();
+
+        }
         this.assetForm.patchValue(this.data);
-        console.log('data: ' , this.data);
-        console.log('action: ' , this.action);
       }
 
     }
+
     closeDialog() {
+      console.log('CloseDialog');
       this.dialogRef.close({event: 'Cancel'});
     }
 
     submit() {
-      this.dialogRef.close({event: this.action, data: this.assetForm.value});
+      console.log('Submit');
+      this.alertify.confirm( this.action + ' asset', 'Are you sure you want to ' +
+      this.action.toLowerCase() + ' this asset?', () => {
+        this.dialogRef.close({event: this.action, data: this.assetForm.value});
+      });
     }
 }

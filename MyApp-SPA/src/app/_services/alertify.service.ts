@@ -17,7 +17,9 @@ export class AlertifyService {
 
   confirm(tittle: string, message: string, okCallback: () => any) {
     alertify.confirm(tittle, message, function() { okCallback(); }
-    , function() { alertify.error('Cancel'); });
+    , function() {
+       // alertify.error('Cancel');
+      });
   }
   success(message: string) {
     alertify.success(message);
