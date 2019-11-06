@@ -1,0 +1,20 @@
+[
+  {
+    "Name": "ROCKABYE",
+    "NIF": "B32712853",
+    "Host": "rockabye.com",
+    "Plan": "free"
+  },
+  {
+    "Name": "ZAYA",
+    "NIF": "B18919197",
+    "Host": "zaya.ca",
+    "Plan": "basic"
+  },
+  {
+    "Name": "TALKOLA",
+    "NIF": "B26667433",
+    "Host": "talkola.net",
+    "Plan": "premium"
+  }
+]

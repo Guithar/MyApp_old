@@ -24,6 +24,8 @@ namespace MyApp.API
                     var userManager = services.GetRequiredService<UserManager<User>>();
                     var roleManager = services.GetRequiredService<RoleManager<Role>>();
                     context.Database.Migrate();
+                    
+                    Seed.SeedTenants(context);
                     Seed.SeedUsers(userManager, roleManager);
                     Seed.SeedClients(context);
                     Seed.SeedAssets(context);

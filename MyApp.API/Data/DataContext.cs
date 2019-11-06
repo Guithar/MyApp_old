@@ -22,38 +22,38 @@ namespace MyApp.API.Data
         public DbSet<ProductCategory> ProductCategories {get;set;}
         public DbSet<Product> Products { get; set; }
         public DbSet<Asset> Assets { get; set; }
+        public DbSet<Tenant> Tenants { get; set; }
 
-        // public override int SaveChanges()
-        // {
-        //     UpdateSoftDeleteStatuses();
-        //     return base.SaveChanges();
-        // }
+        public override int SaveChanges()
+        {
+            UpdateSoftDeleteStatuses();
+            return base.SaveChanges();
+        }
 
-        // public override  Task<int>  SaveChangesAsync(bool acceptAllChangesOnSuccess, CancellationToken cancellationToken = default(CancellationToken))
-        // {
-        //         UpdateSoftDeleteStatuses();
-        //         return base.SaveChangesAsync(acceptAllChangesOnSuccess, cancellationToken);
-        // }
+        public override  Task<int>  SaveChangesAsync(bool acceptAllChangesOnSuccess, CancellationToken cancellationToken = default(CancellationToken))
+        {
+                UpdateSoftDeleteStatuses();
+                return base.SaveChangesAsync(acceptAllChangesOnSuccess, cancellationToken);
+        }
 
-        // private void UpdateSoftDeleteStatuses()
-        // {
-        //     foreach (var entry in ChangeTracker.Entries())
-        //     {
-        //             if(entry.CurrentValues["IsDeleted"] !=null){
-        //                 switch (entry.State)
-        //                 {
-        //                 case EntityState.Added:
-        //                     entry.CurrentValues["IsDeleted"] = false;
-        //                     break;
-        //                 case EntityState.Deleted:
-        //                     entry.State = EntityState.Modified;
-        //                     entry.CurrentValues["IsDeleted"] = true;
-        //                     break;
-        //                 }
-        //             }
-                
-        //     }
-        // }
+        private void UpdateSoftDeleteStatuses()
+        {
+            foreach (var entry in ChangeTracker.Entries())
+            { //  If the field "IsDelete" doesn't exist makes a hard delete
+                    if(entry.Entity.GetType().GetProperty("IsDeleted")!=null) {
+                        switch (entry.State)
+                        {
+                        case EntityState.Added:
+                            entry.CurrentValues["IsDeleted"] = false;
+                            break;
+                        case EntityState.Deleted:
+                            entry.State = EntityState.Modified;
+                            entry.CurrentValues["IsDeleted"] = true;
+                            break;
+                        }
+                    }
+            }
+        }
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
@@ -99,17 +99,21 @@ namespace MyApp.API.Data
                 .OnDelete(DeleteBehavior.Restrict);
 
             builder.Entity<Photo>().HasQueryFilter(p => p.IsApproved);
-
-
+        
             builder.Entity<Client>()
-            .Property(c => c.CreatedDate)
+            .Property(c => c.CreatedOn)
             .HasDefaultValueSql("getdate()");
              builder.Entity<Client>()
-            .Property(c => c.LastModifiedDate)
+            .Property(c => c.UpdatedOn)
             .HasDefaultValueSql("getdate()");
             builder.Entity<Client>()
             .Property(c => c.FullName)
             .HasComputedColumnSql("[LastName] + ', ' + [FirstName]");
+
+             builder.Entity<Client>()
+            .Property(a => a.IsDeleted)
+            .HasDefaultValue(false);
+
             builder.Entity<Client>().HasQueryFilter(
                 c => EF.Property<bool>(c, "IsDeleted") == false);
 

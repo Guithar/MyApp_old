@@ -49,6 +49,19 @@ namespace MyApp.API.Data
                 }
             }
         }
+        public static void SeedTenants(DataContext context)
+         {
+            if(!context.Tenants.Any())
+            {
+                var tenantData = System.IO.File.ReadAllText("Data/SeedDataTenant.json");
+                var tenants = JsonConvert.DeserializeObject<List<Tenant>>(tenantData);
+                foreach (var tenant in tenants)
+                {
+                    context.Tenants.Add(tenant);
+                };
+                context.SaveChanges();
+            }
+         }
          public static void SeedClients(DataContext context)
          {
             if(!context.Clients.Any())

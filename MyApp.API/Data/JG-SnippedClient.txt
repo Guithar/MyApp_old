@@ -1,7 +1,10 @@
 //To generate json file at https://next.json-generator.com/
+
 [
-  '{{repeat(1, 20)}}',
   {
+    'repeat(11)': {
+      
+     
     FirstName: '{{firstName()}}',
     LastName: ' {{surname()}}',
     company: '{{company().toUpperCase()}}',
@@ -31,6 +34,8 @@
     
     isActive: '{{bool()}}',
     
-    registered: '{{date(new Date(2014, 0, 1), new Date(), "YYYY-MM-ddThh:mm:ss Z")}}'
-  }
+    registered: '{{date(new Date(2014, 0, 1), new Date(), "YYYY-MM-ddThh:mm:ss Z")}}',
+    TenantId:'{{integer(1,1, 00)}}'
+      }
+    }
 ]
