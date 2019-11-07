@@ -17,6 +17,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
+using System;
 
 namespace MyApp.API
 {
@@ -29,30 +30,70 @@ namespace MyApp.API
 
         public IConfiguration Configuration { get; }
 
-        public void ConfigureDevelopmentServices(IServiceCollection services)
-        {
+        
+        // public void ConfigureDevelopmentServices(IServiceCollection services)
+        // {
               
-            services.AddDbContext<DataContext>(x => {
-                x.UseLazyLoadingProxies();
-                x.EnableSensitiveDataLogging();
-                x.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
-            });
+        //     services.AddDbContext<DataContext>(x => {
+        //         x.UseLazyLoadingProxies();
+        //         x.EnableSensitiveDataLogging();
+        //         x.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
+        //     });
 
           
 
+        //     ConfigureServices(services);
+        // }
+
+        // public void ConfigureProductionServices(IServiceCollection services)
+        // {
+            
+
+        //     services.AddDbContext<DataContext>(x => {
+        //         x.UseLazyLoadingProxies();
+        //         x.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
+        //     });
+           
+           
+        //     ConfigureServices(services);
+        // }
+
+           
+        public void ConfigureDevelopmentServices(IServiceCollection services)
+        {
+            
+            services.AddTransient<DataContext>( serviceProvider =>
+            {
+                DbContextOptionsBuilder<DataContext> options = 
+                    new DbContextOptionsBuilder<DataContext>();
+                options.UseLazyLoadingProxies()
+                    .EnableSensitiveDataLogging()
+                    .UseSqlServer(Configuration
+                    .GetConnectionString("DefaultConnection"));
+                   
+                   // TODO Asign value to tenantId by a TenantProvider DevelopmentServices
+                    int tenantId=1;
+                    return new DataContext (tenantId, options.Options);
+            });
+            
             ConfigureServices(services);
         }
-
         public void ConfigureProductionServices(IServiceCollection services)
         {
             
-
-            services.AddDbContext<DataContext>(x => {
-                x.UseLazyLoadingProxies();
-                x.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
+           services.AddTransient<DataContext>( serviceProvider =>
+            {
+                DbContextOptionsBuilder<DataContext> options = 
+                    new DbContextOptionsBuilder<DataContext>();
+                options.UseLazyLoadingProxies()
+                    .UseSqlServer(Configuration
+                    .GetConnectionString("DefaultConnection"));
+                   
+                   // TODO Asign value to tenantId by a TenantProvider ProductionServices
+                    int tenantId=1;
+                    return new DataContext (tenantId, options.Options);
             });
-           
-            
+
             ConfigureServices(services);
         }
         public void ConfigureServices(IServiceCollection services)
