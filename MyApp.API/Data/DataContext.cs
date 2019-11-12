@@ -12,10 +12,10 @@ namespace MyApp.API.Data
         IdentityUserClaim<int>, UserRole, IdentityUserLogin<int>,
         IdentityRoleClaim<int>, IdentityUserToken<int>>
     {
-        
-        public DataContext( DbContextOptions<DataContext> options) : base(options) 
+        private readonly int _tenantId;
+        public DataContext(int tenantId, DbContextOptions<DataContext> options) : base(options) 
         {
-            
+            _tenantId = tenantId;
          }
 
         public DbSet<Value> Values { get; set; }
@@ -121,6 +121,38 @@ namespace MyApp.API.Data
                 .OnDelete(DeleteBehavior.Restrict);
 
             builder.Entity<Photo>().HasQueryFilter(p => p.IsApproved);
+
+            builder.Entity<Client>()
+            .Property(c => c.CreatedOn)
+            .HasDefaultValueSql("getdate()");
+            builder.Entity<Client>()
+           .Property(c => c.UpdatedOn)
+           .HasDefaultValueSql("getdate()");
+            builder.Entity<Client>()
+            .Property(c => c.FullName)
+            .HasComputedColumnSql("[LastName] + ', ' + [FirstName]");
+
+            builder.Entity<Client>()
+           .Property(a => a.IsDeleted)
+           .HasDefaultValue(false);
+
+            builder.Entity<Client>().HasQueryFilter(
+                c => EF.Property<bool>(c, "IsDeleted") == false 
+                && c.TenantId==this._tenantId);
+            
+
+            builder.Entity<Asset>()
+           .Property(a => a.CreatedOn)
+           .HasDefaultValueSql("getdate()");
+            builder.Entity<Asset>()
+            .Property(a => a.ManufacturedDate)
+            .HasDefaultValueSql("getdate()");
+            builder.Entity<Asset>()
+            .Property(a => a.Quantity)
+            .HasDefaultValue(1);
+            builder.Entity<Asset>()
+            .Property(a => a.IsActive)
+            .HasDefaultValue(true);
 
 
             builder.Entity<Client>(client =>
