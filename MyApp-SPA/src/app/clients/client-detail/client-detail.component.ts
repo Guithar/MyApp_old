@@ -1,9 +1,11 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Inject } from '@angular/core';
 import { Client } from 'src/app/_models/client';
 import { Router } from '@angular/router';
 import { ClientService } from 'src/app/_services/client.service';
 import { AlertifyService } from 'src/app/_services/alertify.service';
 import { FormBuilder, Validators } from '@angular/forms';
+
+
 
 @Component({
   selector: 'app-client-detail',
@@ -12,9 +14,9 @@ import { FormBuilder, Validators } from '@angular/forms';
 })
 export class ClientDetailComponent implements OnInit {
   @Input() client: Client;
-
+  action: string;
   constructor(private alertify: AlertifyService, private clientService: ClientService,
-    private router: Router, private formBuilder: FormBuilder) { }
+    private router: Router, private formBuilder: FormBuilder ) { }
 
   clientForm =  this.formBuilder.group({
     id: ['', Validators.required],
@@ -47,7 +49,6 @@ export class ClientDetailComponent implements OnInit {
     console.log(this.client);
     console.log(this.clientForm.value);
     }
-
   }
   onSubmit() {
     if (this.client) {
@@ -66,15 +67,7 @@ export class ClientDetailComponent implements OnInit {
     });
   }
   createClient() {
-      this.clientService.createClient(this.clientForm.value)
-    .subscribe((client: Client) => {
-      this.client = client;
-      this.alertify.success('Client created successfully');
-      this.router.navigate(['clients/', client.id]);
-    }, error => {
-      this.alertify.error(error);
-    });
-
+    console.log('create client');
   }
   deleteClient() {
     this.alertify.confirm('Delete client', 'Are you sure you want to delete this client?', () => {

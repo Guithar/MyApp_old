@@ -2,7 +2,7 @@
         <div class="card-header">
             <span>
                 <strong> CLIENT </strong> <small>List</small> 
-                <button [routerLink]="['/clients/new']" mat-stroked-button color="primary"><i class="material-icons">
+                <button (click)="openDialog('Add',{})" mat-stroked-button color="primary"><i class="material-icons">
                     add
                     </i> New</button>
                 <button  mat-stroked-button color="primary">Options <i class="material-icons">

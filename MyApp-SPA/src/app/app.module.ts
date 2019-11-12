@@ -50,6 +50,7 @@ import { ClientAssetsListComponent } from './clients/client-assets-list/client-a
 import { AssetListResolver } from './_resolvers/asset-list.resolver';
 import { AssetService } from './_services/asset.service';
 import { ClientAssetDetailComponent } from './clients/client-asset-detail/client-asset-detail.component';
+import { ClientAddComponent } from './clients/client-add/client-add.component';
 
 export function tokenGetter() {
   return localStorage.getItem('token');
@@ -86,7 +87,8 @@ export class CustomHammerConfig extends HammerGestureConfig  {
     ClientDetailComponent,
     ClientSkeletonComponent,
     ClientAssetsListComponent,
-    ClientAssetDetailComponent
+    ClientAssetDetailComponent,
+    ClientAddComponent
   ],
   imports: [
     BrowserModule,
@@ -133,7 +135,9 @@ export class CustomHammerConfig extends HammerGestureConfig  {
     ],
   entryComponents: [
     RolesModalComponent,
-    ClientAssetDetailComponent
+    ClientAssetDetailComponent,
+    ClientDetailComponent,
+    ClientAddComponent
   ],
   bootstrap: [AppComponent]
 })

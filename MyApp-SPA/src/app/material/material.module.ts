@@ -9,10 +9,10 @@ import {MatButtonModule,
         MatIconModule,
         MatToolbarModule,
         MatTabsModule,
-        MatDialogModule,
         MatSlideToggleModule,
         MatDatepickerModule,
         MatNativeDateModule} from '@angular/material';
+import {MatDialogModule} from '@angular/material/dialog';
 
 const MaterialComponents = [
   MatButtonModule,
