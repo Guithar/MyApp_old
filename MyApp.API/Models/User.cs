@@ -7,6 +7,7 @@ namespace MyApp.API.Models
 {
     public class User : IdentityUser<int>
     {
+
         public string Gender { get; set; }
         public DateTime DateOfBirth { get; set; }
         public string KnownAs { get; set; }
@@ -23,6 +24,13 @@ namespace MyApp.API.Models
         public virtual ICollection<Message> MessagesSent { get; set; }
         public virtual ICollection<Message> MessagesReceived { get; set; }
         public virtual ICollection<UserRole> UserRoles { get; set; }
-        public virtual ICollection<Client> Clients { get; set; }
+        public int TenantId { get; set; }
+        public virtual Tenant Tenant{ get; set; }
+
+        public bool? IsActive { get; set; }
+        public bool? IsDeleted { get; set; }
+        public DateTime? CreatedOn { get; set; }
+        public DateTime? UpdatedOn { get; set; }
+       
     }
 }

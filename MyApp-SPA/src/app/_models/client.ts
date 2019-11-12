@@ -1,6 +1,6 @@
-
 export interface Client {
   id: number;
+  tenantId: number;
   firstName: string;
   lastName: string;
   fullName: string;
@@ -15,9 +15,11 @@ export interface Client {
   email: string;
   phone: string;
   observations: string;
-  userId: number;
   isDeleted: boolean;
-  isActive: boolean;
-  createdDate: string;
-  lastModifiedDate: string;
+  createdOn: string;
+  updatedOn: string;
+  deletedOn?: any;
+  createdBy: number;
+  updatedBy: number;
+  deletedBy: number;
 }

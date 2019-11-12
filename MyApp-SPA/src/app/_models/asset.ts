@@ -2,15 +2,23 @@
 export interface Asset {
   id: number;
   clientId: number;
-  clientUserId: number;
+  tenantId: number;
   clientCompany: string;
   name: string;
   description: string;
   location: string;
   quantity: number;
-  isActive: boolean;
   manufacturedDate: string;
   installedDate: string;
-  productId: number;
   productName: string;
+  isActive: boolean;
+  isDelete: boolean;
+  createdOn: Date;
+  updatedOn: Date;
+  deletedOn: Date;
+  createdBy: number;
+  updatedBy: number;
+  deletedBy: number;
+
 }
+

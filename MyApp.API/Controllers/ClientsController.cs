@@ -22,21 +22,24 @@ namespace MyApp.API.Controllers
         {
             _mapper = mapper;
             _repo = repo;
+            
         }
 
         [HttpGet]
         public async Task<ActionResult<IEnumerable<ClientForListDto>>> GetClients()
         {   
-            var currentUserId= int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value); 
-            var clients = await _repo.GetClients(currentUserId);
+             var currentTenantId= int.Parse(User.FindFirst("TenantId").Value);
+            // var currentUserId= int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value); 
+            var clients = await _repo.GetClients(currentTenantId);
             var clientsToReturn= _mapper.Map<IEnumerable<ClientForListDto>>(clients);
             return new List<ClientForListDto>(clientsToReturn);
         }
         [HttpGet("{id}", Name="GetClient")]
         public async Task<ActionResult<ClientForDetailedDto>> GetClient(int id)
         {
-            var currentUserId= int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value); 
-            var client = await _repo.GetClient(id, currentUserId);
+             var currentTenantId= int.Parse(User.FindFirst("TenantId").Value);
+            // var currentUserId= int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value); 
+            var client = await _repo.GetClient(id, currentTenantId);
             if (client == null)
                 return NotFound();
                 
@@ -47,11 +50,11 @@ namespace MyApp.API.Controllers
         [HttpPut("{id}")]
         public async Task<ActionResult> UpdateClient(int id,ClientForUpdateDto clientForUpdateDto)
         {   
+            var currentTenantId= int.Parse(User.FindFirst("TenantId").Value);
+            // var currentUserId= int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value); 
             if(id != clientForUpdateDto.Id)
-                return Unauthorized();
-            
-            var currentUserId= int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value);   
-            var clientFromRepo = await _repo.GetClient(id, currentUserId);
+                return Unauthorized(); 
+            var clientFromRepo = await _repo.GetClient(id, currentTenantId);
             if(clientFromRepo==null)
              return NotFound();
 
@@ -66,7 +69,9 @@ namespace MyApp.API.Controllers
     [HttpPost]     
         public async Task<ActionResult<ClientForDetailedDto>> CreateClient(ClientForCreationDto clientForCreationDto)
         {
-            clientForCreationDto.UserId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value);
+            var currentTenantId= int.Parse(User.FindFirst("TenantId").Value);
+            // var currentUserId= int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value); 
+            clientForCreationDto.TenantId = currentTenantId;
             var client = _mapper.Map<Client>(clientForCreationDto);
 
             _repo.Add(client);
@@ -83,9 +88,10 @@ namespace MyApp.API.Controllers
         [HttpDelete("{id}")]
         public async Task<ActionResult> DeleteClient(int id)
         {
-            var currentUserId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value);
+            var currentTenantId= int.Parse(User.FindFirst("TenantId").Value);
+            // var currentUserId= int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value); 
 
-            var clientFromRepo = await _repo.GetClient(id, currentUserId);
+            var clientFromRepo = await _repo.GetClient(id, currentTenantId);
             if(clientFromRepo==null)
              return Unauthorized();
                  _repo.Delete(clientFromRepo);

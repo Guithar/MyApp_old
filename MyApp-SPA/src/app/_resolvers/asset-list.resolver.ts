@@ -12,12 +12,14 @@ export class AssetListResolver implements Resolve<Asset[]> {
         private alertify: AlertifyService) {}
 
     resolve(route: ActivatedRouteSnapshot): Observable<Asset[]> {
-        return this.assetService.getAssets(route.params['id']).pipe(
-            catchError(() => {
-                this.alertify.error('Problem retrieving data');
-                this.router.navigate(['/home']);
-                return of(null);
-            })
-        );
+        if (route.params['id'] !== 'new') {
+            return this.assetService.getAssets(route.params['id']).pipe(
+                catchError(() => {
+                    this.alertify.error('Problem retrieving data');
+                    this.router.navigate(['/home']);
+                    return of(null);
+                })
+            );
+        }
     }
 }

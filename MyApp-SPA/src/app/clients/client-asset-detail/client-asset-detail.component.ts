@@ -20,29 +20,41 @@ export class ClientAssetDetailComponent implements OnInit  {
 
 
     assetForm =  this.formBuilder.group({
-      id: [{value: '' } , Validators.required],
+      id: ['' , Validators.required],
       clientId: ['', Validators.required],
-      clientUserId: ['', Validators.required],
-      clientCompany: ['', Validators.required],
+      tenantId: ['', Validators.required],
       name: [{value: '', disabled: false}, Validators.required],
       description: ['', Validators.required],
       location: ['', Validators.required],
       quantity: ['', Validators.required],
-      isActive: ['', Validators.required],
       manufacturedDate: ['', Validators.required],
       installedDate: ['', Validators.required],
       productId: ['', Validators.required],
-      productName: ['', Validators.required]
+      productName: ['', Validators.required],
+      isActive: ['', Validators.required],
+      isDeleted: [{value: '', disabled: true}, Validators.required],
+      createdOn: [{value: '', disabled: true}, Validators.required],
+      updateOn: [{value: '', disabled: true}, Validators.required],
+      deletedOn: [{value: '', disabled: true}, Validators.required],
+      createdBy: [{value: '', disabled: true}, Validators.required],
+      updateBy: [{value: '', disabled: true}, Validators.required],
+      deletedBy: [{value: '', disabled: true}, Validators.required]
     });
 
     ngOnInit() {
       if (this.data) {
         this.action = this.data.action;
-        if (this.action === 'Delete'){
+        if (this.action === 'Delete') {
           this.assetForm.disable();
 
+        } else if (this.action === 'Add') {
+          this.assetForm.controls['id'].disable();
+          this.assetForm.controls['clientId'].disable();
+          this.assetForm.controls['tenantId'].disable();
         }
         this.assetForm.patchValue(this.data);
+        console.log(this.data);
+        console.log(this.assetForm.value);
       }
 
     }

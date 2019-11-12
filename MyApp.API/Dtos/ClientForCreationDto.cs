@@ -5,6 +5,7 @@ namespace MyApp.API.Dtos
     public class ClientForCreationDto
     {
         //information of the client
+        public int TenantId { get; set; } 
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string FullName { get; set; }
@@ -19,14 +20,8 @@ namespace MyApp.API.Dtos
         public string Email { get; set; }
         public string Phone { get; set; }
         public string Observations { get; set; }
-        public int UserId { get; set; }
-        public DateTime CreatedDate { get; set; }
-        public DateTime LastModifiedDate { get; set; }
-        public ClientForCreationDto()
-        {   
-            CreatedDate=DateTime.Now;
-            LastModifiedDate=DateTime.Now;
-        }
+
+      
 
     }
 }

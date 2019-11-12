@@ -169,31 +169,31 @@ namespace MyApp.API.Data
             return messages;
         }
 
-        public async Task<IEnumerable<Client>> GetClients(int currentUserId)
+        public async Task<IEnumerable<Client>> GetClients(int currentTenantId)
         {
            var clients= await _context.Clients
-           .Where(c => c.UserId==currentUserId)
+           .Where(c => c.TenantId==currentTenantId)
            .ToListAsync();
             return clients;
         }
  
-        public async Task<Client> GetClient(int id, int currentUserId)
+        public async Task<Client> GetClient(int id, int currentTenantId)
         {    
             var query = _context.Clients.AsQueryable();
-            var client = await query.FirstOrDefaultAsync(c => c.Id==id && c.UserId==currentUserId);
+            var client = await query.FirstOrDefaultAsync(c => c.Id==id && c.TenantId==currentTenantId);
             return client;   
         }
-        public async Task<IEnumerable<Asset>> GetAssets(int clientId, int currentUserId)
+        public async Task<IEnumerable<Asset>> GetAssets(int clientId, int currentTenantId)
         {     
              var assets= await _context.Assets
-             .Where(c=> c.ClientId==clientId && c.Client.UserId==currentUserId)
+             .Where(c=> c.ClientId==clientId && c.Client.TenantId==currentTenantId)
              .ToListAsync(); 
             return assets;
         }
-        public async Task<Asset> GetAsset(int id, int clientId, int currentUserId)
+        public async Task<Asset> GetAsset(int id, int clientId, int currentTenantId)
         {           
             var asset= await _context.Assets
-             .Where(c=> c.Id==id && c.Client.Id==clientId && c.Client.UserId==currentUserId)
+             .Where(c=> c.Id==id && c.Client.Id==clientId && c.Client.TenantId==currentTenantId)
              .FirstOrDefaultAsync(); 
             return asset;
         }

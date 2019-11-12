@@ -22,7 +22,7 @@ export class ClientSkeletonComponent implements OnInit {
   @HostListener('window:beforeunload', ['$event'])
 
   unloadNotification($event: any) {
-   
+
     if (this.clientDetailComponent.clientForm.dirty) {
       $event.returnValue = true;
     }

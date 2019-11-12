@@ -19,10 +19,10 @@ namespace MyApp.API.Data
         Task<Message> GetMessage(int id);
         Task<PagedList<Message>> GetMessagesForUser(MessageParams messageParams);
         Task<IEnumerable<Message>> GetMessageThread(int userId, int recipientId);
-        Task<IEnumerable<Client>> GetClients(int currentUserId);
-        Task<Client> GetClient(int id, int currentUserId);
-        Task<IEnumerable<Asset>> GetAssets(int clientId, int currentUserId);
-        Task<Asset> GetAsset(int id, int clientId, int currentUserId);
+        Task<IEnumerable<Client>> GetClients(int currentTenantId);
+        Task<Client> GetClient(int id, int currentTenantId);
+        Task<IEnumerable<Asset>> GetAssets(int clientId, int currentTenantId);
+        Task<Asset> GetAsset(int id, int clientId, int currentTenantId);
          
 
          

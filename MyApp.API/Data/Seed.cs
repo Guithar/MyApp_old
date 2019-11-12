@@ -8,6 +8,50 @@ namespace MyApp.API.Data
 {
     public class Seed
     {
+        // public static void SeedTenantUsers(UserManager<User> userManager, RoleManager<Role> roleManager)
+        // {
+        //     if (!userManager.Users.Any())
+        //     {
+        //         var tenantData = System.IO.File.ReadAllText("Data/SeedDataTenantUser.json");
+        //         var tenants = JsonConvert.DeserializeObject<List<Tenant>>(tenantData);
+
+        //         var roles = new List<Role>
+        //         {
+        //             new Role{Name = "Member"},
+        //             new Role{Name = "Admin"},
+        //             new Role{Name = "Moderator"},
+        //             new Role{Name = "VIP"},
+        //         };
+
+        //         foreach (var role in roles)
+        //         {
+        //             roleManager.CreateAsync(role).Wait();
+        //         }
+
+        //         foreach (var tenant in tenants)
+        //         {
+        //             foreach (var user in tenant.User) {
+        //                 user.Photos.SingleOrDefault().IsApproved = true;
+        //                 userManager.CreateAsync(user, "password").Wait();
+        //                 userManager.AddToRoleAsync(user, "Member").Wait();
+        //             }
+        //         }
+
+        //         var adminUser = new User
+        //         {
+        //             UserName = "Admin"
+        //         };
+
+        //         IdentityResult result = userManager.CreateAsync(adminUser, "password").Result;
+
+        //         if (result.Succeeded)
+        //         {
+        //             var admin = userManager.FindByNameAsync("Admin").Result;
+        //             userManager.AddToRolesAsync(admin, new[] {"Admin", "Moderator"}).Wait();
+        //         }
+        //     }
+        // }
+
         public static void SeedUsers(UserManager<User> userManager, RoleManager<Role> roleManager)
         {
             if (!userManager.Users.Any())
@@ -30,14 +74,15 @@ namespace MyApp.API.Data
 
                 foreach (var user in users)
                 {
-                    user.Photos.SingleOrDefault().IsApproved = true;
-                    userManager.CreateAsync(user, "password").Wait();
-                    userManager.AddToRoleAsync(user, "Member").Wait();
+                        user.Photos.SingleOrDefault().IsApproved = true;
+                        userManager.CreateAsync(user, "password").Wait();
+                        userManager.AddToRoleAsync(user, "Member").Wait();
                 }
 
                 var adminUser = new User
                 {
-                    UserName = "Admin"
+                    UserName = "Admin",
+                    TenantId=1
                 };
 
                 IdentityResult result = userManager.CreateAsync(adminUser, "password").Result;
@@ -76,11 +121,11 @@ namespace MyApp.API.Data
             }
          }
 
-        public static void SeedAssets(DataContext context)
+        public static void SeedDataCagetoryProductAsset(DataContext context)
          {
             if(!context.ProductCategories.Any())
             {
-                var productsData = System.IO.File.ReadAllText("Data/SeedDataAsset.json");
+                var productsData = System.IO.File.ReadAllText("Data/SeedDataCagetoryProductAsset.json");
                 var products = JsonConvert.DeserializeObject<List<ProductCategory>>(productsData);
                 foreach (var product in products)
                 {

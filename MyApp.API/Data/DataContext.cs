@@ -12,10 +12,10 @@ namespace MyApp.API.Data
         IdentityUserClaim<int>, UserRole, IdentityUserLogin<int>,
         IdentityRoleClaim<int>, IdentityUserToken<int>>
     {
-        private readonly int _tenantId;
-        public DataContext(int tenantId, DbContextOptions<DataContext> options) : base(options) 
+        
+        public DataContext( DbContextOptions<DataContext> options) : base(options) 
         {
-            _tenantId = tenantId;
+            
          }
 
         public DbSet<Value> Values { get; set; }
@@ -62,6 +62,23 @@ namespace MyApp.API.Data
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
+             builder.Entity<Tenant>(tenant =>
+            {
+                // audit fields
+                tenant.Property(c => c.CreatedOn).HasDefaultValueSql("getdate()");
+                tenant.Property(c => c.UpdatedOn).HasDefaultValueSql("getdate()");
+                tenant.Property(a => a.IsDeleted).HasDefaultValue(false);
+                tenant.HasQueryFilter(c => EF.Property<bool>(c, "IsDeleted") == false);
+            });
+            
+             builder.Entity<User>(user =>
+            {
+                // audit fields
+                user.Property(c => c.CreatedOn).HasDefaultValueSql("getdate()");
+                user.Property(c => c.UpdatedOn).HasDefaultValueSql("getdate()");
+                user.Property(a => a.IsDeleted).HasDefaultValue(false);
+                user.HasQueryFilter(c => EF.Property<bool>(c, "IsDeleted") == false);
+            });
 
             builder.Entity<UserRole>(userRole =>
             {
@@ -105,38 +122,51 @@ namespace MyApp.API.Data
 
             builder.Entity<Photo>().HasQueryFilter(p => p.IsApproved);
 
-            builder.Entity<Client>()
-            .Property(c => c.CreatedOn)
-            .HasDefaultValueSql("getdate()");
-            builder.Entity<Client>()
-           .Property(c => c.UpdatedOn)
-           .HasDefaultValueSql("getdate()");
-            builder.Entity<Client>()
-            .Property(c => c.FullName)
-            .HasComputedColumnSql("[LastName] + ', ' + [FirstName]");
 
-            builder.Entity<Client>()
-           .Property(a => a.IsDeleted)
-           .HasDefaultValue(false);
+            builder.Entity<Client>(client =>
+            {
+                client.Property(c => c.FullName).HasComputedColumnSql("[LastName] + ', ' + [FirstName]");
+                // audit fields
+                client.Property(a => a.IsActive).HasDefaultValue(true);
+                client.Property(c => c.CreatedOn).HasDefaultValueSql("getdate()");
+                client.Property(c => c.UpdatedOn).HasDefaultValueSql("getdate()");
+                client.Property(a => a.IsDeleted).HasDefaultValue(false);
+                client.HasQueryFilter(c => EF.Property<bool>(c, "IsDeleted") == false);
+            });
 
-            builder.Entity<Client>().HasQueryFilter(
-                c => EF.Property<bool>(c, "IsDeleted") == false 
-                && c.TenantId==this._tenantId);
+            builder.Entity<Asset>(asset =>
+            {
+                asset.Property(a => a.ManufacturedDate).HasDefaultValueSql("getdate()");
+                asset.Property(a => a.IsActive).HasDefaultValue(true);
+                asset.Property(a => a.Quantity).HasDefaultValue(1);
+                // audit fields
+                asset.Property(a => a.IsActive).HasDefaultValue(true);
+                asset.Property(c => c.CreatedOn).HasDefaultValueSql("getdate()");
+                asset.Property(c => c.UpdatedOn).HasDefaultValueSql("getdate()");
+                asset.Property(a => a.IsDeleted).HasDefaultValue(false);
+                asset.HasQueryFilter(c => EF.Property<bool>(c, "IsDeleted") == false);
+            });
+             builder.Entity<Product>(product =>
+            {  
+                // audit fields
+                product.Property(a => a.IsActive).HasDefaultValue(true);
+                product.Property(c => c.CreatedOn).HasDefaultValueSql("getdate()");
+                product.Property(c => c.UpdatedOn).HasDefaultValueSql("getdate()");
+                product.Property(a => a.IsDeleted).HasDefaultValue(false);
+                product.HasQueryFilter(c => EF.Property<bool>(c, "IsDeleted") == false);
+            });
+
+            builder.Entity<ProductCategory>(productCategory =>
+            {
+                // audit fields
+                productCategory.Property(a => a.IsActive).HasDefaultValue(true);
+                productCategory.Property(c => c.CreatedOn).HasDefaultValueSql("getdate()");
+                productCategory.Property(c => c.UpdatedOn).HasDefaultValueSql("getdate()");
+                productCategory.Property(a => a.IsDeleted).HasDefaultValue(false);
+                productCategory.HasQueryFilter(c => EF.Property<bool>(c, "IsDeleted") == false);
+            });
             
-
-            builder.Entity<Asset>()
-           .Property(a => a.CreatedDate)
-           .HasDefaultValueSql("getdate()");
-            builder.Entity<Asset>()
-            .Property(a => a.ManufacturedDate)
-            .HasDefaultValueSql("getdate()");
-            builder.Entity<Asset>()
-            .Property(a => a.Quantity)
-            .HasDefaultValue(1);
-            builder.Entity<Asset>()
-            .Property(a => a.IsActive)
-            .HasDefaultValue(true);
-
         }
+
     }
 }

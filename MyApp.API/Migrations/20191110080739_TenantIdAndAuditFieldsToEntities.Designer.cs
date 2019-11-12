@@ -10,8 +10,8 @@ using MyApp.API.Data;
 namespace MyApp.API.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20191106182718_TenantAndAuditFieldsToClient")]
-    partial class TenantAndAuditFieldsToClient
+    [Migration("20191110080739_TenantIdAndAuditFieldsToEntities")]
+    partial class TenantIdAndAuditFieldsToEntities
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -99,9 +99,15 @@ namespace MyApp.API.Migrations
 
                     b.Property<int>("ClientId");
 
-                    b.Property<DateTime>("CreatedDate")
+                    b.Property<int>("CreatedBy");
+
+                    b.Property<DateTime?>("CreatedOn")
                         .ValueGeneratedOnAdd()
                         .HasDefaultValueSql("getdate()");
+
+                    b.Property<int>("DeletedBy");
+
+                    b.Property<DateTime?>("DeletedOn");
 
                     b.Property<string>("Description");
 
@@ -110,6 +116,10 @@ namespace MyApp.API.Migrations
                     b.Property<bool?>("IsActive")
                         .ValueGeneratedOnAdd()
                         .HasDefaultValue(true);
+
+                    b.Property<bool?>("IsDeleted")
+                        .ValueGeneratedOnAdd()
+                        .HasDefaultValue(false);
 
                     b.Property<string>("Location");
 
@@ -124,6 +134,14 @@ namespace MyApp.API.Migrations
                     b.Property<int>("Quantity")
                         .ValueGeneratedOnAdd()
                         .HasDefaultValue(1);
+
+                    b.Property<int>("TenantId");
+
+                    b.Property<int>("UpdatedBy");
+
+                    b.Property<DateTime?>("UpdatedOn")
+                        .ValueGeneratedOnAdd()
+                        .HasDefaultValueSql("getdate()");
 
                     b.HasKey("Id");
 
@@ -141,8 +159,6 @@ namespace MyApp.API.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Adress");
-
-                    b.Property<int>("AssetID");
 
                     b.Property<string>("City");
 
@@ -168,6 +184,10 @@ namespace MyApp.API.Migrations
                         .ValueGeneratedOnAddOrUpdate()
                         .HasComputedColumnSql("[LastName] + ', ' + [FirstName]");
 
+                    b.Property<bool?>("IsActive")
+                        .ValueGeneratedOnAdd()
+                        .HasDefaultValue(true);
+
                     b.Property<bool?>("IsDeleted")
                         .ValueGeneratedOnAdd()
                         .HasDefaultValue(false);
@@ -192,15 +212,11 @@ namespace MyApp.API.Migrations
                         .ValueGeneratedOnAdd()
                         .HasDefaultValueSql("getdate()");
 
-                    b.Property<int>("UserId");
-
                     b.Property<string>("ZIP_PostalCode");
 
                     b.HasKey("Id");
 
                     b.HasIndex("TenantId");
-
-                    b.HasIndex("UserId");
 
                     b.ToTable("Clients");
                 });
@@ -282,11 +298,37 @@ namespace MyApp.API.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int>("CreatedBy");
+
+                    b.Property<DateTime?>("CreatedOn")
+                        .ValueGeneratedOnAdd()
+                        .HasDefaultValueSql("getdate()");
+
+                    b.Property<int>("DeletedBy");
+
+                    b.Property<DateTime?>("DeletedOn");
+
                     b.Property<string>("Description");
+
+                    b.Property<bool?>("IsActive")
+                        .ValueGeneratedOnAdd()
+                        .HasDefaultValue(true);
+
+                    b.Property<bool?>("IsDeleted")
+                        .ValueGeneratedOnAdd()
+                        .HasDefaultValue(false);
 
                     b.Property<string>("Name");
 
                     b.Property<int>("ProductCategoryId");
+
+                    b.Property<int>("TenantId");
+
+                    b.Property<int>("UpdatedBy");
+
+                    b.Property<DateTime?>("UpdatedOn")
+                        .ValueGeneratedOnAdd()
+                        .HasDefaultValueSql("getdate()");
 
                     b.HasKey("Id");
 
@@ -301,9 +343,35 @@ namespace MyApp.API.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int>("CreatedBy");
+
+                    b.Property<DateTime?>("CreatedOn")
+                        .ValueGeneratedOnAdd()
+                        .HasDefaultValueSql("getdate()");
+
+                    b.Property<int>("DeletedBy");
+
+                    b.Property<DateTime?>("DeletedOn");
+
                     b.Property<string>("Description");
 
+                    b.Property<bool?>("IsActive")
+                        .ValueGeneratedOnAdd()
+                        .HasDefaultValue(true);
+
+                    b.Property<bool?>("IsDeleted")
+                        .ValueGeneratedOnAdd()
+                        .HasDefaultValue(false);
+
                     b.Property<string>("Name");
+
+                    b.Property<int>("TenantId");
+
+                    b.Property<int>("UpdatedBy");
+
+                    b.Property<DateTime?>("UpdatedOn")
+                        .ValueGeneratedOnAdd()
+                        .HasDefaultValueSql("getdate()");
 
                     b.HasKey("Id");
 
@@ -343,13 +411,35 @@ namespace MyApp.API.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int>("CreatedBy");
+
+                    b.Property<DateTime?>("CreatedOn")
+                        .ValueGeneratedOnAdd()
+                        .HasDefaultValueSql("getdate()");
+
+                    b.Property<int>("DeletedBy");
+
+                    b.Property<DateTime?>("DeletedOn");
+
                     b.Property<string>("Host");
+
+                    b.Property<bool?>("IsActive");
+
+                    b.Property<bool?>("IsDeleted")
+                        .ValueGeneratedOnAdd()
+                        .HasDefaultValue(false);
 
                     b.Property<string>("NIF");
 
                     b.Property<string>("Name");
 
                     b.Property<string>("Plan");
+
+                    b.Property<int>("UpdatedBy");
+
+                    b.Property<DateTime?>("UpdatedOn")
+                        .ValueGeneratedOnAdd()
+                        .HasDefaultValueSql("getdate()");
 
                     b.HasKey("Id");
 
@@ -373,6 +463,10 @@ namespace MyApp.API.Migrations
 
                     b.Property<DateTime>("Created");
 
+                    b.Property<DateTime?>("CreatedOn")
+                        .ValueGeneratedOnAdd()
+                        .HasDefaultValueSql("getdate()");
+
                     b.Property<DateTime>("DateOfBirth");
 
                     b.Property<string>("Email")
@@ -385,6 +479,12 @@ namespace MyApp.API.Migrations
                     b.Property<string>("Interests");
 
                     b.Property<string>("Introduction");
+
+                    b.Property<bool?>("IsActive");
+
+                    b.Property<bool?>("IsDeleted")
+                        .ValueGeneratedOnAdd()
+                        .HasDefaultValue(false);
 
                     b.Property<string>("KnownAs");
 
@@ -410,7 +510,13 @@ namespace MyApp.API.Migrations
 
                     b.Property<string>("SecurityStamp");
 
+                    b.Property<int>("TenantId");
+
                     b.Property<bool>("TwoFactorEnabled");
+
+                    b.Property<DateTime?>("UpdatedOn")
+                        .ValueGeneratedOnAdd()
+                        .HasDefaultValueSql("getdate()");
 
                     b.Property<string>("UserName")
                         .HasMaxLength(256);
@@ -424,6 +530,8 @@ namespace MyApp.API.Migrations
                         .IsUnique()
                         .HasName("UserNameIndex")
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
+
+                    b.HasIndex("TenantId");
 
                     b.ToTable("AspNetUsers");
                 });
@@ -505,11 +613,6 @@ namespace MyApp.API.Migrations
                         .WithMany("Client")
                         .HasForeignKey("TenantId")
                         .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("MyApp.API.Models.User", "User")
-                        .WithMany("Clients")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("MyApp.API.Models.Like", b =>
@@ -551,6 +654,14 @@ namespace MyApp.API.Migrations
                     b.HasOne("MyApp.API.Models.ProductCategory", "ProductCategory")
                         .WithMany("Products")
                         .HasForeignKey("ProductCategoryId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("MyApp.API.Models.User", b =>
+                {
+                    b.HasOne("MyApp.API.Models.Tenant", "Tenant")
+                        .WithMany("User")
+                        .HasForeignKey("TenantId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 

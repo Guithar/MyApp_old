@@ -29,8 +29,8 @@ namespace MyApp.API.Controllers
             [HttpGet]
             public async Task <ActionResult<IEnumerable<AssetForListDto>>> GetAssets(int clientId)
             {  
-                var currentUserId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value);
-                var Assets = await _repo.GetAssets(clientId, currentUserId);
+                var currentTenantId= int.Parse(User.FindFirst("TenantId").Value);
+                var Assets = await _repo.GetAssets(clientId, currentTenantId);
                 if (Assets == null)
                     return NotFound();
                  var AssetsToReturn=  _mapper.Map<IEnumerable<AssetForListDto>>(Assets);
@@ -41,8 +41,8 @@ namespace MyApp.API.Controllers
             
             public async Task<ActionResult<AssetForDetailedDto>> GetAsset(int id, int clientId)
             {   
-                var currentUserId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value);
-                var AssetFromRepo = await _repo.GetAsset(id, clientId, currentUserId);
+                var currentTenantId= int.Parse(User.FindFirst("TenantId").Value);
+                var AssetFromRepo = await _repo.GetAsset(id, clientId, currentTenantId);
                 if(AssetFromRepo==null)
                 return NotFound();
                 var AssetToReturn= _mapper.Map<AssetForDetailedDto>(AssetFromRepo);
@@ -56,9 +56,9 @@ namespace MyApp.API.Controllers
             // if(id != assetForUpdateDto.Id)
             //     return Unauthorized();
             
-            var currentUserId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value);
+            var currentTenantId= int.Parse(User.FindFirst("TenantId").Value);
 
-            var AssetFromRepo = await _repo.GetAsset(id, clientId, currentUserId);
+            var AssetFromRepo = await _repo.GetAsset(id, clientId, currentTenantId);
             if(AssetFromRepo==null)
              return NotFound();
 
@@ -69,12 +69,39 @@ namespace MyApp.API.Controllers
             return BadRequest("No changes were applied");
             //throw new Exception($"Updating Asset {id} failed on save");   
         }
+
+          [HttpPost]
+        public async Task<ActionResult<AssetForDetailedDto>> CreateAsset(int clientId, AssetForCreationDto assetForCreationDto)
+        {
+            var currentUserId= int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value);             var currentTenantId= int.Parse(User.FindFirst("TenantId").Value);
+            var ClientFromRepo = await _repo.GetClient(clientId, currentTenantId);
+            if (ClientFromRepo == null)
+               return Unauthorized();
+               
+            assetForCreationDto.TenantId = currentTenantId;
+            assetForCreationDto.ClientId = clientId;
+            assetForCreationDto.CreatedBy= currentUserId;
+            assetForCreationDto.UpdatedBy= currentUserId;
+
+            var asset = _mapper.Map<Asset>(assetForCreationDto);
+
+            _repo.Add(asset);
+
+            if (await _repo.SaveAll())
+            {
+                var assetToReturn= _mapper.Map<AssetForDetailedDto>(asset);
+                return CreatedAtRoute("GetAsset", new {id = asset.Id}, assetToReturn);
+            }
+
+            throw new Exception("Creating the asset failed on save");
+        }
+
          [HttpDelete("{id}")]
         public async Task<ActionResult<Asset>> DeleteAsset(int id, int clientId)
         {
-            var currentUserId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value);
+            var currentTenantId= int.Parse(User.FindFirst("TenantId").Value);
 
-            var AssetFromRepo = await _repo.GetAsset(id, clientId, currentUserId);
+            var AssetFromRepo = await _repo.GetAsset(id, clientId, currentTenantId);
             if(AssetFromRepo==null)
                 return NotFound();
              _repo.Delete(AssetFromRepo);

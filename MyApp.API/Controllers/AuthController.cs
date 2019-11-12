@@ -89,7 +89,9 @@ namespace MyApp.API.Controllers
             var claims = new List<Claim>
             {
                 new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
-                new Claim(ClaimTypes.Name, user.UserName)
+                new Claim(ClaimTypes.Name, user.UserName),
+                // TODO obtain the TenantId from Db or create new
+                new Claim("TenantId", "1") 
             };
 
             var roles = await _userManager.GetRolesAsync(user);

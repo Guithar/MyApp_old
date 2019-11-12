@@ -4,10 +4,10 @@ using System.Collections.Generic;
 namespace MyApp.API.Models
 {
     public class Client
-    {   // composite key ( Id, TenantId) in API fluent
+    {   // TODO composite key ( Id, TenantId) in API fluent
         public int Id { get; set; } 
         public int TenantId { get; set; } 
-        public virtual Tenant Tenant { get; set; }
+         public virtual Tenant Tenant { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string FullName { get; set; }
@@ -22,13 +22,13 @@ namespace MyApp.API.Models
         public string Email { get; set; }
         public string Phone { get; set; }
         public string Observations { get; set; }
-    
-        public virtual User User { get; set; }
-        public int UserId { get; set; }
+        
 
         public virtual ICollection<Asset> Assets { get; set; }
 
         // Audit Fields
+        
+        public bool? IsActive { get; set; }
          public bool? IsDeleted { get; set; }
         public DateTime? CreatedOn { get; set; }
         public DateTime? UpdatedOn { get; set; }

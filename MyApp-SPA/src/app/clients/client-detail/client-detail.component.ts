@@ -18,17 +18,34 @@ export class ClientDetailComponent implements OnInit {
 
   clientForm =  this.formBuilder.group({
     id: ['', Validators.required],
+    tenantId: ['', Validators.required],
+   fistName: ['', Validators.required],
+   lastName: ['', Validators.required],
+   fullName: ['', Validators.required],
     company: ['', Validators.required],
     nif: ['', Validators.required],
+    jobTitle: ['', Validators.required],
     adress: ['', Validators.required],
     city: ['', Validators.required],
+    state_Province: ['', Validators.required],
+    country: ['', Validators.required],
+    email: ['', Validators.required],
     phone: ['', Validators.required],
-    country: ['', Validators.required]
+    observations: ['', Validators.required],
+    isDeleted: ['', Validators.required],
+    createdOn: ['', Validators.required],
+    updatedOn: ['', Validators.required],
+    deletedOn: ['', Validators.required],
+    createdBy: ['', Validators.required],
+    updatedBy: ['', Validators.required],
+    deletedBy: ['', Validators.required]
   });
 
   ngOnInit() {
     if (this.client) {
     this.clientForm.patchValue(this.client);
+    console.log(this.client);
+    console.log(this.clientForm.value);
     }
 
   }

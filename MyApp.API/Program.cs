@@ -28,7 +28,7 @@ namespace MyApp.API
                     Seed.SeedTenants(context);
                     Seed.SeedUsers(userManager, roleManager);
                     Seed.SeedClients(context);
-                    Seed.SeedAssets(context);
+                    Seed.SeedDataCagetoryProductAsset(context);
                 } 
                 catch (Exception ex)
                 {

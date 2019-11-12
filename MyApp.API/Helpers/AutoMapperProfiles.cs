@@ -43,7 +43,7 @@ namespace MyApp.API.Helpers
             CreateMap<Asset,AssetForListDto>();
             CreateMap<Asset,AssetForDetailedDto>();
             CreateMap<AssetForUpdateDto,Asset>();
-            //CreateMap<AssetForCreationDto,Asset>();
+            CreateMap<AssetForCreationDto,Asset>();
 
 
         }

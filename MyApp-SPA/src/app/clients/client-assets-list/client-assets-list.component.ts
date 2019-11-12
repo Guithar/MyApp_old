@@ -14,8 +14,8 @@ import { ClientAssetDetailComponent } from '../client-asset-detail/client-asset-
 })
 
 export class ClientAssetsListComponent implements OnInit {
-  @Input()
-  clientId: number;
+  @Input() clientId: number;
+  @Input() tenantId: number;
   assets: Asset[];
 
   constructor(private alertify: AlertifyService, private assetService: AssetService,
@@ -84,12 +84,13 @@ export class ClientAssetsListComponent implements OnInit {
   }
   addData(asset: Asset) {
     console.log('addData');
-    this.assetService.createAsset(asset.clientId,
+    console.log(asset);
+    this.assetService.createAsset(this.clientId,
       asset).subscribe(() => {
           this.alertify.success('Asset created successfully');
           this.loadAssets();
         }, error => {
-          this.alertify.error(error);
+          this.alertify.error('error ' + error);
         });
   }
   deleteData(asset: Asset) {
