@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using MyApp.API.Dtos;
 using MyApp.API.Helpers;
 using MyApp.API.Models;
 
@@ -24,8 +25,8 @@ namespace MyApp.API.Data
         Task<IEnumerable<Asset>> GetAssets(int clientId, int currentTenantId);
         Task<Asset> GetAsset(int id, int clientId, int currentTenantId);
          
-
-         
+         Task<IEnumerable<ProductCategory>> GetCategoriesAndProducts(int currentTenantId);
+        Task<Product> GetProduct(int id,int currentTenantId);
         
     }
 }

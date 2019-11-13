@@ -197,5 +197,24 @@ namespace MyApp.API.Data
              .FirstOrDefaultAsync(); 
             return asset;
         }
+
+        public async Task<IEnumerable<ProductCategory>> GetCategoriesAndProducts(int currentTenantId)
+        {
+              
+             var CategoriesAndProducts= await _context.ProductCategories
+             .Include(x => x.Products)
+             .Where(pc=> pc.TenantId==currentTenantId)
+             .ToListAsync(); 
+            return CategoriesAndProducts;
+        
+        }
+
+        public async Task<Product> GetProduct(int id, int currentTenantId)
+        {
+            var product= await _context.Products
+             .Where(p=> p.Id == id && p.TenantId==currentTenantId )
+             .FirstOrDefaultAsync(); 
+            return product;
+        }
     }
 }
