@@ -11,8 +11,9 @@ import {MatButtonModule,
         MatTabsModule,
         MatSlideToggleModule,
         MatDatepickerModule,
-        MatNativeDateModule} from '@angular/material';
-import {MatDialogModule} from '@angular/material/dialog';
+        MatNativeDateModule,
+        MatDialogModule,
+        MatSelectModule} from '@angular/material';
 
 const MaterialComponents = [
   MatButtonModule,
@@ -28,7 +29,8 @@ const MaterialComponents = [
   MatDialogModule,
   MatSlideToggleModule,
   MatDatepickerModule,
-  MatNativeDateModule
+  MatNativeDateModule,
+  MatSelectModule
 ];
 
 @NgModule({

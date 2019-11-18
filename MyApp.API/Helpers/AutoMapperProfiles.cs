@@ -45,7 +45,7 @@ namespace MyApp.API.Helpers
             CreateMap<AssetForUpdateDto,Asset>();
             CreateMap<AssetForCreationDto,Asset>();
 
-            CreateMap<Product,ProductForListDto>();
+            CreateMap<Product,ProductForListDto>().ReverseMap();;
             CreateMap<ProductCategory,ProductCategoryForListDto>();
         }
     }

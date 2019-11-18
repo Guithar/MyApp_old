@@ -6,6 +6,7 @@ using MyApp.API.Helpers;
 using MyApp.API.Models;
 using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
+using MyApp.API.Dtos;
 
 namespace MyApp.API.Data
 {
@@ -186,27 +187,32 @@ namespace MyApp.API.Data
         public async Task<IEnumerable<Asset>> GetAssets(int clientId, int currentTenantId)
         {     
              var assets= await _context.Assets
-             .Where(c=> c.ClientId==clientId && c.Client.TenantId==currentTenantId)
+             .Include(p => p.Product)
+             .Where(a=> a.ClientId==clientId && a.TenantId==currentTenantId)
              .ToListAsync(); 
             return assets;
         }
         public async Task<Asset> GetAsset(int id, int clientId, int currentTenantId)
         {           
             var asset= await _context.Assets
-             .Where(c=> c.Id==id && c.Client.Id==clientId && c.Client.TenantId==currentTenantId)
+             .Include(p => p.Product)
+             .Where(a=> a.Id==id && a.ClientId==clientId && a.TenantId==currentTenantId)
              .FirstOrDefaultAsync(); 
             return asset;
         }
+       public async Task<IEnumerable<Product>> GetProducts(int currentTenantId, 
+        ProductParams productParams)
+        { 
+            var products=  _context.Products.AsQueryable();
 
-        public async Task<IEnumerable<ProductCategory>> GetCategoriesAndProducts(int currentTenantId)
-        {
-              
-             var CategoriesAndProducts= await _context.ProductCategories
-             .Include(x => x.Products)
-             .Where(pc=> pc.TenantId==currentTenantId)
-             .ToListAsync(); 
-            return CategoriesAndProducts;
-        
+            products= products.Where(p=> p.TenantId==currentTenantId);
+             
+            System.Console.WriteLine( productParams.categoryId);
+            if (productParams.categoryId != 0)
+            {
+             products= products.Where(p=> p.ProductCategoryId==productParams.categoryId);
+            }
+            return await products.ToListAsync();
         }
 
         public async Task<Product> GetProduct(int id, int currentTenantId)
@@ -216,5 +222,15 @@ namespace MyApp.API.Data
              .FirstOrDefaultAsync(); 
             return product;
         }
+         public async Task<IEnumerable<ProductCategory>> GetCategories(int currentTenantId)
+        {
+             var Categories= await _context.ProductCategories
+             .Where(c=> c.TenantId==currentTenantId)
+             .ToListAsync(); 
+            return Categories;
+        
+        }
+
+       
     }
 }

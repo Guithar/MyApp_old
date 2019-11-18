@@ -21,6 +21,7 @@ export class ClientListComponent implements OnInit {
   @ViewChild(MatSort, {static: true}) sort: MatSort;
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
 
+
   constructor(private clientService: ClientService, private alertify: AlertifyService,
   private route: ActivatedRoute, private router: Router, private dialog: MatDialog) {
   }
@@ -51,7 +52,7 @@ export class ClientListComponent implements OnInit {
       this.router.navigate(['clients/' + row.id]);
   }
 
-  
+
   openDialog(action: string, obj: any) {
     obj.action = action;
    const dialogConfig = new MatDialogConfig<any>();

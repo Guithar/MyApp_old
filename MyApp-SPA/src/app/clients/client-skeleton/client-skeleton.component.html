@@ -3,7 +3,7 @@
     <strong *ngIf="client"> {{client.company}}</strong>
     <small> Form</small>
 </div>
-<mat-tab-group>
+<mat-tab-group [selectedIndex]="1">
     <mat-tab>
         <ng-template mat-tab-label>
             Detail

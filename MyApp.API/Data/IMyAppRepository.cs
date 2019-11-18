@@ -24,9 +24,9 @@ namespace MyApp.API.Data
         Task<Client> GetClient(int id, int currentTenantId);
         Task<IEnumerable<Asset>> GetAssets(int clientId, int currentTenantId);
         Task<Asset> GetAsset(int id, int clientId, int currentTenantId);
-         
-         Task<IEnumerable<ProductCategory>> GetCategoriesAndProducts(int currentTenantId);
+        Task<IEnumerable<Product>> GetProducts(int currentTenantId, ProductParams productParams);
         Task<Product> GetProduct(int id,int currentTenantId);
+        Task<IEnumerable<ProductCategory>> GetCategories(int currentTenantId);
         
     }
 }

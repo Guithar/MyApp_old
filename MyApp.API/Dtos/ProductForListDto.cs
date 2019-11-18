@@ -12,6 +12,7 @@ namespace MyApp.API.Dtos
         public int ProductCategoryId { get; set; }
         public string ProductCategoryName { get; set; }
         public string ProductCategoryDescription{ get; set; }
+        // TODO change name to CategoryId (migrations seeds)
 
                // Audit Fields
         public bool? IsActive { get; set; }

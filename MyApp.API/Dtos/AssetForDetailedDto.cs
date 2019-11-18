@@ -1,4 +1,5 @@
 using System;
+using MyApp.API.Models;
 
 namespace MyApp.API.Dtos
 {
@@ -6,6 +7,7 @@ namespace MyApp.API.Dtos
     {
         public int Id { get; set; }
         public int ClientId { get; set; }
+        public int TenantId { get; set; }
         public string ClientCompany { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
@@ -15,7 +17,8 @@ namespace MyApp.API.Dtos
         public DateTime ManufacturedDate { get; set; }
         public DateTime? InstalledDate { get; set; }
         public int ProductId { get; set; }
-        public string ProductName { get; set; } 
+        public ProductForListDto product { get; set; }
+
             // Audit Fields
          public bool? IsDeleted { get; set; }
         public DateTime? CreatedOn { get; set; }

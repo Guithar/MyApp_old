@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using MyApp.API.Data;
 using MyApp.API.Dtos;
+using MyApp.API.Helpers;
 using MyApp.API.Models;
 
 namespace MyApp.API.Controllers
@@ -25,29 +26,29 @@ namespace MyApp.API.Controllers
             _repo = repo;
                 
         }
-
-  [HttpGet]
-            public async Task <ActionResult<IEnumerable<ProductCategoryForListDto>>> GetCategoriesAndProducts()
-            {  
-                var currentTenantId= int.Parse(User.FindFirst("TenantId").Value);
-                var categoriesAndProducts = await _repo.GetCategoriesAndProducts( currentTenantId);
-                if (categoriesAndProducts == null)
-                    return NotFound();
-                var ProductsToReturn= _mapper.Map<IEnumerable<ProductCategoryForListDto>>(categoriesAndProducts);
-                return new List<ProductCategoryForListDto>(ProductsToReturn);
-               
-            }
-            [HttpGet("{id}", Name="GetProduct")]
-            
-            public async Task<ActionResult<ProductForListDto>> GetProduct(int id)
-            {   
-                var currentTenantId= int.Parse(User.FindFirst("TenantId").Value);
-                var productFromRepo = await _repo.GetProduct(id,currentTenantId);
-                if(productFromRepo==null)
+        [HttpGet]
+        public async Task <ActionResult<IEnumerable<ProductForListDto>>> getProducts([FromQuery] ProductParams productParams)
+        {  
+            var currentTenantId= int.Parse(User.FindFirst("TenantId").Value);
+            var products = await _repo.GetProducts( currentTenantId, productParams);
+            if (products == null)
                 return NotFound();
-                var productToReturn= _mapper.Map<ProductForListDto>(productFromRepo);
-                return productToReturn;
-              
-            }
+            var ProductsToReturn= _mapper.Map<IEnumerable<ProductForListDto>>(products);
+            return new List<ProductForListDto>(ProductsToReturn);
+            
+        }
+
+        [HttpGet("{id}", Name="GetProduct")]
+        
+        public async Task<ActionResult<ProductForListDto>> GetProduct(int id)
+        {   
+            var currentTenantId= int.Parse(User.FindFirst("TenantId").Value);
+            var productFromRepo = await _repo.GetProduct(id,currentTenantId);
+            if(productFromRepo==null)
+            return NotFound();
+            var productToReturn= _mapper.Map<ProductForListDto>(productFromRepo);
+            return productToReturn;
+            
+        }
     }
 }

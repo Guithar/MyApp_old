@@ -4,11 +4,10 @@ namespace MyApp.API.Dtos
 {
     public class AssetForListDto
     {
-        
         public int Id { get; set; }
         public int ClientId { get; set; }
         public int TenantId {get;set;}
-        public string Name { get; set; }
+    
         public string Description { get; set; }
         public string Location { get; set; }
         public int Quantity { get; set; }
@@ -16,7 +15,9 @@ namespace MyApp.API.Dtos
         public DateTime ManufacturedDate { get; set; }
         public DateTime? InstalledDate { get; set; }
         public int ProductId { get; set; }
-        public string ProductName { get; set; }
+        public int ProductProductCategoryId { get; set; }
+
+        public ProductForListDto Product { get; set; }
 
                   // Audit Fields
          public bool? IsDeleted { get; set; }

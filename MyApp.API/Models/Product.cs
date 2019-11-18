@@ -9,7 +9,7 @@ namespace MyApp.API.Models
         public int TenantId { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
-        public int ProductCategoryId { get; set; }
+        public int ProductCategoryId { get; set; } // TODO change name to CategoryId (migrations seeds)
         public virtual ProductCategory ProductCategory { get; set; }
         public virtual ICollection<Asset> Assets { get; set; }
 

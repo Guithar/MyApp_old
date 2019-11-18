@@ -33,9 +33,9 @@ namespace MyApp.API.Controllers
                 var Assets = await _repo.GetAssets(clientId, currentTenantId);
                 if (Assets == null)
                     return NotFound();
+
                  var AssetsToReturn=  _mapper.Map<IEnumerable<AssetForListDto>>(Assets);
                  return new List<AssetForListDto> (AssetsToReturn);
-               
             }
             [HttpGet("{id}", Name="GetAsset")]
             
@@ -61,8 +61,10 @@ namespace MyApp.API.Controllers
             var AssetFromRepo = await _repo.GetAsset(id, clientId, currentTenantId);
             if(AssetFromRepo==null)
              return NotFound();
-
+                // TODO update only ProductId and not the properties of Product
             _mapper.Map(assetForUpdateDto, AssetFromRepo);
+                     // si me traigo el subObjeto product el problema está al mapear,
+                    // porque intensa sobreescribir el objeto product y su id           
 
             if (await _repo.SaveAll())
                 return NoContent();

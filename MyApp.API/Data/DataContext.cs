@@ -12,10 +12,10 @@ namespace MyApp.API.Data
         IdentityUserClaim<int>, UserRole, IdentityUserLogin<int>,
         IdentityRoleClaim<int>, IdentityUserToken<int>>
     {
-        private readonly int _tenantId;
-        public DataContext(int tenantId, DbContextOptions<DataContext> options) : base(options) 
+        
+        public DataContext( DbContextOptions<DataContext> options) : base(options) 
         {
-            _tenantId = tenantId;
+            
          }
 
         public DbSet<Value> Values { get; set; }
@@ -137,8 +137,7 @@ namespace MyApp.API.Data
            .HasDefaultValue(false);
 
             builder.Entity<Client>().HasQueryFilter(
-                c => EF.Property<bool>(c, "IsDeleted") == false 
-                && c.TenantId==this._tenantId);
+                c => EF.Property<bool>(c, "IsDeleted") == false);
             
 
             builder.Entity<Asset>()

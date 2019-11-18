@@ -1,7 +1,6 @@
 import { Component, OnInit, Input, ViewChild } from '@angular/core';
 import { AlertifyService } from 'src/app/_services/alertify.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Client } from 'src/app/_models/client';
 import { AssetService } from 'src/app/_services/asset.service';
 import { MatTableDataSource, MatPaginator, MatSort, MatDialog, MatDialogConfig, MatTable } from '@angular/material';
 import { Asset } from 'src/app/_models/asset';
@@ -23,7 +22,8 @@ export class ClientAssetsListComponent implements OnInit {
 
     dataSource: MatTableDataSource<Asset>;
     displayedColumns: string[] = ['id', 'name', 'description', 'location', 'quantity',
-        'isActive', 'manufacturedDate', 'installedDate', 'productId', 'productName', 'actions'];
+        'isActive', 'manufacturedDate', 'installedDate', 'productId',
+        'product.productCategoryName', 'actions'];
 
     @ViewChild(MatSort, {static: true}) sort: MatSort;
     @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
@@ -43,6 +43,7 @@ export class ClientAssetsListComponent implements OnInit {
         this.dataSource = new MatTableDataSource(assets);
         this.dataSource.sort = this.sort;
         this.dataSource.paginator = this.paginator;
+        console.log(assets);
     }, error => {
       this.alertify.error(error);
     });

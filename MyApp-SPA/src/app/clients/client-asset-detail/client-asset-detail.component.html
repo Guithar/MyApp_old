@@ -1,91 +1,83 @@
 <div class="container">
-        <h3 mat-dialog-title>{{action}} Asset id: {{data.id}}</h3>
-      
-        <form [formGroup]="assetForm"   id="assetForm" >
-      
-          <div class="form">
-            <mat-form-field >
-              <input matInput #input  placeholder="quantity" 
-                formControlName="quantity" id="quantity"  >
-            </mat-form-field>
+  <h3 mat-dialog-title>{{action}} Asset id: {{data.id}}</h3>
 
-            <mat-form-field color="accent">
-              <input matInput #input  placeholder="name"
-                formControlName="name" name="name" >
-            </mat-form-field>
-          </div>
+  <form [formGroup]="assetForm">
 
+    <div class="form">
+      <mat-form-field>
+        <input matInput placeholder="quantity" formControlName="quantity" >
+      </mat-form-field>
+    </div>
 
-          <div class="form">
-            <mat-form-field >
-              <textarea matInput #input  placeholder="description" 
-                formControlName="description" id="description" >
+    <div class="form">
+      <mat-form-field>
+        <textarea matInput  placeholder="description" formControlName="description">
               </textarea>
-            </mat-form-field>
-          </div>
+      </mat-form-field>
+    </div>
+
+    <div class="form">
+      <mat-form-field>
+        <input matInput  placeholder="location" formControlName="location">
+      </mat-form-field>
+    </div>
+
+    <div class="form">
+      <mat-slide-toggle  formControlName="isActive">
+        Is Active
+      </mat-slide-toggle>
+    </div>
+
+    <div class="form">
+      <span>
+        <mat-form-field>
+          <input matInput  [matDatepicker]="picker2" placeholder="Manufactured date"
+            formControlName="manufacturedDate" [value]="data.manufacturedDate">
+          <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+          <mat-datepicker #picker2></mat-datepicker>
+        </mat-form-field>
+      </span>
+<div></div>
+      <span>
+        <mat-form-field>
+          <input matInput  [matDatepicker]="picker1" placeholder="installedDate" formControlName="installedDate"
+            id="installedDate" [value]="assetForm.get('installedDate').value">
+          <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+          <mat-datepicker #picker1></mat-datepicker>
+        </mat-form-field>
+      </span>
+    </div>
+
     
-          <div class="form">
-            <mat-form-field >
-              <input matInput #input  placeholder="location" 
-                formControlName="location" id="location"  >
-            </mat-form-field>
-          </div>
-          
-          <div class="form">
-              <mat-slide-toggle #input 
-              formControlName="isActive" id="isActive">
-              Is Active
-            </mat-slide-toggle>
-          </div>
 
-          <div class="form">
-            
-            <!-- <mat-form-field >
-              <input matInput #input  placeholder="manufacturedDate" 
-                formControlName="manufacturedDate" id="manufacturedDate"
-                [value]="assetForm.get('manufacturedDate').value | date:'MMM, y'">
-            </mat-form-field>
-          -->
-        
-            <mat-form-field>
-              <input matInput #input [matDatepicker]="picker2" placeholder="Manufactured date"
-              formControlName="manufacturedDate" id="manufacturedDate"
-              [value]="data.manufacturedDate">
-              <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
-              <mat-datepicker #picker2></mat-datepicker>
-            </mat-form-field>
-          
-            <mat-form-field>
-              <input matInput #input [matDatepicker]="picker1" placeholder="installedDate"
-              formControlName="installedDate" id="installedDate"
-              [value]="assetForm.get('installedDate').value">
-              <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
-              <mat-datepicker #picker1></mat-datepicker>
-            </mat-form-field>
-          
-           
-          </div>
-          
-
-          <div class="form">
-            <mat-form-field >
-              <input matInput #input  placeholder="productId" 
-                formControlName="productId" id="productId"  >
-            </mat-form-field>
-          </div>
-          
-
-          <div class="form">
-            <mat-form-field >
-              <input matInput #input  placeholder="productName" 
-                formControlName="productName" id="productName"  >
-            </mat-form-field>
-          </div>
-
-          <div  mat-dialog-actions>
-            <button mat-button (click)="submit()" >{{action}}</button>
-            <button mat-button (click)="closeDialog()" tabindex="-1">Cancel</button>
-          </div>
-          
-        </form>
+      <div class="form">
+        <mat-form-field>
+          <mat-select placeholder="Select Category" formControlName="productProductCategoryId"
+             (selectionChange)="getProductsOfCategory($event.value)">
+            <mat-option [value]="category.id" *ngFor="let category of Categories">
+              {{category.id}}-{{category.name}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
       </div>
+
+
+      <div class="form">
+        <mat-form-field>
+          <mat-select [value]="this.data.product" placeholder="Select Product"
+          formControlName="productId">
+            <mat-option [value]="product.id" *ngFor="let product of ListOfProducts">
+              {{product.id}}-{{product.name}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    
+
+    <div mat-dialog-actions>
+      <button mat-button (click)="submit()">{{action}}</button>
+      <button mat-button (click)="closeDialog()" tabindex="-1">Cancel</button>
+    </div>
+
+  </form>
+</div>
