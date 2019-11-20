@@ -8,49 +8,6 @@ namespace MyApp.API.Data
 {
     public class Seed
     {
-        // public static void SeedTenantUsers(UserManager<User> userManager, RoleManager<Role> roleManager)
-        // {
-        //     if (!userManager.Users.Any())
-        //     {
-        //         var tenantData = System.IO.File.ReadAllText("Data/SeedDataTenantUser.json");
-        //         var tenants = JsonConvert.DeserializeObject<List<Tenant>>(tenantData);
-
-        //         var roles = new List<Role>
-        //         {
-        //             new Role{Name = "Member"},
-        //             new Role{Name = "Admin"},
-        //             new Role{Name = "Moderator"},
-        //             new Role{Name = "VIP"},
-        //         };
-
-        //         foreach (var role in roles)
-        //         {
-        //             roleManager.CreateAsync(role).Wait();
-        //         }
-
-        //         foreach (var tenant in tenants)
-        //         {
-        //             foreach (var user in tenant.User) {
-        //                 user.Photos.SingleOrDefault().IsApproved = true;
-        //                 userManager.CreateAsync(user, "password").Wait();
-        //                 userManager.AddToRoleAsync(user, "Member").Wait();
-        //             }
-        //         }
-
-        //         var adminUser = new User
-        //         {
-        //             UserName = "Admin"
-        //         };
-
-        //         IdentityResult result = userManager.CreateAsync(adminUser, "password").Result;
-
-        //         if (result.Succeeded)
-        //         {
-        //             var admin = userManager.FindByNameAsync("Admin").Result;
-        //             userManager.AddToRolesAsync(admin, new[] {"Admin", "Moderator"}).Wait();
-        //         }
-        //     }
-        // }
 
         public static void SeedUsers(UserManager<User> userManager, RoleManager<Role> roleManager)
         {
@@ -131,6 +88,20 @@ namespace MyApp.API.Data
                 {
                     
                     context.ProductCategories.Add(product);
+                };
+                context.SaveChanges();
+            }
+         }
+         public static void SeedDataMaint(DataContext context)
+         {
+            if(!context.MaintSchedules.Any())
+            {
+                var MaintData = System.IO.File.ReadAllText("Data/SeedDataMaint.json");
+                var MaintSchedules = JsonConvert.DeserializeObject<List<MaintSchedule>>(MaintData);
+                foreach (var MaintSchedule in MaintSchedules)
+                {
+                    
+                    context.MaintSchedules.Add(MaintSchedule);
                 };
                 context.SaveChanges();
             }

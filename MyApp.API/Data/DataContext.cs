@@ -28,6 +28,14 @@ namespace MyApp.API.Data
         public DbSet<Asset> Assets { get; set; }
         public DbSet<Tenant> Tenants { get; set; }
 
+        public DbSet<MaintSchedule> MaintSchedules { get; set; }
+        public DbSet<AssetMaintSchedule> AssetMaintSchedules { get; set; }
+        public DbSet<MaintResult> MaintResults { get; set; }
+        public DbSet<MaintOperation> MaintOperations { get; set; }
+        
+
+
+
         public override int SaveChanges()
         {
             UpdateSoftDeleteStatuses();
@@ -121,38 +129,7 @@ namespace MyApp.API.Data
                 .OnDelete(DeleteBehavior.Restrict);
 
             builder.Entity<Photo>().HasQueryFilter(p => p.IsApproved);
-
-            builder.Entity<Client>()
-            .Property(c => c.CreatedOn)
-            .HasDefaultValueSql("getdate()");
-            builder.Entity<Client>()
-           .Property(c => c.UpdatedOn)
-           .HasDefaultValueSql("getdate()");
-            builder.Entity<Client>()
-            .Property(c => c.FullName)
-            .HasComputedColumnSql("[LastName] + ', ' + [FirstName]");
-
-            builder.Entity<Client>()
-           .Property(a => a.IsDeleted)
-           .HasDefaultValue(false);
-
-            builder.Entity<Client>().HasQueryFilter(
-                c => EF.Property<bool>(c, "IsDeleted") == false);
-            
-
-            builder.Entity<Asset>()
-           .Property(a => a.CreatedOn)
-           .HasDefaultValueSql("getdate()");
-            builder.Entity<Asset>()
-            .Property(a => a.ManufacturedDate)
-            .HasDefaultValueSql("getdate()");
-            builder.Entity<Asset>()
-            .Property(a => a.Quantity)
-            .HasDefaultValue(1);
-            builder.Entity<Asset>()
-            .Property(a => a.IsActive)
-            .HasDefaultValue(true);
-
+ 
 
             builder.Entity<Client>(client =>
             {
@@ -196,6 +173,12 @@ namespace MyApp.API.Data
                 productCategory.Property(a => a.IsDeleted).HasDefaultValue(false);
                 productCategory.HasQueryFilter(c => EF.Property<bool>(c, "IsDeleted") == false);
             });
+
+            builder.Entity<AssetMaintSchedule>(AssetMaintSchedule =>
+            {
+                AssetMaintSchedule.HasKey(x => new{x.MaintScheduleId, x.AssetId});
+            });
+
             
         }
 
