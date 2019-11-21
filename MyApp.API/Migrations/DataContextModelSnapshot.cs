@@ -150,37 +150,6 @@ namespace MyApp.API.Migrations
                     b.ToTable("Assets");
                 });
 
-            modelBuilder.Entity("MyApp.API.Models.AssetMaintSchedule", b =>
-                {
-                    b.Property<int>("MaintScheduleId");
-
-                    b.Property<int>("AssetId");
-
-                    b.Property<int>("CreatedBy");
-
-                    b.Property<DateTime?>("CreatedOn");
-
-                    b.Property<int>("DeletedBy");
-
-                    b.Property<DateTime?>("DeletedOn");
-
-                    b.Property<bool?>("IsActive");
-
-                    b.Property<bool?>("IsDeleted");
-
-                    b.Property<int>("TenantId");
-
-                    b.Property<int>("UpdatedBy");
-
-                    b.Property<DateTime?>("UpdatedOn");
-
-                    b.HasKey("MaintScheduleId", "AssetId");
-
-                    b.HasIndex("AssetId");
-
-                    b.ToTable("AssetMaintSchedules");
-                });
-
             modelBuilder.Entity("MyApp.API.Models.Client", b =>
                 {
                     b.Property<int>("Id")
@@ -314,7 +283,9 @@ namespace MyApp.API.Migrations
 
                     b.Property<int>("CreatedBy");
 
-                    b.Property<DateTime?>("CreatedOn");
+                    b.Property<DateTime?>("CreatedOn")
+                        .ValueGeneratedOnAdd()
+                        .HasDefaultValueSql("getdate()");
 
                     b.Property<int>("DeletedBy");
 
@@ -324,9 +295,13 @@ namespace MyApp.API.Migrations
 
                     b.Property<DateTime>("ExecutedOn");
 
-                    b.Property<bool?>("IsActive");
+                    b.Property<bool?>("IsActive")
+                        .ValueGeneratedOnAdd()
+                        .HasDefaultValue(true);
 
-                    b.Property<bool?>("IsDeleted");
+                    b.Property<bool?>("IsDeleted")
+                        .ValueGeneratedOnAdd()
+                        .HasDefaultValue(false);
 
                     b.Property<int>("MaintScheduleId");
 
@@ -338,13 +313,13 @@ namespace MyApp.API.Migrations
 
                     b.Property<int>("UpdatedBy");
 
-                    b.Property<DateTime?>("UpdatedOn");
+                    b.Property<DateTime?>("UpdatedOn")
+                        .ValueGeneratedOnAdd()
+                        .HasDefaultValueSql("getdate()");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("AssetId");
-
-                    b.HasIndex("MaintScheduleId");
+                    b.HasIndex("AssetId", "MaintScheduleId");
 
                     b.ToTable("MaintResults");
                 });
@@ -357,7 +332,9 @@ namespace MyApp.API.Migrations
 
                     b.Property<int>("CreatedBy");
 
-                    b.Property<DateTime?>("CreatedOn");
+                    b.Property<DateTime?>("CreatedOn")
+                        .ValueGeneratedOnAdd()
+                        .HasDefaultValueSql("getdate()");
 
                     b.Property<int>("DeletedBy");
 
@@ -365,9 +342,13 @@ namespace MyApp.API.Migrations
 
                     b.Property<string>("Description");
 
-                    b.Property<bool?>("IsActive");
+                    b.Property<bool?>("IsActive")
+                        .ValueGeneratedOnAdd()
+                        .HasDefaultValue(true);
 
-                    b.Property<bool?>("IsDeleted");
+                    b.Property<bool?>("IsDeleted")
+                        .ValueGeneratedOnAdd()
+                        .HasDefaultValue(false);
 
                     b.Property<int>("MonthsInterval");
 
@@ -377,11 +358,52 @@ namespace MyApp.API.Migrations
 
                     b.Property<int>("UpdatedBy");
 
-                    b.Property<DateTime?>("UpdatedOn");
+                    b.Property<DateTime?>("UpdatedOn")
+                        .ValueGeneratedOnAdd()
+                        .HasDefaultValueSql("getdate()");
 
                     b.HasKey("Id");
 
                     b.ToTable("MaintSchedules");
+                });
+
+            modelBuilder.Entity("MyApp.API.Models.MaintScheduleAsset", b =>
+                {
+                    b.Property<int>("MaintScheduleId");
+
+                    b.Property<int>("AssetId");
+
+                    b.Property<int>("CreatedBy");
+
+                    b.Property<DateTime?>("CreatedOn")
+                        .ValueGeneratedOnAdd()
+                        .HasDefaultValueSql("getdate()");
+
+                    b.Property<int>("DeletedBy");
+
+                    b.Property<DateTime?>("DeletedOn");
+
+                    b.Property<bool?>("IsActive")
+                        .ValueGeneratedOnAdd()
+                        .HasDefaultValue(true);
+
+                    b.Property<bool?>("IsDeleted")
+                        .ValueGeneratedOnAdd()
+                        .HasDefaultValue(false);
+
+                    b.Property<int>("TenantId");
+
+                    b.Property<int>("UpdatedBy");
+
+                    b.Property<DateTime?>("UpdatedOn")
+                        .ValueGeneratedOnAdd()
+                        .HasDefaultValueSql("getdate()");
+
+                    b.HasKey("MaintScheduleId", "AssetId");
+
+                    b.HasIndex("AssetId");
+
+                    b.ToTable("MaintSchedulesAssets");
                 });
 
             modelBuilder.Entity("MyApp.API.Models.Message", b =>
@@ -757,19 +779,6 @@ namespace MyApp.API.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("MyApp.API.Models.AssetMaintSchedule", b =>
-                {
-                    b.HasOne("MyApp.API.Models.Asset", "Asset")
-                        .WithMany("AssetMaintSchedules")
-                        .HasForeignKey("AssetId")
-                        .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("MyApp.API.Models.MaintSchedule", "MaintSchedule")
-                        .WithMany("AssetMaintSchedules")
-                        .HasForeignKey("MaintScheduleId")
-                        .OnDelete(DeleteBehavior.Cascade);
-                });
-
             modelBuilder.Entity("MyApp.API.Models.Client", b =>
                 {
                     b.HasOne("MyApp.API.Models.Tenant", "Tenant")
@@ -801,13 +810,21 @@ namespace MyApp.API.Migrations
 
             modelBuilder.Entity("MyApp.API.Models.MaintResult", b =>
                 {
-                    b.HasOne("MyApp.API.Models.Asset", "Asset")
+                    b.HasOne("MyApp.API.Models.MaintScheduleAsset", "MaintScheduleAsset")
                         .WithMany("MaintResults")
+                        .HasForeignKey("AssetId", "MaintScheduleId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("MyApp.API.Models.MaintScheduleAsset", b =>
+                {
+                    b.HasOne("MyApp.API.Models.Asset", "Asset")
+                        .WithMany("MaintScheduleAssets")
                         .HasForeignKey("AssetId")
                         .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("MyApp.API.Models.MaintSchedule", "MaintSchedule")
-                        .WithMany("MaintResults")
+                        .WithMany("MaintScheduleAssets")
                         .HasForeignKey("MaintScheduleId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });

@@ -6,12 +6,12 @@ namespace MyApp.API.Models
     {
         public int Id { get; set; }
         public int TenantId { get; set; }
-        public int AssetId { get; set; }
-        public virtual Asset Asset { get; set; }
-        public int MaintScheduleId { get; set; }
-        public virtual MaintSchedule MaintSchedule { get; set; }
-        public DateTime ExecutedOn { get; set; }
+        public int AssetId { get; set; } // by convention: MaintScheduleAssetAssetId
+        public int MaintScheduleId { get; set; }// by convention: MaintScheduleAssetMaintScheduleId
+        public virtual MaintScheduleAsset MaintScheduleAsset { get; set; }
+
         public int ExecutedBy { get; set; }
+        public DateTime ExecutedOn { get; set; }
         public string Observations { get; set; }
         public string Result { get; set; }
 

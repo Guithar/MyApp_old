@@ -1,8 +1,8 @@
 //To generate json file at https://next.json-generator.com/
 //*********************************************************
-[//****************************************
+[
   {
-    'repeat(5)': {
+    'repeat(5)': {//MaintSchedule
     	Index: '{{index(1)}}',
     	TenantId:1,
       	ProductCategoryId: '{{integer(0, 15)}}',
@@ -32,9 +32,9 @@
       IsActive:true,
       IsDelete:false,
 //****************************************
-     	AssetMaintSchedules: [
+     	MaintScheduleAssets: [
           {
-          'repeat(10)': {
+          'repeat(5)': {
             AssetId:  '{{index(1)}}',
             MaintScheduleId: function (tags,parent) {
       		var  Months = [1, 2,3, 4, 5, 6, 7,8,9,10,11,12,13,14,15];
@@ -43,43 +43,46 @@
             
             TenantId:1,
             IsActive:true,
-      		IsDelete:false
+      		IsDelete:false,
+             //****************************************
+            MaintResults: [
+              {
+                'repeat(2)': {
+                  Index: '{{index(1)}}',   
+                  AssetId: function (tags,parent) {
+      		return parent.AssetId;
+    		},
+                  MaintScheduleId: function (tags,parent) {
+      		return parent.MaintScheduleId;
+    		},
+                  TenantId:1,
+                  
+                   ExecutedOn: function (tags,parent) {
+                    
+                    return 2019-this.Index + '-11-19 11:17:43';
+                  },
+                  Observations: function (tags) {
+                    var  verbo = ['Verificado ', 'Mal estado de ', 'Requiere limpieza de ', 'No se ha realizado la reposición de ', 'Fallo en ', 'Estado incorrecto de ', 'Prueba correcta de ', 'Sustitución de ', 'Desconexión de ', 'Aviso a responsable de ', 'Retirada de '];
+                    var cd =['los sistemas','los sensores','los pilotos indicadores','las conexiones','las instalación eléctrica','los equipos del sistema','las sirenas', 'todas las salidas', 'la alimentación eléctica', 'voltaje y corriente', 'las baterías', 'equipos averiados'];      
+                    return  verbo[tags.integer(0, verbo.length -1)] + cd[tags.integer(0, cd.length -1)] ;
+                  },
+                  Result: function (tags) {
+                    var estado = ['Y','N','P'];
+                    return estado[tags.integer(0, estado.length -1)];
+                  },
+                  IsActive:true,
+                  IsDelete:false
+                }
+              }
+            ],
               }
           }
     	],
-      //****************************************
-     MaintResults: [
-      {
-      	'repeat(5)': {
-              Index: '{{index(1)}}',   
-              AssetId:  '{{index(1)}}',
-              MaintScheduleId: function (tags,parent) {
-      		var  Months = [1, 2,3, 4, 5, 6, 7,8,9,10,11,12,13,14,15];
-      		return Months[parent.Index-1];
-    		},
-              TenantId:1,
-           ExecutedOn: function (tags) {
-            var fecha = ['2019-11-04 11:17:43','2019-11-05 11:17:43','2019-11-06 11:17:43','2019-11-07 11:17:43','2019-11-08 11:17:43','2019-11-11 11:17:43','2019-11-12 11:17:43','2019-11-13 11:17:43','2019-11-14 11:17:43','2019-11-15 11:17:43','2019-11-18 11:17:43','2019-11-19 11:17:43'];
-            return fecha[tags.integer(0, fecha.length -1)];
-          },
-           Observations: function (tags) {
-      		var  verbo = ['Verificado ', 'Mal estado de ', 'Requiere limpieza de ', 'No se ha realizado la reposición de ', 'Fallo en ', 'Estado incorrecto de ', 'Prueba correcta de ', 'Sustitución de ', 'Desconexión de ', 'Aviso a responsable de ', 'Retirada de '];
-            var cd =['los sistemas','los sensores','los pilotos indicadores','las conexiones','las instalación eléctrica','los equipos del sistema','las sirenas', 'todas las salidas', 'la alimentación eléctica', 'voltaje y corriente', 'las baterías', 'equipos averiados'];      
-      		return  verbo[tags.integer(0, verbo.length -1)] + cd[tags.integer(0, cd.length -1)] ;
-    		},
-              Result: function (tags) {
-            var estado = ['Y','N','P'];
-            return estado[tags.integer(0, estado.length -1)];
-          },
-            IsActive:true,
-      		IsDelete:false
-        }
-      }
-    ],
+     
 //****************************************
      	MaintOperations: [
        {
-              'repeat(10)': {
+              'repeat(9)': {
                 Index: '{{index(1)}}',
                 TenantId:1,
                  MaintScheduleId: function (tags,parent) {

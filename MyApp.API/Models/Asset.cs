@@ -18,8 +18,7 @@ namespace MyApp.API.Models
         public int ProductId { get; set; }
         public virtual Product Product { get; set; }
 
-        public virtual ICollection<AssetMaintSchedule> AssetMaintSchedules { get; set; }
-        public virtual ICollection<MaintResult> MaintResults { get; set; }
+        public virtual ICollection<MaintScheduleAsset> MaintScheduleAssets { get; set; }
 
             // Audit Fields
         public bool? IsActive { get; set; }

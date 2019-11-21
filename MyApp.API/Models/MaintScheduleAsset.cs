@@ -1,13 +1,15 @@
 using System;
+using System.Collections.Generic;
 
 namespace MyApp.API.Models
 {
-    public class AssetMaintSchedule
+    public class MaintScheduleAsset
     {
         public int AssetId { get; set; }
         public int MaintScheduleId { get; set; }
         public virtual Asset Asset { get; set; }
         public virtual MaintSchedule MaintSchedule { get; set; }
+        public virtual ICollection<MaintResult> MaintResults { get; set; }
         public int TenantId { get; set; }
 
             // Audit Fields

@@ -29,7 +29,7 @@ namespace MyApp.API.Data
         public DbSet<Tenant> Tenants { get; set; }
 
         public DbSet<MaintSchedule> MaintSchedules { get; set; }
-        public DbSet<AssetMaintSchedule> AssetMaintSchedules { get; set; }
+        public DbSet<MaintScheduleAsset> MaintSchedulesAssets { get; set; }
         public DbSet<MaintResult> MaintResults { get; set; }
         public DbSet<MaintOperation> MaintOperations { get; set; }
         
@@ -174,9 +174,48 @@ namespace MyApp.API.Data
                 productCategory.HasQueryFilter(c => EF.Property<bool>(c, "IsDeleted") == false);
             });
 
-            builder.Entity<AssetMaintSchedule>(AssetMaintSchedule =>
+            builder.Entity<MaintSchedule>(MaintSchedule =>
             {
-                AssetMaintSchedule.HasKey(x => new{x.MaintScheduleId, x.AssetId});
+            // audit fields
+                MaintSchedule.Property(a => a.IsActive).HasDefaultValue(true);
+                MaintSchedule.Property(c => c.CreatedOn).HasDefaultValueSql("getdate()");
+                MaintSchedule.Property(c => c.UpdatedOn).HasDefaultValueSql("getdate()");
+                MaintSchedule.Property(a => a.IsDeleted).HasDefaultValue(false);
+                MaintSchedule.HasQueryFilter(c => EF.Property<bool>(c, "IsDeleted") == false);
+         });
+
+            builder.Entity<MaintSchedule>(MaintOperation =>
+            {
+            // audit fields
+                MaintOperation.Property(a => a.IsActive).HasDefaultValue(true);
+                MaintOperation.Property(c => c.CreatedOn).HasDefaultValueSql("getdate()");
+                MaintOperation.Property(c => c.UpdatedOn).HasDefaultValueSql("getdate()");
+                MaintOperation.Property(a => a.IsDeleted).HasDefaultValue(false);
+                MaintOperation.HasQueryFilter(c => EF.Property<bool>(c, "IsDeleted") == false);
+         });
+            builder.Entity<MaintScheduleAsset>(MaintScheduleAsset =>
+            {
+                MaintScheduleAsset.HasKey(x => new{x.MaintScheduleId, x.AssetId});
+                // audit fields
+                MaintScheduleAsset.Property(a => a.IsActive).HasDefaultValue(true);
+                MaintScheduleAsset.Property(c => c.CreatedOn).HasDefaultValueSql("getdate()");
+                MaintScheduleAsset.Property(c => c.UpdatedOn).HasDefaultValueSql("getdate()");
+                MaintScheduleAsset.Property(a => a.IsDeleted).HasDefaultValue(false);
+                MaintScheduleAsset.HasQueryFilter(c => EF.Property<bool>(c, "IsDeleted") == false);
+         });
+
+            builder.Entity<MaintResult>(MaintResult =>
+            {
+                MaintResult.HasOne(mr => mr.MaintScheduleAsset)
+                .WithMany(msa => msa.MaintResults)
+                .HasForeignKey(mr => new { mr.AssetId, mr.MaintScheduleId });
+                // audit fields
+                MaintResult.Property(a => a.IsActive).HasDefaultValue(true);
+                MaintResult.Property(c => c.CreatedOn).HasDefaultValueSql("getdate()");
+                MaintResult.Property(c => c.UpdatedOn).HasDefaultValueSql("getdate()");
+                MaintResult.Property(a => a.IsDeleted).HasDefaultValue(false);
+                MaintResult.HasQueryFilter(c => EF.Property<bool>(c, "IsDeleted") == false);
+        
             });
 
             
