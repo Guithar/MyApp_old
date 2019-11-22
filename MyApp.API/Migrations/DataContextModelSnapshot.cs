@@ -305,6 +305,8 @@ namespace MyApp.API.Migrations
 
                     b.Property<int>("MaintScheduleId");
 
+                    b.Property<DateTime>("NextRevision");
+
                     b.Property<string>("Observations");
 
                     b.Property<string>("Result");

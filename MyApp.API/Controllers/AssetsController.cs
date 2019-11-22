@@ -12,7 +12,7 @@ using MyApp.API.Models;
 namespace MyApp.API.Controllers
 {
         [Authorize]
-        [Route("api/clients/{clientId}/assets")]
+        [Route("api/clients/{clientId}/[controller]")]
         [ApiController]
         public class AssetsController : ControllerBase
         {

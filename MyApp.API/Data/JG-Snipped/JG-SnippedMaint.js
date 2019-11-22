@@ -1,5 +1,3 @@
-//To generate json file at https://next.json-generator.com/
-//*********************************************************
 [
   {
     'repeat(5)': {//MaintSchedule
@@ -60,6 +58,10 @@
                    ExecutedOn: function (tags,parent) {
                     
                     return 2019-this.Index + '-11-19 11:17:43';
+                  },
+                   NextRevision: function (tags,parent) {
+                    
+                    return 2020-this.Index + '-11-19 11:17:43';
                   },
                   Observations: function (tags) {
                     var  verbo = ['Verificado ', 'Mal estado de ', 'Requiere limpieza de ', 'No se ha realizado la reposición de ', 'Fallo en ', 'Estado incorrecto de ', 'Prueba correcta de ', 'Sustitución de ', 'Desconexión de ', 'Aviso a responsable de ', 'Retirada de '];

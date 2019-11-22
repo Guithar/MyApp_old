@@ -108,6 +108,7 @@ namespace MyApp.API.Migrations
                     MaintScheduleId = table.Column<int>(nullable: false),
                     ExecutedBy = table.Column<int>(nullable: false),
                     ExecutedOn = table.Column<DateTime>(nullable: false),
+                    NextRevision = table.Column<DateTime>(nullable: false),
                     Observations = table.Column<string>(nullable: true),
                     Result = table.Column<string>(nullable: true),
                     IsActive = table.Column<bool>(nullable: true, defaultValue: true),

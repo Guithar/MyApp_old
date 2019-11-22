@@ -12,6 +12,7 @@ namespace MyApp.API.Models
 
         public int ExecutedBy { get; set; }
         public DateTime ExecutedOn { get; set; }
+        public DateTime NextRevision { get; set; }
         public string Observations { get; set; }
         public string Result { get; set; }
 

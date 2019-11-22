@@ -231,6 +231,19 @@ namespace MyApp.API.Data
         
         }
 
-       
+        public async Task<IEnumerable<MaintScheduleAsset>> GetMaints(int clientId, int currentTenantId)
+        {
+             
+             var maints= await _context.MaintSchedulesAssets
+             // .Include(p => p.Product)
+             .Where(a=> a.Asset.ClientId==clientId && a.TenantId==currentTenantId)
+             .ToListAsync(); 
+            return maints;
+        }
+
+        public Task<MaintScheduleAsset> GetMaint(int AssetId, int MaintScheduleId, int clientId, int currentTenantId)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

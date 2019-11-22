@@ -47,6 +47,41 @@ namespace MyApp.API.Helpers
 
             CreateMap<Product,ProductForListDto>().ReverseMap();;
             CreateMap<ProductCategory,ProductCategoryForListDto>();
+
+            CreateMap<MaintScheduleAsset,MaintForListDto>()
+            .ForPath(m => m.product.Id, opt => opt
+                    .MapFrom(msa => msa.Asset.Product.Id))
+            .ForPath(m => m.product.Name, opt => opt
+                    .MapFrom(msa => msa.Asset.Product.Name))
+            .ForPath(m => m.product.Description, opt => opt
+                    .MapFrom(msa => msa.Asset.Product.ProductCategory.Description))
+            .ForPath(m => m.product.ProductCategoryId, opt => opt
+                    .MapFrom(msa => msa.Asset.Product.ProductCategoryId))
+            .ForPath(m => m.product.ProductCategoryName, opt => opt
+                    .MapFrom(msa => msa.Asset.Product.ProductCategory.Name))
+
+
+            .ForMember(m => m.Location, opt => opt
+                    .MapFrom(msa => msa.Asset.Location))
+            .ForMember(m => m.ManufacturedDate, opt => opt
+                    .MapFrom(msa => msa.Asset.ManufacturedDate))
+            .ForMember(m => m.Quantity, opt => opt
+                    .MapFrom(msa => msa.Asset.Quantity))
+           
+            .ForMember(m => m.LastRev, opt => opt
+                .MapFrom(msa => msa.MaintResults
+                    .OrderByDescending(c => c.ExecutedOn)
+                    .FirstOrDefault().ExecutedOn))
+            .ForMember(m => m.NextRev, opt => opt
+                .MapFrom(msa => msa.MaintResults
+                    .OrderByDescending(c => c.ExecutedOn)
+                    .FirstOrDefault().NextRevision))
+            .ForMember(m => m.LastResult, opt => opt
+                .MapFrom(msa => msa.MaintResults
+                    .OrderByDescending(c => c.ExecutedOn)
+                    .FirstOrDefault().Result))
+            .ForMember(m => m.MonthsInterval, opt => opt
+                    .MapFrom(msa => msa.MaintSchedule.MonthsInterval));
         }
     }
 }

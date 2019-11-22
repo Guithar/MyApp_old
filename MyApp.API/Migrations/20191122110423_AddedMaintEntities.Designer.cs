@@ -10,7 +10,7 @@ using MyApp.API.Data;
 namespace MyApp.API.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20191121070210_AddedMaintEntities")]
+    [Migration("20191122110423_AddedMaintEntities")]
     partial class AddedMaintEntities
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -306,6 +306,8 @@ namespace MyApp.API.Migrations
                         .HasDefaultValue(false);
 
                     b.Property<int>("MaintScheduleId");
+
+                    b.Property<DateTime>("NextRevision");
 
                     b.Property<string>("Observations");
 
