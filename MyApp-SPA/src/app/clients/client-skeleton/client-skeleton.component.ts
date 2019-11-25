@@ -1,7 +1,6 @@
 import { Component, OnInit, HostListener, ViewChild } from '@angular/core';
 import { AlertifyService } from 'src/app/_services/alertify.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ClientService } from 'src/app/_services/client.service';
 import { Client } from 'src/app/_models/client';
 import { ClientDetailComponent } from '../client-detail/client-detail.component';
 

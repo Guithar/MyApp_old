@@ -15,16 +15,16 @@
         <ng-template mat-tab-label>
             Assets
         </ng-template>
-        <app-client-assets-list [tenantId]="client.tenantId" [clientId]="client.id" ></app-client-assets-list>
+        <app-client-assets-list [clientId]="client.id" ></app-client-assets-list>
     </mat-tab>
 
     <mat-tab>
         <ng-template mat-tab-label>
-            Revisions
+            Maintenance
         </ng-template>
+        <app-client-maint-list [clientId]="client.id" ></app-client-maint-list>
+    </mat-tab> 
 
-        Content 3
-    </mat-tab>
     <mat-tab>
         <ng-template mat-tab-label>
             Revisions

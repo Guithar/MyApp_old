@@ -19,6 +19,8 @@ import { ClientDetailComponent } from './clients/client-detail/client-detail.com
 import { ClientDetailResolver } from './_resolvers/client-detail.resolver';
 import { ClientSkeletonComponent } from './clients/client-skeleton/client-skeleton.component';
 import { AssetListResolver } from './_resolvers/asset-list.resolver';
+import { ClientMaintListComponent } from './clients/client-maint-list/client-maint-list.component';
+import { MaintListResolver } from './_resolvers/maint-list.resolver';
 
 export const appRoutes: Routes = [
     {path: '', component: HomeComponent},
@@ -31,7 +33,8 @@ export const appRoutes: Routes = [
                 resolve: {clients: ClientListResolver}},
             {path: 'clients/:id', component: ClientSkeletonComponent,
                 resolve: {client: ClientDetailResolver,
-                            assets: AssetListResolver}},
+                            assets: AssetListResolver,
+                            }},
             {path: 'members', component: MemberListComponent,
                 resolve: {users: MemberListResolver}},
             {path: 'members/:id', component: MemberDetailComponent,

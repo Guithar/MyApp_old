@@ -2,6 +2,7 @@
   {
     'repeat(5)': {//MaintSchedule
     	Index: '{{index(1)}}',
+      marca:'***********************************************************',
     	TenantId:1,
       	ProductCategoryId: '{{integer(0, 15)}}',
       	ProductId:'',
@@ -32,13 +33,20 @@
 //****************************************
      	MaintScheduleAssets: [
           {
-          'repeat(5)': {
-            AssetId:  '{{index(1)}}',
+          'repeat(10)': {
+            
+            Ide:  '{{index(0)}}',
+  
+             AssetId_con_marca________________________________________: function (tags,parent) {
+      		return parent.Index+this.Ide+9*(parent.Index-1);
+    		},
+             AssetId: function (tags,parent) {
+      		return parent.Index+this.Ide+9*(parent.Index-1);
+    		},
             MaintScheduleId: function (tags,parent) {
       		var  Months = [1, 2,3, 4, 5, 6, 7,8,9,10,11,12,13,14,15];
       		return Months[parent.Index-1];
     		},
-            
             TenantId:1,
             IsActive:true,
       		IsDelete:false,

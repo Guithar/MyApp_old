@@ -1,913 +1,938 @@
 [
   {
-    "Ide": 1,
+    "IndexCategory": 1,
     "TenantId": 1,
     "Name": "Bocas de Incendio",
-    "Description": "labore est magna commodo nulla tempor magna sunt",
+    "Description": "Douglass Street Kansas",
     "Products": [
       {
-        "Ide": 1,
+        "IndexProduct": 1,
         "TenantId": 1,
-        "Name": "Bocas de Incendio tipo {{lorem(1, \"words\")}}",
-        "Description": "excepteur esse do enim proident culpa sit ut",
-        "CategoryId": "1",
-        "Assets": [
-          {
-            "TenantId": 1,
-            "Name": "Bocas de Incendio tipo {{lorem(1, \"words\")}}",
-            "Description": "pariatur eiusmod id commodo pariatur culpa nulla elit",
-            "ClientId": 10,
-            "Location": "Colton",
-            "Quantity": 1,
-            "IsActive": true,
-            "ManufacturedDate": "2010-02-01 12:00:00",
-            "InstalledDate": "2010-02-01 12:00:00",
-            "CreatedDate": "2019-11-08 06:06:17",
-            "productId": "1"
-          },
-          {
-            "TenantId": 1,
-            "Name": "Bocas de Incendio tipo {{lorem(1, \"words\")}}",
-            "Description": "excepteur sunt culpa culpa enim laboris ex occaecat",
-            "ClientId": 10,
-            "Location": "Vandiver",
-            "Quantity": 1,
-            "IsActive": true,
-            "ManufacturedDate": "2010-02-01 12:00:00",
-            "InstalledDate": "2010-02-01 12:00:00",
-            "CreatedDate": "2019-11-08 06:06:17",
-            "productId": "1"
-          }
-        ]
-      },
-      {
-        "Ide": 2,
-        "TenantId": 1,
-        "Name": "Bocas de Incendio tipo {{lorem(1, \"words\")}}",
-        "Description": "exercitation officia ea consectetur nulla tempor fugiat laborum",
-        "CategoryId": "1",
-        "Assets": [
-          {
-            "TenantId": 1,
-            "Name": "Bocas de Incendio tipo {{lorem(1, \"words\")}}",
-            "Description": "elit cupidatat commodo labore in dolor id veniam",
-            "ClientId": 6,
-            "Location": "Soudan",
-            "Quantity": 1,
-            "IsActive": true,
-            "ManufacturedDate": "2010-02-01 12:00:00",
-            "InstalledDate": "2010-02-01 12:00:00",
-            "CreatedDate": "2019-11-08 06:06:17",
-            "productId": "2"
-          },
-          {
-            "TenantId": 1,
-            "Name": "Bocas de Incendio tipo {{lorem(1, \"words\")}}",
-            "Description": "veniam tempor do mollit aliquip culpa minim ea",
-            "ClientId": 6,
-            "Location": "Blandburg",
-            "Quantity": 1,
-            "IsActive": true,
-            "ManufacturedDate": "2010-02-01 12:00:00",
-            "InstalledDate": "2010-02-01 12:00:00",
-            "CreatedDate": "2019-11-08 06:06:17",
-            "productId": "2"
-          }
-        ]
-      },
-      {
-        "Ide": 3,
-        "TenantId": 1,
-        "Name": "Bocas de Incendio tipo amet",
-        "Description": "nisi reprehenderit aliqua deserunt magna exercitation culpa consequat",
+        "Location": "Matheny",
+        "Name": "Bocas de Incendio tipo Matheny",
+        "Description": "Bocas de Incendio tipo Matheny",
         "CategoryId": 1,
         "Assets": [
           {
             "TenantId": 1,
-            "Name": "Bocas de Incendio tipo est",
-            "Description": "magna exercitation eiusmod esse voluptate sit aliquip nostrud",
+            "Name": "Bocas de Incendio tipo Matheny",
+            "Description": "green",
+            "ClientId": 2,
+            "Location": "Corinne",
+            "Quantity": 1,
+            "IsActive": true,
+            "ManufacturedDate": "2010-02-01 12:00:00",
+            "InstalledDate": "2010-02-01 12:00:00",
+            "CreatedDate": "2019-11-25 11:11:31",
+            "productId": 1
+          },
+          {
+            "TenantId": 1,
+            "Name": "Bocas de Incendio tipo Matheny",
+            "Description": "green",
+            "ClientId": 10,
+            "Location": "Woodburn",
+            "Quantity": 1,
+            "IsActive": true,
+            "ManufacturedDate": "2010-02-01 12:00:00",
+            "InstalledDate": "2010-02-01 12:00:00",
+            "CreatedDate": "2019-11-25 11:11:31",
+            "productId": 1
+          }
+        ]
+      },
+      {
+        "IndexProduct": 2,
+        "TenantId": 1,
+        "Location": "Mayfair",
+        "Name": "Bocas de Incendio tipo Mayfair",
+        "Description": "Bocas de Incendio tipo Mayfair",
+        "CategoryId": 1,
+        "Assets": [
+          {
+            "TenantId": 1,
+            "Name": "Bocas de Incendio tipo Mayfair",
+            "Description": "brown",
+            "ClientId": 4,
+            "Location": "Gallina",
+            "Quantity": 1,
+            "IsActive": true,
+            "ManufacturedDate": "2010-02-01 12:00:00",
+            "InstalledDate": "2010-02-01 12:00:00",
+            "CreatedDate": "2019-11-25 11:11:31",
+            "productId": 2
+          },
+          {
+            "TenantId": 1,
+            "Name": "Bocas de Incendio tipo Mayfair",
+            "Description": "brown",
+            "ClientId": 5,
+            "Location": "Nicut",
+            "Quantity": 1,
+            "IsActive": true,
+            "ManufacturedDate": "2010-02-01 12:00:00",
+            "InstalledDate": "2010-02-01 12:00:00",
+            "CreatedDate": "2019-11-25 11:11:31",
+            "productId": 2
+          }
+        ]
+      },
+      {
+        "IndexProduct": 3,
+        "TenantId": 1,
+        "Location": "Efland",
+        "Name": "Bocas de Incendio tipo Efland",
+        "Description": "Bocas de Incendio tipo Efland",
+        "CategoryId": 1,
+        "Assets": [
+          {
+            "TenantId": 1,
+            "Name": "Bocas de Incendio tipo Efland",
+            "Description": "blue",
+            "ClientId": 10,
+            "Location": "Kempton",
+            "Quantity": 1,
+            "IsActive": true,
+            "ManufacturedDate": "2010-02-01 12:00:00",
+            "InstalledDate": "2010-02-01 12:00:00",
+            "CreatedDate": "2019-11-25 11:11:31",
+            "productId": 3
+          },
+          {
+            "TenantId": 1,
+            "Name": "Bocas de Incendio tipo Efland",
+            "Description": "brown",
+            "ClientId": 11,
+            "Location": "Clay",
+            "Quantity": 1,
+            "IsActive": true,
+            "ManufacturedDate": "2010-02-01 12:00:00",
+            "InstalledDate": "2010-02-01 12:00:00",
+            "CreatedDate": "2019-11-25 11:11:31",
+            "productId": 3
+          }
+        ]
+      },
+      {
+        "IndexProduct": 4,
+        "TenantId": 1,
+        "Location": "Barronett",
+        "Name": "Bocas de Incendio tipo Barronett",
+        "Description": "Bocas de Incendio tipo Barronett",
+        "CategoryId": 1,
+        "Assets": [
+          {
+            "TenantId": 1,
+            "Name": "Bocas de Incendio tipo Barronett",
+            "Description": "green",
+            "ClientId": 11,
+            "Location": "Bartley",
+            "Quantity": 1,
+            "IsActive": true,
+            "ManufacturedDate": "2010-02-01 12:00:00",
+            "InstalledDate": "2010-02-01 12:00:00",
+            "CreatedDate": "2019-11-25 11:11:31",
+            "productId": 4
+          },
+          {
+            "TenantId": 1,
+            "Name": "Bocas de Incendio tipo Barronett",
+            "Description": "green",
+            "ClientId": 8,
+            "Location": "Welch",
+            "Quantity": 1,
+            "IsActive": true,
+            "ManufacturedDate": "2010-02-01 12:00:00",
+            "InstalledDate": "2010-02-01 12:00:00",
+            "CreatedDate": "2019-11-25 11:11:31",
+            "productId": 4
+          }
+        ]
+      },
+      {
+        "IndexProduct": 5,
+        "TenantId": 1,
+        "Location": "Clayville",
+        "Name": "Bocas de Incendio tipo Clayville",
+        "Description": "Bocas de Incendio tipo Clayville",
+        "CategoryId": 1,
+        "Assets": [
+          {
+            "TenantId": 1,
+            "Name": "Bocas de Incendio tipo Clayville",
+            "Description": "green",
+            "ClientId": 3,
+            "Location": "Concho",
+            "Quantity": 1,
+            "IsActive": true,
+            "ManufacturedDate": "2010-02-01 12:00:00",
+            "InstalledDate": "2010-02-01 12:00:00",
+            "CreatedDate": "2019-11-25 11:11:31",
+            "productId": 5
+          },
+          {
+            "TenantId": 1,
+            "Name": "Bocas de Incendio tipo Clayville",
+            "Description": "blue",
+            "ClientId": 9,
+            "Location": "Westerville",
+            "Quantity": 1,
+            "IsActive": true,
+            "ManufacturedDate": "2010-02-01 12:00:00",
+            "InstalledDate": "2010-02-01 12:00:00",
+            "CreatedDate": "2019-11-25 11:11:31",
+            "productId": 5
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "IndexCategory": 2,
+    "TenantId": 1,
+    "Name": "Detectores de incendios",
+    "Description": "Barlow Drive Connecticut",
+    "Products": [
+      {
+        "IndexProduct": 1,
+        "TenantId": 1,
+        "Location": "Idledale",
+        "Name": "Detectores de incendios tipo Idledale",
+        "Description": "Detectores de incendios tipo Idledale",
+        "CategoryId": 2,
+        "Assets": [
+          {
+            "TenantId": 1,
+            "Name": "Detectores de incendios tipo Idledale",
+            "Description": "green",
+            "ClientId": 11,
+            "Location": "Wawona",
+            "Quantity": 1,
+            "IsActive": true,
+            "ManufacturedDate": "2010-02-01 12:00:00",
+            "InstalledDate": "2010-02-01 12:00:00",
+            "CreatedDate": "2019-11-25 11:11:31",
+            "productId": 1
+          },
+          {
+            "TenantId": 1,
+            "Name": "Detectores de incendios tipo Idledale",
+            "Description": "brown",
+            "ClientId": 5,
+            "Location": "Cassel",
+            "Quantity": 1,
+            "IsActive": true,
+            "ManufacturedDate": "2010-02-01 12:00:00",
+            "InstalledDate": "2010-02-01 12:00:00",
+            "CreatedDate": "2019-11-25 11:11:31",
+            "productId": 1
+          }
+        ]
+      },
+      {
+        "IndexProduct": 2,
+        "TenantId": 1,
+        "Location": "Wollochet",
+        "Name": "Detectores de incendios tipo Wollochet",
+        "Description": "Detectores de incendios tipo Wollochet",
+        "CategoryId": 2,
+        "Assets": [
+          {
+            "TenantId": 1,
+            "Name": "Detectores de incendios tipo Wollochet",
+            "Description": "blue",
+            "ClientId": 3,
+            "Location": "Wilsonia",
+            "Quantity": 1,
+            "IsActive": true,
+            "ManufacturedDate": "2010-02-01 12:00:00",
+            "InstalledDate": "2010-02-01 12:00:00",
+            "CreatedDate": "2019-11-25 11:11:31",
+            "productId": 2
+          },
+          {
+            "TenantId": 1,
+            "Name": "Detectores de incendios tipo Wollochet",
+            "Description": "green",
+            "ClientId": 7,
+            "Location": "Glidden",
+            "Quantity": 1,
+            "IsActive": true,
+            "ManufacturedDate": "2010-02-01 12:00:00",
+            "InstalledDate": "2010-02-01 12:00:00",
+            "CreatedDate": "2019-11-25 11:11:31",
+            "productId": 2
+          }
+        ]
+      },
+      {
+        "IndexProduct": 3,
+        "TenantId": 1,
+        "Location": "Vallonia",
+        "Name": "Detectores de incendios tipo Vallonia",
+        "Description": "Detectores de incendios tipo Vallonia",
+        "CategoryId": 2,
+        "Assets": [
+          {
+            "TenantId": 1,
+            "Name": "Detectores de incendios tipo Vallonia",
+            "Description": "green",
+            "ClientId": 7,
+            "Location": "Jacksonwald",
+            "Quantity": 1,
+            "IsActive": true,
+            "ManufacturedDate": "2010-02-01 12:00:00",
+            "InstalledDate": "2010-02-01 12:00:00",
+            "CreatedDate": "2019-11-25 11:11:31",
+            "productId": 3
+          },
+          {
+            "TenantId": 1,
+            "Name": "Detectores de incendios tipo Vallonia",
+            "Description": "brown",
+            "ClientId": 5,
+            "Location": "Holcombe",
+            "Quantity": 1,
+            "IsActive": true,
+            "ManufacturedDate": "2010-02-01 12:00:00",
+            "InstalledDate": "2010-02-01 12:00:00",
+            "CreatedDate": "2019-11-25 11:11:31",
+            "productId": 3
+          }
+        ]
+      },
+      {
+        "IndexProduct": 4,
+        "TenantId": 1,
+        "Location": "Shaft",
+        "Name": "Detectores de incendios tipo Shaft",
+        "Description": "Detectores de incendios tipo Shaft",
+        "CategoryId": 2,
+        "Assets": [
+          {
+            "TenantId": 1,
+            "Name": "Detectores de incendios tipo Shaft",
+            "Description": "brown",
+            "ClientId": 2,
+            "Location": "Wacissa",
+            "Quantity": 1,
+            "IsActive": true,
+            "ManufacturedDate": "2010-02-01 12:00:00",
+            "InstalledDate": "2010-02-01 12:00:00",
+            "CreatedDate": "2019-11-25 11:11:31",
+            "productId": 4
+          },
+          {
+            "TenantId": 1,
+            "Name": "Detectores de incendios tipo Shaft",
+            "Description": "brown",
+            "ClientId": 3,
+            "Location": "Byrnedale",
+            "Quantity": 1,
+            "IsActive": true,
+            "ManufacturedDate": "2010-02-01 12:00:00",
+            "InstalledDate": "2010-02-01 12:00:00",
+            "CreatedDate": "2019-11-25 11:11:31",
+            "productId": 4
+          }
+        ]
+      },
+      {
+        "IndexProduct": 5,
+        "TenantId": 1,
+        "Location": "Oretta",
+        "Name": "Detectores de incendios tipo Oretta",
+        "Description": "Detectores de incendios tipo Oretta",
+        "CategoryId": 2,
+        "Assets": [
+          {
+            "TenantId": 1,
+            "Name": "Detectores de incendios tipo Oretta",
+            "Description": "blue",
+            "ClientId": 1,
+            "Location": "Itmann",
+            "Quantity": 1,
+            "IsActive": true,
+            "ManufacturedDate": "2010-02-01 12:00:00",
+            "InstalledDate": "2010-02-01 12:00:00",
+            "CreatedDate": "2019-11-25 11:11:31",
+            "productId": 5
+          },
+          {
+            "TenantId": 1,
+            "Name": "Detectores de incendios tipo Oretta",
+            "Description": "brown",
+            "ClientId": 10,
+            "Location": "Cobbtown",
+            "Quantity": 1,
+            "IsActive": true,
+            "ManufacturedDate": "2010-02-01 12:00:00",
+            "InstalledDate": "2010-02-01 12:00:00",
+            "CreatedDate": "2019-11-25 11:11:31",
+            "productId": 5
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "IndexCategory": 3,
+    "TenantId": 1,
+    "Name": "Aerosoles",
+    "Description": "Royce Street Oregon",
+    "Products": [
+      {
+        "IndexProduct": 1,
+        "TenantId": 1,
+        "Location": "Oasis",
+        "Name": "Aerosoles tipo Oasis",
+        "Description": "Aerosoles tipo Oasis",
+        "CategoryId": 3,
+        "Assets": [
+          {
+            "TenantId": 1,
+            "Name": "Aerosoles tipo Oasis",
+            "Description": "green",
+            "ClientId": 7,
+            "Location": "Neibert",
+            "Quantity": 1,
+            "IsActive": true,
+            "ManufacturedDate": "2010-02-01 12:00:00",
+            "InstalledDate": "2010-02-01 12:00:00",
+            "CreatedDate": "2019-11-25 11:11:31",
+            "productId": 1
+          },
+          {
+            "TenantId": 1,
+            "Name": "Aerosoles tipo Oasis",
+            "Description": "brown",
+            "ClientId": 10,
+            "Location": "Kohatk",
+            "Quantity": 1,
+            "IsActive": true,
+            "ManufacturedDate": "2010-02-01 12:00:00",
+            "InstalledDate": "2010-02-01 12:00:00",
+            "CreatedDate": "2019-11-25 11:11:31",
+            "productId": 1
+          }
+        ]
+      },
+      {
+        "IndexProduct": 2,
+        "TenantId": 1,
+        "Location": "Courtland",
+        "Name": "Aerosoles tipo Courtland",
+        "Description": "Aerosoles tipo Courtland",
+        "CategoryId": 3,
+        "Assets": [
+          {
+            "TenantId": 1,
+            "Name": "Aerosoles tipo Courtland",
+            "Description": "brown",
+            "ClientId": 11,
+            "Location": "Brooktrails",
+            "Quantity": 1,
+            "IsActive": true,
+            "ManufacturedDate": "2010-02-01 12:00:00",
+            "InstalledDate": "2010-02-01 12:00:00",
+            "CreatedDate": "2019-11-25 11:11:31",
+            "productId": 2
+          },
+          {
+            "TenantId": 1,
+            "Name": "Aerosoles tipo Courtland",
+            "Description": "blue",
+            "ClientId": 9,
+            "Location": "Grenelefe",
+            "Quantity": 1,
+            "IsActive": true,
+            "ManufacturedDate": "2010-02-01 12:00:00",
+            "InstalledDate": "2010-02-01 12:00:00",
+            "CreatedDate": "2019-11-25 11:11:31",
+            "productId": 2
+          }
+        ]
+      },
+      {
+        "IndexProduct": 3,
+        "TenantId": 1,
+        "Location": "Faxon",
+        "Name": "Aerosoles tipo Faxon",
+        "Description": "Aerosoles tipo Faxon",
+        "CategoryId": 3,
+        "Assets": [
+          {
+            "TenantId": 1,
+            "Name": "Aerosoles tipo Faxon",
+            "Description": "brown",
+            "ClientId": 7,
+            "Location": "Wattsville",
+            "Quantity": 1,
+            "IsActive": true,
+            "ManufacturedDate": "2010-02-01 12:00:00",
+            "InstalledDate": "2010-02-01 12:00:00",
+            "CreatedDate": "2019-11-25 11:11:31",
+            "productId": 3
+          },
+          {
+            "TenantId": 1,
+            "Name": "Aerosoles tipo Faxon",
+            "Description": "brown",
+            "ClientId": 8,
+            "Location": "Brecon",
+            "Quantity": 1,
+            "IsActive": true,
+            "ManufacturedDate": "2010-02-01 12:00:00",
+            "InstalledDate": "2010-02-01 12:00:00",
+            "CreatedDate": "2019-11-25 11:11:31",
+            "productId": 3
+          }
+        ]
+      },
+      {
+        "IndexProduct": 4,
+        "TenantId": 1,
+        "Location": "Dahlen",
+        "Name": "Aerosoles tipo Dahlen",
+        "Description": "Aerosoles tipo Dahlen",
+        "CategoryId": 3,
+        "Assets": [
+          {
+            "TenantId": 1,
+            "Name": "Aerosoles tipo Dahlen",
+            "Description": "green",
+            "ClientId": 5,
+            "Location": "Grimsley",
+            "Quantity": 1,
+            "IsActive": true,
+            "ManufacturedDate": "2010-02-01 12:00:00",
+            "InstalledDate": "2010-02-01 12:00:00",
+            "CreatedDate": "2019-11-25 11:11:31",
+            "productId": 4
+          },
+          {
+            "TenantId": 1,
+            "Name": "Aerosoles tipo Dahlen",
+            "Description": "blue",
+            "ClientId": 6,
+            "Location": "Gratton",
+            "Quantity": 1,
+            "IsActive": true,
+            "ManufacturedDate": "2010-02-01 12:00:00",
+            "InstalledDate": "2010-02-01 12:00:00",
+            "CreatedDate": "2019-11-25 11:11:31",
+            "productId": 4
+          }
+        ]
+      },
+      {
+        "IndexProduct": 5,
+        "TenantId": 1,
+        "Location": "Ypsilanti",
+        "Name": "Aerosoles tipo Ypsilanti",
+        "Description": "Aerosoles tipo Ypsilanti",
+        "CategoryId": 3,
+        "Assets": [
+          {
+            "TenantId": 1,
+            "Name": "Aerosoles tipo Ypsilanti",
+            "Description": "blue",
+            "ClientId": 9,
+            "Location": "Gardiner",
+            "Quantity": 1,
+            "IsActive": true,
+            "ManufacturedDate": "2010-02-01 12:00:00",
+            "InstalledDate": "2010-02-01 12:00:00",
+            "CreatedDate": "2019-11-25 11:11:31",
+            "productId": 5
+          },
+          {
+            "TenantId": 1,
+            "Name": "Aerosoles tipo Ypsilanti",
+            "Description": "green",
+            "ClientId": 8,
+            "Location": "Carrizo",
+            "Quantity": 1,
+            "IsActive": true,
+            "ManufacturedDate": "2010-02-01 12:00:00",
+            "InstalledDate": "2010-02-01 12:00:00",
+            "CreatedDate": "2019-11-25 11:11:31",
+            "productId": 5
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "IndexCategory": 4,
+    "TenantId": 1,
+    "Name": "Extinción por Rociadores",
+    "Description": "Rock Street Louisiana",
+    "Products": [
+      {
+        "IndexProduct": 1,
+        "TenantId": 1,
+        "Location": "Boling",
+        "Name": "Extinción por Rociadores tipo Boling",
+        "Description": "Extinción por Rociadores tipo Boling",
+        "CategoryId": 4,
+        "Assets": [
+          {
+            "TenantId": 1,
+            "Name": "Extinción por Rociadores tipo Boling",
+            "Description": "blue",
+            "ClientId": 2,
+            "Location": "Cumberland",
+            "Quantity": 1,
+            "IsActive": true,
+            "ManufacturedDate": "2010-02-01 12:00:00",
+            "InstalledDate": "2010-02-01 12:00:00",
+            "CreatedDate": "2019-11-25 11:11:31",
+            "productId": 1
+          },
+          {
+            "TenantId": 1,
+            "Name": "Extinción por Rociadores tipo Boling",
+            "Description": "brown",
+            "ClientId": 1,
+            "Location": "Boomer",
+            "Quantity": 1,
+            "IsActive": true,
+            "ManufacturedDate": "2010-02-01 12:00:00",
+            "InstalledDate": "2010-02-01 12:00:00",
+            "CreatedDate": "2019-11-25 11:11:31",
+            "productId": 1
+          }
+        ]
+      },
+      {
+        "IndexProduct": 2,
+        "TenantId": 1,
+        "Location": "Walland",
+        "Name": "Extinción por Rociadores tipo Walland",
+        "Description": "Extinción por Rociadores tipo Walland",
+        "CategoryId": 4,
+        "Assets": [
+          {
+            "TenantId": 1,
+            "Name": "Extinción por Rociadores tipo Walland",
+            "Description": "green",
+            "ClientId": 9,
+            "Location": "Herbster",
+            "Quantity": 1,
+            "IsActive": true,
+            "ManufacturedDate": "2010-02-01 12:00:00",
+            "InstalledDate": "2010-02-01 12:00:00",
+            "CreatedDate": "2019-11-25 11:11:31",
+            "productId": 2
+          },
+          {
+            "TenantId": 1,
+            "Name": "Extinción por Rociadores tipo Walland",
+            "Description": "green",
+            "ClientId": 1,
+            "Location": "Dexter",
+            "Quantity": 1,
+            "IsActive": true,
+            "ManufacturedDate": "2010-02-01 12:00:00",
+            "InstalledDate": "2010-02-01 12:00:00",
+            "CreatedDate": "2019-11-25 11:11:31",
+            "productId": 2
+          }
+        ]
+      },
+      {
+        "IndexProduct": 3,
+        "TenantId": 1,
+        "Location": "Cataract",
+        "Name": "Extinción por Rociadores tipo Cataract",
+        "Description": "Extinción por Rociadores tipo Cataract",
+        "CategoryId": 4,
+        "Assets": [
+          {
+            "TenantId": 1,
+            "Name": "Extinción por Rociadores tipo Cataract",
+            "Description": "brown",
+            "ClientId": 2,
+            "Location": "Falmouth",
+            "Quantity": 1,
+            "IsActive": true,
+            "ManufacturedDate": "2010-02-01 12:00:00",
+            "InstalledDate": "2010-02-01 12:00:00",
+            "CreatedDate": "2019-11-25 11:11:31",
+            "productId": 3
+          },
+          {
+            "TenantId": 1,
+            "Name": "Extinción por Rociadores tipo Cataract",
+            "Description": "green",
+            "ClientId": 9,
+            "Location": "Allendale",
+            "Quantity": 1,
+            "IsActive": true,
+            "ManufacturedDate": "2010-02-01 12:00:00",
+            "InstalledDate": "2010-02-01 12:00:00",
+            "CreatedDate": "2019-11-25 11:11:31",
+            "productId": 3
+          }
+        ]
+      },
+      {
+        "IndexProduct": 4,
+        "TenantId": 1,
+        "Location": "Sanders",
+        "Name": "Extinción por Rociadores tipo Sanders",
+        "Description": "Extinción por Rociadores tipo Sanders",
+        "CategoryId": 4,
+        "Assets": [
+          {
+            "TenantId": 1,
+            "Name": "Extinción por Rociadores tipo Sanders",
+            "Description": "blue",
+            "ClientId": 7,
+            "Location": "Lemoyne",
+            "Quantity": 1,
+            "IsActive": true,
+            "ManufacturedDate": "2010-02-01 12:00:00",
+            "InstalledDate": "2010-02-01 12:00:00",
+            "CreatedDate": "2019-11-25 11:11:31",
+            "productId": 4
+          },
+          {
+            "TenantId": 1,
+            "Name": "Extinción por Rociadores tipo Sanders",
+            "Description": "brown",
+            "ClientId": 4,
+            "Location": "Tyhee",
+            "Quantity": 1,
+            "IsActive": true,
+            "ManufacturedDate": "2010-02-01 12:00:00",
+            "InstalledDate": "2010-02-01 12:00:00",
+            "CreatedDate": "2019-11-25 11:11:31",
+            "productId": 4
+          }
+        ]
+      },
+      {
+        "IndexProduct": 5,
+        "TenantId": 1,
+        "Location": "Delwood",
+        "Name": "Extinción por Rociadores tipo Delwood",
+        "Description": "Extinción por Rociadores tipo Delwood",
+        "CategoryId": 4,
+        "Assets": [
+          {
+            "TenantId": 1,
+            "Name": "Extinción por Rociadores tipo Delwood",
+            "Description": "brown",
+            "ClientId": 6,
+            "Location": "Smeltertown",
+            "Quantity": 1,
+            "IsActive": true,
+            "ManufacturedDate": "2010-02-01 12:00:00",
+            "InstalledDate": "2010-02-01 12:00:00",
+            "CreatedDate": "2019-11-25 11:11:31",
+            "productId": 5
+          },
+          {
+            "TenantId": 1,
+            "Name": "Extinción por Rociadores tipo Delwood",
+            "Description": "brown",
+            "ClientId": 2,
+            "Location": "Harviell",
+            "Quantity": 1,
+            "IsActive": true,
+            "ManufacturedDate": "2010-02-01 12:00:00",
+            "InstalledDate": "2010-02-01 12:00:00",
+            "CreatedDate": "2019-11-25 11:11:31",
+            "productId": 5
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "IndexCategory": 5,
+    "TenantId": 1,
+    "Name": "Extinción por gas",
+    "Description": "Hampton Avenue New York",
+    "Products": [
+      {
+        "IndexProduct": 1,
+        "TenantId": 1,
+        "Location": "Ebro",
+        "Name": "Extinción por gas tipo Ebro",
+        "Description": "Extinción por gas tipo Ebro",
+        "CategoryId": 5,
+        "Assets": [
+          {
+            "TenantId": 1,
+            "Name": "Extinción por gas tipo Ebro",
+            "Description": "blue",
+            "ClientId": 5,
+            "Location": "Waikele",
+            "Quantity": 1,
+            "IsActive": true,
+            "ManufacturedDate": "2010-02-01 12:00:00",
+            "InstalledDate": "2010-02-01 12:00:00",
+            "CreatedDate": "2019-11-25 11:11:31",
+            "productId": 1
+          },
+          {
+            "TenantId": 1,
+            "Name": "Extinción por gas tipo Ebro",
+            "Description": "brown",
+            "ClientId": 9,
+            "Location": "Dotsero",
+            "Quantity": 1,
+            "IsActive": true,
+            "ManufacturedDate": "2010-02-01 12:00:00",
+            "InstalledDate": "2010-02-01 12:00:00",
+            "CreatedDate": "2019-11-25 11:11:31",
+            "productId": 1
+          }
+        ]
+      },
+      {
+        "IndexProduct": 2,
+        "TenantId": 1,
+        "Location": "Bainbridge",
+        "Name": "Extinción por gas tipo Bainbridge",
+        "Description": "Extinción por gas tipo Bainbridge",
+        "CategoryId": 5,
+        "Assets": [
+          {
+            "TenantId": 1,
+            "Name": "Extinción por gas tipo Bainbridge",
+            "Description": "blue",
+            "ClientId": 10,
+            "Location": "Condon",
+            "Quantity": 1,
+            "IsActive": true,
+            "ManufacturedDate": "2010-02-01 12:00:00",
+            "InstalledDate": "2010-02-01 12:00:00",
+            "CreatedDate": "2019-11-25 11:11:31",
+            "productId": 2
+          },
+          {
+            "TenantId": 1,
+            "Name": "Extinción por gas tipo Bainbridge",
+            "Description": "blue",
+            "ClientId": 8,
+            "Location": "Mansfield",
+            "Quantity": 1,
+            "IsActive": true,
+            "ManufacturedDate": "2010-02-01 12:00:00",
+            "InstalledDate": "2010-02-01 12:00:00",
+            "CreatedDate": "2019-11-25 11:11:31",
+            "productId": 2
+          }
+        ]
+      },
+      {
+        "IndexProduct": 3,
+        "TenantId": 1,
+        "Location": "Vicksburg",
+        "Name": "Extinción por gas tipo Vicksburg",
+        "Description": "Extinción por gas tipo Vicksburg",
+        "CategoryId": 5,
+        "Assets": [
+          {
+            "TenantId": 1,
+            "Name": "Extinción por gas tipo Vicksburg",
+            "Description": "blue",
+            "ClientId": 7,
+            "Location": "Swartzville",
+            "Quantity": 1,
+            "IsActive": true,
+            "ManufacturedDate": "2010-02-01 12:00:00",
+            "InstalledDate": "2010-02-01 12:00:00",
+            "CreatedDate": "2019-11-25 11:11:31",
+            "productId": 3
+          },
+          {
+            "TenantId": 1,
+            "Name": "Extinción por gas tipo Vicksburg",
+            "Description": "green",
+            "ClientId": 8,
+            "Location": "Reno",
+            "Quantity": 1,
+            "IsActive": true,
+            "ManufacturedDate": "2010-02-01 12:00:00",
+            "InstalledDate": "2010-02-01 12:00:00",
+            "CreatedDate": "2019-11-25 11:11:31",
+            "productId": 3
+          }
+        ]
+      },
+      {
+        "IndexProduct": 4,
+        "TenantId": 1,
+        "Location": "Waterford",
+        "Name": "Extinción por gas tipo Waterford",
+        "Description": "Extinción por gas tipo Waterford",
+        "CategoryId": 5,
+        "Assets": [
+          {
+            "TenantId": 1,
+            "Name": "Extinción por gas tipo Waterford",
+            "Description": "blue",
+            "ClientId": 2,
+            "Location": "Makena",
+            "Quantity": 1,
+            "IsActive": true,
+            "ManufacturedDate": "2010-02-01 12:00:00",
+            "InstalledDate": "2010-02-01 12:00:00",
+            "CreatedDate": "2019-11-25 11:11:31",
+            "productId": 4
+          },
+          {
+            "TenantId": 1,
+            "Name": "Extinción por gas tipo Waterford",
+            "Description": "brown",
+            "ClientId": 10,
+            "Location": "Shindler",
+            "Quantity": 1,
+            "IsActive": true,
+            "ManufacturedDate": "2010-02-01 12:00:00",
+            "InstalledDate": "2010-02-01 12:00:00",
+            "CreatedDate": "2019-11-25 11:11:31",
+            "productId": 4
+          }
+        ]
+      },
+      {
+        "IndexProduct": 5,
+        "TenantId": 1,
+        "Location": "Devon",
+        "Name": "Extinción por gas tipo Devon",
+        "Description": "Extinción por gas tipo Devon",
+        "CategoryId": 5,
+        "Assets": [
+          {
+            "TenantId": 1,
+            "Name": "Extinción por gas tipo Devon",
+            "Description": "brown",
             "ClientId": 9,
             "Location": "Orviston",
             "Quantity": 1,
             "IsActive": true,
             "ManufacturedDate": "2010-02-01 12:00:00",
             "InstalledDate": "2010-02-01 12:00:00",
-            "CreatedDate": "2019-11-08 06:06:17",
-            "productId": 3
+            "CreatedDate": "2019-11-25 11:11:31",
+            "productId": 5
           },
           {
             "TenantId": 1,
-            "Name": "Bocas de Incendio tipo anim",
-            "Description": "non proident ullamco est qui nostrud mollit occaecat",
-            "ClientId": 8,
-            "Location": "Craig",
-            "Quantity": 1,
-            "IsActive": true,
-            "ManufacturedDate": "2010-02-01 12:00:00",
-            "InstalledDate": "2010-02-01 12:00:00",
-            "CreatedDate": "2019-11-08 06:06:17",
-            "productId": 3
-          }
-        ]
-      },
-      {
-        "Ide": 4,
-        "TenantId": 1,
-        "Name": "Bocas de Incendio tipo id",
-        "Description": "nostrud aliquip sint excepteur deserunt aliquip non pariatur",
-        "CategoryId": 1,
-        "Assets": [
-          {
-            "TenantId": 1,
-            "Name": "Bocas de Incendio tipo amet",
-            "Description": "ut culpa pariatur elit id cillum elit Lorem",
+            "Name": "Extinción por gas tipo Devon",
+            "Description": "green",
             "ClientId": 10,
-            "Location": "Rote",
+            "Location": "Onton",
             "Quantity": 1,
             "IsActive": true,
             "ManufacturedDate": "2010-02-01 12:00:00",
             "InstalledDate": "2010-02-01 12:00:00",
-            "CreatedDate": "2019-11-08 06:06:17",
-            "productId": 4
-          },
-          {
-            "TenantId": 1,
-            "Name": "Bocas de Incendio tipo laboris",
-            "Description": "eiusmod cillum veniam incididunt in veniam cillum labore",
-            "ClientId": 2,
-            "Location": "Leyner",
-            "Quantity": 1,
-            "IsActive": true,
-            "ManufacturedDate": "2010-02-01 12:00:00",
-            "InstalledDate": "2010-02-01 12:00:00",
-            "CreatedDate": "2019-11-08 06:06:17",
-            "productId": 4
-          }
-        ]
-      },
-      {
-        "Ide": 5,
-        "TenantId": 1,
-        "Name": "Bocas de Incendio tipo sint",
-        "Description": "consequat do magna laborum fugiat consequat mollit non",
-        "CategoryId": 1,
-        "Assets": [
-          {
-            "TenantId": 1,
-            "Name": "Bocas de Incendio tipo dolore",
-            "Description": "veniam aliquip eu duis irure elit sint esse",
-            "ClientId": 7,
-            "Location": "Bowmansville",
-            "Quantity": 1,
-            "IsActive": true,
-            "ManufacturedDate": "2010-02-01 12:00:00",
-            "InstalledDate": "2010-02-01 12:00:00",
-            "CreatedDate": "2019-11-08 06:06:17",
-            "productId": 5
-          },
-          {
-            "TenantId": 1,
-            "Name": "Bocas de Incendio tipo reprehenderit",
-            "Description": "nulla dolor velit ipsum voluptate minim laborum culpa",
-            "ClientId": 4,
-            "Location": "Deltaville",
-            "Quantity": 1,
-            "IsActive": true,
-            "ManufacturedDate": "2010-02-01 12:00:00",
-            "InstalledDate": "2010-02-01 12:00:00",
-            "CreatedDate": "2019-11-08 06:06:17",
-            "productId": 5
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "Ide": 2,
-    "TenantId": 1,
-    "Name": "Detectores de incendios",
-    "Description": "incididunt Lorem cillum minim non ipsum sint exercitation",
-    "Products": [
-      {
-        "Ide": 1,
-        "TenantId": 1,
-        "Name": "Detectores de incendios tipo {{lorem(1, \"words\")}}",
-        "Description": "culpa cupidatat exercitation duis nisi aliquip elit non",
-        "CategoryId": "2",
-        "Assets": [
-          {
-            "TenantId": 1,
-            "Name": "Detectores de incendios tipo {{lorem(1, \"words\")}}",
-            "Description": "incididunt pariatur in velit eu eu culpa velit",
-            "ClientId": 4,
-            "Location": "Derwood",
-            "Quantity": 1,
-            "IsActive": true,
-            "ManufacturedDate": "2010-02-01 12:00:00",
-            "InstalledDate": "2010-02-01 12:00:00",
-            "CreatedDate": "2019-11-08 06:06:17",
-            "productId": "1"
-          },
-          {
-            "TenantId": 1,
-            "Name": "Detectores de incendios tipo {{lorem(1, \"words\")}}",
-            "Description": "consequat consequat eu sint aliquip reprehenderit sunt esse",
-            "ClientId": 11,
-            "Location": "Groton",
-            "Quantity": 1,
-            "IsActive": true,
-            "ManufacturedDate": "2010-02-01 12:00:00",
-            "InstalledDate": "2010-02-01 12:00:00",
-            "CreatedDate": "2019-11-08 06:06:17",
-            "productId": "1"
-          }
-        ]
-      },
-      {
-        "Ide": 2,
-        "TenantId": 1,
-        "Name": "Detectores de incendios tipo {{lorem(1, \"words\")}}",
-        "Description": "et culpa tempor sint est id aute tempor",
-        "CategoryId": "2",
-        "Assets": [
-          {
-            "TenantId": 1,
-            "Name": "Detectores de incendios tipo {{lorem(1, \"words\")}}",
-            "Description": "aute laboris reprehenderit mollit magna elit esse voluptate",
-            "ClientId": 8,
-            "Location": "Eagleville",
-            "Quantity": 1,
-            "IsActive": true,
-            "ManufacturedDate": "2010-02-01 12:00:00",
-            "InstalledDate": "2010-02-01 12:00:00",
-            "CreatedDate": "2019-11-08 06:06:17",
-            "productId": "2"
-          },
-          {
-            "TenantId": 1,
-            "Name": "Detectores de incendios tipo {{lorem(1, \"words\")}}",
-            "Description": "velit sit mollit ea quis adipisicing ea irure",
-            "ClientId": 9,
-            "Location": "Lopezo",
-            "Quantity": 1,
-            "IsActive": true,
-            "ManufacturedDate": "2010-02-01 12:00:00",
-            "InstalledDate": "2010-02-01 12:00:00",
-            "CreatedDate": "2019-11-08 06:06:17",
-            "productId": "2"
-          }
-        ]
-      },
-      {
-        "Ide": 3,
-        "TenantId": 1,
-        "Name": "Detectores de incendios tipo aliqua",
-        "Description": "laboris fugiat ad laboris ad elit qui non",
-        "CategoryId": 2,
-        "Assets": [
-          {
-            "TenantId": 1,
-            "Name": "Detectores de incendios tipo dolore",
-            "Description": "sunt commodo ullamco nulla tempor consequat duis amet",
-            "ClientId": 3,
-            "Location": "Stonybrook",
-            "Quantity": 1,
-            "IsActive": true,
-            "ManufacturedDate": "2010-02-01 12:00:00",
-            "InstalledDate": "2010-02-01 12:00:00",
-            "CreatedDate": "2019-11-08 06:06:17",
-            "productId": 3
-          },
-          {
-            "TenantId": 1,
-            "Name": "Detectores de incendios tipo velit",
-            "Description": "magna reprehenderit cupidatat dolore duis nostrud quis in",
-            "ClientId": 3,
-            "Location": "Gadsden",
-            "Quantity": 1,
-            "IsActive": true,
-            "ManufacturedDate": "2010-02-01 12:00:00",
-            "InstalledDate": "2010-02-01 12:00:00",
-            "CreatedDate": "2019-11-08 06:06:17",
-            "productId": 3
-          }
-        ]
-      },
-      {
-        "Ide": 4,
-        "TenantId": 1,
-        "Name": "Detectores de incendios tipo ex",
-        "Description": "dolor commodo minim sit exercitation nisi cupidatat pariatur",
-        "CategoryId": 2,
-        "Assets": [
-          {
-            "TenantId": 1,
-            "Name": "Detectores de incendios tipo consectetur",
-            "Description": "pariatur proident eu Lorem sunt culpa dolore officia",
-            "ClientId": 8,
-            "Location": "Bluetown",
-            "Quantity": 1,
-            "IsActive": true,
-            "ManufacturedDate": "2010-02-01 12:00:00",
-            "InstalledDate": "2010-02-01 12:00:00",
-            "CreatedDate": "2019-11-08 06:06:17",
-            "productId": 4
-          },
-          {
-            "TenantId": 1,
-            "Name": "Detectores de incendios tipo laboris",
-            "Description": "irure non ut non nisi sint dolor proident",
-            "ClientId": 2,
-            "Location": "Takilma",
-            "Quantity": 1,
-            "IsActive": true,
-            "ManufacturedDate": "2010-02-01 12:00:00",
-            "InstalledDate": "2010-02-01 12:00:00",
-            "CreatedDate": "2019-11-08 06:06:17",
-            "productId": 4
-          }
-        ]
-      },
-      {
-        "Ide": 5,
-        "TenantId": 1,
-        "Name": "Detectores de incendios tipo ipsum",
-        "Description": "irure eiusmod cillum anim dolore voluptate eiusmod sint",
-        "CategoryId": 2,
-        "Assets": [
-          {
-            "TenantId": 1,
-            "Name": "Detectores de incendios tipo quis",
-            "Description": "non commodo laboris proident pariatur cillum proident deserunt",
-            "ClientId": 2,
-            "Location": "Coldiron",
-            "Quantity": 1,
-            "IsActive": true,
-            "ManufacturedDate": "2010-02-01 12:00:00",
-            "InstalledDate": "2010-02-01 12:00:00",
-            "CreatedDate": "2019-11-08 06:06:17",
-            "productId": 5
-          },
-          {
-            "TenantId": 1,
-            "Name": "Detectores de incendios tipo cillum",
-            "Description": "irure proident voluptate laboris irure laboris nisi ex",
-            "ClientId": 7,
-            "Location": "Crenshaw",
-            "Quantity": 1,
-            "IsActive": true,
-            "ManufacturedDate": "2010-02-01 12:00:00",
-            "InstalledDate": "2010-02-01 12:00:00",
-            "CreatedDate": "2019-11-08 06:06:17",
-            "productId": 5
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "Ide": 3,
-    "TenantId": 1,
-    "Name": "Aerosoles",
-    "Description": "cillum eiusmod esse reprehenderit enim Lorem sunt eu",
-    "Products": [
-      {
-        "Ide": 1,
-        "TenantId": 1,
-        "Name": "Aerosoles tipo eiusmod",
-        "Description": "ullamco pariatur sint laborum dolore pariatur occaecat aliquip",
-        "CategoryId": 3,
-        "Assets": [
-          {
-            "TenantId": 1,
-            "Name": "Aerosoles tipo cillum",
-            "Description": "ullamco id amet non fugiat nulla nisi tempor",
-            "ClientId": 5,
-            "Location": "Cashtown",
-            "Quantity": 1,
-            "IsActive": true,
-            "ManufacturedDate": "2010-02-01 12:00:00",
-            "InstalledDate": "2010-02-01 12:00:00",
-            "CreatedDate": "2019-11-08 06:06:17",
-            "productId": 1
-          },
-          {
-            "TenantId": 1,
-            "Name": "Aerosoles tipo ex",
-            "Description": "id elit quis anim veniam proident ipsum ea",
-            "ClientId": 8,
-            "Location": "Lowell",
-            "Quantity": 1,
-            "IsActive": true,
-            "ManufacturedDate": "2010-02-01 12:00:00",
-            "InstalledDate": "2010-02-01 12:00:00",
-            "CreatedDate": "2019-11-08 06:06:17",
-            "productId": 1
-          }
-        ]
-      },
-      {
-        "Ide": 2,
-        "TenantId": 1,
-        "Name": "Aerosoles tipo aliqua",
-        "Description": "non aliquip Lorem aute sunt laborum ut cillum",
-        "CategoryId": 3,
-        "Assets": [
-          {
-            "TenantId": 1,
-            "Name": "Aerosoles tipo labore",
-            "Description": "cillum culpa magna incididunt pariatur eiusmod nostrud duis",
-            "ClientId": 10,
-            "Location": "Allamuchy",
-            "Quantity": 1,
-            "IsActive": true,
-            "ManufacturedDate": "2010-02-01 12:00:00",
-            "InstalledDate": "2010-02-01 12:00:00",
-            "CreatedDate": "2019-11-08 06:06:17",
-            "productId": 2
-          },
-          {
-            "TenantId": 1,
-            "Name": "Aerosoles tipo nulla",
-            "Description": "esse dolore incididunt ea aliquip labore amet voluptate",
-            "ClientId": 11,
-            "Location": "Stockdale",
-            "Quantity": 1,
-            "IsActive": true,
-            "ManufacturedDate": "2010-02-01 12:00:00",
-            "InstalledDate": "2010-02-01 12:00:00",
-            "CreatedDate": "2019-11-08 06:06:17",
-            "productId": 2
-          }
-        ]
-      },
-      {
-        "Ide": 3,
-        "TenantId": 1,
-        "Name": "Aerosoles tipo id",
-        "Description": "occaecat aute voluptate ad veniam non sunt in",
-        "CategoryId": 3,
-        "Assets": [
-          {
-            "TenantId": 1,
-            "Name": "Aerosoles tipo reprehenderit",
-            "Description": "nostrud ea consectetur anim cillum adipisicing mollit laboris",
-            "ClientId": 3,
-            "Location": "National",
-            "Quantity": 1,
-            "IsActive": true,
-            "ManufacturedDate": "2010-02-01 12:00:00",
-            "InstalledDate": "2010-02-01 12:00:00",
-            "CreatedDate": "2019-11-08 06:06:17",
-            "productId": 3
-          },
-          {
-            "TenantId": 1,
-            "Name": "Aerosoles tipo sint",
-            "Description": "ut consequat qui incididunt Lorem laborum dolor esse",
-            "ClientId": 9,
-            "Location": "Freelandville",
-            "Quantity": 1,
-            "IsActive": true,
-            "ManufacturedDate": "2010-02-01 12:00:00",
-            "InstalledDate": "2010-02-01 12:00:00",
-            "CreatedDate": "2019-11-08 06:06:17",
-            "productId": 3
-          }
-        ]
-      },
-      {
-        "Ide": 4,
-        "TenantId": 1,
-        "Name": "Aerosoles tipo et",
-        "Description": "nisi anim eiusmod velit ullamco voluptate eu nisi",
-        "CategoryId": 3,
-        "Assets": [
-          {
-            "TenantId": 1,
-            "Name": "Aerosoles tipo culpa",
-            "Description": "nisi minim commodo velit consectetur ullamco aute amet",
-            "ClientId": 4,
-            "Location": "Bedias",
-            "Quantity": 1,
-            "IsActive": true,
-            "ManufacturedDate": "2010-02-01 12:00:00",
-            "InstalledDate": "2010-02-01 12:00:00",
-            "CreatedDate": "2019-11-08 06:06:17",
-            "productId": 4
-          },
-          {
-            "TenantId": 1,
-            "Name": "Aerosoles tipo sit",
-            "Description": "proident quis irure irure in ullamco ipsum anim",
-            "ClientId": 5,
-            "Location": "Bethany",
-            "Quantity": 1,
-            "IsActive": true,
-            "ManufacturedDate": "2010-02-01 12:00:00",
-            "InstalledDate": "2010-02-01 12:00:00",
-            "CreatedDate": "2019-11-08 06:06:17",
-            "productId": 4
-          }
-        ]
-      },
-      {
-        "Ide": 5,
-        "TenantId": 1,
-        "Name": "Aerosoles tipo commodo",
-        "Description": "consequat deserunt magna esse quis commodo elit Lorem",
-        "CategoryId": 3,
-        "Assets": [
-          {
-            "TenantId": 1,
-            "Name": "Aerosoles tipo eiusmod",
-            "Description": "ullamco irure commodo tempor magna minim dolor voluptate",
-            "ClientId": 2,
-            "Location": "Lookingglass",
-            "Quantity": 1,
-            "IsActive": true,
-            "ManufacturedDate": "2010-02-01 12:00:00",
-            "InstalledDate": "2010-02-01 12:00:00",
-            "CreatedDate": "2019-11-08 06:06:17",
-            "productId": 5
-          },
-          {
-            "TenantId": 1,
-            "Name": "Aerosoles tipo non",
-            "Description": "non in ad proident cillum nulla do id",
-            "ClientId": 9,
-            "Location": "Yukon",
-            "Quantity": 1,
-            "IsActive": true,
-            "ManufacturedDate": "2010-02-01 12:00:00",
-            "InstalledDate": "2010-02-01 12:00:00",
-            "CreatedDate": "2019-11-08 06:06:17",
-            "productId": 5
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "Ide": 4,
-    "TenantId": 1,
-    "Name": "Extinción por Rociadores",
-    "Description": "eiusmod eiusmod pariatur ad irure irure officia minim",
-    "Products": [
-      {
-        "Ide": 1,
-        "TenantId": 1,
-        "Name": "Extinción por Rociadores tipo qui",
-        "Description": "consectetur laboris est ut culpa sint aliquip ad",
-        "CategoryId": 4,
-        "Assets": [
-          {
-            "TenantId": 1,
-            "Name": "Extinción por Rociadores tipo Lorem",
-            "Description": "officia culpa occaecat labore aute enim ea non",
-            "ClientId": 11,
-            "Location": "Sandston",
-            "Quantity": 1,
-            "IsActive": true,
-            "ManufacturedDate": "2010-02-01 12:00:00",
-            "InstalledDate": "2010-02-01 12:00:00",
-            "CreatedDate": "2019-11-08 06:06:17",
-            "productId": 1
-          },
-          {
-            "TenantId": 1,
-            "Name": "Extinción por Rociadores tipo velit",
-            "Description": "dolor minim ea labore ut ad mollit Lorem",
-            "ClientId": 4,
-            "Location": "Noblestown",
-            "Quantity": 1,
-            "IsActive": true,
-            "ManufacturedDate": "2010-02-01 12:00:00",
-            "InstalledDate": "2010-02-01 12:00:00",
-            "CreatedDate": "2019-11-08 06:06:17",
-            "productId": 1
-          }
-        ]
-      },
-      {
-        "Ide": 2,
-        "TenantId": 1,
-        "Name": "Extinción por Rociadores tipo velit",
-        "Description": "eu irure esse labore voluptate exercitation ipsum consequat",
-        "CategoryId": 4,
-        "Assets": [
-          {
-            "TenantId": 1,
-            "Name": "Extinción por Rociadores tipo exercitation",
-            "Description": "adipisicing adipisicing deserunt ad deserunt cillum et consectetur",
-            "ClientId": 8,
-            "Location": "Cannondale",
-            "Quantity": 1,
-            "IsActive": true,
-            "ManufacturedDate": "2010-02-01 12:00:00",
-            "InstalledDate": "2010-02-01 12:00:00",
-            "CreatedDate": "2019-11-08 06:06:17",
-            "productId": 2
-          },
-          {
-            "TenantId": 1,
-            "Name": "Extinción por Rociadores tipo laboris",
-            "Description": "cillum veniam ut veniam irure do qui mollit",
-            "ClientId": 11,
-            "Location": "Chamberino",
-            "Quantity": 1,
-            "IsActive": true,
-            "ManufacturedDate": "2010-02-01 12:00:00",
-            "InstalledDate": "2010-02-01 12:00:00",
-            "CreatedDate": "2019-11-08 06:06:17",
-            "productId": 2
-          }
-        ]
-      },
-      {
-        "Ide": 3,
-        "TenantId": 1,
-        "Name": "Extinción por Rociadores tipo laborum",
-        "Description": "dolore excepteur pariatur excepteur laborum consequat culpa laborum",
-        "CategoryId": 4,
-        "Assets": [
-          {
-            "TenantId": 1,
-            "Name": "Extinción por Rociadores tipo voluptate",
-            "Description": "ipsum dolore officia cupidatat aliqua sit laborum laboris",
-            "ClientId": 3,
-            "Location": "Ronco",
-            "Quantity": 1,
-            "IsActive": true,
-            "ManufacturedDate": "2010-02-01 12:00:00",
-            "InstalledDate": "2010-02-01 12:00:00",
-            "CreatedDate": "2019-11-08 06:06:17",
-            "productId": 3
-          },
-          {
-            "TenantId": 1,
-            "Name": "Extinción por Rociadores tipo dolore",
-            "Description": "et mollit nulla velit cupidatat enim laborum magna",
-            "ClientId": 1,
-            "Location": "Jacksonwald",
-            "Quantity": 1,
-            "IsActive": true,
-            "ManufacturedDate": "2010-02-01 12:00:00",
-            "InstalledDate": "2010-02-01 12:00:00",
-            "CreatedDate": "2019-11-08 06:06:17",
-            "productId": 3
-          }
-        ]
-      },
-      {
-        "Ide": 4,
-        "TenantId": 1,
-        "Name": "Extinción por Rociadores tipo consequat",
-        "Description": "nisi dolor minim fugiat enim labore laborum reprehenderit",
-        "CategoryId": 4,
-        "Assets": [
-          {
-            "TenantId": 1,
-            "Name": "Extinción por Rociadores tipo tempor",
-            "Description": "duis amet aute officia elit est laboris occaecat",
-            "ClientId": 3,
-            "Location": "Walton",
-            "Quantity": 1,
-            "IsActive": true,
-            "ManufacturedDate": "2010-02-01 12:00:00",
-            "InstalledDate": "2010-02-01 12:00:00",
-            "CreatedDate": "2019-11-08 06:06:17",
-            "productId": 4
-          },
-          {
-            "TenantId": 1,
-            "Name": "Extinción por Rociadores tipo officia",
-            "Description": "ad consequat aute et excepteur pariatur proident do",
-            "ClientId": 10,
-            "Location": "Deputy",
-            "Quantity": 1,
-            "IsActive": true,
-            "ManufacturedDate": "2010-02-01 12:00:00",
-            "InstalledDate": "2010-02-01 12:00:00",
-            "CreatedDate": "2019-11-08 06:06:17",
-            "productId": 4
-          }
-        ]
-      },
-      {
-        "Ide": 5,
-        "TenantId": 1,
-        "Name": "Extinción por Rociadores tipo pariatur",
-        "Description": "laborum cupidatat anim non reprehenderit fugiat officia ad",
-        "CategoryId": 4,
-        "Assets": [
-          {
-            "TenantId": 1,
-            "Name": "Extinción por Rociadores tipo veniam",
-            "Description": "nisi proident irure ullamco cillum adipisicing est ad",
-            "ClientId": 2,
-            "Location": "Singer",
-            "Quantity": 1,
-            "IsActive": true,
-            "ManufacturedDate": "2010-02-01 12:00:00",
-            "InstalledDate": "2010-02-01 12:00:00",
-            "CreatedDate": "2019-11-08 06:06:17",
-            "productId": 5
-          },
-          {
-            "TenantId": 1,
-            "Name": "Extinción por Rociadores tipo voluptate",
-            "Description": "ut in reprehenderit tempor esse esse ullamco cupidatat",
-            "ClientId": 10,
-            "Location": "Gratton",
-            "Quantity": 1,
-            "IsActive": true,
-            "ManufacturedDate": "2010-02-01 12:00:00",
-            "InstalledDate": "2010-02-01 12:00:00",
-            "CreatedDate": "2019-11-08 06:06:17",
-            "productId": 5
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "Ide": 5,
-    "TenantId": 1,
-    "Name": "Extinción por gas",
-    "Description": "in adipisicing dolor sint elit laboris do consectetur",
-    "Products": [
-      {
-        "Ide": 1,
-        "TenantId": 1,
-        "Name": "Extinción por gas tipo ullamco",
-        "Description": "et ut sint Lorem cillum est aliqua veniam",
-        "CategoryId": 5,
-        "Assets": [
-          {
-            "TenantId": 1,
-            "Name": "Extinción por gas tipo commodo",
-            "Description": "anim nulla aliquip labore ea commodo consequat esse",
-            "ClientId": 9,
-            "Location": "Blairstown",
-            "Quantity": 1,
-            "IsActive": true,
-            "ManufacturedDate": "2010-02-01 12:00:00",
-            "InstalledDate": "2010-02-01 12:00:00",
-            "CreatedDate": "2019-11-08 06:06:17",
-            "productId": 1
-          },
-          {
-            "TenantId": 1,
-            "Name": "Extinción por gas tipo exercitation",
-            "Description": "incididunt aute est sunt aliqua non incididunt dolor",
-            "ClientId": 5,
-            "Location": "Rew",
-            "Quantity": 1,
-            "IsActive": true,
-            "ManufacturedDate": "2010-02-01 12:00:00",
-            "InstalledDate": "2010-02-01 12:00:00",
-            "CreatedDate": "2019-11-08 06:06:17",
-            "productId": 1
-          }
-        ]
-      },
-      {
-        "Ide": 2,
-        "TenantId": 1,
-        "Name": "Extinción por gas tipo ea",
-        "Description": "pariatur sunt pariatur nostrud esse pariatur ullamco veniam",
-        "CategoryId": 5,
-        "Assets": [
-          {
-            "TenantId": 1,
-            "Name": "Extinción por gas tipo duis",
-            "Description": "do cillum consequat anim exercitation laborum eu labore",
-            "ClientId": 8,
-            "Location": "Boomer",
-            "Quantity": 1,
-            "IsActive": true,
-            "ManufacturedDate": "2010-02-01 12:00:00",
-            "InstalledDate": "2010-02-01 12:00:00",
-            "CreatedDate": "2019-11-08 06:06:17",
-            "productId": 2
-          },
-          {
-            "TenantId": 1,
-            "Name": "Extinción por gas tipo aliquip",
-            "Description": "quis adipisicing proident et et aliqua velit qui",
-            "ClientId": 2,
-            "Location": "Roy",
-            "Quantity": 1,
-            "IsActive": true,
-            "ManufacturedDate": "2010-02-01 12:00:00",
-            "InstalledDate": "2010-02-01 12:00:00",
-            "CreatedDate": "2019-11-08 06:06:17",
-            "productId": 2
-          }
-        ]
-      },
-      {
-        "Ide": 3,
-        "TenantId": 1,
-        "Name": "Extinción por gas tipo voluptate",
-        "Description": "ullamco exercitation ut eu aliqua commodo elit incididunt",
-        "CategoryId": 5,
-        "Assets": [
-          {
-            "TenantId": 1,
-            "Name": "Extinción por gas tipo eu",
-            "Description": "aliquip commodo sint irure ad eiusmod officia pariatur",
-            "ClientId": 3,
-            "Location": "Hilltop",
-            "Quantity": 1,
-            "IsActive": true,
-            "ManufacturedDate": "2010-02-01 12:00:00",
-            "InstalledDate": "2010-02-01 12:00:00",
-            "CreatedDate": "2019-11-08 06:06:17",
-            "productId": 3
-          },
-          {
-            "TenantId": 1,
-            "Name": "Extinción por gas tipo reprehenderit",
-            "Description": "ea velit aliqua reprehenderit aliqua proident incididunt in",
-            "ClientId": 4,
-            "Location": "Westphalia",
-            "Quantity": 1,
-            "IsActive": true,
-            "ManufacturedDate": "2010-02-01 12:00:00",
-            "InstalledDate": "2010-02-01 12:00:00",
-            "CreatedDate": "2019-11-08 06:06:17",
-            "productId": 3
-          }
-        ]
-      },
-      {
-        "Ide": 4,
-        "TenantId": 1,
-        "Name": "Extinción por gas tipo deserunt",
-        "Description": "in cupidatat ea laborum do in veniam laborum",
-        "CategoryId": 5,
-        "Assets": [
-          {
-            "TenantId": 1,
-            "Name": "Extinción por gas tipo dolor",
-            "Description": "est ea consectetur ea nulla cupidatat irure commodo",
-            "ClientId": 7,
-            "Location": "Soham",
-            "Quantity": 1,
-            "IsActive": true,
-            "ManufacturedDate": "2010-02-01 12:00:00",
-            "InstalledDate": "2010-02-01 12:00:00",
-            "CreatedDate": "2019-11-08 06:06:17",
-            "productId": 4
-          },
-          {
-            "TenantId": 1,
-            "Name": "Extinción por gas tipo sit",
-            "Description": "commodo ullamco proident cupidatat incididunt ullamco velit tempor",
-            "ClientId": 8,
-            "Location": "Galesville",
-            "Quantity": 1,
-            "IsActive": true,
-            "ManufacturedDate": "2010-02-01 12:00:00",
-            "InstalledDate": "2010-02-01 12:00:00",
-            "CreatedDate": "2019-11-08 06:06:17",
-            "productId": 4
-          }
-        ]
-      },
-      {
-        "Ide": 5,
-        "TenantId": 1,
-        "Name": "Extinción por gas tipo et",
-        "Description": "labore adipisicing proident consequat culpa esse ex incididunt",
-        "CategoryId": 5,
-        "Assets": [
-          {
-            "TenantId": 1,
-            "Name": "Extinción por gas tipo voluptate",
-            "Description": "esse sunt cupidatat sunt cupidatat consequat laboris reprehenderit",
-            "ClientId": 8,
-            "Location": "Celeryville",
-            "Quantity": 1,
-            "IsActive": true,
-            "ManufacturedDate": "2010-02-01 12:00:00",
-            "InstalledDate": "2010-02-01 12:00:00",
-            "CreatedDate": "2019-11-08 06:06:17",
-            "productId": 5
-          },
-          {
-            "TenantId": 1,
-            "Name": "Extinción por gas tipo commodo",
-            "Description": "officia incididunt cupidatat enim excepteur tempor velit ex",
-            "ClientId": 9,
-            "Location": "Barclay",
-            "Quantity": 1,
-            "IsActive": true,
-            "ManufacturedDate": "2010-02-01 12:00:00",
-            "InstalledDate": "2010-02-01 12:00:00",
-            "CreatedDate": "2019-11-08 06:06:17",
+            "CreatedDate": "2019-11-25 11:11:31",
             "productId": 5
           }
         ]

@@ -14,7 +14,6 @@ import { ClientAssetDetailComponent } from '../client-asset-detail/client-asset-
 
 export class ClientAssetsListComponent implements OnInit {
   @Input() clientId: number;
-  @Input() tenantId: number;
   assets: Asset[];
 
   constructor(private alertify: AlertifyService, private assetService: AssetService,

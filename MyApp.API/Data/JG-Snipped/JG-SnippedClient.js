@@ -1,4 +1,3 @@
-//To generate json file at https://next.json-generator.com/
 [
   {
     'repeat(11)': {
@@ -7,7 +6,7 @@
     FirstName: '{{firstName()}}',
     LastName: '{{surname()}}',
     society: function (tags) {
-      var soc = [', S.L.', ', S.A.', ', S.C.', ' & CIA',', C.B.'];
+      var soc = [', S.L.', ', S.A.', ', S.C.', ', S.COOP.',', C.B.'];
       return soc[tags.integer(0, soc.length - 1)];  },
     company_: '{{company().toUpperCase()}}',
     company(tags) {
@@ -33,7 +32,7 @@
     
     phone: '+1 {{phone()}}',
     
-    Observations: '{{lorem(1, "paragraphs")}}',
+    Observations: '',
     
     
     isDeleted: 'false',
@@ -41,7 +40,7 @@
     isActive: '{{bool()}}',
     
     registered: '{{moment(this.date(new Date(2014, 0, 1), new Date())).format("YYYY-MM-DD")}}',
-    TenantId:'{{integer(1,2, 00)}}'
+    TenantId:'{{integer(1,1, 00)}}'
       }
     }
 ]
