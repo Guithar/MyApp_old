@@ -87,7 +87,7 @@ export class ClientListComponent implements OnInit {
     deleteData(client: Client) {
       console.log('deleteData');
     }
-    updateData(client: any) {
+    updateData(client: Client) {
       console.log('updateData');
     }
 

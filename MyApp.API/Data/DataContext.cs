@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
+using System;
 
 namespace MyApp.API.Data
 {
@@ -58,10 +59,12 @@ namespace MyApp.API.Data
                     {
                         case EntityState.Added:
                             entry.CurrentValues["IsDeleted"] = false;
+                            
                             break;
                         case EntityState.Deleted:
                             entry.State = EntityState.Modified;
                             entry.CurrentValues["IsDeleted"] = true;
+                            entry.CurrentValues["DeletedOn"] = DateTime.Now;
                             break;
                     }
                 }

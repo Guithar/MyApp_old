@@ -21,6 +21,11 @@ import { ClientSkeletonComponent } from './clients/client-skeleton/client-skelet
 import { AssetListResolver } from './_resolvers/asset-list.resolver';
 import { ClientMaintListComponent } from './clients/client-maint-list/client-maint-list.component';
 import { MaintListResolver } from './_resolvers/maint-list.resolver';
+import { ProductListComponent } from './catalog/product-list/product-list.component';
+import { ProductListResolver } from './_resolvers/product-list.resolver';
+import { ProductDetailComponent } from './catalog/product-detail/product-detail.component';
+import { ProductSkeletonComponent } from './catalog/product-skeleton/product-skeleton.component';
+import { ProductDetailResolver } from './_resolvers/product-detail.resolver';
 
 export const appRoutes: Routes = [
     {path: '', component: HomeComponent},
@@ -44,7 +49,11 @@ export const appRoutes: Routes = [
             {path: 'messages', component: MessagesComponent, resolve: {messages: MessagesResolver}},
             {path: 'lists', component: ListsComponent, resolve: {users: ListsResolver}},
             {path: 'admin', component: AdminPanelComponent, data: {roles: ['Admin', 'Moderator']}},
-        ]
+            {path: 'products', component: ProductListComponent,
+                resolve: {products: ProductListResolver}},
+            {path: 'products/:id', component: ProductSkeletonComponent,
+                resolve: {product: ProductDetailResolver}},
+            ]
     },
     {path: '**', redirectTo: '', pathMatch: 'full'},
 ];

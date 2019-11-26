@@ -45,7 +45,10 @@ namespace MyApp.API.Helpers
             CreateMap<AssetForUpdateDto,Asset>();
             CreateMap<AssetForCreationDto,Asset>();
 
-            CreateMap<Product,ProductForListDto>().ReverseMap();;
+            CreateMap<Product,ProductForListDto>().ReverseMap();
+            CreateMap<ProductForUpdateDto,Product>();
+            CreateMap<ProductForCreationDto,Product>();
+            CreateMap<Product,ProductForDetailedDto>();
             CreateMap<ProductCategory,ProductCategoryForListDto>();
 
             CreateMap<MaintScheduleAsset,MaintForListDto>()
@@ -85,5 +88,6 @@ namespace MyApp.API.Helpers
             .ForMember(m => m.MonthsInterval, opt => opt
                     .MapFrom(msa => msa.MaintSchedule.MonthsInterval));
         }
+
     }
 }

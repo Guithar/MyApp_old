@@ -1,5 +1,4 @@
 import { Component, OnInit, Input, Inject } from '@angular/core';
-import { Client } from 'src/app/_models/client';
 import { Router } from '@angular/router';
 import { ClientService } from 'src/app/_services/client.service';
 import { AlertifyService } from 'src/app/_services/alertify.service';
@@ -14,7 +13,6 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
   styleUrls: ['./client-add.component.css']
 })
 export class ClientAddComponent implements OnInit {
-  @Input() client: Client;
   action: string;
   constructor(public dialogRef: MatDialogRef<ClientAddComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any , private alertify: AlertifyService,
@@ -65,12 +63,9 @@ export class ClientAddComponent implements OnInit {
 
   }
   resetForm() {
-    if (this.client) {
-      this.clientForm.reset(this.client);
-    } else {
-      this.alertify.confirm('Reset form', 'Are you sure you want to reset this form?', () => {
-        this.clientForm.reset();
+      this.alertify.confirm('Reset form', 'Are you sure you want to cancel?', () => {
+        // this.clientForm.reset();
+        this.dialogRef.close({event: 'Cancel', data: this.clientForm.value});
       });
-    }
   }
 }

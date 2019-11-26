@@ -31,4 +31,14 @@ export class ProductService {
   getProduct( id: number): Observable<Product> {
     return this.http.get<Product>(this.baseUrl + 'products/' + id);
   }
+  updateProduct(id: number, product: Product) {
+    return this.http.put(this.baseUrl + 'products/' + id, product);
+  }
+  createProduct(product: Product) {
+    return this.http.post(this.baseUrl + 'products/', product);
+  }
+  deleteProduct(id: number) {
+
+    return this.http.delete(this.baseUrl + 'products/' + id, {});
+  }
 }

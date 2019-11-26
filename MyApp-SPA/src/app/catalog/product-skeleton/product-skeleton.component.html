@@ -1,0 +1,28 @@
+<div class="card-header">
+        <strong *ngIf="!product"> New Product</strong>
+        <strong *ngIf="product"> {{product.id}} - {{product.name}}</strong>
+        <small> Detailed </small>
+    </div>
+    <mat-tab-group [selectedIndex]="0">
+        <mat-tab>
+            <ng-template mat-tab-label>
+                Detail
+            </ng-template>
+            <app-product-detail #productDetailComponent [product]="product"></app-product-detail>
+        </mat-tab>
+    
+        <mat-tab>
+            <ng-template mat-tab-label>
+                Tariffs
+            </ng-template>
+            Content 2
+        </mat-tab>
+    
+        <mat-tab>
+            <ng-template mat-tab-label>
+                Documents
+            </ng-template>
+            Content 3
+        </mat-tab> 
+    
+    </mat-tab-group>

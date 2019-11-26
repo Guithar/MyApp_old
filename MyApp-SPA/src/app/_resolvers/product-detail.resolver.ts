@@ -1,20 +1,22 @@
+
 import {Injectable} from '@angular/core';
 import {Resolve, Router, ActivatedRouteSnapshot} from '@angular/router';
-import { ClientService } from '../_services/client.service';
 import { AlertifyService } from '../_services/alertify.service';
 import { Observable, of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { Client } from '../_models/client';
+import { Product } from '../_models/product';
+import { ProductService } from '../_services/product.service';
+
 
 @Injectable()
-export class ClientDetailResolver implements Resolve<Client> {
-    constructor(private clientService: ClientService, private router: Router,
+export class ProductDetailResolver implements Resolve<Product> {
+    constructor(private productService: ProductService, private router: Router,
         private alertify: AlertifyService) {}
 
-    resolve(route: ActivatedRouteSnapshot): Observable<Client> {
+    resolve(route: ActivatedRouteSnapshot): Observable<Product> {
 
         if (route.params['id'] !== 'new') {
-           return this.clientService.getClient(route.params['id']).pipe(
+           return this.productService.getProduct(route.params['id']).pipe(
             catchError(() => {
                 this.alertify.error('Problem retrieving data');
                 this.router.navigate(['/home']);

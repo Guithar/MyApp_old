@@ -1,0 +1,10 @@
+
+table {
+    width: 100%;
+    cursor: pointer;
+  }
+  
+  .card-header {
+    justify-content: space-between
+  }
+
