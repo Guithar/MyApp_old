@@ -6,6 +6,7 @@ export interface MaintForList {
   location: string;
   quantity: number;
   monthsInterval: number;
+  maintScheduleName: string;
   manufacturedDate: Date;
   lastRev: Date;
   nextRev: Date;

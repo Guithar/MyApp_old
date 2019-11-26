@@ -61,6 +61,8 @@ namespace MyApp.API.Helpers
                     .MapFrom(msa => msa.Asset.Product.ProductCategory.Name))
 
 
+        .ForMember(m => m.MaintScheduleName, opt => opt
+                    .MapFrom(msa => msa.MaintSchedule.Name))
             .ForMember(m => m.Location, opt => opt
                     .MapFrom(msa => msa.Asset.Location))
             .ForMember(m => m.ManufacturedDate, opt => opt

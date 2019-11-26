@@ -14,6 +14,7 @@ namespace MyApp.API.Models
         public string Location { get; set; }
         public int Quantity { get; set; }
         
+        public string MaintScheduleName { get; set; }
         public int MonthsInterval { get; set; }
         public DateTime ManufacturedDate { get; set; }
         public DateTime LastRev { get; set; }
