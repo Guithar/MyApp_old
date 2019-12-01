@@ -15,15 +15,11 @@ import { MessagesResolver } from './_resolvers/messages.resolver';
 import { AdminPanelComponent } from './admin/admin-panel/admin-panel.component';
 import { ClientListComponent } from './clients/client-list/client-list.component';
 import { ClientListResolver } from './_resolvers/client-list.resolver';
-import { ClientDetailComponent } from './clients/client-detail/client-detail.component';
 import { ClientDetailResolver } from './_resolvers/client-detail.resolver';
 import { ClientSkeletonComponent } from './clients/client-skeleton/client-skeleton.component';
 import { AssetListResolver } from './_resolvers/asset-list.resolver';
-import { ClientMaintListComponent } from './clients/client-maint-list/client-maint-list.component';
-import { MaintListResolver } from './_resolvers/maint-list.resolver';
 import { ProductListComponent } from './catalog/product-list/product-list.component';
 import { ProductListResolver } from './_resolvers/product-list.resolver';
-import { ProductDetailComponent } from './catalog/product-detail/product-detail.component';
 import { ProductSkeletonComponent } from './catalog/product-skeleton/product-skeleton.component';
 import { ProductDetailResolver } from './_resolvers/product-detail.resolver';
 
@@ -38,8 +34,7 @@ export const appRoutes: Routes = [
                 resolve: {clients: ClientListResolver}},
             {path: 'clients/:id', component: ClientSkeletonComponent,
                 resolve: {client: ClientDetailResolver,
-                            assets: AssetListResolver,
-                            }},
+                            assets: AssetListResolver}},
             {path: 'members', component: MemberListComponent,
                 resolve: {users: MemberListResolver}},
             {path: 'members/:id', component: MemberDetailComponent,

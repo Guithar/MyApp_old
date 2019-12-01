@@ -27,26 +27,33 @@ export class ClientAssetDetailComponent implements OnInit  {
      }
 
       assetForm =  this.formBuilder.group({
-      id: ['' , Validators.required],
-      clientId: ['', Validators.required],
-      tenantId: ['', Validators.required],
-      // name: [{value: '', disabled: false}, Validators.required],
-      description: ['', Validators.required],
-      location: ['', Validators.required],
-      quantity: ['', Validators.required],
-      manufacturedDate: ['', Validators.required],
-      installedDate: ['', Validators.required],
-      productProductCategoryId: ['', Validators.required], 
-      productId: ['', Validators.required],
-      isActive: ['', Validators.required],
-      isDeleted: [{value: '', disabled: true}, Validators.required],
-      createdOn: [{value: '', disabled: true}, Validators.required],
-      updateOn: [{value: '', disabled: true}, Validators.required],
-      deletedOn: [{value: '', disabled: true}, Validators.required],
-      createdBy: [{value: '', disabled: true}, Validators.required],
-      updateBy: [{value: '', disabled: true}, Validators.required],
-      deletedBy: [{value: '', disabled: true}, Validators.required]
-    });
+        assetId: ['' , Validators.required],
+        maintScheduleId: ['', Validators.required],
+        maintScheduleName: ['', Validators.required],
+        tenantId: ['', Validators.required],
+        product: this.formBuilder.group({
+          id: [{value: '', disabled: false}, Validators.required],
+          name: [{value: '', disabled: false}, Validators.required],
+          description: [{value: '', disabled: false}, Validators.required],
+          productCategoryName: [{value: '', disabled: false}, Validators.required],
+          productCategoryId: ['', Validators.required],
+        }),
+        location: ['', Validators.required],
+        quantity: ['', Validators.required],
+        monthsInterval: ['', Validators.required],
+        manufacturedDate: ['', Validators.required],
+        lastRev: ['', Validators.required],
+        nextRev: ['', Validators.required],
+        lastResult: ['', Validators.required],
+        isActive: ['', Validators.required],
+        isDeleted: [{value: '', disabled: true}, Validators.required],
+        createdOn: [{value: '', disabled: true}, Validators.required],
+        updateOn: [{value: '', disabled: true}, Validators.required],
+        deletedOn: [{value: '', disabled: true}, Validators.required],
+        createdBy: [{value: '', disabled: true}, Validators.required],
+        updateBy: [{value: '', disabled: true}, Validators.required],
+        deletedBy: [{value: '', disabled: true}, Validators.required]
+      });
 
     ngOnInit() {
       this.getCategories();
@@ -54,25 +61,28 @@ export class ClientAssetDetailComponent implements OnInit  {
         switch (this.data.action) {
           case 'Add':
               this.assetForm.controls['id'].disable();
-              this.assetForm.controls['clientId'].disable();
               this.assetForm.controls['tenantId'].disable();
               break;
           case 'Delete':
               this.assetForm.patchValue(this.data);
+              this.productParams.categoryId = this.data.product.productCategoryId;
+              this.getProductsOfCategory(this.productParams.categoryId);
               this.assetForm.disable();
               break;
           case 'Update':
               this.assetForm.patchValue(this.data);
-              this.productParams.categoryId = this.data.productProductCategoryId;
+              this.productParams.categoryId = this.data.product.productCategoryId;
               this.getProductsOfCategory(this.productParams.categoryId);
             break;
 
           default:
               console.log('Error');
             break;
-        }
+      }
+ 
+      console.log('this.data.productCategoryId: ', this.data.productCategoryId);
       console.log('this.data: ', this.data);
-      console.log(this.assetForm.value);
+      console.log('assetForm.value ', this.assetForm.value);
     }
 
     closeDialog() {

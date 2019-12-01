@@ -8,15 +8,35 @@
         <input matInput placeholder="quantity" formControlName="quantity" >
       </mat-form-field>
     </div>
+    <!-- product -->
+    
+    <div formGroupName="product">
 
-    <div class="form">
-      <mat-form-field>
-        <textarea matInput  placeholder="description" formControlName="description">
-              </textarea>
-      </mat-form-field>
+        <div class="form">
+            <mat-form-field>
+              <mat-select placeholder="Select Category" formControlName="productCategoryId"
+                 (selectionChange)="getProductsOfCategory($event.value)">
+                <mat-option [value]="category.id" *ngFor="let category of Categories">
+                  {{category.id}}-{{category.name}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+
+          <div class="form">
+              <mat-form-field>
+                <mat-select [value]="this.data.product" placeholder="Select Product"
+                formControlName="id">
+                  <mat-option [value]="product.id" *ngFor="let product of ListOfProducts">
+                    {{product.id}}-{{product.name}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
     </div>
 
-    <div class="form">
+
+<div class="form">
       <mat-form-field>
         <input matInput  placeholder="location" formControlName="location">
       </mat-form-field>
@@ -29,50 +49,16 @@
     </div>
 
     <div class="form">
-      <span>
+      
         <mat-form-field>
           <input matInput  [matDatepicker]="picker2" placeholder="Manufactured date"
             formControlName="manufacturedDate" [value]="data.manufacturedDate">
           <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
           <mat-datepicker #picker2></mat-datepicker>
         </mat-form-field>
-      </span>
-<div></div>
-      <span>
-        <mat-form-field>
-          <input matInput  [matDatepicker]="picker1" placeholder="installedDate" formControlName="installedDate"
-            id="installedDate" [value]="assetForm.get('installedDate').value">
-          <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
-          <mat-datepicker #picker1></mat-datepicker>
-        </mat-form-field>
-      </span>
     </div>
 
-    
 
-      <div class="form">
-        <mat-form-field>
-          <mat-select placeholder="Select Category" formControlName="productProductCategoryId"
-             (selectionChange)="getProductsOfCategory($event.value)">
-            <mat-option [value]="category.id" *ngFor="let category of Categories">
-              {{category.id}}-{{category.name}}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
-      </div>
-
-
-      <div class="form">
-        <mat-form-field>
-          <mat-select [value]="this.data.product" placeholder="Select Product"
-          formControlName="productId">
-            <mat-option [value]="product.id" *ngFor="let product of ListOfProducts">
-              {{product.id}}-{{product.name}}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
-      </div>
-    
 
     <div mat-dialog-actions>
       <button mat-button (click)="submit()">{{action}}</button>

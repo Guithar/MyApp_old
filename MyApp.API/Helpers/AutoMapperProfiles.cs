@@ -40,7 +40,7 @@ namespace MyApp.API.Helpers
             CreateMap<ClientForCreationDto,Client>();
             CreateMap<Client,ClientToReturnDto>();
 
-            CreateMap<Asset,AssetForListDto>();
+           // CreateMap<Asset,AssetForListDto>();
             CreateMap<Asset,AssetForDetailedDto>();
             CreateMap<AssetForUpdateDto,Asset>();
             CreateMap<AssetForCreationDto,Asset>();
@@ -51,20 +51,18 @@ namespace MyApp.API.Helpers
             CreateMap<Product,ProductForDetailedDto>();
             CreateMap<ProductCategory,ProductCategoryForListDto>();
 
-            CreateMap<MaintScheduleAsset,MaintForListDto>()
-            .ForPath(m => m.product.Id, opt => opt
+            CreateMap<MaintScheduleAsset,AssetForListDto>()
+            .ForPath(a => a.product.Id, opt => opt
                     .MapFrom(msa => msa.Asset.Product.Id))
-            .ForPath(m => m.product.Name, opt => opt
+            .ForPath(a => a.product.Name, opt => opt
                     .MapFrom(msa => msa.Asset.Product.Name))
-            .ForPath(m => m.product.Description, opt => opt
+            .ForPath(a => a.product.Description, opt => opt
                     .MapFrom(msa => msa.Asset.Product.ProductCategory.Description))
-            .ForPath(m => m.product.ProductCategoryId, opt => opt
+            .ForPath(a => a.product.ProductCategoryId, opt => opt
                     .MapFrom(msa => msa.Asset.Product.ProductCategoryId))
-            .ForPath(m => m.product.ProductCategoryName, opt => opt
+            .ForPath(a => a.product.ProductCategoryName, opt => opt
                     .MapFrom(msa => msa.Asset.Product.ProductCategory.Name))
-
-
-        .ForMember(m => m.MaintScheduleName, opt => opt
+            .ForMember(m => m.MaintScheduleName, opt => opt
                     .MapFrom(msa => msa.MaintSchedule.Name))
             .ForMember(m => m.Location, opt => opt
                     .MapFrom(msa => msa.Asset.Location))

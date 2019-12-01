@@ -27,16 +27,17 @@ namespace MyApp.API.Controllers
             }
 
             [HttpGet]
-            public async Task <ActionResult<IEnumerable<AssetForListDto>>> GetAssets(int clientId)
-            {  
-                var currentTenantId= int.Parse(User.FindFirst("TenantId").Value);
-                var Assets = await _repo.GetAssets(clientId, currentTenantId);
-                if (Assets == null)
-                    return NotFound();
+        public async Task <ActionResult<IEnumerable<AssetForListDto>>> GetAssets(int clientId)
+        {   // -filters:by MaintScheduleId, by ClientId ,by AssetId - orderBy:
+            var currentTenantId= int.Parse(User.FindFirst("TenantId").Value);
+            var maints = await _repo.GetAssets(clientId, currentTenantId);
+            if (maints == null)
+                return NotFound();
+            var maintsToReturn= _mapper.Map<IEnumerable<AssetForListDto>>(maints);
+            return new List<AssetForListDto>(maintsToReturn);
+            
+        }
 
-                 var AssetsToReturn=  _mapper.Map<IEnumerable<AssetForListDto>>(Assets);
-                 return new List<AssetForListDto> (AssetsToReturn);
-            }
             [HttpGet("{id}", Name="GetAsset")]
             
             public async Task<ActionResult<AssetForDetailedDto>> GetAsset(int id, int clientId)

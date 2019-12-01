@@ -14,44 +14,86 @@
         </span>
     </div>
     <div class="card-body">
-    
-        <table mat-table [dataSource]="dataSource" matSort #assetsListTable>
         
-            <!-- id Column -->
-            <ng-container matColumnDef="id">
-                <th mat-header-cell mat-sort-header *matHeaderCellDef> id </th>
-                <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+            <div *ngIf="selection.selected.length>0" mat-dialog-actions>
+                    Selected records count: {{selection.selected.length}}
+                    <button mat-raised-button class="primary"> 
+                        <i class="material-icons">delete</i> Delete All</button>
+                    <button mat-raised-button > Move to client</button>
+                    <button mat-raised-button > <i class="material-icons">
+                            assignment_turned_in
+                            </i>
+                            Start inspection</button>
+                    <button mat-raised-button > <i class="material-icons">update</i> Update </button>
+            </div>
+
+        <table mat-table [dataSource]="dataSource" matSort #assetsListTable>
+
+
+            <!-- Checkbox Column -->
+   <ng-container matColumnDef="select">
+        <th mat-header-cell *matHeaderCellDef>
+          <mat-checkbox (change)="$event ? masterToggle() : null"
+                        [checked]="selection.hasValue() && isAllSelected()"
+                        [indeterminate]="selection.hasValue() && !isAllSelected()"
+                        [aria-label]="checkboxLabel()">
+          </mat-checkbox> Check
+        </th>
+        <td mat-cell *matCellDef="let row">
+          <mat-checkbox (click)="$event.stopPropagation()"
+                        (change)="$event ? selection.toggle(row) : null"
+                        [checked]="selection.isSelected(row)"
+                        [aria-label]="checkboxLabel(row)">
+          </mat-checkbox>
+        </td>
+      </ng-container>
+
+            <!-- assetId Column -->
+            <ng-container matColumnDef="assetId">
+                <th mat-header-cell mat-sort-header *matHeaderCellDef> assetId </th>
+                <td mat-cell *matCellDef="let element"> {{element.assetId}} </td>
             </ng-container>
 
-            <!-- clientId Column -->
-            <ng-container matColumnDef="clientId">
-                <th mat-header-cell mat-sort-header *matHeaderCellDef> clientId</th>
-                <td mat-cell *matCellDef="let element"> {{element.clientId}} </td>
+
+
+
+            <!-- product.productCategoryName Column -->
+            <ng-container matColumnDef="product.productCategoryName">
+                <th mat-header-cell mat-sort-header *matHeaderCellDef> Category</th>
+                <td mat-cell *matCellDef="let element"> {{element.product.productCategoryName}} </td>
+            </ng-container>
+
+            <!-- maintScheduleName Column -->
+            <ng-container matColumnDef="maintScheduleName">
+                    <th mat-header-cell mat-sort-header *matHeaderCellDef> maintScheduleName</th>
+                    <td mat-cell *matCellDef="let element"> {{element.maintScheduleName}} </td>
+                </ng-container>
+
+            <!-- product.name Column -->
+            <ng-container matColumnDef="product.name">
+                <th mat-header-cell mat-sort-header *matHeaderCellDef> Name</th>
+                <td mat-cell *matCellDef="let element"> {{element.product.name}} </td>
             </ng-container>
 
             <!-- clientUserId Column -->
-            <ng-container matColumnDef="clientUserId">
-            <th mat-header-cell mat-sort-header *matHeaderCellDef> clientUserId</th>
-            <td mat-cell *matCellDef="let element"> {{element.clientUserId}} </td>
+            <ng-container matColumnDef="product.isActive">
+            <th mat-header-cell mat-sort-header *matHeaderCellDef> isActive</th>
+            <td mat-cell *matCellDef="let element"> {{element.product.isActive}} </td>
             </ng-container>
 
-            <!-- clientCompany Column -->
-            <ng-container matColumnDef="clientCompany">
-                <th mat-header-cell mat-sort-header *matHeaderCellDef> clientCompany </th>
-                <td mat-cell *matCellDef="let element"> {{element.clientCompany}} </td>
+            <!-- monthsInterval Column -->
+            <ng-container matColumnDef="monthsInterval">
+                <th mat-header-cell mat-sort-header *matHeaderCellDef> monthsInterval </th>
+                <td mat-cell *matCellDef="let element"> {{element.monthsInterval}} </td>
             </ng-container>
 
-            <!-- name Column -->
-            <ng-container matColumnDef="name">
-                <th mat-header-cell mat-sort-header *matHeaderCellDef> Name </th>
-                <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+            <!-- isActive Column -->
+            <ng-container matColumnDef="isActive">
+                <th mat-header-cell mat-sort-header *matHeaderCellDef> isActive </th>
+                <td mat-cell *matCellDef="let element"> {{element.isActive}} </td>
             </ng-container>
 
-            <!-- description Column -->
-            <ng-container matColumnDef="description">
-                <th mat-header-cell *matHeaderCellDef> Description </th>
-                <td mat-cell *matCellDef="let element"> {{element.description}} </td>
-            </ng-container>
+      
 
             <!-- location Column -->
             <ng-container matColumnDef="location">
@@ -65,36 +107,37 @@
                 <td mat-cell *matCellDef="let element"> {{element.quantity}} </td>
             </ng-container>
 
-            <!-- isActive Column -->
-            <ng-container matColumnDef="isActive">
-                <th mat-header-cell mat-sort-header *matHeaderCellDef> Active </th>
-                <td mat-cell *matCellDef="let element"> {{element.isActive}} </td>
-            </ng-container>
-
             <!-- manufacturedDate Column -->
             <ng-container matColumnDef="manufacturedDate">
-                <th mat-header-cell *matHeaderCellDef> Manufactured Date </th>
+                <th mat-header-cell mat-sort-header  *matHeaderCellDef> Manufactured </th>
                 <td mat-cell *matCellDef="let element"> {{element.manufacturedDate | date:'MMM, y'}} </td>
             </ng-container>    
 
             <!-- installedDate Column -->
             <ng-container matColumnDef="installedDate">
-                <th mat-header-cell mat-sort-header *matHeaderCellDef> Installed Date </th>
+                <th mat-header-cell mat-sort-header *matHeaderCellDef> Installed </th>
                 <td mat-cell *matCellDef="let element"> {{element.installedDate | date:'MMM, y'}} </td>
-            </ng-container>   
-            
-            <!-- productId Column -->
-            <ng-container matColumnDef="productId">
-                <th mat-header-cell *matHeaderCellDef> productId </th>
-                <td mat-cell *matCellDef="let element"> {{element.productId}} </td>
             </ng-container>  
 
-            <!-- productName Column -->
-            <ng-container matColumnDef="product.productCategoryName">
-                <th mat-header-cell *matHeaderCellDef> Category</th>
-                <td mat-cell *matCellDef="let element"> {{element.product.productCategoryName}} </td>
-
+            <!-- lastRev Column -->
+            <ng-container matColumnDef="lastRev">
+                <th mat-header-cell mat-sort-header *matHeaderCellDef> last Rev </th>
+                <td mat-cell *matCellDef="let element"> {{element.lastRev| date:'MMM, y'}} </td>
             </ng-container>
+
+            <!-- nextRev Column -->
+            <ng-container matColumnDef="nextRev">
+                <th mat-header-cell mat-sort-header *matHeaderCellDef> next Rev </th>
+                <td mat-cell *matCellDef="let element"> {{element.nextRev| date:'MMM, y'}} </td>
+            </ng-container>
+
+           
+            
+            <!-- lastResult Column -->
+            <ng-container matColumnDef="lastResult">
+                <th mat-header-cell mat-sort-header  *matHeaderCellDef> last Result </th>
+                <td mat-cell *matCellDef="let element"> {{element.lastResult}} </td>
+            </ng-container>  
             <!-- Actions Column -->
             
             <ng-container matColumnDef="actions">
@@ -121,9 +164,17 @@
 
                 
             <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-            <tr mat-row  *matRowDef="let row; columns: displayedColumns;"></tr>
+            <tr mat-row  *matRowDef="let row; columns: displayedColumns;"
+            class="example-element-row"
+            [class.example-expanded-row]="expandedElement === row"
+            (click)="expandedElement = expandedElement === row ? null : row">>
+                
+            </tr>
         </table>
         
     <mat-paginator [pageSizeOptions]="[20, 30, 40, 50]" showFirstLastButtons></mat-paginator>
 </div>
 
+<div>
+        <p *ngFor="let item of selection.selected">{{item.assetId}} - {{item.product.name}}</p>
+    </div>

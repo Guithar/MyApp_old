@@ -1,28 +1,31 @@
-import { Product } from './product';
 
 export interface Asset {
-  id: number;
-  clientId: number;
+  assetId: number;
+  maintScheduleId: number;
   tenantId: number;
-  clientCompany: string;
-  name: string;
-  description: string;
+  product: ProductInAsset;
   location: string;
   quantity: number;
-  manufacturedDate: string;
-  installedDate: string;
-  productName: string;
-  productProductCategoryId: number;
-  productId: number;
-  product: Product;
+  monthsInterval: number;
+  maintScheduleName: string;
+  manufacturedDate: Date;
+  lastRev: Date;
+  nextRev: Date;
+  lastResult: string;
   isActive: boolean;
-  isDelete: boolean;
+  isDeleted: boolean;
   createdOn: Date;
   updatedOn: Date;
-  deletedOn: Date;
+  deletedOn?: Date;
   createdBy: number;
   updatedBy: number;
   deletedBy: number;
-
 }
 
+ interface ProductInAsset {
+  id: number;
+  name: string;
+  description: string;
+  productCategoryId: number;
+  productCategoryName: string;
+}

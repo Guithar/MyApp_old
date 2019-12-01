@@ -40,8 +40,11 @@ import { ClientSkeletonComponent } from './clients/client-skeleton/client-skelet
 import { ClientAssetsListComponent } from './clients/client-assets-list/client-assets-list.component';
 import { ClientAssetDetailComponent } from './clients/client-asset-detail/client-asset-detail.component';
 import { ClientAddComponent } from './clients/client-add/client-add.component';
-import { ClientMaintListComponent } from './clients/client-maint-list/client-maint-list.component';
 import { ProductListComponent } from './catalog/product-list/product-list.component';
+import { ProductAddComponent } from './catalog/product-add/product-add.component';
+import { ProductDetailComponent } from './catalog/product-detail/product-detail.component';
+import { ProductSkeletonComponent } from './catalog/product-skeleton/product-skeleton.component';
+
 // Services
 import { UserService } from './_services/user.service';
 import { AlertifyService } from './_services/alertify.service';
@@ -55,13 +58,9 @@ import { ListsResolver } from './_resolvers/lists.resolver';
 import { MessagesResolver } from './_resolvers/messages.resolver';
 import { ClientListResolver } from './_resolvers/client-list.resolver';
 import { ClientDetailResolver } from './_resolvers/client-detail.resolver';
-import { MaintListResolver } from './_resolvers/maint-list.resolver';
 import { AssetListResolver } from './_resolvers/asset-list.resolver';
 import { ProductListResolver } from './_resolvers/product-list.resolver';
-import { ProductAddComponent } from './catalog/product-add/product-add.component';
-import { ProductDetailComponent } from './catalog/product-detail/product-detail.component';
 import { ProductDetailResolver } from './_resolvers/product-detail.resolver';
-import { ProductSkeletonComponent } from './catalog/product-skeleton/product-skeleton.component';
 
 export function tokenGetter() {
   return localStorage.getItem('token');
@@ -100,7 +99,6 @@ export class CustomHammerConfig extends HammerGestureConfig  {
     ClientAssetsListComponent,
     ClientAssetDetailComponent,
     ClientAddComponent,
-    ClientMaintListComponent,
     ProductListComponent,
     ProductAddComponent,
     ProductDetailComponent,
@@ -146,7 +144,6 @@ export class CustomHammerConfig extends HammerGestureConfig  {
       ClientListResolver,
       ClientDetailResolver,
       AssetListResolver,
-      MaintListResolver,
       AssetService,
       ProductListResolver,
       ProductDetailResolver,

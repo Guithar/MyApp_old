@@ -184,14 +184,7 @@ namespace MyApp.API.Data
             var client = await query.FirstOrDefaultAsync(c => c.Id==id && c.TenantId==currentTenantId);
             return client;   
         }
-        public async Task<IEnumerable<Asset>> GetAssets(int clientId, int currentTenantId)
-        {     
-             var assets= await _context.Assets
-             .Include(p => p.Product)
-             .Where(a=> a.ClientId==clientId && a.TenantId==currentTenantId)
-             .ToListAsync(); 
-            return assets;
-        }
+
         public async Task<Asset> GetAsset(int id, int clientId, int currentTenantId)
         {           
             var asset= await _context.Assets
@@ -231,19 +224,21 @@ namespace MyApp.API.Data
         
         }
 
-        public async Task<IEnumerable<MaintScheduleAsset>> GetMaints(int clientId, int currentTenantId)
+        public async Task<IEnumerable<MaintScheduleAsset>> GetAssets(int clientId, int currentTenantId)
         {
              
              var maints= await _context.MaintSchedulesAssets
-             // .Include(p => p.Product)
              .Where(a=> a.Asset.ClientId==clientId && a.TenantId==currentTenantId)
              .ToListAsync(); 
             return maints;
         }
-
-        public Task<MaintScheduleAsset> GetMaint(int AssetId, int MaintScheduleId, int clientId, int currentTenantId)
-        {
-            throw new NotImplementedException();
-        }
+        // public async Task<IEnumerable<Asset>> GetAssets(int clientId, int currentTenantId)
+        // {     
+        //      var assets= await _context.Assets
+        //      .Include(p => p.Product)
+        //      .Where(a=> a.ClientId==clientId && a.TenantId==currentTenantId)
+        //      .ToListAsync(); 
+        //     return assets;
+        // }    
     }
 }
