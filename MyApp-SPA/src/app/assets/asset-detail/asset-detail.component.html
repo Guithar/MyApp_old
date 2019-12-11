@@ -1,0 +1,100 @@
+<div class="card">
+        <div class="card-header">
+            <div mat-dialog-actions>
+                Edit Asset of Client: <strong></strong>
+            </div>
+        </div>
+        <div class="card-body">
+    
+            <div class="container">
+                <h3 mat-dialog-title>Asset {{asset.id}} - {{asset.product.name}}</h3>
+    
+                <form [formGroup]="assetForm">
+    
+                    <div class="form">
+                        <mat-form-field>
+                            <input matInput placeholder="quantity" formControlName="quantity">
+                        </mat-form-field>
+                    </div>
+                    <!-- product -->
+    
+                    <div formGroupName="product">
+    
+                        <div class="form">
+                            <mat-form-field>
+                                <mat-select placeholder="Select Category" formControlName="productCategoryId" (selectionChange)="CategoryChanged($event.value)">
+                                    <mat-option [value]="category.id" *ngFor="let category of Categories">
+                                        {{category.id}}-{{category.name}}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+    
+                        <div class="form">
+                            <mat-form-field>
+                                <mat-select 
+                                    [value]="asset.product" 
+                                    placeholder="Select Product" 
+                                    formControlName="id">
+                                    <mat-option [value]="product.id" *ngFor="let product of ListOfProducts">
+                                        {{product.id}}-{{product.name}}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+                    </div>
+    
+                    <!-- location -->
+                    <div class="form">
+                        <mat-form-field>
+                            <input matInput placeholder="location" formControlName="location">
+                        </mat-form-field>
+                    </div>
+    
+                    <!-- isActive -->
+                    <div class="form">
+                        <mat-slide-toggle formControlName="isActive">
+                            Is Active
+                        </mat-slide-toggle>
+                    </div>
+    
+                    <!-- manufacturedDate  -->
+                    <div class="form">
+                        <mat-form-field>
+                            <input 
+                            matInput [matDatepicker]="picker2" 
+                            placeholder="Manufactured date" 
+                            formControlName="manufacturedDate" 
+                            [value]="asset.manufacturedDate">
+                            <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                            <mat-datepicker #picker2></mat-datepicker>
+                        </mat-form-field>
+                    </div>
+                            
+                    <div formGroupName="inspections">
+
+                        <div class="form">
+                            <mat-form-field id="maints">
+                                <mat-select 
+                                    [value]="asset.inspections" 
+                                    placeholder="Maintenance Schedules" 
+                                    formControlName="maintScheduleId"  
+                                    multiple>
+
+                                <mat-option *ngFor="let maintSchedule of ListOfMaintSchedules" [value]="maintSchedule" >
+                                        {{maintSchedule.id}} - {{maintSchedule.name}}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                           
+                            <button mat-raised-button color="primary" (click)="submit()">Update</button>
+ 
+                            
+                        </div>
+                        
+                        
+                    </div>   
+
+                </form>
+            </div>
+        </div>

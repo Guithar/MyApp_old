@@ -1,12 +1,13 @@
-import { Component, OnInit, Inject } from '@angular/core';
-import { MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { AlertifyService } from 'src/app/_services/alertify.service';
-import { ProductService } from 'src/app/_services/product.service';
 import { Product } from 'src/app/_models/product';
-import { catchError } from 'rxjs/operators';
 import { ProductCategoryService } from 'src/app/_services/ProductCategory.service';
 import { ProductCategory } from 'src/app/_models/productCategory';
+import { ActivatedRoute } from '@angular/router';
+import { Asset } from 'src/app/_models/asset';
+import { ProductService } from 'src/app/_services/product.service';
+import {Location} from '@angular/common';
 
 
 @Component({
@@ -19,32 +20,39 @@ export class ClientAssetDetailComponent implements OnInit  {
     Categories: ProductCategory[];
     ListOfProducts: Product[];
     productParams: any = {};
+    asset:  Asset;
 
-    constructor(public dialogRef: MatDialogRef<ClientAssetDetailComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: any , private formBuilder: FormBuilder,
-    private alertify: AlertifyService, private categoryService: ProductCategoryService,
-    private productService: ProductService) {
+    constructor (private formBuilder: FormBuilder,
+    private alertify: AlertifyService,
+    private categoryService: ProductCategoryService,
+    private productService: ProductService,
+    private currentRoute: ActivatedRoute,
+    private _location: Location) {
      }
 
       assetForm =  this.formBuilder.group({
-        assetId: ['' , Validators.required],
-        maintScheduleId: ['', Validators.required],
-        maintScheduleName: ['', Validators.required],
+        id: ['' , Validators.required],
         tenantId: ['', Validators.required],
+        location: ['', Validators.required],
+        quantity: ['', Validators.required],
+        manufacturedDate: ['', Validators.required],
+
         product: this.formBuilder.group({
           id: [{value: '', disabled: false}, Validators.required],
           name: [{value: '', disabled: false}, Validators.required],
           description: [{value: '', disabled: false}, Validators.required],
-          productCategoryName: [{value: '', disabled: false}, Validators.required],
           productCategoryId: ['', Validators.required],
+          productCategoryName: [{value: '', disabled: false}, Validators.required],
         }),
-        location: ['', Validators.required],
-        quantity: ['', Validators.required],
-        monthsInterval: ['', Validators.required],
-        manufacturedDate: ['', Validators.required],
-        lastRev: ['', Validators.required],
-        nextRev: ['', Validators.required],
-        lastResult: ['', Validators.required],
+        inspections: this.formBuilder.group({
+          maintScheduleId: ['', Validators.required],
+          name: [{value: '', disabled: false}, Validators.required],
+          description: [{value: '', disabled: false}, Validators.required],
+          monthsInterval: ['', Validators.required],
+          lastResult: ['', Validators.required],
+          lastInspectionDate: ['', Validators.required],
+          nextInspectionDate: ['', Validators.required]
+        }),
         isActive: ['', Validators.required],
         isDeleted: [{value: '', disabled: true}, Validators.required],
         createdOn: [{value: '', disabled: true}, Validators.required],
@@ -56,45 +64,38 @@ export class ClientAssetDetailComponent implements OnInit  {
       });
 
     ngOnInit() {
-      this.getCategories();
-      this.action = this.data.action;
-        switch (this.data.action) {
-          case 'Add':
-              this.assetForm.controls['id'].disable();
-              this.assetForm.controls['tenantId'].disable();
-              break;
-          case 'Delete':
-              this.assetForm.patchValue(this.data);
-              this.productParams.categoryId = this.data.product.productCategoryId;
-              this.getProductsOfCategory(this.productParams.categoryId);
-              this.assetForm.disable();
-              break;
-          case 'Update':
-              this.assetForm.patchValue(this.data);
-              this.productParams.categoryId = this.data.product.productCategoryId;
-              this.getProductsOfCategory(this.productParams.categoryId);
-            break;
+      const assetId = this.currentRoute.snapshot.paramMap.get('assetId');
+      console.log (assetId);
+      if (assetId == null) {
+        this.action = 'new';
+      } else {
+        this.action = 'edit';
 
-          default:
-              console.log('Error');
-            break;
+        this.currentRoute.data.subscribe(data => {
+          this.asset = data['asset'];
+          console.log('this.asset');
+          console.log(this.asset);
+          this.loadAsset();
+
+        });
       }
- 
-      console.log('this.data.productCategoryId: ', this.data.productCategoryId);
-      console.log('this.data: ', this.data);
-      console.log('assetForm.value ', this.assetForm.value);
+      console.log (this.action);
     }
 
-    closeDialog() {
-      this.dialogRef.close({event: 'Cancel'});
+    loadAsset() {
+      console.log('asset' , this.asset);
+      this.assetForm.patchValue(this.asset);
+      this.getCategories();
+      this.getProductsOfCategory(this.asset.product.productCategoryId);
+      console.log('assetForm', this.assetForm.value);
     }
-
     submit() {
       this.alertify.confirm( this.action + ' asset', 'Are you sure you want to ' +
       this.action.toLowerCase() + ' this asset?', () => {
-        this.dialogRef.close({event: this.action, data: this.assetForm.value});
+        // submit
       });
     }
+
     getCategories() {
       this.categoryService.getCategories().subscribe (response => {
         this.Categories = response;
@@ -102,6 +103,7 @@ export class ClientAssetDetailComponent implements OnInit  {
           this.alertify.error(error);
        });
     }
+
     getProductsOfCategory(categoryId: number) {
       console.log('getProductsOfCategory ', categoryId);
       this.productParams.categoryId = categoryId;
@@ -110,5 +112,8 @@ export class ClientAssetDetailComponent implements OnInit  {
        }, error => {
           this.alertify.error(error);
        });
+    }
+    backClicked() {
+      this._location.back();
     }
 }

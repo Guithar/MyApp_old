@@ -22,6 +22,10 @@ import { ProductListComponent } from './catalog/product-list/product-list.compon
 import { ProductListResolver } from './_resolvers/product-list.resolver';
 import { ProductSkeletonComponent } from './catalog/product-skeleton/product-skeleton.component';
 import { ProductDetailResolver } from './_resolvers/product-detail.resolver';
+import { ClientAssetDetailComponent } from './clients/client-asset-detail/client-asset-detail.component';
+import { AssetDetailResolver } from './_resolvers/asset-detail.resolver';
+import { AssetListComponent } from './assets/asset-list/asset-list.component';
+import { AssetSkeletonComponent } from './assets/asset-skeleton/asset-skeleton.component';
 
 export const appRoutes: Routes = [
     {path: '', component: HomeComponent},
@@ -35,6 +39,10 @@ export const appRoutes: Routes = [
             {path: 'clients/:id', component: ClientSkeletonComponent,
                 resolve: {client: ClientDetailResolver,
                             assets: AssetListResolver}},
+            {path: 'clients/:id/assets', component: AssetListComponent,
+                resolve: {assets: AssetListResolver}},
+            {path: 'clients/:id/assets/:assetId', component: AssetSkeletonComponent,
+                resolve: {asset: AssetDetailResolver}},
             {path: 'members', component: MemberListComponent,
                 resolve: {users: MemberListResolver}},
             {path: 'members/:id', component: MemberDetailComponent,
@@ -47,7 +55,7 @@ export const appRoutes: Routes = [
             {path: 'products', component: ProductListComponent,
                 resolve: {products: ProductListResolver}},
             {path: 'products/:id', component: ProductSkeletonComponent,
-                resolve: {product: ProductDetailResolver}},
+                resolve: {product: ProductDetailResolver}}
             ]
     },
     {path: '**', redirectTo: '', pathMatch: 'full'},

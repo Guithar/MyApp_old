@@ -28,23 +28,16 @@ export class ProductListComponent implements OnInit {
     }
   ngOnInit() {
     this.route.data.subscribe(data => {
-      this.products = data['products'].result;
-      this.loadProducts();
-    });
-}
+      this.products = data['products'];
 
-  loadProducts() {
-    console.log('loadProducts()');
-    this.productService.getProducts()
-    .subscribe((products: Product[]) => {
-      this.products = products;
-      this.dataSource = new MatTableDataSource(products);
-      this.dataSource.sort = this.sort;
-      this.dataSource.paginator = this.paginator;
-    }, error => {
-    this.alertify.error(error);
     });
-  }
+    this.loadProducts();
+}
+loadProducts() {
+  this.dataSource = new MatTableDataSource(this.products);
+this.dataSource.sort = this.sort;
+this.dataSource.paginator = this.paginator;
+}
   applyFilter(filterValue: string) {
     console.log(filterValue.trim().toLowerCase());
     this.dataSource.filter = filterValue.trim().toLowerCase();
@@ -105,7 +98,9 @@ export class ProductListComponent implements OnInit {
     console.log(product);
     this.productService.createProduct(product).subscribe(() => {
           this.alertify.success('Product created successfully');
+          this.products.push(product);
           this.loadProducts();
+          // TODO update the list with the new id
         }, error => {
           this.alertify.error('error ' + error);
         });

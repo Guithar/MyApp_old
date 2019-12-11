@@ -39,11 +39,8 @@ namespace MyApp.API.Helpers
             CreateMap<ClientForUpdateDto,Client>();
             CreateMap<ClientForCreationDto,Client>();
             CreateMap<Client,ClientToReturnDto>();
+            CreateMap<Client,ClientForAssetDto>();
 
-           // CreateMap<Asset,AssetForListDto>();
-            CreateMap<Asset,AssetForDetailedDto>();
-            CreateMap<AssetForUpdateDto,Asset>();
-            CreateMap<AssetForCreationDto,Asset>();
 
             CreateMap<Product,ProductForListDto>().ReverseMap();
             CreateMap<ProductForUpdateDto,Product>();
@@ -51,40 +48,47 @@ namespace MyApp.API.Helpers
             CreateMap<Product,ProductForDetailedDto>();
             CreateMap<ProductCategory,ProductCategoryForListDto>();
 
-            CreateMap<MaintScheduleAsset,AssetForListDto>()
-            .ForPath(a => a.product.Id, opt => opt
-                    .MapFrom(msa => msa.Asset.Product.Id))
-            .ForPath(a => a.product.Name, opt => opt
-                    .MapFrom(msa => msa.Asset.Product.Name))
-            .ForPath(a => a.product.Description, opt => opt
-                    .MapFrom(msa => msa.Asset.Product.ProductCategory.Description))
-            .ForPath(a => a.product.ProductCategoryId, opt => opt
-                    .MapFrom(msa => msa.Asset.Product.ProductCategoryId))
-            .ForPath(a => a.product.ProductCategoryName, opt => opt
-                    .MapFrom(msa => msa.Asset.Product.ProductCategory.Name))
-            .ForMember(m => m.MaintScheduleName, opt => opt
+            CreateMap<MaintScheduleAsset,MaintScheduleAssetDto>()
+             .ForMember(m => m.Name, opt => opt
                     .MapFrom(msa => msa.MaintSchedule.Name))
-            .ForMember(m => m.Location, opt => opt
-                    .MapFrom(msa => msa.Asset.Location))
-            .ForMember(m => m.ManufacturedDate, opt => opt
-                    .MapFrom(msa => msa.Asset.ManufacturedDate))
-            .ForMember(m => m.Quantity, opt => opt
-                    .MapFrom(msa => msa.Asset.Quantity))
-           
-            .ForMember(m => m.LastRev, opt => opt
+            .ForMember(m => m.Description, opt => opt
+                    .MapFrom(msa => msa.MaintSchedule.Description))
+            
+            .ForMember(m => m.MonthsInterval, opt => opt
+                    .MapFrom(msa => msa.MaintSchedule.MonthsInterval))
+            .ForMember(m => m.LastInspectionDate, opt => opt
                 .MapFrom(msa => msa.MaintResults
                     .OrderByDescending(c => c.ExecutedOn)
                     .FirstOrDefault().ExecutedOn))
-            .ForMember(m => m.NextRev, opt => opt
+            .ForMember(m => m.NextInspectionDate, opt => opt
                 .MapFrom(msa => msa.MaintResults
                     .OrderByDescending(c => c.ExecutedOn)
-                    .FirstOrDefault().NextRevision))
+                    .FirstOrDefault().NextInspectionDate))
             .ForMember(m => m.LastResult, opt => opt
                 .MapFrom(msa => msa.MaintResults
                     .OrderByDescending(c => c.ExecutedOn)
-                    .FirstOrDefault().Result))
-            .ForMember(m => m.MonthsInterval, opt => opt
-                    .MapFrom(msa => msa.MaintSchedule.MonthsInterval));
+                    .FirstOrDefault().Result));
+   
+            CreateMap<Asset,AssetForListDto>()
+            .ForMember(a => a.Inspections, opt => opt
+                .MapFrom(msa => msa.MaintScheduleAssets))
+            .ForPath(a => a.product.Id, opt => opt
+                    .MapFrom(msa => msa.Product.Id))
+            .ForPath(a => a.product.Name, opt => opt
+                    .MapFrom(msa => msa.Product.Name))
+            .ForPath(a => a.product.Description, opt => opt
+                    .MapFrom(msa => msa.Product.ProductCategory.Description))
+            .ForPath(a => a.product.ProductCategoryId, opt => opt
+                    .MapFrom(msa => msa.Product.ProductCategoryId))
+            .ForPath(a => a.product.ProductCategoryName, opt => opt
+                    .MapFrom(msa => msa.Product.ProductCategory.Name));
+                      
+                 
+            CreateMap<Asset,AssetForDetailedDto>();
+            CreateMap<AssetForUpdateDto,Asset>();
+            CreateMap<AssetForCreationDto,Asset>();
+
+            CreateMap<MaintSchedule,MaintSchedulesForListDto>();
         }
 
     }

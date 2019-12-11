@@ -200,10 +200,10 @@ namespace MyApp.API.Data
 
             products= products.Where(p=> p.TenantId==currentTenantId);
              
-            System.Console.WriteLine( productParams.categoryId);
-            if (productParams.categoryId != 0)
+            System.Console.WriteLine( productParams.CategoryId);
+            if (productParams.CategoryId != 0)
             {
-             products= products.Where(p=> p.ProductCategoryId==productParams.categoryId);
+             products= products.Where(p=> p.ProductCategoryId==productParams.CategoryId);
             }
             return await products.ToListAsync();
         }
@@ -224,21 +224,33 @@ namespace MyApp.API.Data
         
         }
 
-        public async Task<IEnumerable<MaintScheduleAsset>> GetAssets(int clientId, int currentTenantId)
+        public async Task<IEnumerable<Asset>> GetAssets(int clientId, int currentTenantId)
+        {
+            var assets=  _context.Assets.AsQueryable();
+             if (clientId==0){
+                 // TODO pagination
+                assets= assets.Where(a=> a.TenantId==currentTenantId);
+             }else{
+                assets = assets.Where(a=> a.ClientId==clientId && a.TenantId==currentTenantId);
+             }
+            return await assets.ToListAsync();;
+        }
+
+        public async Task<IEnumerable<MaintSchedule>> GetMaintSchedules(int currentTenantId, 
+        MaintScheduleParams productParams)
         {
              
-             var maints= await _context.MaintSchedulesAssets
-             .Where(a=> a.Asset.ClientId==clientId && a.TenantId==currentTenantId)
-             .ToListAsync(); 
-            return maints;
+            var maintSchedule=  _context.MaintSchedules.AsQueryable();
+
+            maintSchedule= maintSchedule.Where(p=> p.TenantId==currentTenantId);
+             
+            System.Console.WriteLine( productParams.ProductCategoryId);
+            if (productParams.ProductCategoryId != 0)
+            {
+             maintSchedule= maintSchedule.Where(m=> m.ProductCategoryId==productParams.ProductCategoryId);
+            }
+            return await maintSchedule.ToListAsync();
         }
-        // public async Task<IEnumerable<Asset>> GetAssets(int clientId, int currentTenantId)
-        // {     
-        //      var assets= await _context.Assets
-        //      .Include(p => p.Product)
-        //      .Where(a=> a.ClientId==clientId && a.TenantId==currentTenantId)
-        //      .ToListAsync(); 
-        //     return assets;
-        // }    
+        
     }
 }

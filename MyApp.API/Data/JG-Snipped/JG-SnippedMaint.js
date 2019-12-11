@@ -4,7 +4,7 @@
     	Index: '{{index(1)}}',
       marca:'***********************************************************',
     	TenantId:1,
-      	ProductCategoryId: '{{integer(0, 15)}}',
+      	ProductCategoryId: '{{integer(0, 5)}}',
       	ProductId:'',
        	_categoria(tags) {
       	const Categories = ['Extintores', 'Bocas de Incendio', 'Detectores de incendios','Aerosoles', 'Extinción por Rociadores', 'Extinción por gas','Abastecimiento de agua', 'Detectores de CO', 'Ventilación','Extinción por Espuma', 'Señalización', 'Puertas Cortafuego','Hidrantes y columna seca', 'Extinción por Polvo', 'Agua nebulizada'];
@@ -67,7 +67,7 @@
                     
                     return 2019-this.Index + '-11-19 11:17:43';
                   },
-                   NextRevision: function (tags,parent) {
+                   NextInspectionDate: function (tags,parent) {
                     
                     return 2020-this.Index + '-11-19 11:17:43';
                   },

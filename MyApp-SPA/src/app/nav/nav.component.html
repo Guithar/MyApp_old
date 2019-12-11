@@ -3,11 +3,14 @@
     <a class="navbar-brand" [routerLink]="['/home']">MyApp</a>
 
     <ul *ngIf="loggedIn()" class="navbar-nav mr-auto">
-        <li class="nav-item" routerLinkActive="active">
+        <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
             <a class="nav-link" [routerLink]="['/clients']">Clients</a>
           </li>
           <li class="nav-item" routerLinkActive="active">
             <a class="nav-link" [routerLink]="['/products']">Catalog</a>
+          </li>
+          <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+            <a class="nav-link" [routerLink]="['/clients/0/assets']">Assets</a>
           </li>
           
       <li class="nav-item" routerLinkActive="active">
