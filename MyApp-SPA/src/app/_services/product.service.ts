@@ -17,7 +17,7 @@ export class ProductService {
     let params = new HttpParams();
 
     if (productParam != null) {
-      params = params.append('categoryId', productParam.categoryId);
+      params = params.append('CategoryId', productParam.categoryId);
     }
 
     return this.http.get<Product[]>(this.baseUrl + 'products', { observe: 'response', params})

@@ -10,6 +10,7 @@ namespace MyApp.API.Models
         public string Name { get; set; }
         public string Description { get; set; }
         public int MonthsInterval { get; set; }
+        public int ProductCategoryId { get; set; }
         public virtual ICollection<MaintScheduleAsset> MaintScheduleAssets { get; set; }
         public virtual ICollection<MaintOperation> MaintOperations { get; set; }
 

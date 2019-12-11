@@ -1,23 +1,18 @@
 using System;
+using System.Collections.Generic;
 
 namespace MyApp.API.Dtos
 {
     public class AssetForListDto
     {
-              public int AssetId { get; set; }
-        public int MaintScheduleId { get; set; }
+        public int Id { get; set; }
         public int TenantId { get; set; }
-  
-        public ProductForMaintListDto product { get; set; }
         public string Location { get; set; }
         public int Quantity { get; set; }
-        
-        public string MaintScheduleName { get; set; }
-        public int MonthsInterval { get; set; }
         public DateTime ManufacturedDate { get; set; }
-        public DateTime LastRev { get; set; }
-        public DateTime NextRev { get; set; }
-        public string LastResult { get; set; }
+        public ProductForMaintListDto product{ get; set; }
+        public ClientForAssetDto client { get; set; }
+        public ICollection<MaintScheduleAssetDto>  Inspections { get; set; }
 
             // Audit Fields
          public bool? IsActive { get; set; }

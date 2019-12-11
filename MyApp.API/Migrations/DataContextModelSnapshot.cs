@@ -305,7 +305,7 @@ namespace MyApp.API.Migrations
 
                     b.Property<int>("MaintScheduleId");
 
-                    b.Property<DateTime>("NextRevision");
+                    b.Property<DateTime>("NextInspectionDate");
 
                     b.Property<string>("Observations");
 
@@ -355,6 +355,8 @@ namespace MyApp.API.Migrations
                     b.Property<int>("MonthsInterval");
 
                     b.Property<string>("Name");
+
+                    b.Property<int>("ProductCategoryId");
 
                     b.Property<int>("TenantId");
 

@@ -2,6 +2,6 @@ namespace MyApp.API.Helpers
 {
     public class ProductParams
     {
-        public int categoryId { get; set; }
+        public int CategoryId { get; set; }
     }
 }

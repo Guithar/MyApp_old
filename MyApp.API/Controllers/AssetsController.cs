@@ -40,13 +40,13 @@ namespace MyApp.API.Controllers
 
             [HttpGet("{id}", Name="GetAsset")]
             
-            public async Task<ActionResult<AssetForDetailedDto>> GetAsset(int id, int clientId)
+            public async Task<ActionResult<AssetForListDto>> GetAsset(int id, int clientId)
             {   
                 var currentTenantId= int.Parse(User.FindFirst("TenantId").Value);
                 var AssetFromRepo = await _repo.GetAsset(id, clientId, currentTenantId);
                 if(AssetFromRepo==null)
                 return NotFound();
-                var AssetToReturn= _mapper.Map<AssetForDetailedDto>(AssetFromRepo);
+                var AssetToReturn= _mapper.Map<AssetForListDto>(AssetFromRepo);
                 return AssetToReturn;
               
             }
@@ -76,7 +76,8 @@ namespace MyApp.API.Controllers
           [HttpPost]
         public async Task<ActionResult<AssetForDetailedDto>> CreateAsset(int clientId, AssetForCreationDto assetForCreationDto)
         {
-            var currentUserId= int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value);             var currentTenantId= int.Parse(User.FindFirst("TenantId").Value);
+            var currentUserId= int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value);             
+            var currentTenantId= int.Parse(User.FindFirst("TenantId").Value);
             var ClientFromRepo = await _repo.GetClient(clientId, currentTenantId);
             if (ClientFromRepo == null)
                return Unauthorized();

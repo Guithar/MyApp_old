@@ -28,21 +28,15 @@ export class ClientListComponent implements OnInit {
 
     ngOnInit() {
       this.route.data.subscribe(data => {
-        this.clients = data['clients'].result;
+        this.clients = data['clients'];
         this.loadClients();
       });
   }
 
   loadClients() {
-    this.clientService.getClients()
-      .subscribe((clients: Client[]) => {
-        this.clients = clients;
-        this.dataSource = new MatTableDataSource(clients);
+        this.dataSource = new MatTableDataSource(this.clients);
         this.dataSource.sort = this.sort;
         this.dataSource.paginator = this.paginator;
-    }, error => {
-      this.alertify.error(error);
-    });
   }
   applyFilter(filterValue: string) {
     console.log(filterValue.trim().toLowerCase());
@@ -79,7 +73,9 @@ export class ClientListComponent implements OnInit {
       console.log(client);
       this.clientService.createClient(client).subscribe(() => {
             this.alertify.success('Client created successfully');
+            this.clients.push(client);
             this.loadClients();
+            // TODO update the list with the new id
           }, error => {
             this.alertify.error('error ' + error);
           });

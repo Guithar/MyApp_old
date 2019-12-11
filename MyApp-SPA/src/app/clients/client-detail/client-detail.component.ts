@@ -6,7 +6,6 @@ import { AlertifyService } from 'src/app/_services/alertify.service';
 import { FormBuilder, Validators } from '@angular/forms';
 
 
-
 @Component({
   selector: 'app-client-detail',
   templateUrl: './client-detail.component.html',

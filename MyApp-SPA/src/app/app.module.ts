@@ -61,6 +61,12 @@ import { ClientDetailResolver } from './_resolvers/client-detail.resolver';
 import { AssetListResolver } from './_resolvers/asset-list.resolver';
 import { ProductListResolver } from './_resolvers/product-list.resolver';
 import { ProductDetailResolver } from './_resolvers/product-detail.resolver';
+import { AssetDetailResolver } from './_resolvers/asset-detail.resolver';
+import { ClientAssetDetailModalComponent } from './clients/client-asset-detail-modal/client-asset-detail-modal.component';
+import { AssetListComponent } from './assets/asset-list/asset-list.component';
+import { AssetSkeletonComponent } from './assets/asset-skeleton/asset-skeleton.component';
+import { AssetDetailComponent } from './assets/asset-detail/asset-detail.component';
+import { AssetMaintScheduleListComponent } from './assets/asset-maint-schedule-list/asset-maint-schedule-list.component';
 
 export function tokenGetter() {
   return localStorage.getItem('token');
@@ -103,6 +109,11 @@ export class CustomHammerConfig extends HammerGestureConfig  {
     ProductAddComponent,
     ProductDetailComponent,
     ProductSkeletonComponent,
+    ClientAssetDetailModalComponent,
+    AssetListComponent,
+    AssetSkeletonComponent,
+    AssetDetailComponent,
+    AssetMaintScheduleListComponent,
   ],
   imports: [
     BrowserModule,
@@ -147,11 +158,12 @@ export class CustomHammerConfig extends HammerGestureConfig  {
       AssetService,
       ProductListResolver,
       ProductDetailResolver,
+      AssetDetailResolver,
       { provide: HAMMER_GESTURE_CONFIG, useClass: CustomHammerConfig }
     ],
   entryComponents: [
     RolesModalComponent,
-    ClientAssetDetailComponent,
+    ClientAssetDetailModalComponent,
     ClientDetailComponent,
     ClientAddComponent,
     ProductAddComponent

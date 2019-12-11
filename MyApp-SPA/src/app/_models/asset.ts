@@ -1,31 +1,54 @@
 
 export interface Asset {
-  assetId: number;
-  maintScheduleId: number;
+  id: number;
   tenantId: number;
-  product: ProductInAsset;
   location: string;
   quantity: number;
-  monthsInterval: number;
-  maintScheduleName: string;
-  manufacturedDate: Date;
-  lastRev: Date;
-  nextRev: Date;
-  lastResult: string;
+  manufacturedDate: string;
+  product: ProductInAsset;
+  client: ClientInAsset;
+  inspections: Inspection[];
   isActive: boolean;
   isDeleted: boolean;
-  createdOn: Date;
-  updatedOn: Date;
-  deletedOn?: Date;
+  createdOn: string;
+  updatedOn: string;
+  deletedOn?: any;
   createdBy: number;
   updatedBy: number;
   deletedBy: number;
 }
 
- interface ProductInAsset {
+interface Inspection {
+  maintScheduleId: number;
+  name: string;
+  description: string;
+  monthsInterval: number;
+  lastInspectionDate: string;
+  nextInspectionDate: string;
+  lastResult?: string;
+}
+
+interface ProductInAsset {
   id: number;
   name: string;
   description: string;
   productCategoryId: number;
   productCategoryName: string;
+}
+
+
+interface ClientInAsset {
+  id: number;
+  tenantId: number;
+  company: string;
+  nif: string;
+  jobTitle: string;
+  adress: string;
+  city: string;
+  state_Province: string;
+  ziP_PostalCode: string;
+  country: string;
+  email: string;
+  phone: string;
+  observations: string;
 }

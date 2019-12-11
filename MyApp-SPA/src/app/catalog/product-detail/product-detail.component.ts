@@ -25,7 +25,7 @@ export class ProductDetailComponent implements OnInit {
     private router: Router, private formBuilder: FormBuilder,
     private categoryService: ProductCategoryService) { }
 
-  
+
     productForm = this.formBuilder.group({
       id: [{value: ''}, Validators.required],
       tenantId: [{value: '', disabled: true}, Validators.required],

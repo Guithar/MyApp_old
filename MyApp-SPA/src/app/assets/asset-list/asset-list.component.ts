@@ -1,28 +1,29 @@
 import { Component, OnInit, Input, ViewChild } from '@angular/core';
-import { AlertifyService } from 'src/app/_services/alertify.service';
-import { ActivatedRoute, Router } from '@angular/router';
-import { AssetService } from 'src/app/_services/asset.service';
-import { MatTableDataSource, MatPaginator, MatSort, MatDialog, MatDialogConfig, MatTable } from '@angular/material';
+import { ActivatedRoute } from '@angular/router';
+import { MatTableDataSource, MatPaginator, MatSort, MatTable } from '@angular/material';
 import { Asset } from 'src/app/_models/asset';
 import { SelectionModel } from '@angular/cdk/collections';
-import { ClientAssetDetailModalComponent } from '../client-asset-detail-modal/client-asset-detail-modal.component';
 
 @Component({
-  selector: 'app-client-assets-list',
-  templateUrl: './client-assets-list.component.html',
-  styleUrls: ['./client-assets-list.component.css'],
+  selector: 'app-asset-list',
+  templateUrl: './asset-list.component.html',
+  styleUrls: ['./asset-list.component.css']
 })
+export class AssetListComponent implements OnInit {
 
-export class ClientAssetsListComponent implements OnInit {
   @Input() clientId: number;
   assets: Asset[];
 
-  constructor(private alertify: AlertifyService, private assetService: AssetService,
-    private route: ActivatedRoute, private dialog: MatDialog) { }
+  constructor(private route: ActivatedRoute) { }
 
     dataSource: MatTableDataSource<Asset>;
     allColumns: string[] = [
       'select', 'isActive', 'id',
+      'client.adress', 'client.city', 'client.company',
+      'client.country', 'client.email', 'client.id',
+      'client.jobTitle', 'client.nif', 'client.observations',
+      'client.phone', 'client.state_Province', 'client.tenantId',
+      'client.ziP_PostalCode',
       'product.id', 'product.name', 'product.description', 'product.productCategoryId',
       'product.productCategoryName', 'location', 'quantity',
       'inspection.maintScheduleId', 'inspection.name', 'inspection.description',
@@ -30,8 +31,11 @@ export class ClientAssetsListComponent implements OnInit {
       'inspection.nextInspectionDate',
       'actions'];
 
+
+
+
       displayedColumns: string[] = [
-        'select', 'isActive', 'id',
+        'select', 'client.company', 'isActive', 'id',
          'product.name',
          'location', 'quantity',
         'inspections', 'inspections.lastResult', 'inspections.nextInspectionDate',
@@ -85,25 +89,6 @@ export class ClientAssetsListComponent implements OnInit {
   }
 
 
-  openDialog(action: string, obj: any) {
-     obj.action = action;
-    const dialogConfig = new MatDialogConfig<any>();
-    dialogConfig.disableClose = true;
-    dialogConfig.autoFocus = true;
-    dialogConfig.data = obj;
-     const dialogRef = this.dialog.open(ClientAssetDetailModalComponent, dialogConfig);
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('afterClosed result: ' , result);
-      if (result.event === 'Add') {
-        this.addData(result.data);
-      } else if (result.event === 'Update') {
-        this.updateData(result.data);
-      } else if (result.event === 'Delete') {
-        this.deleteData(result.data);
-      }
-    });
-  }
 
   updateData(asset: any) {
     console.log('updateData');
@@ -139,3 +124,4 @@ export class ClientAssetsListComponent implements OnInit {
     //     });
   }
 }
+
