@@ -112,7 +112,7 @@ export class AssetDetailComponent implements OnInit {
      });
   }
 
-    CategoryChanged(productCategoryId:number){
+    CategoryChanged(productCategoryId: number) {
       this.getProductsOfCategory(productCategoryId);
       this.getMaintSchedules(productCategoryId);
 
@@ -134,7 +134,7 @@ export class AssetDetailComponent implements OnInit {
      }, error => {
         this.alertify.error(error);
      });
-     
+
   }
   backClicked() {
     this._location.back();
