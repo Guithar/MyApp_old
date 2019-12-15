@@ -67,6 +67,8 @@ import { AssetListComponent } from './assets/asset-list/asset-list.component';
 import { AssetSkeletonComponent } from './assets/asset-skeleton/asset-skeleton.component';
 import { AssetDetailComponent } from './assets/asset-detail/asset-detail.component';
 import { AssetMaintScheduleListComponent } from './assets/asset-maint-schedule-list/asset-maint-schedule-list.component';
+import { MaintScheduleAssetListResolver } from './_resolvers/maint-schedule-asset-list.resolver';
+import { MaintScheduleAssetDetailModalComponent } from './assets/maint-schedule-asset-detail-modal/maint-schedule-asset-detail-modal.component';
 
 export function tokenGetter() {
   return localStorage.getItem('token');
@@ -114,6 +116,7 @@ export class CustomHammerConfig extends HammerGestureConfig  {
     AssetSkeletonComponent,
     AssetDetailComponent,
     AssetMaintScheduleListComponent,
+    MaintScheduleAssetDetailModalComponent,
   ],
   imports: [
     BrowserModule,
@@ -159,6 +162,7 @@ export class CustomHammerConfig extends HammerGestureConfig  {
       ProductListResolver,
       ProductDetailResolver,
       AssetDetailResolver,
+      MaintScheduleAssetListResolver,
       { provide: HAMMER_GESTURE_CONFIG, useClass: CustomHammerConfig }
     ],
   entryComponents: [
@@ -166,7 +170,8 @@ export class CustomHammerConfig extends HammerGestureConfig  {
     ClientAssetDetailModalComponent,
     ClientDetailComponent,
     ClientAddComponent,
-    ProductAddComponent
+    ProductAddComponent,
+    MaintScheduleAssetDetailModalComponent
   ],
   bootstrap: [AppComponent]
 })

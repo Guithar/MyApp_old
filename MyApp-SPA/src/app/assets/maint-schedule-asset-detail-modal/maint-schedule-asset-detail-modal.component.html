@@ -1,0 +1,64 @@
+<div class="container">
+    <h1 mat-dialog-title>(modal) {{action}}  Inspection  id: {{data.maintScheduleId}}}}</h1>
+  
+    <form [formGroup]="MaintScheduleAssetForm ">
+  
+    
+
+      <!-- MaintScheduleId -->
+      <div class="form">
+        <mat-form-field id="maints">
+            <mat-select 
+                placeholder="Maintenance Schedules" 
+                formControlName="maintScheduleId">
+            <mat-option *ngFor="let maintSchedule of ListOfMaintSchedules" [value]="maintSchedule.id" >
+                    {{maintSchedule.id}} - {{maintSchedule.name}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+
+      <!-- name (disabled) -->
+      <div class="form">
+        <mat-form-field>
+          <input matInput  placeholder="name" formControlName="name" readonly>
+        </mat-form-field>
+      </div>
+      <!-- description (disabled) -->
+      <div class="form">
+        <mat-form-field>
+          <input matInput  placeholder="description" formControlName="description" readonly>
+        </mat-form-field>
+      </div>
+      <!-- monthsInterval (disabled) -->
+      <div class="form">
+        <mat-form-field>
+          <input matInput  placeholder="monthsInterval " formControlName="monthsInterval" readonly>
+        </mat-form-field>
+      </div>
+
+      <div class="form">
+        <mat-slide-toggle  formControlName="isActive">
+          Is Active
+        </mat-slide-toggle>
+      </div>
+  
+      <!-- nextInspectionDate -->
+      <div class="form">
+          <mat-form-field>
+            <input matInput  [matDatepicker]="picker" placeholder="nextInspectionDate"
+              formControlName="nextInspectionDate" [value]="data.nextInspectionDate">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+      </div>
+  
+  
+  
+      <div mat-dialog-actions>
+        <button mat-button (click)="submit()">{{action}}</button>
+        <button mat-button (click)="closeDialog()" tabindex="-1">Cancel</button>
+      </div>
+  
+    </form>
+  </div>

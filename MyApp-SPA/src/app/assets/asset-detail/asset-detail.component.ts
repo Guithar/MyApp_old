@@ -21,7 +21,7 @@ export class AssetDetailComponent implements OnInit {
   Action: string;
   Categories: ProductCategory[];
   ListOfProducts: Product[];
-  ListOfMaintSchedules:MaintSchedule[];
+  ListOfMaintSchedules: MaintSchedule[];
   ProductParams: any = {};
   MaintScheduleParams: any = {};
   asset:  Asset;

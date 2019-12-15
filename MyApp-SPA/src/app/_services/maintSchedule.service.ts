@@ -4,6 +4,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { MaintSchedule } from '../_models/maintSchedule';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { MaintScheduleAsset } from '../_models/maintScheduleAsset';
 
 @Injectable({
   providedIn: 'root'
@@ -28,4 +29,11 @@ getMaintSchedules(maintScheduleParam?): Observable<MaintSchedule[]> {
   );
 
   }
+
+  getMaintScheduleAssets(assetId: number): Observable<MaintScheduleAsset[]> {
+
+    return this.http.get<MaintScheduleAsset[]>(this.baseUrl
+      + 'maintschedules/asset/' + assetId );
+    }
+
 }

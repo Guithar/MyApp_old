@@ -26,6 +26,7 @@ import { ClientAssetDetailComponent } from './clients/client-asset-detail/client
 import { AssetDetailResolver } from './_resolvers/asset-detail.resolver';
 import { AssetListComponent } from './assets/asset-list/asset-list.component';
 import { AssetSkeletonComponent } from './assets/asset-skeleton/asset-skeleton.component';
+import { MaintScheduleAssetListResolver } from './_resolvers/maint-schedule-asset-list.resolver';
 
 export const appRoutes: Routes = [
     {path: '', component: HomeComponent},
@@ -42,7 +43,8 @@ export const appRoutes: Routes = [
             {path: 'clients/:id/assets', component: AssetListComponent,
                 resolve: {assets: AssetListResolver}},
             {path: 'clients/:id/assets/:assetId', component: AssetSkeletonComponent,
-                resolve: {asset: AssetDetailResolver}},
+                resolve: {asset: AssetDetailResolver,
+                        MaintScheduleAssets: MaintScheduleAssetListResolver}},
             {path: 'members', component: MemberListComponent,
                 resolve: {users: MemberListResolver}},
             {path: 'members/:id', component: MemberDetailComponent,

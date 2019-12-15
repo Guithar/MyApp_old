@@ -29,6 +29,7 @@ namespace MyApp.API.Data
         Task<IEnumerable<ProductCategory>> GetCategories(int currentTenantId);
         Task<IEnumerable<MaintSchedule>> GetMaintSchedules(int currentTenantId, 
             MaintScheduleParams productParams);
+        Task<IEnumerable<MaintScheduleAsset>> GetMaintScheduleAssets(int currentTenantId, int id);
         
 
     }

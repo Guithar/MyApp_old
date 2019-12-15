@@ -27,6 +27,7 @@ namespace MyApp.API.Controllers
             _repo = repo;
                 
         }
+        [HttpGet]
           public async Task <ActionResult<IEnumerable<MaintSchedulesForListDto>>> getMaintSchedules(
               [FromQuery] MaintScheduleParams maintScheduleParams)
         {  
@@ -38,5 +39,16 @@ namespace MyApp.API.Controllers
             return new List<MaintSchedulesForListDto>(maintSchedulesToReturn);
             
         }
+
+        [HttpGet("asset/{id}")]
+         public async Task <ActionResult<IEnumerable<MaintScheduleAssetDto>>> getMaintScheduleAssets(int id)
+         {
+            var currentTenantId= int.Parse(User.FindFirst("TenantId").Value);
+            var maintSchedules = await _repo.GetMaintScheduleAssets( currentTenantId, id);
+            if (maintSchedules == null)
+                return NotFound();
+            var maintSchedulesToReturn= _mapper.Map<IEnumerable<MaintScheduleAssetDto>>(maintSchedules);
+            return new List<MaintScheduleAssetDto>(maintSchedulesToReturn);
+         }
     }
 }

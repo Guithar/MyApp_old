@@ -53,6 +53,9 @@ namespace MyApp.API.Helpers
                     .MapFrom(msa => msa.MaintSchedule.Name))
             .ForMember(m => m.Description, opt => opt
                     .MapFrom(msa => msa.MaintSchedule.Description))
+
+            .ForMember(m => m.ProductCategoryId, opt => opt
+                    .MapFrom(msa => msa.Asset.Product.ProductCategoryId))
             
             .ForMember(m => m.MonthsInterval, opt => opt
                     .MapFrom(msa => msa.MaintSchedule.MonthsInterval))

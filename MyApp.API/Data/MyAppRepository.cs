@@ -249,7 +249,19 @@ namespace MyApp.API.Data
             {
              maintSchedule= maintSchedule.Where(m=> m.ProductCategoryId==productParams.ProductCategoryId);
             }
+
             return await maintSchedule.ToListAsync();
+        }
+
+        public async Task<IEnumerable<MaintScheduleAsset>> GetMaintScheduleAssets(int currentTenantId, int id)
+        {
+             
+            var maintSchedulesAssets=  _context.MaintSchedulesAssets.AsQueryable();
+
+            maintSchedulesAssets= maintSchedulesAssets
+            .Include(a=> a.Asset)
+            .Where(p=> p.TenantId==currentTenantId && p.Asset.Id == id);
+            return await maintSchedulesAssets.ToListAsync();
         }
         
     }
