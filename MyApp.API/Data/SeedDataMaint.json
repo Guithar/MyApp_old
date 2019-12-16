@@ -3,14 +3,14 @@
     "Index": 1,
     "marca": "***********************************************************",
     "TenantId": 1,
-    "ProductCategoryId": 2,
+    "ProductCategoryId": 4,
     "ProductId": "",
-    "_categoria": "Detectores de incendios",
-    "_CodCategoria": "DET",
-    "_indicePeriodo": 2,
-    "MonthsInterval": 6,
-    "Description": "Revisión semestral de Detectores de incendios",
-    "Name": "REVISIÓN SEMESTRAL DE DETECTORES DE INCENDIOS",
+    "_categoria": "Extinción por Rociadores",
+    "_CodCategoria": "ROC",
+    "_indicePeriodo": 4,
+    "MonthsInterval": 24,
+    "Description": "Revisión bianual de Extinción por Rociadores",
+    "Name": "REVISIÓN BIANUAL DE EXTINCIÓN POR ROCIADORES",
     "IsActive": true,
     "IsDelete": false,
     "MaintScheduleAssets": [
@@ -22,6 +22,7 @@
         "TenantId": 1,
         "IsActive": true,
         "IsDelete": false,
+        "NextInspectionDate": "2020-12-15",
         "MaintResults": [
           {
             "Index": 1,
@@ -30,8 +31,8 @@
             "TenantId": 1,
             "ExecutedOn": "2018-11-19 11:17:43",
             "NextInspectionDate": "2019-11-19 11:17:43",
-            "Observations": "Desconexión de los equipos del sistema",
-            "Result": "Y",
+            "Observations": "Retirada de los sistemas",
+            "Result": "P",
             "IsActive": true,
             "IsDelete": false
           },
@@ -42,8 +43,8 @@
             "TenantId": 1,
             "ExecutedOn": "2017-11-19 11:17:43",
             "NextInspectionDate": "2018-11-19 11:17:43",
-            "Observations": "Retirada de las instalación eléctrica",
-            "Result": "Y",
+            "Observations": "Aviso a responsable de las instalación eléctrica",
+            "Result": "N",
             "IsActive": true,
             "IsDelete": false
           }
@@ -57,6 +58,7 @@
         "TenantId": 1,
         "IsActive": true,
         "IsDelete": false,
+        "NextInspectionDate": "2020-12-15",
         "MaintResults": [
           {
             "Index": 1,
@@ -65,7 +67,7 @@
             "TenantId": 1,
             "ExecutedOn": "2018-11-19 11:17:43",
             "NextInspectionDate": "2019-11-19 11:17:43",
-            "Observations": "Retirada de todas las salidas",
+            "Observations": "Mal estado de las conexiones",
             "Result": "P",
             "IsActive": true,
             "IsDelete": false
@@ -77,8 +79,8 @@
             "TenantId": 1,
             "ExecutedOn": "2017-11-19 11:17:43",
             "NextInspectionDate": "2018-11-19 11:17:43",
-            "Observations": "Sustitución de equipos averiados",
-            "Result": "N",
+            "Observations": "Prueba correcta de todas las salidas",
+            "Result": "P",
             "IsActive": true,
             "IsDelete": false
           }
@@ -92,6 +94,7 @@
         "TenantId": 1,
         "IsActive": true,
         "IsDelete": false,
+        "NextInspectionDate": "2020-12-15",
         "MaintResults": [
           {
             "Index": 1,
@@ -100,8 +103,8 @@
             "TenantId": 1,
             "ExecutedOn": "2018-11-19 11:17:43",
             "NextInspectionDate": "2019-11-19 11:17:43",
-            "Observations": "Prueba correcta de las instalación eléctrica",
-            "Result": "Y",
+            "Observations": "Verificado voltaje y corriente",
+            "Result": "P",
             "IsActive": true,
             "IsDelete": false
           },
@@ -112,8 +115,8 @@
             "TenantId": 1,
             "ExecutedOn": "2017-11-19 11:17:43",
             "NextInspectionDate": "2018-11-19 11:17:43",
-            "Observations": "Mal estado de los sensores",
-            "Result": "N",
+            "Observations": "Prueba correcta de todas las salidas",
+            "Result": "P",
             "IsActive": true,
             "IsDelete": false
           }
@@ -127,6 +130,7 @@
         "TenantId": 1,
         "IsActive": true,
         "IsDelete": false,
+        "NextInspectionDate": "2020-12-15",
         "MaintResults": [
           {
             "Index": 1,
@@ -135,7 +139,7 @@
             "TenantId": 1,
             "ExecutedOn": "2018-11-19 11:17:43",
             "NextInspectionDate": "2019-11-19 11:17:43",
-            "Observations": "Fallo en los sistemas",
+            "Observations": "Mal estado de las conexiones",
             "Result": "Y",
             "IsActive": true,
             "IsDelete": false
@@ -147,8 +151,8 @@
             "TenantId": 1,
             "ExecutedOn": "2017-11-19 11:17:43",
             "NextInspectionDate": "2018-11-19 11:17:43",
-            "Observations": "Fallo en los equipos del sistema",
-            "Result": "Y",
+            "Observations": "Requiere limpieza de voltaje y corriente",
+            "Result": "N",
             "IsActive": true,
             "IsDelete": false
           }
@@ -162,6 +166,7 @@
         "TenantId": 1,
         "IsActive": true,
         "IsDelete": false,
+        "NextInspectionDate": "2020-12-15",
         "MaintResults": [
           {
             "Index": 1,
@@ -170,8 +175,8 @@
             "TenantId": 1,
             "ExecutedOn": "2018-11-19 11:17:43",
             "NextInspectionDate": "2019-11-19 11:17:43",
-            "Observations": "Retirada de la alimentación eléctica",
-            "Result": "Y",
+            "Observations": "Sustitución de las sirenas",
+            "Result": "N",
             "IsActive": true,
             "IsDelete": false
           },
@@ -182,7 +187,7 @@
             "TenantId": 1,
             "ExecutedOn": "2017-11-19 11:17:43",
             "NextInspectionDate": "2018-11-19 11:17:43",
-            "Observations": "Requiere limpieza de los pilotos indicadores",
+            "Observations": "Retirada de los sistemas",
             "Result": "P",
             "IsActive": true,
             "IsDelete": false
@@ -197,6 +202,7 @@
         "TenantId": 1,
         "IsActive": true,
         "IsDelete": false,
+        "NextInspectionDate": "2020-12-15",
         "MaintResults": [
           {
             "Index": 1,
@@ -205,8 +211,8 @@
             "TenantId": 1,
             "ExecutedOn": "2018-11-19 11:17:43",
             "NextInspectionDate": "2019-11-19 11:17:43",
-            "Observations": "Estado incorrecto de las instalación eléctrica",
-            "Result": "Y",
+            "Observations": "Fallo en todas las salidas",
+            "Result": "N",
             "IsActive": true,
             "IsDelete": false
           },
@@ -217,7 +223,7 @@
             "TenantId": 1,
             "ExecutedOn": "2017-11-19 11:17:43",
             "NextInspectionDate": "2018-11-19 11:17:43",
-            "Observations": "Desconexión de los sistemas",
+            "Observations": "Retirada de los sistemas",
             "Result": "P",
             "IsActive": true,
             "IsDelete": false
@@ -232,6 +238,7 @@
         "TenantId": 1,
         "IsActive": true,
         "IsDelete": false,
+        "NextInspectionDate": "2020-12-15",
         "MaintResults": [
           {
             "Index": 1,
@@ -240,7 +247,7 @@
             "TenantId": 1,
             "ExecutedOn": "2018-11-19 11:17:43",
             "NextInspectionDate": "2019-11-19 11:17:43",
-            "Observations": "Sustitución de voltaje y corriente",
+            "Observations": "Verificado los sistemas",
             "Result": "Y",
             "IsActive": true,
             "IsDelete": false
@@ -252,8 +259,8 @@
             "TenantId": 1,
             "ExecutedOn": "2017-11-19 11:17:43",
             "NextInspectionDate": "2018-11-19 11:17:43",
-            "Observations": "Sustitución de voltaje y corriente",
-            "Result": "P",
+            "Observations": "Prueba correcta de las instalación eléctrica",
+            "Result": "Y",
             "IsActive": true,
             "IsDelete": false
           }
@@ -267,6 +274,7 @@
         "TenantId": 1,
         "IsActive": true,
         "IsDelete": false,
+        "NextInspectionDate": "2020-12-15",
         "MaintResults": [
           {
             "Index": 1,
@@ -275,8 +283,8 @@
             "TenantId": 1,
             "ExecutedOn": "2018-11-19 11:17:43",
             "NextInspectionDate": "2019-11-19 11:17:43",
-            "Observations": "Aviso a responsable de los sistemas",
-            "Result": "P",
+            "Observations": "Mal estado de las sirenas",
+            "Result": "N",
             "IsActive": true,
             "IsDelete": false
           },
@@ -287,8 +295,8 @@
             "TenantId": 1,
             "ExecutedOn": "2017-11-19 11:17:43",
             "NextInspectionDate": "2018-11-19 11:17:43",
-            "Observations": "Prueba correcta de todas las salidas",
-            "Result": "P",
+            "Observations": "No se ha realizado la reposición de las instalación eléctrica",
+            "Result": "Y",
             "IsActive": true,
             "IsDelete": false
           }
@@ -302,6 +310,7 @@
         "TenantId": 1,
         "IsActive": true,
         "IsDelete": false,
+        "NextInspectionDate": "2020-12-15",
         "MaintResults": [
           {
             "Index": 1,
@@ -310,8 +319,8 @@
             "TenantId": 1,
             "ExecutedOn": "2018-11-19 11:17:43",
             "NextInspectionDate": "2019-11-19 11:17:43",
-            "Observations": "Verificado las instalación eléctrica",
-            "Result": "Y",
+            "Observations": "No se ha realizado la reposición de las sirenas",
+            "Result": "P",
             "IsActive": true,
             "IsDelete": false
           },
@@ -322,7 +331,7 @@
             "TenantId": 1,
             "ExecutedOn": "2017-11-19 11:17:43",
             "NextInspectionDate": "2018-11-19 11:17:43",
-            "Observations": "Desconexión de todas las salidas",
+            "Observations": "Mal estado de las sirenas",
             "Result": "N",
             "IsActive": true,
             "IsDelete": false
@@ -337,6 +346,7 @@
         "TenantId": 1,
         "IsActive": true,
         "IsDelete": false,
+        "NextInspectionDate": "2020-12-15",
         "MaintResults": [
           {
             "Index": 1,
@@ -345,7 +355,7 @@
             "TenantId": 1,
             "ExecutedOn": "2018-11-19 11:17:43",
             "NextInspectionDate": "2019-11-19 11:17:43",
-            "Observations": "No se ha realizado la reposición de los sensores",
+            "Observations": "Desconexión de los pilotos indicadores",
             "Result": "P",
             "IsActive": true,
             "IsDelete": false
@@ -357,8 +367,8 @@
             "TenantId": 1,
             "ExecutedOn": "2017-11-19 11:17:43",
             "NextInspectionDate": "2018-11-19 11:17:43",
-            "Observations": "Sustitución de las instalación eléctrica",
-            "Result": "N",
+            "Observations": "Prueba correcta de las baterías",
+            "Result": "Y",
             "IsActive": true,
             "IsDelete": false
           }
@@ -370,10 +380,10 @@
         "Index": 1,
         "TenantId": 1,
         "MaintScheduleId": 1,
-        "Code": "DET.01",
+        "Code": "ROC.01",
         "Position": 1,
-        "Description": "Prueba de las sirenas",
-        "Name": "PRUEBA DE LAS SIRENAS",
+        "Description": "Sustitución de equipos averiados",
+        "Name": "SUSTITUCIÓN DE EQUIPOS AVERIADOS",
         "IsActive": true,
         "IsDelete": false
       },
@@ -381,10 +391,10 @@
         "Index": 2,
         "TenantId": 1,
         "MaintScheduleId": 1,
-        "Code": "DET.02",
+        "Code": "ROC.02",
         "Position": 2,
-        "Description": "Limpieza de voltaje y corriente",
-        "Name": "LIMPIEZA DE VOLTAJE Y CORRIENTE",
+        "Description": "Restaurar las sirenas",
+        "Name": "RESTAURAR LAS SIRENAS",
         "IsActive": true,
         "IsDelete": false
       },
@@ -392,10 +402,10 @@
         "Index": 3,
         "TenantId": 1,
         "MaintScheduleId": 1,
-        "Code": "DET.03",
+        "Code": "ROC.03",
         "Position": 3,
-        "Description": "Desconectar previamente las baterías",
-        "Name": "DESCONECTAR PREVIAMENTE LAS BATERÍAS",
+        "Description": "Sustitución de todas las salidas",
+        "Name": "SUSTITUCIÓN DE TODAS LAS SALIDAS",
         "IsActive": true,
         "IsDelete": false
       },
@@ -403,10 +413,10 @@
         "Index": 4,
         "TenantId": 1,
         "MaintScheduleId": 1,
-        "Code": "DET.04",
+        "Code": "ROC.04",
         "Position": 4,
-        "Description": "Reposición de las conexiones",
-        "Name": "REPOSICIÓN DE LAS CONEXIONES",
+        "Description": "Medir las baterías",
+        "Name": "MEDIR LAS BATERÍAS",
         "IsActive": true,
         "IsDelete": false
       },
@@ -414,10 +424,10 @@
         "Index": 5,
         "TenantId": 1,
         "MaintScheduleId": 1,
-        "Code": "DET.05",
+        "Code": "ROC.05",
         "Position": 5,
-        "Description": "Reposición de voltaje y corriente",
-        "Name": "REPOSICIÓN DE VOLTAJE Y CORRIENTE",
+        "Description": "Reposición de las sirenas",
+        "Name": "REPOSICIÓN DE LAS SIRENAS",
         "IsActive": true,
         "IsDelete": false
       },
@@ -425,10 +435,10 @@
         "Index": 6,
         "TenantId": 1,
         "MaintScheduleId": 1,
-        "Code": "DET.06",
+        "Code": "ROC.06",
         "Position": 6,
-        "Description": "Desconectar previamente los sensores",
-        "Name": "DESCONECTAR PREVIAMENTE LOS SENSORES",
+        "Description": "Comprobar estado de los sistemas",
+        "Name": "COMPROBAR ESTADO DE LOS SISTEMAS",
         "IsActive": true,
         "IsDelete": false
       },
@@ -436,10 +446,10 @@
         "Index": 7,
         "TenantId": 1,
         "MaintScheduleId": 1,
-        "Code": "DET.07",
+        "Code": "ROC.07",
         "Position": 7,
-        "Description": "Limpieza de los sensores",
-        "Name": "LIMPIEZA DE LOS SENSORES",
+        "Description": "Sustitución de las baterías",
+        "Name": "SUSTITUCIÓN DE LAS BATERÍAS",
         "IsActive": true,
         "IsDelete": false
       },
@@ -447,10 +457,10 @@
         "Index": 8,
         "TenantId": 1,
         "MaintScheduleId": 1,
-        "Code": "DET.08",
+        "Code": "ROC.08",
         "Position": 8,
-        "Description": "Reposición de los pilotos indicadores",
-        "Name": "REPOSICIÓN DE LOS PILOTOS INDICADORES",
+        "Description": "Medir los equipos del sistema",
+        "Name": "MEDIR LOS EQUIPOS DEL SISTEMA",
         "IsActive": true,
         "IsDelete": false
       },
@@ -458,10 +468,10 @@
         "Index": 9,
         "TenantId": 1,
         "MaintScheduleId": 1,
-        "Code": "DET.09",
+        "Code": "ROC.09",
         "Position": 9,
-        "Description": "Verificar los sistemas",
-        "Name": "VERIFICAR LOS SISTEMAS",
+        "Description": "Medir las instalación eléctrica",
+        "Name": "MEDIR LAS INSTALACIÓN ELÉCTRICA",
         "IsActive": true,
         "IsDelete": false
       }
@@ -471,14 +481,14 @@
     "Index": 2,
     "marca": "***********************************************************",
     "TenantId": 1,
-    "ProductCategoryId": 2,
+    "ProductCategoryId": 5,
     "ProductId": "",
-    "_categoria": "Detectores de incendios",
-    "_CodCategoria": "DET",
-    "_indicePeriodo": 6,
-    "MonthsInterval": 60,
-    "Description": "Revisión quinquenal de Detectores de incendios",
-    "Name": "REVISIÓN QUINQUENAL DE DETECTORES DE INCENDIOS",
+    "_categoria": "Extinción por gas",
+    "_CodCategoria": "GAS",
+    "_indicePeriodo": 2,
+    "MonthsInterval": 6,
+    "Description": "Revisión semestral de Extinción por gas",
+    "Name": "REVISIÓN SEMESTRAL DE EXTINCIÓN POR GAS",
     "IsActive": true,
     "IsDelete": false,
     "MaintScheduleAssets": [
@@ -490,6 +500,7 @@
         "TenantId": 1,
         "IsActive": true,
         "IsDelete": false,
+        "NextInspectionDate": "2020-12-15",
         "MaintResults": [
           {
             "Index": 1,
@@ -498,7 +509,7 @@
             "TenantId": 1,
             "ExecutedOn": "2018-11-19 11:17:43",
             "NextInspectionDate": "2019-11-19 11:17:43",
-            "Observations": "Mal estado de las conexiones",
+            "Observations": "Requiere limpieza de las conexiones",
             "Result": "N",
             "IsActive": true,
             "IsDelete": false
@@ -510,8 +521,8 @@
             "TenantId": 1,
             "ExecutedOn": "2017-11-19 11:17:43",
             "NextInspectionDate": "2018-11-19 11:17:43",
-            "Observations": "Requiere limpieza de los sistemas",
-            "Result": "Y",
+            "Observations": "Aviso a responsable de equipos averiados",
+            "Result": "P",
             "IsActive": true,
             "IsDelete": false
           }
@@ -525,6 +536,7 @@
         "TenantId": 1,
         "IsActive": true,
         "IsDelete": false,
+        "NextInspectionDate": "2020-12-15",
         "MaintResults": [
           {
             "Index": 1,
@@ -533,8 +545,8 @@
             "TenantId": 1,
             "ExecutedOn": "2018-11-19 11:17:43",
             "NextInspectionDate": "2019-11-19 11:17:43",
-            "Observations": "Fallo en los pilotos indicadores",
-            "Result": "N",
+            "Observations": "Desconexión de las baterías",
+            "Result": "Y",
             "IsActive": true,
             "IsDelete": false
           },
@@ -545,8 +557,8 @@
             "TenantId": 1,
             "ExecutedOn": "2017-11-19 11:17:43",
             "NextInspectionDate": "2018-11-19 11:17:43",
-            "Observations": "Estado incorrecto de las instalación eléctrica",
-            "Result": "N",
+            "Observations": "Verificado los pilotos indicadores",
+            "Result": "P",
             "IsActive": true,
             "IsDelete": false
           }
@@ -560,6 +572,7 @@
         "TenantId": 1,
         "IsActive": true,
         "IsDelete": false,
+        "NextInspectionDate": "2020-12-15",
         "MaintResults": [
           {
             "Index": 1,
@@ -568,8 +581,8 @@
             "TenantId": 1,
             "ExecutedOn": "2018-11-19 11:17:43",
             "NextInspectionDate": "2019-11-19 11:17:43",
-            "Observations": "Estado incorrecto de los sistemas",
-            "Result": "P",
+            "Observations": "No se ha realizado la reposición de las baterías",
+            "Result": "Y",
             "IsActive": true,
             "IsDelete": false
           },
@@ -580,8 +593,8 @@
             "TenantId": 1,
             "ExecutedOn": "2017-11-19 11:17:43",
             "NextInspectionDate": "2018-11-19 11:17:43",
-            "Observations": "Prueba correcta de las instalación eléctrica",
-            "Result": "Y",
+            "Observations": "Retirada de las instalación eléctrica",
+            "Result": "P",
             "IsActive": true,
             "IsDelete": false
           }
@@ -595,6 +608,7 @@
         "TenantId": 1,
         "IsActive": true,
         "IsDelete": false,
+        "NextInspectionDate": "2020-12-15",
         "MaintResults": [
           {
             "Index": 1,
@@ -603,8 +617,8 @@
             "TenantId": 1,
             "ExecutedOn": "2018-11-19 11:17:43",
             "NextInspectionDate": "2019-11-19 11:17:43",
-            "Observations": "Verificado los sistemas",
-            "Result": "P",
+            "Observations": "Mal estado de las sirenas",
+            "Result": "Y",
             "IsActive": true,
             "IsDelete": false
           },
@@ -615,8 +629,8 @@
             "TenantId": 1,
             "ExecutedOn": "2017-11-19 11:17:43",
             "NextInspectionDate": "2018-11-19 11:17:43",
-            "Observations": "Aviso a responsable de los sistemas",
-            "Result": "P",
+            "Observations": "Verificado los equipos del sistema",
+            "Result": "Y",
             "IsActive": true,
             "IsDelete": false
           }
@@ -630,6 +644,7 @@
         "TenantId": 1,
         "IsActive": true,
         "IsDelete": false,
+        "NextInspectionDate": "2020-12-15",
         "MaintResults": [
           {
             "Index": 1,
@@ -638,8 +653,8 @@
             "TenantId": 1,
             "ExecutedOn": "2018-11-19 11:17:43",
             "NextInspectionDate": "2019-11-19 11:17:43",
-            "Observations": "Aviso a responsable de las sirenas",
-            "Result": "Y",
+            "Observations": "Desconexión de las conexiones",
+            "Result": "N",
             "IsActive": true,
             "IsDelete": false
           },
@@ -650,8 +665,8 @@
             "TenantId": 1,
             "ExecutedOn": "2017-11-19 11:17:43",
             "NextInspectionDate": "2018-11-19 11:17:43",
-            "Observations": "No se ha realizado la reposición de los sensores",
-            "Result": "N",
+            "Observations": "Mal estado de las sirenas",
+            "Result": "P",
             "IsActive": true,
             "IsDelete": false
           }
@@ -665,6 +680,7 @@
         "TenantId": 1,
         "IsActive": true,
         "IsDelete": false,
+        "NextInspectionDate": "2020-12-15",
         "MaintResults": [
           {
             "Index": 1,
@@ -673,7 +689,7 @@
             "TenantId": 1,
             "ExecutedOn": "2018-11-19 11:17:43",
             "NextInspectionDate": "2019-11-19 11:17:43",
-            "Observations": "Fallo en los sensores",
+            "Observations": "Retirada de los sistemas",
             "Result": "Y",
             "IsActive": true,
             "IsDelete": false
@@ -685,8 +701,8 @@
             "TenantId": 1,
             "ExecutedOn": "2017-11-19 11:17:43",
             "NextInspectionDate": "2018-11-19 11:17:43",
-            "Observations": "Verificado las instalación eléctrica",
-            "Result": "P",
+            "Observations": "Sustitución de los sensores",
+            "Result": "N",
             "IsActive": true,
             "IsDelete": false
           }
@@ -700,6 +716,7 @@
         "TenantId": 1,
         "IsActive": true,
         "IsDelete": false,
+        "NextInspectionDate": "2020-12-15",
         "MaintResults": [
           {
             "Index": 1,
@@ -708,7 +725,7 @@
             "TenantId": 1,
             "ExecutedOn": "2018-11-19 11:17:43",
             "NextInspectionDate": "2019-11-19 11:17:43",
-            "Observations": "Estado incorrecto de las baterías",
+            "Observations": "Retirada de voltaje y corriente",
             "Result": "P",
             "IsActive": true,
             "IsDelete": false
@@ -720,7 +737,7 @@
             "TenantId": 1,
             "ExecutedOn": "2017-11-19 11:17:43",
             "NextInspectionDate": "2018-11-19 11:17:43",
-            "Observations": "Mal estado de voltaje y corriente",
+            "Observations": "Desconexión de los sistemas",
             "Result": "Y",
             "IsActive": true,
             "IsDelete": false
@@ -735,6 +752,7 @@
         "TenantId": 1,
         "IsActive": true,
         "IsDelete": false,
+        "NextInspectionDate": "2020-12-15",
         "MaintResults": [
           {
             "Index": 1,
@@ -743,8 +761,8 @@
             "TenantId": 1,
             "ExecutedOn": "2018-11-19 11:17:43",
             "NextInspectionDate": "2019-11-19 11:17:43",
-            "Observations": "Sustitución de las instalación eléctrica",
-            "Result": "Y",
+            "Observations": "Sustitución de todas las salidas",
+            "Result": "P",
             "IsActive": true,
             "IsDelete": false
           },
@@ -755,8 +773,8 @@
             "TenantId": 1,
             "ExecutedOn": "2017-11-19 11:17:43",
             "NextInspectionDate": "2018-11-19 11:17:43",
-            "Observations": "Desconexión de la alimentación eléctica",
-            "Result": "Y",
+            "Observations": "Fallo en voltaje y corriente",
+            "Result": "P",
             "IsActive": true,
             "IsDelete": false
           }
@@ -770,6 +788,7 @@
         "TenantId": 1,
         "IsActive": true,
         "IsDelete": false,
+        "NextInspectionDate": "2020-12-15",
         "MaintResults": [
           {
             "Index": 1,
@@ -778,7 +797,7 @@
             "TenantId": 1,
             "ExecutedOn": "2018-11-19 11:17:43",
             "NextInspectionDate": "2019-11-19 11:17:43",
-            "Observations": "Verificado equipos averiados",
+            "Observations": "Retirada de las instalación eléctrica",
             "Result": "P",
             "IsActive": true,
             "IsDelete": false
@@ -790,7 +809,7 @@
             "TenantId": 1,
             "ExecutedOn": "2017-11-19 11:17:43",
             "NextInspectionDate": "2018-11-19 11:17:43",
-            "Observations": "Desconexión de voltaje y corriente",
+            "Observations": "Retirada de voltaje y corriente",
             "Result": "P",
             "IsActive": true,
             "IsDelete": false
@@ -805,6 +824,7 @@
         "TenantId": 1,
         "IsActive": true,
         "IsDelete": false,
+        "NextInspectionDate": "2020-12-15",
         "MaintResults": [
           {
             "Index": 1,
@@ -813,8 +833,8 @@
             "TenantId": 1,
             "ExecutedOn": "2018-11-19 11:17:43",
             "NextInspectionDate": "2019-11-19 11:17:43",
-            "Observations": "Desconexión de los sistemas",
-            "Result": "N",
+            "Observations": "Sustitución de los sensores",
+            "Result": "P",
             "IsActive": true,
             "IsDelete": false
           },
@@ -825,8 +845,8 @@
             "TenantId": 1,
             "ExecutedOn": "2017-11-19 11:17:43",
             "NextInspectionDate": "2018-11-19 11:17:43",
-            "Observations": "Desconexión de equipos averiados",
-            "Result": "N",
+            "Observations": "Aviso a responsable de todas las salidas",
+            "Result": "Y",
             "IsActive": true,
             "IsDelete": false
           }
@@ -838,10 +858,10 @@
         "Index": 1,
         "TenantId": 1,
         "MaintScheduleId": 2,
-        "Code": "DET.01",
+        "Code": "GAS.01",
         "Position": 1,
-        "Description": "Prueba de las conexiones",
-        "Name": "PRUEBA DE LAS CONEXIONES",
+        "Description": "Verificar equipos averiados",
+        "Name": "VERIFICAR EQUIPOS AVERIADOS",
         "IsActive": true,
         "IsDelete": false
       },
@@ -849,10 +869,10 @@
         "Index": 2,
         "TenantId": 1,
         "MaintScheduleId": 2,
-        "Code": "DET.02",
+        "Code": "GAS.02",
         "Position": 2,
-        "Description": "Desconectar previamente los sistemas",
-        "Name": "DESCONECTAR PREVIAMENTE LOS SISTEMAS",
+        "Description": "Medir la alimentación eléctica",
+        "Name": "MEDIR LA ALIMENTACIÓN ELÉCTICA",
         "IsActive": true,
         "IsDelete": false
       },
@@ -860,10 +880,10 @@
         "Index": 3,
         "TenantId": 1,
         "MaintScheduleId": 2,
-        "Code": "DET.03",
+        "Code": "GAS.03",
         "Position": 3,
-        "Description": "Medir los sensores",
-        "Name": "MEDIR LOS SENSORES",
+        "Description": "Sustitución de la alimentación eléctica",
+        "Name": "SUSTITUCIÓN DE LA ALIMENTACIÓN ELÉCTICA",
         "IsActive": true,
         "IsDelete": false
       },
@@ -871,10 +891,10 @@
         "Index": 4,
         "TenantId": 1,
         "MaintScheduleId": 2,
-        "Code": "DET.04",
+        "Code": "GAS.04",
         "Position": 4,
-        "Description": "Desconectar previamente la alimentación eléctica",
-        "Name": "DESCONECTAR PREVIAMENTE LA ALIMENTACIÓN ELÉCTICA",
+        "Description": "Comprobar estado de los sistemas",
+        "Name": "COMPROBAR ESTADO DE LOS SISTEMAS",
         "IsActive": true,
         "IsDelete": false
       },
@@ -882,10 +902,10 @@
         "Index": 5,
         "TenantId": 1,
         "MaintScheduleId": 2,
-        "Code": "DET.05",
+        "Code": "GAS.05",
         "Position": 5,
-        "Description": "Limpieza de la alimentación eléctica",
-        "Name": "LIMPIEZA DE LA ALIMENTACIÓN ELÉCTICA",
+        "Description": "Reposición de los equipos del sistema",
+        "Name": "REPOSICIÓN DE LOS EQUIPOS DEL SISTEMA",
         "IsActive": true,
         "IsDelete": false
       },
@@ -893,10 +913,10 @@
         "Index": 6,
         "TenantId": 1,
         "MaintScheduleId": 2,
-        "Code": "DET.06",
+        "Code": "GAS.06",
         "Position": 6,
-        "Description": "Comprobar estado de los equipos del sistema",
-        "Name": "COMPROBAR ESTADO DE LOS EQUIPOS DEL SISTEMA",
+        "Description": "Aviso previo a la prueba de las sirenas",
+        "Name": "AVISO PREVIO A LA PRUEBA DE LAS SIRENAS",
         "IsActive": true,
         "IsDelete": false
       },
@@ -904,10 +924,10 @@
         "Index": 7,
         "TenantId": 1,
         "MaintScheduleId": 2,
-        "Code": "DET.07",
+        "Code": "GAS.07",
         "Position": 7,
-        "Description": "Aviso previo a la prueba de la alimentación eléctica",
-        "Name": "AVISO PREVIO A LA PRUEBA DE LA ALIMENTACIÓN ELÉCTICA",
+        "Description": "Aviso previo a la prueba de las sirenas",
+        "Name": "AVISO PREVIO A LA PRUEBA DE LAS SIRENAS",
         "IsActive": true,
         "IsDelete": false
       },
@@ -915,10 +935,10 @@
         "Index": 8,
         "TenantId": 1,
         "MaintScheduleId": 2,
-        "Code": "DET.08",
+        "Code": "GAS.08",
         "Position": 8,
-        "Description": "Sustitución de equipos averiados",
-        "Name": "SUSTITUCIÓN DE EQUIPOS AVERIADOS",
+        "Description": "Reposición de los equipos del sistema",
+        "Name": "REPOSICIÓN DE LOS EQUIPOS DEL SISTEMA",
         "IsActive": true,
         "IsDelete": false
       },
@@ -926,10 +946,10 @@
         "Index": 9,
         "TenantId": 1,
         "MaintScheduleId": 2,
-        "Code": "DET.09",
+        "Code": "GAS.09",
         "Position": 9,
-        "Description": "Aviso previo a la prueba de equipos averiados",
-        "Name": "AVISO PREVIO A LA PRUEBA DE EQUIPOS AVERIADOS",
+        "Description": "Medir la alimentación eléctica",
+        "Name": "MEDIR LA ALIMENTACIÓN ELÉCTICA",
         "IsActive": true,
         "IsDelete": false
       }
@@ -939,14 +959,14 @@
     "Index": 3,
     "marca": "***********************************************************",
     "TenantId": 1,
-    "ProductCategoryId": 2,
+    "ProductCategoryId": 5,
     "ProductId": "",
-    "_categoria": "Detectores de incendios",
-    "_CodCategoria": "DET",
-    "_indicePeriodo": 2,
-    "MonthsInterval": 6,
-    "Description": "Revisión semestral de Detectores de incendios",
-    "Name": "REVISIÓN SEMESTRAL DE DETECTORES DE INCENDIOS",
+    "_categoria": "Extinción por gas",
+    "_CodCategoria": "GAS",
+    "_indicePeriodo": 0,
+    "MonthsInterval": 1,
+    "Description": "Revisión mensual de Extinción por gas",
+    "Name": "REVISIÓN MENSUAL DE EXTINCIÓN POR GAS",
     "IsActive": true,
     "IsDelete": false,
     "MaintScheduleAssets": [
@@ -958,6 +978,7 @@
         "TenantId": 1,
         "IsActive": true,
         "IsDelete": false,
+        "NextInspectionDate": "2020-12-15",
         "MaintResults": [
           {
             "Index": 1,
@@ -966,8 +987,8 @@
             "TenantId": 1,
             "ExecutedOn": "2018-11-19 11:17:43",
             "NextInspectionDate": "2019-11-19 11:17:43",
-            "Observations": "Aviso a responsable de las conexiones",
-            "Result": "N",
+            "Observations": "Requiere limpieza de las instalación eléctrica",
+            "Result": "P",
             "IsActive": true,
             "IsDelete": false
           },
@@ -978,8 +999,8 @@
             "TenantId": 1,
             "ExecutedOn": "2017-11-19 11:17:43",
             "NextInspectionDate": "2018-11-19 11:17:43",
-            "Observations": "Fallo en la alimentación eléctica",
-            "Result": "N",
+            "Observations": "Sustitución de la alimentación eléctica",
+            "Result": "Y",
             "IsActive": true,
             "IsDelete": false
           }
@@ -993,6 +1014,7 @@
         "TenantId": 1,
         "IsActive": true,
         "IsDelete": false,
+        "NextInspectionDate": "2020-12-15",
         "MaintResults": [
           {
             "Index": 1,
@@ -1001,8 +1023,8 @@
             "TenantId": 1,
             "ExecutedOn": "2018-11-19 11:17:43",
             "NextInspectionDate": "2019-11-19 11:17:43",
-            "Observations": "Verificado las instalación eléctrica",
-            "Result": "N",
+            "Observations": "Sustitución de las baterías",
+            "Result": "Y",
             "IsActive": true,
             "IsDelete": false
           },
@@ -1013,8 +1035,8 @@
             "TenantId": 1,
             "ExecutedOn": "2017-11-19 11:17:43",
             "NextInspectionDate": "2018-11-19 11:17:43",
-            "Observations": "Retirada de las instalación eléctrica",
-            "Result": "P",
+            "Observations": "Estado incorrecto de la alimentación eléctica",
+            "Result": "Y",
             "IsActive": true,
             "IsDelete": false
           }
@@ -1028,6 +1050,7 @@
         "TenantId": 1,
         "IsActive": true,
         "IsDelete": false,
+        "NextInspectionDate": "2020-12-15",
         "MaintResults": [
           {
             "Index": 1,
@@ -1036,7 +1059,7 @@
             "TenantId": 1,
             "ExecutedOn": "2018-11-19 11:17:43",
             "NextInspectionDate": "2019-11-19 11:17:43",
-            "Observations": "Fallo en las baterías",
+            "Observations": "Aviso a responsable de las instalación eléctrica",
             "Result": "Y",
             "IsActive": true,
             "IsDelete": false
@@ -1048,8 +1071,8 @@
             "TenantId": 1,
             "ExecutedOn": "2017-11-19 11:17:43",
             "NextInspectionDate": "2018-11-19 11:17:43",
-            "Observations": "Retirada de los sistemas",
-            "Result": "N",
+            "Observations": "No se ha realizado la reposición de las conexiones",
+            "Result": "Y",
             "IsActive": true,
             "IsDelete": false
           }
@@ -1063,6 +1086,7 @@
         "TenantId": 1,
         "IsActive": true,
         "IsDelete": false,
+        "NextInspectionDate": "2020-12-15",
         "MaintResults": [
           {
             "Index": 1,
@@ -1071,8 +1095,8 @@
             "TenantId": 1,
             "ExecutedOn": "2018-11-19 11:17:43",
             "NextInspectionDate": "2019-11-19 11:17:43",
-            "Observations": "Sustitución de los equipos del sistema",
-            "Result": "P",
+            "Observations": "Estado incorrecto de los equipos del sistema",
+            "Result": "N",
             "IsActive": true,
             "IsDelete": false
           },
@@ -1083,7 +1107,7 @@
             "TenantId": 1,
             "ExecutedOn": "2017-11-19 11:17:43",
             "NextInspectionDate": "2018-11-19 11:17:43",
-            "Observations": "Prueba correcta de las conexiones",
+            "Observations": "Verificado equipos averiados",
             "Result": "N",
             "IsActive": true,
             "IsDelete": false
@@ -1098,6 +1122,7 @@
         "TenantId": 1,
         "IsActive": true,
         "IsDelete": false,
+        "NextInspectionDate": "2020-12-15",
         "MaintResults": [
           {
             "Index": 1,
@@ -1106,8 +1131,8 @@
             "TenantId": 1,
             "ExecutedOn": "2018-11-19 11:17:43",
             "NextInspectionDate": "2019-11-19 11:17:43",
-            "Observations": "Fallo en los sensores",
-            "Result": "Y",
+            "Observations": "Requiere limpieza de las conexiones",
+            "Result": "N",
             "IsActive": true,
             "IsDelete": false
           },
@@ -1118,8 +1143,8 @@
             "TenantId": 1,
             "ExecutedOn": "2017-11-19 11:17:43",
             "NextInspectionDate": "2018-11-19 11:17:43",
-            "Observations": "Desconexión de los sistemas",
-            "Result": "P",
+            "Observations": "Mal estado de los sensores",
+            "Result": "Y",
             "IsActive": true,
             "IsDelete": false
           }
@@ -1133,6 +1158,7 @@
         "TenantId": 1,
         "IsActive": true,
         "IsDelete": false,
+        "NextInspectionDate": "2020-12-15",
         "MaintResults": [
           {
             "Index": 1,
@@ -1141,7 +1167,7 @@
             "TenantId": 1,
             "ExecutedOn": "2018-11-19 11:17:43",
             "NextInspectionDate": "2019-11-19 11:17:43",
-            "Observations": "No se ha realizado la reposición de las sirenas",
+            "Observations": "Estado incorrecto de voltaje y corriente",
             "Result": "Y",
             "IsActive": true,
             "IsDelete": false
@@ -1153,8 +1179,8 @@
             "TenantId": 1,
             "ExecutedOn": "2017-11-19 11:17:43",
             "NextInspectionDate": "2018-11-19 11:17:43",
-            "Observations": "Fallo en las conexiones",
-            "Result": "N",
+            "Observations": "Desconexión de las baterías",
+            "Result": "Y",
             "IsActive": true,
             "IsDelete": false
           }
@@ -1168,6 +1194,7 @@
         "TenantId": 1,
         "IsActive": true,
         "IsDelete": false,
+        "NextInspectionDate": "2020-12-15",
         "MaintResults": [
           {
             "Index": 1,
@@ -1176,7 +1203,7 @@
             "TenantId": 1,
             "ExecutedOn": "2018-11-19 11:17:43",
             "NextInspectionDate": "2019-11-19 11:17:43",
-            "Observations": "Requiere limpieza de la alimentación eléctica",
+            "Observations": "Mal estado de voltaje y corriente",
             "Result": "P",
             "IsActive": true,
             "IsDelete": false
@@ -1188,7 +1215,7 @@
             "TenantId": 1,
             "ExecutedOn": "2017-11-19 11:17:43",
             "NextInspectionDate": "2018-11-19 11:17:43",
-            "Observations": "Mal estado de los pilotos indicadores",
+            "Observations": "Mal estado de todas las salidas",
             "Result": "P",
             "IsActive": true,
             "IsDelete": false
@@ -1203,6 +1230,7 @@
         "TenantId": 1,
         "IsActive": true,
         "IsDelete": false,
+        "NextInspectionDate": "2020-12-15",
         "MaintResults": [
           {
             "Index": 1,
@@ -1211,8 +1239,8 @@
             "TenantId": 1,
             "ExecutedOn": "2018-11-19 11:17:43",
             "NextInspectionDate": "2019-11-19 11:17:43",
-            "Observations": "No se ha realizado la reposición de equipos averiados",
-            "Result": "P",
+            "Observations": "Aviso a responsable de las sirenas",
+            "Result": "Y",
             "IsActive": true,
             "IsDelete": false
           },
@@ -1223,8 +1251,8 @@
             "TenantId": 1,
             "ExecutedOn": "2017-11-19 11:17:43",
             "NextInspectionDate": "2018-11-19 11:17:43",
-            "Observations": "Prueba correcta de los sistemas",
-            "Result": "N",
+            "Observations": "Sustitución de las conexiones",
+            "Result": "P",
             "IsActive": true,
             "IsDelete": false
           }
@@ -1238,6 +1266,7 @@
         "TenantId": 1,
         "IsActive": true,
         "IsDelete": false,
+        "NextInspectionDate": "2020-12-15",
         "MaintResults": [
           {
             "Index": 1,
@@ -1246,8 +1275,8 @@
             "TenantId": 1,
             "ExecutedOn": "2018-11-19 11:17:43",
             "NextInspectionDate": "2019-11-19 11:17:43",
-            "Observations": "Desconexión de voltaje y corriente",
-            "Result": "Y",
+            "Observations": "Desconexión de las baterías",
+            "Result": "N",
             "IsActive": true,
             "IsDelete": false
           },
@@ -1258,8 +1287,8 @@
             "TenantId": 1,
             "ExecutedOn": "2017-11-19 11:17:43",
             "NextInspectionDate": "2018-11-19 11:17:43",
-            "Observations": "Estado incorrecto de los sistemas",
-            "Result": "Y",
+            "Observations": "Sustitución de los sensores",
+            "Result": "N",
             "IsActive": true,
             "IsDelete": false
           }
@@ -1273,6 +1302,7 @@
         "TenantId": 1,
         "IsActive": true,
         "IsDelete": false,
+        "NextInspectionDate": "2020-12-15",
         "MaintResults": [
           {
             "Index": 1,
@@ -1281,7 +1311,7 @@
             "TenantId": 1,
             "ExecutedOn": "2018-11-19 11:17:43",
             "NextInspectionDate": "2019-11-19 11:17:43",
-            "Observations": "Retirada de los sensores",
+            "Observations": "Fallo en las baterías",
             "Result": "N",
             "IsActive": true,
             "IsDelete": false
@@ -1293,7 +1323,7 @@
             "TenantId": 1,
             "ExecutedOn": "2017-11-19 11:17:43",
             "NextInspectionDate": "2018-11-19 11:17:43",
-            "Observations": "Verificado la alimentación eléctica",
+            "Observations": "Estado incorrecto de todas las salidas",
             "Result": "Y",
             "IsActive": true,
             "IsDelete": false
@@ -1306,10 +1336,10 @@
         "Index": 1,
         "TenantId": 1,
         "MaintScheduleId": 3,
-        "Code": "DET.01",
+        "Code": "GAS.01",
         "Position": 1,
-        "Description": "Restaurar todas las salidas",
-        "Name": "RESTAURAR TODAS LAS SALIDAS",
+        "Description": "Restaurar las conexiones",
+        "Name": "RESTAURAR LAS CONEXIONES",
         "IsActive": true,
         "IsDelete": false
       },
@@ -1317,10 +1347,10 @@
         "Index": 2,
         "TenantId": 1,
         "MaintScheduleId": 3,
-        "Code": "DET.02",
+        "Code": "GAS.02",
         "Position": 2,
-        "Description": "Desconectar previamente las conexiones",
-        "Name": "DESCONECTAR PREVIAMENTE LAS CONEXIONES",
+        "Description": "Restaurar equipos averiados",
+        "Name": "RESTAURAR EQUIPOS AVERIADOS",
         "IsActive": true,
         "IsDelete": false
       },
@@ -1328,10 +1358,10 @@
         "Index": 3,
         "TenantId": 1,
         "MaintScheduleId": 3,
-        "Code": "DET.03",
+        "Code": "GAS.03",
         "Position": 3,
-        "Description": "Desconectar previamente los sistemas",
-        "Name": "DESCONECTAR PREVIAMENTE LOS SISTEMAS",
+        "Description": "Medir los sensores",
+        "Name": "MEDIR LOS SENSORES",
         "IsActive": true,
         "IsDelete": false
       },
@@ -1339,10 +1369,10 @@
         "Index": 4,
         "TenantId": 1,
         "MaintScheduleId": 3,
-        "Code": "DET.04",
+        "Code": "GAS.04",
         "Position": 4,
-        "Description": "Restaurar los equipos del sistema",
-        "Name": "RESTAURAR LOS EQUIPOS DEL SISTEMA",
+        "Description": "Verificar los pilotos indicadores",
+        "Name": "VERIFICAR LOS PILOTOS INDICADORES",
         "IsActive": true,
         "IsDelete": false
       },
@@ -1350,10 +1380,10 @@
         "Index": 5,
         "TenantId": 1,
         "MaintScheduleId": 3,
-        "Code": "DET.05",
+        "Code": "GAS.05",
         "Position": 5,
-        "Description": "Desconectar previamente la alimentación eléctica",
-        "Name": "DESCONECTAR PREVIAMENTE LA ALIMENTACIÓN ELÉCTICA",
+        "Description": "Aviso previo a la prueba de voltaje y corriente",
+        "Name": "AVISO PREVIO A LA PRUEBA DE VOLTAJE Y CORRIENTE",
         "IsActive": true,
         "IsDelete": false
       },
@@ -1361,10 +1391,10 @@
         "Index": 6,
         "TenantId": 1,
         "MaintScheduleId": 3,
-        "Code": "DET.06",
+        "Code": "GAS.06",
         "Position": 6,
-        "Description": "Reposición de los equipos del sistema",
-        "Name": "REPOSICIÓN DE LOS EQUIPOS DEL SISTEMA",
+        "Description": "Verificar la alimentación eléctica",
+        "Name": "VERIFICAR LA ALIMENTACIÓN ELÉCTICA",
         "IsActive": true,
         "IsDelete": false
       },
@@ -1372,10 +1402,10 @@
         "Index": 7,
         "TenantId": 1,
         "MaintScheduleId": 3,
-        "Code": "DET.07",
+        "Code": "GAS.07",
         "Position": 7,
-        "Description": "Restaurar los equipos del sistema",
-        "Name": "RESTAURAR LOS EQUIPOS DEL SISTEMA",
+        "Description": "Prueba de los equipos del sistema",
+        "Name": "PRUEBA DE LOS EQUIPOS DEL SISTEMA",
         "IsActive": true,
         "IsDelete": false
       },
@@ -1383,10 +1413,10 @@
         "Index": 8,
         "TenantId": 1,
         "MaintScheduleId": 3,
-        "Code": "DET.08",
+        "Code": "GAS.08",
         "Position": 8,
-        "Description": "Retirar voltaje y corriente",
-        "Name": "RETIRAR VOLTAJE Y CORRIENTE",
+        "Description": "Restaurar los pilotos indicadores",
+        "Name": "RESTAURAR LOS PILOTOS INDICADORES",
         "IsActive": true,
         "IsDelete": false
       },
@@ -1394,10 +1424,10 @@
         "Index": 9,
         "TenantId": 1,
         "MaintScheduleId": 3,
-        "Code": "DET.09",
+        "Code": "GAS.09",
         "Position": 9,
-        "Description": "Retirar la alimentación eléctica",
-        "Name": "RETIRAR LA ALIMENTACIÓN ELÉCTICA",
+        "Description": "Limpieza de voltaje y corriente",
+        "Name": "LIMPIEZA DE VOLTAJE Y CORRIENTE",
         "IsActive": true,
         "IsDelete": false
       }
@@ -1411,10 +1441,10 @@
     "ProductId": "",
     "_categoria": "Aerosoles",
     "_CodCategoria": "AER",
-    "_indicePeriodo": 3,
-    "MonthsInterval": 12,
-    "Description": "Revisión anual de Aerosoles",
-    "Name": "REVISIÓN ANUAL DE AEROSOLES",
+    "_indicePeriodo": 1,
+    "MonthsInterval": 3,
+    "Description": "Revisión trimestral de Aerosoles",
+    "Name": "REVISIÓN TRIMESTRAL DE AEROSOLES",
     "IsActive": true,
     "IsDelete": false,
     "MaintScheduleAssets": [
@@ -1426,6 +1456,7 @@
         "TenantId": 1,
         "IsActive": true,
         "IsDelete": false,
+        "NextInspectionDate": "2020-12-15",
         "MaintResults": [
           {
             "Index": 1,
@@ -1434,8 +1465,8 @@
             "TenantId": 1,
             "ExecutedOn": "2018-11-19 11:17:43",
             "NextInspectionDate": "2019-11-19 11:17:43",
-            "Observations": "Requiere limpieza de la alimentación eléctica",
-            "Result": "P",
+            "Observations": "Estado incorrecto de los sistemas",
+            "Result": "N",
             "IsActive": true,
             "IsDelete": false
           },
@@ -1446,8 +1477,8 @@
             "TenantId": 1,
             "ExecutedOn": "2017-11-19 11:17:43",
             "NextInspectionDate": "2018-11-19 11:17:43",
-            "Observations": "Sustitución de las sirenas",
-            "Result": "N",
+            "Observations": "Prueba correcta de las instalación eléctrica",
+            "Result": "P",
             "IsActive": true,
             "IsDelete": false
           }
@@ -1461,6 +1492,7 @@
         "TenantId": 1,
         "IsActive": true,
         "IsDelete": false,
+        "NextInspectionDate": "2020-12-15",
         "MaintResults": [
           {
             "Index": 1,
@@ -1469,8 +1501,8 @@
             "TenantId": 1,
             "ExecutedOn": "2018-11-19 11:17:43",
             "NextInspectionDate": "2019-11-19 11:17:43",
-            "Observations": "Mal estado de voltaje y corriente",
-            "Result": "Y",
+            "Observations": "Requiere limpieza de los sistemas",
+            "Result": "N",
             "IsActive": true,
             "IsDelete": false
           },
@@ -1481,8 +1513,8 @@
             "TenantId": 1,
             "ExecutedOn": "2017-11-19 11:17:43",
             "NextInspectionDate": "2018-11-19 11:17:43",
-            "Observations": "Fallo en las baterías",
-            "Result": "P",
+            "Observations": "Desconexión de todas las salidas",
+            "Result": "Y",
             "IsActive": true,
             "IsDelete": false
           }
@@ -1496,6 +1528,7 @@
         "TenantId": 1,
         "IsActive": true,
         "IsDelete": false,
+        "NextInspectionDate": "2020-12-15",
         "MaintResults": [
           {
             "Index": 1,
@@ -1504,8 +1537,8 @@
             "TenantId": 1,
             "ExecutedOn": "2018-11-19 11:17:43",
             "NextInspectionDate": "2019-11-19 11:17:43",
-            "Observations": "No se ha realizado la reposición de la alimentación eléctica",
-            "Result": "Y",
+            "Observations": "No se ha realizado la reposición de los sistemas",
+            "Result": "N",
             "IsActive": true,
             "IsDelete": false
           },
@@ -1516,8 +1549,8 @@
             "TenantId": 1,
             "ExecutedOn": "2017-11-19 11:17:43",
             "NextInspectionDate": "2018-11-19 11:17:43",
-            "Observations": "Prueba correcta de los pilotos indicadores",
-            "Result": "P",
+            "Observations": "Verificado la alimentación eléctica",
+            "Result": "N",
             "IsActive": true,
             "IsDelete": false
           }
@@ -1531,6 +1564,7 @@
         "TenantId": 1,
         "IsActive": true,
         "IsDelete": false,
+        "NextInspectionDate": "2020-12-15",
         "MaintResults": [
           {
             "Index": 1,
@@ -1539,8 +1573,8 @@
             "TenantId": 1,
             "ExecutedOn": "2018-11-19 11:17:43",
             "NextInspectionDate": "2019-11-19 11:17:43",
-            "Observations": "Mal estado de los sensores",
-            "Result": "P",
+            "Observations": "Verificado voltaje y corriente",
+            "Result": "N",
             "IsActive": true,
             "IsDelete": false
           },
@@ -1551,8 +1585,8 @@
             "TenantId": 1,
             "ExecutedOn": "2017-11-19 11:17:43",
             "NextInspectionDate": "2018-11-19 11:17:43",
-            "Observations": "Mal estado de la alimentación eléctica",
-            "Result": "N",
+            "Observations": "Retirada de voltaje y corriente",
+            "Result": "Y",
             "IsActive": true,
             "IsDelete": false
           }
@@ -1566,6 +1600,7 @@
         "TenantId": 1,
         "IsActive": true,
         "IsDelete": false,
+        "NextInspectionDate": "2020-12-15",
         "MaintResults": [
           {
             "Index": 1,
@@ -1574,7 +1609,7 @@
             "TenantId": 1,
             "ExecutedOn": "2018-11-19 11:17:43",
             "NextInspectionDate": "2019-11-19 11:17:43",
-            "Observations": "Mal estado de voltaje y corriente",
+            "Observations": "Requiere limpieza de los sensores",
             "Result": "N",
             "IsActive": true,
             "IsDelete": false
@@ -1586,8 +1621,8 @@
             "TenantId": 1,
             "ExecutedOn": "2017-11-19 11:17:43",
             "NextInspectionDate": "2018-11-19 11:17:43",
-            "Observations": "No se ha realizado la reposición de la alimentación eléctica",
-            "Result": "Y",
+            "Observations": "Mal estado de todas las salidas",
+            "Result": "P",
             "IsActive": true,
             "IsDelete": false
           }
@@ -1601,6 +1636,7 @@
         "TenantId": 1,
         "IsActive": true,
         "IsDelete": false,
+        "NextInspectionDate": "2020-12-15",
         "MaintResults": [
           {
             "Index": 1,
@@ -1609,7 +1645,7 @@
             "TenantId": 1,
             "ExecutedOn": "2018-11-19 11:17:43",
             "NextInspectionDate": "2019-11-19 11:17:43",
-            "Observations": "Requiere limpieza de la alimentación eléctica",
+            "Observations": "Retirada de las instalación eléctrica",
             "Result": "Y",
             "IsActive": true,
             "IsDelete": false
@@ -1621,8 +1657,8 @@
             "TenantId": 1,
             "ExecutedOn": "2017-11-19 11:17:43",
             "NextInspectionDate": "2018-11-19 11:17:43",
-            "Observations": "Requiere limpieza de equipos averiados",
-            "Result": "Y",
+            "Observations": "Requiere limpieza de los pilotos indicadores",
+            "Result": "P",
             "IsActive": true,
             "IsDelete": false
           }
@@ -1636,6 +1672,7 @@
         "TenantId": 1,
         "IsActive": true,
         "IsDelete": false,
+        "NextInspectionDate": "2020-12-15",
         "MaintResults": [
           {
             "Index": 1,
@@ -1644,7 +1681,7 @@
             "TenantId": 1,
             "ExecutedOn": "2018-11-19 11:17:43",
             "NextInspectionDate": "2019-11-19 11:17:43",
-            "Observations": "No se ha realizado la reposición de los equipos del sistema",
+            "Observations": "Aviso a responsable de equipos averiados",
             "Result": "P",
             "IsActive": true,
             "IsDelete": false
@@ -1656,8 +1693,8 @@
             "TenantId": 1,
             "ExecutedOn": "2017-11-19 11:17:43",
             "NextInspectionDate": "2018-11-19 11:17:43",
-            "Observations": "Estado incorrecto de los sistemas",
-            "Result": "Y",
+            "Observations": "Mal estado de las instalación eléctrica",
+            "Result": "N",
             "IsActive": true,
             "IsDelete": false
           }
@@ -1671,6 +1708,7 @@
         "TenantId": 1,
         "IsActive": true,
         "IsDelete": false,
+        "NextInspectionDate": "2020-12-15",
         "MaintResults": [
           {
             "Index": 1,
@@ -1679,8 +1717,8 @@
             "TenantId": 1,
             "ExecutedOn": "2018-11-19 11:17:43",
             "NextInspectionDate": "2019-11-19 11:17:43",
-            "Observations": "Estado incorrecto de los sensores",
-            "Result": "N",
+            "Observations": "Verificado las instalación eléctrica",
+            "Result": "Y",
             "IsActive": true,
             "IsDelete": false
           },
@@ -1691,8 +1729,8 @@
             "TenantId": 1,
             "ExecutedOn": "2017-11-19 11:17:43",
             "NextInspectionDate": "2018-11-19 11:17:43",
-            "Observations": "Sustitución de voltaje y corriente",
-            "Result": "P",
+            "Observations": "Mal estado de los pilotos indicadores",
+            "Result": "Y",
             "IsActive": true,
             "IsDelete": false
           }
@@ -1706,6 +1744,7 @@
         "TenantId": 1,
         "IsActive": true,
         "IsDelete": false,
+        "NextInspectionDate": "2020-12-15",
         "MaintResults": [
           {
             "Index": 1,
@@ -1714,8 +1753,8 @@
             "TenantId": 1,
             "ExecutedOn": "2018-11-19 11:17:43",
             "NextInspectionDate": "2019-11-19 11:17:43",
-            "Observations": "Prueba correcta de los equipos del sistema",
-            "Result": "N",
+            "Observations": "Retirada de las instalación eléctrica",
+            "Result": "Y",
             "IsActive": true,
             "IsDelete": false
           },
@@ -1726,8 +1765,8 @@
             "TenantId": 1,
             "ExecutedOn": "2017-11-19 11:17:43",
             "NextInspectionDate": "2018-11-19 11:17:43",
-            "Observations": "No se ha realizado la reposición de las sirenas",
-            "Result": "Y",
+            "Observations": "Requiere limpieza de los pilotos indicadores",
+            "Result": "N",
             "IsActive": true,
             "IsDelete": false
           }
@@ -1741,6 +1780,7 @@
         "TenantId": 1,
         "IsActive": true,
         "IsDelete": false,
+        "NextInspectionDate": "2020-12-15",
         "MaintResults": [
           {
             "Index": 1,
@@ -1749,8 +1789,8 @@
             "TenantId": 1,
             "ExecutedOn": "2018-11-19 11:17:43",
             "NextInspectionDate": "2019-11-19 11:17:43",
-            "Observations": "Verificado los equipos del sistema",
-            "Result": "N",
+            "Observations": "Retirada de los sensores",
+            "Result": "Y",
             "IsActive": true,
             "IsDelete": false
           },
@@ -1761,8 +1801,8 @@
             "TenantId": 1,
             "ExecutedOn": "2017-11-19 11:17:43",
             "NextInspectionDate": "2018-11-19 11:17:43",
-            "Observations": "Requiere limpieza de los pilotos indicadores",
-            "Result": "N",
+            "Observations": "Retirada de las conexiones",
+            "Result": "P",
             "IsActive": true,
             "IsDelete": false
           }
@@ -1776,8 +1816,8 @@
         "MaintScheduleId": 4,
         "Code": "AER.01",
         "Position": 1,
-        "Description": "Reposición de voltaje y corriente",
-        "Name": "REPOSICIÓN DE VOLTAJE Y CORRIENTE",
+        "Description": "Sustitución de las baterías",
+        "Name": "SUSTITUCIÓN DE LAS BATERÍAS",
         "IsActive": true,
         "IsDelete": false
       },
@@ -1787,8 +1827,8 @@
         "MaintScheduleId": 4,
         "Code": "AER.02",
         "Position": 2,
-        "Description": "Aviso previo a la prueba de la alimentación eléctica",
-        "Name": "AVISO PREVIO A LA PRUEBA DE LA ALIMENTACIÓN ELÉCTICA",
+        "Description": "Verificar las sirenas",
+        "Name": "VERIFICAR LAS SIRENAS",
         "IsActive": true,
         "IsDelete": false
       },
@@ -1798,8 +1838,8 @@
         "MaintScheduleId": 4,
         "Code": "AER.03",
         "Position": 3,
-        "Description": "Comprobar estado de las baterías",
-        "Name": "COMPROBAR ESTADO DE LAS BATERÍAS",
+        "Description": "Restaurar las baterías",
+        "Name": "RESTAURAR LAS BATERÍAS",
         "IsActive": true,
         "IsDelete": false
       },
@@ -1809,8 +1849,8 @@
         "MaintScheduleId": 4,
         "Code": "AER.04",
         "Position": 4,
-        "Description": "Sustitución de las conexiones",
-        "Name": "SUSTITUCIÓN DE LAS CONEXIONES",
+        "Description": "Aviso previo a la prueba de la alimentación eléctica",
+        "Name": "AVISO PREVIO A LA PRUEBA DE LA ALIMENTACIÓN ELÉCTICA",
         "IsActive": true,
         "IsDelete": false
       },
@@ -1820,8 +1860,8 @@
         "MaintScheduleId": 4,
         "Code": "AER.05",
         "Position": 5,
-        "Description": "Limpieza de los pilotos indicadores",
-        "Name": "LIMPIEZA DE LOS PILOTOS INDICADORES",
+        "Description": "Restaurar los sensores",
+        "Name": "RESTAURAR LOS SENSORES",
         "IsActive": true,
         "IsDelete": false
       },
@@ -1831,8 +1871,8 @@
         "MaintScheduleId": 4,
         "Code": "AER.06",
         "Position": 6,
-        "Description": "Aviso previo a la prueba de los pilotos indicadores",
-        "Name": "AVISO PREVIO A LA PRUEBA DE LOS PILOTOS INDICADORES",
+        "Description": "Reposición de los sistemas",
+        "Name": "REPOSICIÓN DE LOS SISTEMAS",
         "IsActive": true,
         "IsDelete": false
       },
@@ -1842,8 +1882,8 @@
         "MaintScheduleId": 4,
         "Code": "AER.07",
         "Position": 7,
-        "Description": "Restaurar equipos averiados",
-        "Name": "RESTAURAR EQUIPOS AVERIADOS",
+        "Description": "Verificar los sensores",
+        "Name": "VERIFICAR LOS SENSORES",
         "IsActive": true,
         "IsDelete": false
       },
@@ -1853,8 +1893,8 @@
         "MaintScheduleId": 4,
         "Code": "AER.08",
         "Position": 8,
-        "Description": "Prueba de las instalación eléctrica",
-        "Name": "PRUEBA DE LAS INSTALACIÓN ELÉCTRICA",
+        "Description": "Comprobar estado de las sirenas",
+        "Name": "COMPROBAR ESTADO DE LAS SIRENAS",
         "IsActive": true,
         "IsDelete": false
       },
@@ -1864,8 +1904,8 @@
         "MaintScheduleId": 4,
         "Code": "AER.09",
         "Position": 9,
-        "Description": "Aviso previo a la prueba de los sistemas",
-        "Name": "AVISO PREVIO A LA PRUEBA DE LOS SISTEMAS",
+        "Description": "Reposición de los sensores",
+        "Name": "REPOSICIÓN DE LOS SENSORES",
         "IsActive": true,
         "IsDelete": false
       }
@@ -1875,14 +1915,14 @@
     "Index": 5,
     "marca": "***********************************************************",
     "TenantId": 1,
-    "ProductCategoryId": 2,
+    "ProductCategoryId": 4,
     "ProductId": "",
-    "_categoria": "Detectores de incendios",
-    "_CodCategoria": "DET",
-    "_indicePeriodo": 4,
-    "MonthsInterval": 24,
-    "Description": "Revisión bianual de Detectores de incendios",
-    "Name": "REVISIÓN BIANUAL DE DETECTORES DE INCENDIOS",
+    "_categoria": "Extinción por Rociadores",
+    "_CodCategoria": "ROC",
+    "_indicePeriodo": 1,
+    "MonthsInterval": 3,
+    "Description": "Revisión trimestral de Extinción por Rociadores",
+    "Name": "REVISIÓN TRIMESTRAL DE EXTINCIÓN POR ROCIADORES",
     "IsActive": true,
     "IsDelete": false,
     "MaintScheduleAssets": [
@@ -1894,6 +1934,7 @@
         "TenantId": 1,
         "IsActive": true,
         "IsDelete": false,
+        "NextInspectionDate": "2020-12-15",
         "MaintResults": [
           {
             "Index": 1,
@@ -1902,8 +1943,8 @@
             "TenantId": 1,
             "ExecutedOn": "2018-11-19 11:17:43",
             "NextInspectionDate": "2019-11-19 11:17:43",
-            "Observations": "Prueba correcta de los pilotos indicadores",
-            "Result": "Y",
+            "Observations": "Aviso a responsable de los sensores",
+            "Result": "P",
             "IsActive": true,
             "IsDelete": false
           },
@@ -1914,8 +1955,8 @@
             "TenantId": 1,
             "ExecutedOn": "2017-11-19 11:17:43",
             "NextInspectionDate": "2018-11-19 11:17:43",
-            "Observations": "Retirada de las baterías",
-            "Result": "Y",
+            "Observations": "Mal estado de los equipos del sistema",
+            "Result": "N",
             "IsActive": true,
             "IsDelete": false
           }
@@ -1929,6 +1970,7 @@
         "TenantId": 1,
         "IsActive": true,
         "IsDelete": false,
+        "NextInspectionDate": "2020-12-15",
         "MaintResults": [
           {
             "Index": 1,
@@ -1937,7 +1979,7 @@
             "TenantId": 1,
             "ExecutedOn": "2018-11-19 11:17:43",
             "NextInspectionDate": "2019-11-19 11:17:43",
-            "Observations": "Fallo en todas las salidas",
+            "Observations": "Mal estado de las sirenas",
             "Result": "Y",
             "IsActive": true,
             "IsDelete": false
@@ -1949,8 +1991,8 @@
             "TenantId": 1,
             "ExecutedOn": "2017-11-19 11:17:43",
             "NextInspectionDate": "2018-11-19 11:17:43",
-            "Observations": "Mal estado de los pilotos indicadores",
-            "Result": "N",
+            "Observations": "Desconexión de todas las salidas",
+            "Result": "Y",
             "IsActive": true,
             "IsDelete": false
           }
@@ -1964,6 +2006,7 @@
         "TenantId": 1,
         "IsActive": true,
         "IsDelete": false,
+        "NextInspectionDate": "2020-12-15",
         "MaintResults": [
           {
             "Index": 1,
@@ -1972,8 +2015,8 @@
             "TenantId": 1,
             "ExecutedOn": "2018-11-19 11:17:43",
             "NextInspectionDate": "2019-11-19 11:17:43",
-            "Observations": "Verificado los sensores",
-            "Result": "P",
+            "Observations": "Desconexión de los pilotos indicadores",
+            "Result": "N",
             "IsActive": true,
             "IsDelete": false
           },
@@ -1984,7 +2027,7 @@
             "TenantId": 1,
             "ExecutedOn": "2017-11-19 11:17:43",
             "NextInspectionDate": "2018-11-19 11:17:43",
-            "Observations": "Verificado los sensores",
+            "Observations": "No se ha realizado la reposición de todas las salidas",
             "Result": "P",
             "IsActive": true,
             "IsDelete": false
@@ -1999,6 +2042,7 @@
         "TenantId": 1,
         "IsActive": true,
         "IsDelete": false,
+        "NextInspectionDate": "2020-12-15",
         "MaintResults": [
           {
             "Index": 1,
@@ -2007,8 +2051,8 @@
             "TenantId": 1,
             "ExecutedOn": "2018-11-19 11:17:43",
             "NextInspectionDate": "2019-11-19 11:17:43",
-            "Observations": "Sustitución de todas las salidas",
-            "Result": "Y",
+            "Observations": "Mal estado de los sistemas",
+            "Result": "P",
             "IsActive": true,
             "IsDelete": false
           },
@@ -2020,7 +2064,7 @@
             "ExecutedOn": "2017-11-19 11:17:43",
             "NextInspectionDate": "2018-11-19 11:17:43",
             "Observations": "Fallo en las conexiones",
-            "Result": "N",
+            "Result": "P",
             "IsActive": true,
             "IsDelete": false
           }
@@ -2034,6 +2078,7 @@
         "TenantId": 1,
         "IsActive": true,
         "IsDelete": false,
+        "NextInspectionDate": "2020-12-15",
         "MaintResults": [
           {
             "Index": 1,
@@ -2042,7 +2087,7 @@
             "TenantId": 1,
             "ExecutedOn": "2018-11-19 11:17:43",
             "NextInspectionDate": "2019-11-19 11:17:43",
-            "Observations": "Desconexión de las instalación eléctrica",
+            "Observations": "No se ha realizado la reposición de los pilotos indicadores",
             "Result": "Y",
             "IsActive": true,
             "IsDelete": false
@@ -2054,8 +2099,8 @@
             "TenantId": 1,
             "ExecutedOn": "2017-11-19 11:17:43",
             "NextInspectionDate": "2018-11-19 11:17:43",
-            "Observations": "Aviso a responsable de voltaje y corriente",
-            "Result": "P",
+            "Observations": "Sustitución de las sirenas",
+            "Result": "N",
             "IsActive": true,
             "IsDelete": false
           }
@@ -2069,6 +2114,7 @@
         "TenantId": 1,
         "IsActive": true,
         "IsDelete": false,
+        "NextInspectionDate": "2020-12-15",
         "MaintResults": [
           {
             "Index": 1,
@@ -2077,7 +2123,7 @@
             "TenantId": 1,
             "ExecutedOn": "2018-11-19 11:17:43",
             "NextInspectionDate": "2019-11-19 11:17:43",
-            "Observations": "Aviso a responsable de las conexiones",
+            "Observations": "No se ha realizado la reposición de voltaje y corriente",
             "Result": "Y",
             "IsActive": true,
             "IsDelete": false
@@ -2089,8 +2135,8 @@
             "TenantId": 1,
             "ExecutedOn": "2017-11-19 11:17:43",
             "NextInspectionDate": "2018-11-19 11:17:43",
-            "Observations": "Prueba correcta de los equipos del sistema",
-            "Result": "P",
+            "Observations": "Desconexión de las instalación eléctrica",
+            "Result": "Y",
             "IsActive": true,
             "IsDelete": false
           }
@@ -2104,6 +2150,7 @@
         "TenantId": 1,
         "IsActive": true,
         "IsDelete": false,
+        "NextInspectionDate": "2020-12-15",
         "MaintResults": [
           {
             "Index": 1,
@@ -2112,7 +2159,7 @@
             "TenantId": 1,
             "ExecutedOn": "2018-11-19 11:17:43",
             "NextInspectionDate": "2019-11-19 11:17:43",
-            "Observations": "Sustitución de equipos averiados",
+            "Observations": "Prueba correcta de las instalación eléctrica",
             "Result": "Y",
             "IsActive": true,
             "IsDelete": false
@@ -2124,7 +2171,7 @@
             "TenantId": 1,
             "ExecutedOn": "2017-11-19 11:17:43",
             "NextInspectionDate": "2018-11-19 11:17:43",
-            "Observations": "Retirada de las sirenas",
+            "Observations": "Prueba correcta de las sirenas",
             "Result": "Y",
             "IsActive": true,
             "IsDelete": false
@@ -2139,6 +2186,7 @@
         "TenantId": 1,
         "IsActive": true,
         "IsDelete": false,
+        "NextInspectionDate": "2020-12-15",
         "MaintResults": [
           {
             "Index": 1,
@@ -2147,8 +2195,8 @@
             "TenantId": 1,
             "ExecutedOn": "2018-11-19 11:17:43",
             "NextInspectionDate": "2019-11-19 11:17:43",
-            "Observations": "Requiere limpieza de todas las salidas",
-            "Result": "N",
+            "Observations": "Prueba correcta de equipos averiados",
+            "Result": "P",
             "IsActive": true,
             "IsDelete": false
           },
@@ -2159,8 +2207,8 @@
             "TenantId": 1,
             "ExecutedOn": "2017-11-19 11:17:43",
             "NextInspectionDate": "2018-11-19 11:17:43",
-            "Observations": "Retirada de las conexiones",
-            "Result": "N",
+            "Observations": "Verificado las conexiones",
+            "Result": "P",
             "IsActive": true,
             "IsDelete": false
           }
@@ -2174,6 +2222,7 @@
         "TenantId": 1,
         "IsActive": true,
         "IsDelete": false,
+        "NextInspectionDate": "2020-12-15",
         "MaintResults": [
           {
             "Index": 1,
@@ -2182,8 +2231,8 @@
             "TenantId": 1,
             "ExecutedOn": "2018-11-19 11:17:43",
             "NextInspectionDate": "2019-11-19 11:17:43",
-            "Observations": "Prueba correcta de las baterías",
-            "Result": "P",
+            "Observations": "Sustitución de los sistemas",
+            "Result": "Y",
             "IsActive": true,
             "IsDelete": false
           },
@@ -2194,7 +2243,7 @@
             "TenantId": 1,
             "ExecutedOn": "2017-11-19 11:17:43",
             "NextInspectionDate": "2018-11-19 11:17:43",
-            "Observations": "Aviso a responsable de los equipos del sistema",
+            "Observations": "Desconexión de los equipos del sistema",
             "Result": "P",
             "IsActive": true,
             "IsDelete": false
@@ -2209,6 +2258,7 @@
         "TenantId": 1,
         "IsActive": true,
         "IsDelete": false,
+        "NextInspectionDate": "2020-12-15",
         "MaintResults": [
           {
             "Index": 1,
@@ -2217,7 +2267,7 @@
             "TenantId": 1,
             "ExecutedOn": "2018-11-19 11:17:43",
             "NextInspectionDate": "2019-11-19 11:17:43",
-            "Observations": "Estado incorrecto de los equipos del sistema",
+            "Observations": "Desconexión de voltaje y corriente",
             "Result": "Y",
             "IsActive": true,
             "IsDelete": false
@@ -2229,7 +2279,7 @@
             "TenantId": 1,
             "ExecutedOn": "2017-11-19 11:17:43",
             "NextInspectionDate": "2018-11-19 11:17:43",
-            "Observations": "Retirada de los equipos del sistema",
+            "Observations": "Sustitución de los equipos del sistema",
             "Result": "N",
             "IsActive": true,
             "IsDelete": false
@@ -2242,10 +2292,10 @@
         "Index": 1,
         "TenantId": 1,
         "MaintScheduleId": 5,
-        "Code": "DET.01",
+        "Code": "ROC.01",
         "Position": 1,
-        "Description": "Restaurar voltaje y corriente",
-        "Name": "RESTAURAR VOLTAJE Y CORRIENTE",
+        "Description": "Reposición de las sirenas",
+        "Name": "REPOSICIÓN DE LAS SIRENAS",
         "IsActive": true,
         "IsDelete": false
       },
@@ -2253,10 +2303,10 @@
         "Index": 2,
         "TenantId": 1,
         "MaintScheduleId": 5,
-        "Code": "DET.02",
+        "Code": "ROC.02",
         "Position": 2,
-        "Description": "Limpieza de los sistemas",
-        "Name": "LIMPIEZA DE LOS SISTEMAS",
+        "Description": "Aviso previo a la prueba de todas las salidas",
+        "Name": "AVISO PREVIO A LA PRUEBA DE TODAS LAS SALIDAS",
         "IsActive": true,
         "IsDelete": false
       },
@@ -2264,10 +2314,10 @@
         "Index": 3,
         "TenantId": 1,
         "MaintScheduleId": 5,
-        "Code": "DET.03",
+        "Code": "ROC.03",
         "Position": 3,
-        "Description": "Reposición de las conexiones",
-        "Name": "REPOSICIÓN DE LAS CONEXIONES",
+        "Description": "Comprobar estado de las baterías",
+        "Name": "COMPROBAR ESTADO DE LAS BATERÍAS",
         "IsActive": true,
         "IsDelete": false
       },
@@ -2275,10 +2325,10 @@
         "Index": 4,
         "TenantId": 1,
         "MaintScheduleId": 5,
-        "Code": "DET.04",
+        "Code": "ROC.04",
         "Position": 4,
-        "Description": "Restaurar la alimentación eléctica",
-        "Name": "RESTAURAR LA ALIMENTACIÓN ELÉCTICA",
+        "Description": "Aviso previo a la prueba de los pilotos indicadores",
+        "Name": "AVISO PREVIO A LA PRUEBA DE LOS PILOTOS INDICADORES",
         "IsActive": true,
         "IsDelete": false
       },
@@ -2286,10 +2336,10 @@
         "Index": 5,
         "TenantId": 1,
         "MaintScheduleId": 5,
-        "Code": "DET.05",
+        "Code": "ROC.05",
         "Position": 5,
-        "Description": "Aviso previo a la prueba de los sensores",
-        "Name": "AVISO PREVIO A LA PRUEBA DE LOS SENSORES",
+        "Description": "Medir los sensores",
+        "Name": "MEDIR LOS SENSORES",
         "IsActive": true,
         "IsDelete": false
       },
@@ -2297,10 +2347,10 @@
         "Index": 6,
         "TenantId": 1,
         "MaintScheduleId": 5,
-        "Code": "DET.06",
+        "Code": "ROC.06",
         "Position": 6,
-        "Description": "Medir todas las salidas",
-        "Name": "MEDIR TODAS LAS SALIDAS",
+        "Description": "Verificar equipos averiados",
+        "Name": "VERIFICAR EQUIPOS AVERIADOS",
         "IsActive": true,
         "IsDelete": false
       },
@@ -2308,10 +2358,10 @@
         "Index": 7,
         "TenantId": 1,
         "MaintScheduleId": 5,
-        "Code": "DET.07",
+        "Code": "ROC.07",
         "Position": 7,
-        "Description": "Verificar los equipos del sistema",
-        "Name": "VERIFICAR LOS EQUIPOS DEL SISTEMA",
+        "Description": "Retirar equipos averiados",
+        "Name": "RETIRAR EQUIPOS AVERIADOS",
         "IsActive": true,
         "IsDelete": false
       },
@@ -2319,10 +2369,10 @@
         "Index": 8,
         "TenantId": 1,
         "MaintScheduleId": 5,
-        "Code": "DET.08",
+        "Code": "ROC.08",
         "Position": 8,
-        "Description": "Verificar las conexiones",
-        "Name": "VERIFICAR LAS CONEXIONES",
+        "Description": "Limpieza de las baterías",
+        "Name": "LIMPIEZA DE LAS BATERÍAS",
         "IsActive": true,
         "IsDelete": false
       },
@@ -2330,10 +2380,10 @@
         "Index": 9,
         "TenantId": 1,
         "MaintScheduleId": 5,
-        "Code": "DET.09",
+        "Code": "ROC.09",
         "Position": 9,
-        "Description": "Desconectar previamente las instalación eléctrica",
-        "Name": "DESCONECTAR PREVIAMENTE LAS INSTALACIÓN ELÉCTRICA",
+        "Description": "Prueba de los sistemas",
+        "Name": "PRUEBA DE LOS SISTEMAS",
         "IsActive": true,
         "IsDelete": false
       }

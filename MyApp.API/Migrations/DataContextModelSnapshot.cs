@@ -391,9 +391,7 @@ namespace MyApp.API.Migrations
                         .ValueGeneratedOnAdd()
                         .HasDefaultValue(true);
 
-                    b.Property<bool?>("IsDeleted")
-                        .ValueGeneratedOnAdd()
-                        .HasDefaultValue(false);
+                    b.Property<DateTime>("NextInspectionDate");
 
                     b.Property<int>("TenantId");
 

@@ -203,8 +203,8 @@ namespace MyApp.API.Data
                 MaintScheduleAsset.Property(a => a.IsActive).HasDefaultValue(true);
                 MaintScheduleAsset.Property(c => c.CreatedOn).HasDefaultValueSql("getdate()");
                 MaintScheduleAsset.Property(c => c.UpdatedOn).HasDefaultValueSql("getdate()");
-                MaintScheduleAsset.Property(a => a.IsDeleted).HasDefaultValue(false);
-                MaintScheduleAsset.HasQueryFilter(c => EF.Property<bool>(c, "IsDeleted") == false);
+                //MaintScheduleAsset.Property(a => a.IsDeleted).HasDefaultValue(false);
+                // MaintScheduleAsset.HasQueryFilter(c => EF.Property<bool>(c, "IsDeleted") == false);
          });
 
             builder.Entity<MaintResult>(MaintResult =>

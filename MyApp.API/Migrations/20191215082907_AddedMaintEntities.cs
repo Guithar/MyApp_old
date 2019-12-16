@@ -71,9 +71,9 @@ namespace MyApp.API.Migrations
                 {
                     AssetId = table.Column<int>(nullable: false),
                     MaintScheduleId = table.Column<int>(nullable: false),
+                    NextInspectionDate = table.Column<DateTime>(nullable: false),
                     TenantId = table.Column<int>(nullable: false),
                     IsActive = table.Column<bool>(nullable: true, defaultValue: true),
-                    IsDeleted = table.Column<bool>(nullable: true, defaultValue: false),
                     CreatedOn = table.Column<DateTime>(nullable: true, defaultValueSql: "getdate()"),
                     UpdatedOn = table.Column<DateTime>(nullable: true, defaultValueSql: "getdate()"),
                     DeletedOn = table.Column<DateTime>(nullable: true),

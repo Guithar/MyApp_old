@@ -252,17 +252,37 @@ namespace MyApp.API.Data
 
             return await maintSchedule.ToListAsync();
         }
+                public async Task<MaintSchedule> GetMaintSchedule(int currentTenantId, int id)
+        {
+             var maintSchedule= await _context.MaintSchedules
+             .Where(m=> m.Id == id && m.TenantId==currentTenantId )
+             .FirstOrDefaultAsync(); 
+            return maintSchedule;
+        }
 
-        public async Task<IEnumerable<MaintScheduleAsset>> GetMaintScheduleAssets(int currentTenantId, int id)
+
+        public async Task<IEnumerable<MaintScheduleAsset>> GetMaintScheduleAssets(int currentTenantId, int assetId)
         {
              
             var maintSchedulesAssets=  _context.MaintSchedulesAssets.AsQueryable();
 
             maintSchedulesAssets= maintSchedulesAssets
             .Include(a=> a.Asset)
-            .Where(p=> p.TenantId==currentTenantId && p.Asset.Id == id);
+            .Where(p=> p.TenantId==currentTenantId && p.Asset.Id == assetId);
             return await maintSchedulesAssets.ToListAsync();
         }
-        
+
+        public async Task<MaintScheduleAsset> GetMaintScheduleAsset(int currentTenantId, int assetId, 
+            int maintScheduleId)
+        {
+              var maintSchedulesAsset= await _context.MaintSchedulesAssets
+             .Where(m=> m.AssetId == assetId 
+                    && m.TenantId==currentTenantId
+                    && m.MaintScheduleId== maintScheduleId )
+             .FirstOrDefaultAsync(); 
+            return maintSchedulesAsset;
+        }
+
+
     }
 }

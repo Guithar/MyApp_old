@@ -10,7 +10,7 @@ using MyApp.API.Data;
 namespace MyApp.API.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20191207160305_AddedMaintEntities")]
+    [Migration("20191215082907_AddedMaintEntities")]
     partial class AddedMaintEntities
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -393,9 +393,7 @@ namespace MyApp.API.Migrations
                         .ValueGeneratedOnAdd()
                         .HasDefaultValue(true);
 
-                    b.Property<bool?>("IsDeleted")
-                        .ValueGeneratedOnAdd()
-                        .HasDefaultValue(false);
+                    b.Property<DateTime>("NextInspectionDate");
 
                     b.Property<int>("TenantId");
 

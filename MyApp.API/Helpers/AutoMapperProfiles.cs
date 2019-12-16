@@ -62,7 +62,7 @@ namespace MyApp.API.Helpers
                 .MapFrom(msa => msa.MaintResults
                     .OrderByDescending(c => c.ExecutedOn)
                     .FirstOrDefault().ExecutedOn))
-            .ForMember(m => m.NextInspectionDate, opt => opt
+            .ForMember(m => m.CalculatedNextInspectionDate, opt => opt
                 .MapFrom(msa => msa.MaintResults
                     .OrderByDescending(c => c.ExecutedOn)
                     .FirstOrDefault().NextInspectionDate))
@@ -91,6 +91,8 @@ namespace MyApp.API.Helpers
             CreateMap<AssetForCreationDto,Asset>();
 
             CreateMap<MaintSchedule,MaintSchedulesForListDto>();
+
+            CreateMap<MaintScheduleAssetForUpdateDto,MaintScheduleAsset>();
         }
 
     }
