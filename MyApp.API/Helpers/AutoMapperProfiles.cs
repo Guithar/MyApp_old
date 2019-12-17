@@ -93,6 +93,7 @@ namespace MyApp.API.Helpers
             CreateMap<MaintSchedule,MaintSchedulesForListDto>();
 
             CreateMap<MaintScheduleAssetForUpdateDto,MaintScheduleAsset>();
+            CreateMap<MaintScheduleAssetForCreationDto,MaintScheduleAsset>();
         }
 
     }
