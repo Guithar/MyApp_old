@@ -106,6 +106,18 @@ namespace MyApp.API.Controllers
                 clientId, currentTenantId );
             if(assetFromRepo==null)
              return NotFound();
+
+              var maintScheduleFromRepo =  await _repo.GetMaintSchedule(currentTenantId, 
+              maintScheduleAssetForCreationDto.MaintScheduleId);
+            if(maintScheduleFromRepo==null)
+             return NotFound();
+
+            var maintScheduleAssetFromRepo =  await _repo.GetMaintScheduleAsset(currentTenantId,
+              maintScheduleAssetForCreationDto.AssetId,  
+              maintScheduleAssetForCreationDto.MaintScheduleId);
+            if(maintScheduleFromRepo!=null)
+             return BadRequest("this asset has already this maintenance schedule asigned");
+
            
             var maintScheduleAsset = _mapper.Map<MaintScheduleAsset>(maintScheduleAssetForCreationDto);
             maintScheduleAsset.TenantId=currentTenantId;

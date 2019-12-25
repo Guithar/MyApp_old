@@ -30,10 +30,4 @@ getMaintSchedules(maintScheduleParam?): Observable<MaintSchedule[]> {
 
   }
 
-  getMaintScheduleAssets(assetId: number): Observable<MaintScheduleAsset[]> {
-
-    return this.http.get<MaintScheduleAsset[]>(this.baseUrl
-      + 'maintschedules/asset/' + assetId );
-    }
-
 }

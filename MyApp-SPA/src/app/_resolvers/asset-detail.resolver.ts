@@ -13,7 +13,7 @@ export class AssetDetailResolver implements Resolve<Asset> {
         private alertify: AlertifyService) {}
 
     resolve(route: ActivatedRouteSnapshot): Observable<Asset> {
-            return this.assetService.getAsset(route.params['id'], route.params['assetId']  ).pipe(
+            return this.assetService.getAsset(route.params['clientId'], route.params['assetId']  ).pipe(
                 catchError(() => {
                     this.alertify.error('Problem retrieving data');
                     this.router.navigate(['/home']);

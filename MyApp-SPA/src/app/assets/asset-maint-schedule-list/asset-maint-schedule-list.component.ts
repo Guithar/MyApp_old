@@ -7,6 +7,7 @@ import { SelectionModel } from '@angular/cdk/collections';
 import { ClientAssetDetailModalComponent } from 'src/app/clients/client-asset-detail-modal/client-asset-detail-modal.component';
 import { MaintScheduleAsset } from 'src/app/_models/maintScheduleAsset';
 import { MaintScheduleAssetDetailModalComponent } from '../maint-schedule-asset-detail-modal/maint-schedule-asset-detail-modal.component';
+import { MaintScheduleAssetService } from 'src/app/_services/maintScheduleAsset.service';
 
 @Component({
   selector: 'app-asset-maint-schedule-list',
@@ -18,28 +19,22 @@ export class AssetMaintScheduleListComponent implements OnInit {
   maintScheduleAsset: MaintScheduleAsset[];
 
   constructor(private alertify: AlertifyService,
-    private assetService: AssetService,
+    private maintScheduleAssetService: MaintScheduleAssetService,
     private route: ActivatedRoute,
     private dialog: MatDialog,
     private currentRoute: ActivatedRoute) { }
 
     dataSource: MatTableDataSource<MaintScheduleAsset>;
-    allColumns: string[] = [
-      'maintScheduleId',
-      'name',
-      'description',
-      'monthsInterval',
-      'lastInspectionDate',
-      'nextInspectionDate',
-      'lastResult'
-    ];
+
 
       displayedColumns: string[] = [
         'select',
-        // 'maintScheduleId',
-        'name',
-        // 'description',
-        'monthsInterval',
+        'isActive',
+        'assetId',
+        'maintScheduleId',
+        'maintSchedule.name',
+        // 'maintSchedule.description',
+        'maintSchedule.monthsInterval',
         'lastInspectionDate',
         'nextInspectionDate',
         'lastResult',
@@ -116,27 +111,42 @@ export class AssetMaintScheduleListComponent implements OnInit {
   updateData(maintScheduleAsset: any) {
     console.log('updateData');
     console.log(maintScheduleAsset);
-    // this.assetService.updateAsset(asset.clientId,
-    //   asset.id, asset).subscribe(() => {
-    //       this.alertify.success('Asset updated successfully');
-    //       this.loadAssets();
-    //     }, error => {
-    //       this.alertify.error(error);
-    //     });
+    this.maintScheduleAssetService.updateMaintScheduleAsset(
+      maintScheduleAsset.clientId,
+      maintScheduleAsset.assetId,
+      maintScheduleAsset.maintScheduleId,
+      maintScheduleAsset).subscribe(() => {
+          this.alertify.success('Maintenance Schedule has been updated successfully');
+          this.loadMaintScheduleAssets();
+        }, error => {
+          this.alertify.error(error);
+        });
   }
   addData(maintScheduleAsset: MaintScheduleAsset) {
     console.log('addData');
     console.log(maintScheduleAsset);
-    // this.assetService.createAsset(this.clientId,
-    //   asset).subscribe(() => {
-    //       this.alertify.success('Asset created successfully');
-    //       this.loadAssets();
-    //     }, error => {
-    //       this.alertify.error('error ' + error);
-    //     });
+    this.maintScheduleAssetService.createMaintScheduleAsset(
+      maintScheduleAsset.clientId,
+      maintScheduleAsset.assetId,
+      maintScheduleAsset).subscribe(() => {
+          this.alertify.success('Maintenance Schedule has been created successfully');
+          this.loadMaintScheduleAssets();
+        }, error => {
+          this.alertify.error(error);
+        });
   }
   deleteData(maintScheduleAsset: MaintScheduleAsset) {
     console.log('deleteData');
     console.log(maintScheduleAsset);
+    this.maintScheduleAssetService.deleteMaintScheduleAsset(
+      maintScheduleAsset.clientId,
+      maintScheduleAsset.assetId,
+      maintScheduleAsset.maintScheduleId).subscribe(() => {
+          this.alertify.success('Maintenance Schedule has been deleted successfully');
+          this.loadMaintScheduleAssets();
+        }, error => {
+          this.alertify.error(error);
+        });
+
   }
 }

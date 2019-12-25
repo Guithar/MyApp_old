@@ -69,6 +69,7 @@ import { AssetDetailComponent } from './assets/asset-detail/asset-detail.compone
 import { AssetMaintScheduleListComponent } from './assets/asset-maint-schedule-list/asset-maint-schedule-list.component';
 import { MaintScheduleAssetListResolver } from './_resolvers/maint-schedule-asset-list.resolver';
 import { MaintScheduleAssetDetailModalComponent } from './assets/maint-schedule-asset-detail-modal/maint-schedule-asset-detail-modal.component';
+import { MaintScheduleAssetService } from './_services/maintScheduleAsset.service';
 
 export function tokenGetter() {
   return localStorage.getItem('token');
@@ -163,6 +164,7 @@ export class CustomHammerConfig extends HammerGestureConfig  {
       ProductDetailResolver,
       AssetDetailResolver,
       MaintScheduleAssetListResolver,
+      MaintScheduleAssetService,
       { provide: HAMMER_GESTURE_CONFIG, useClass: CustomHammerConfig }
     ],
   entryComponents: [

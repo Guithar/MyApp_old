@@ -42,7 +42,7 @@ export const appRoutes: Routes = [
                             assets: AssetListResolver}},
             {path: 'clients/:id/assets', component: AssetListComponent,
                 resolve: {assets: AssetListResolver}},
-            {path: 'clients/:id/assets/:assetId', component: AssetSkeletonComponent,
+            {path: 'clients/:clientId/assets/:assetId', component: AssetSkeletonComponent,
                 resolve: {asset: AssetDetailResolver,
                         MaintScheduleAssets: MaintScheduleAssetListResolver}},
             {path: 'members', component: MemberListComponent,

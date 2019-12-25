@@ -1,42 +1,27 @@
 <div class="container">
-    <h1 mat-dialog-title>(modal) {{action}}  Inspection  id: {{data.maintScheduleId}}}}</h1>
+    <h1 mat-dialog-title>(modal) {{action}}  Inspection  id: {{data.maintScheduleId}}</h1>
   
     <form [formGroup]="MaintScheduleAssetForm ">
   
+      
+        <!-- MaintSchedule -->
+        <div class="form">
+          <mat-form-field>
+              <mat-select 
+               
+                formControlName="maintScheduleId"
+                placeholder="Change Maintenance Schedules">
+           <!-- <mat-select-trigger>{{MaintScheduleAssetForm.value.maintSchedule.name}}</mat-select-trigger>-->
+              <mat-option *ngFor="let maintSchedule of ListOfMaintSchedules" 
+                [value]="maintSchedule.id">
+                 {{maintSchedule.name}} ({{maintSchedule.monthsInterval}} m.)
+                  </mat-option>
+              </mat-select>
+          </mat-form-field>
+      </div>
     
 
-      <!-- MaintScheduleId -->
-      <div class="form">
-        <mat-form-field id="maints">
-            <mat-select 
-                placeholder="Maintenance Schedules" 
-                formControlName="maintScheduleId">
-            <mat-option *ngFor="let maintSchedule of ListOfMaintSchedules" [value]="maintSchedule.id" >
-                    {{maintSchedule.id}} - {{maintSchedule.name}}
-                </mat-option>
-            </mat-select>
-        </mat-form-field>
-    </div>
-
-      <!-- name (disabled) -->
-      <div class="form">
-        <mat-form-field>
-          <input matInput  placeholder="name" formControlName="name" readonly>
-        </mat-form-field>
-      </div>
-      <!-- description (disabled) -->
-      <div class="form">
-        <mat-form-field>
-          <input matInput  placeholder="description" formControlName="description" readonly>
-        </mat-form-field>
-      </div>
-      <!-- monthsInterval (disabled) -->
-      <div class="form">
-        <mat-form-field>
-          <input matInput  placeholder="monthsInterval " formControlName="monthsInterval" readonly>
-        </mat-form-field>
-      </div>
-
+      <!-- isActive -->
       <div class="form">
         <mat-slide-toggle  formControlName="isActive">
           Is Active
@@ -61,4 +46,5 @@
       </div>
   
     </form>
+  
   </div>

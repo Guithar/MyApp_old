@@ -1,10 +1,15 @@
+import { MaintSchedule } from './maintSchedule';
+
 export class MaintScheduleAsset {
 
+  assetId: number;
   maintScheduleId: number;
-  name: string;
-  description: string;
-  monthsInterval: number;
-  lastInspectionDate: string;
+  maintSchedule: MaintSchedule;
+  clientId: number;
+  productCategoryId: number;
   nextInspectionDate: string;
-  lastResult: string;
+  calculatedNextInspectionDate: string;
+  lastInspectionDate: string;
+  lastResult?: any;
+  isActive: boolean;
 }

@@ -17,8 +17,8 @@ export class AssetService {
         return this.http.get<Asset[]>(this.baseUrl + 'clients/' + clientId + '/assets');
     }
 
-    getAsset(clientId: number, id: number): Observable<Asset> {
-            return this.http.get<Asset>(this.baseUrl + 'clients/' + clientId + '/assets/' + id);
+    getAsset(clientId: number, assetId: number): Observable<Asset> {
+            return this.http.get<Asset>(this.baseUrl + 'clients/' + clientId + '/assets/' + assetId);
     }
 
     updateAsset(clientId: number, id: number, asset: Asset) {

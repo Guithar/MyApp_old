@@ -49,15 +49,10 @@ namespace MyApp.API.Helpers
             CreateMap<ProductCategory,ProductCategoryForListDto>();
 
             CreateMap<MaintScheduleAsset,MaintScheduleAssetDto>()
-             .ForMember(m => m.Name, opt => opt
-                    .MapFrom(msa => msa.MaintSchedule.Name))
-            .ForMember(m => m.Description, opt => opt
-                    .MapFrom(msa => msa.MaintSchedule.Description))
             .ForMember(m => m.ProductCategoryId, opt => opt
                     .MapFrom(msa => msa.Asset.Product.ProductCategoryId))
-            
-            .ForMember(m => m.MonthsInterval, opt => opt
-                    .MapFrom(msa => msa.MaintSchedule.MonthsInterval))
+                .ForMember(m => m.ClientId, opt => opt
+                    .MapFrom(msa => msa.Asset.Client.Id))
             .ForMember(m => m.LastInspectionDate, opt => opt
                 .MapFrom(msa => msa.MaintResults
                     .OrderByDescending(c => c.ExecutedOn)
@@ -90,7 +85,7 @@ namespace MyApp.API.Helpers
             CreateMap<AssetForUpdateDto,Asset>();
             CreateMap<AssetForCreationDto,Asset>();
 
-            CreateMap<MaintSchedule,MaintSchedulesForListDto>();
+            CreateMap<MaintSchedule,MaintScheduleForListDto>();
 
             CreateMap<MaintScheduleAssetForUpdateDto,MaintScheduleAsset>();
             CreateMap<MaintScheduleAssetForCreationDto,MaintScheduleAsset>();

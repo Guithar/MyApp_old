@@ -35,8 +35,8 @@ export class AssetListComponent implements OnInit {
 
 
       displayedColumns: string[] = [
-        'select', 'client.company', 'isActive', 'id',
-         'product.name',
+        'select', 'client.company',  'isActive', 'id',
+         'product.name', 'product.productCategoryId',
          'location', 'quantity',
         'inspections', 'inspections.lastResult', 'inspections.nextInspectionDate',
         'actions'];

@@ -2,9 +2,7 @@
     <div class="card-header">
         <span>
             <strong> ASSETS </strong> <small>List</small> 
-            <button (click)="openDialog('Add',{})"mat-stroked-button color="primary"><i class="material-icons">
-                add
-                </i> New</button>
+            
             <button  mat-stroked-button color="primary">Options <i class="material-icons">
                 keyboard_arrow_down
                 </i> </button>
@@ -158,16 +156,14 @@
             
             <ng-container matColumnDef="actions">
                     <mat-header-cell *matHeaderCellDef>
-                      <button mat-icon-button color="primary" (click)="openDialog('Add',{})">
-                        <mat-icon aria-label="Example icon-button with a heart icon">add</mat-icon>
-                      </button>
+                      
                     </mat-header-cell>
               
                     <mat-cell *matCellDef="let row; let i=index;"> 
                       <button mat-icon-button color="primary"  [routerLink]="['/clients',row.client.id,'assets',row.id]">
                         <mat-icon aria-label="Edit">edit </mat-icon>
                       </button>
-                      <button mat-icon-button color="warn" (click)="openDialog('Delete',row)">
+                      <button mat-icon-button color="warn" (click)="''">
                         <mat-icon aria-label="Delete">delete</mat-icon>
                       </button>
                     </mat-cell>

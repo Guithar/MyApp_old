@@ -29,25 +29,25 @@ namespace MyApp.API.Controllers
                 
         }
         [HttpGet]
-          public async Task <ActionResult<IEnumerable<MaintSchedulesForListDto>>> getMaintSchedules(
+          public async Task <ActionResult<IEnumerable<MaintScheduleForListDto>>> getMaintSchedules(
               [FromQuery] MaintScheduleParams maintScheduleParams)
         {  
             var currentTenantId= int.Parse(User.FindFirst("TenantId").Value);
             var maintSchedules = await _repo.GetMaintSchedules( currentTenantId, maintScheduleParams);
             if (maintSchedules == null)
                 return NotFound();
-            var maintSchedulesToReturn= _mapper.Map<IEnumerable<MaintSchedulesForListDto>>(maintSchedules);
-            return new List<MaintSchedulesForListDto>(maintSchedulesToReturn);
+            var maintSchedulesToReturn= _mapper.Map<IEnumerable<MaintScheduleForListDto>>(maintSchedules);
+            return new List<MaintScheduleForListDto>(maintSchedulesToReturn);
             
         }
          [HttpGet("{id}")]
-          public async Task <ActionResult<MaintSchedulesForListDto>> getMaintSchedule(int id)
+          public async Task <ActionResult<MaintScheduleForListDto>> getMaintSchedule(int id)
         {  
             var currentTenantId= int.Parse(User.FindFirst("TenantId").Value);
             var maintSchedules = await _repo.GetMaintSchedule( currentTenantId, id);
             if (maintSchedules == null)
                 return NotFound();
-            var maintSchedulesToReturn= _mapper.Map<MaintSchedulesForListDto>(maintSchedules);
+            var maintSchedulesToReturn= _mapper.Map<MaintScheduleForListDto>(maintSchedules);
             return maintSchedulesToReturn;
             
         }

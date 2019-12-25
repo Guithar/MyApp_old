@@ -1,6 +1,6 @@
 namespace MyApp.API.Dtos
 {
-    public class MaintSchedulesForListDto
+    public class MaintScheduleForListDto
     {
         
         public int Id { get; set; }

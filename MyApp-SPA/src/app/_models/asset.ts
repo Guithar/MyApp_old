@@ -1,5 +1,5 @@
 
-export interface Asset {
+export interface Asset{
   id: number;
   tenantId: number;
   location: string;
@@ -19,23 +19,18 @@ export interface Asset {
 }
 
 interface Inspection {
+  assetId: number;
   maintScheduleId: number;
+  productCategoryId: number;
+  nextInspectionDate: string;
   name: string;
   description: string;
   monthsInterval: number;
   lastInspectionDate: string;
-  nextInspectionDate: string;
-  lastResult?: string;
+  calculatedNextInspectionDate: string;
+  lastResult: string;
+  isActive: boolean;
 }
-
-interface ProductInAsset {
-  id: number;
-  name: string;
-  description: string;
-  productCategoryId: number;
-  productCategoryName: string;
-}
-
 
 interface ClientInAsset {
   id: number;
@@ -51,4 +46,12 @@ interface ClientInAsset {
   email: string;
   phone: string;
   observations: string;
+}
+
+interface ProductInAsset {
+  id: number;
+  name: string;
+  description: string;
+  productCategoryId: number;
+  productCategoryName: string;
 }
